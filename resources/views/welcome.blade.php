@@ -14,9 +14,9 @@
 </head>
 <body>
 <header>
-    <div class="logotip">
+   <a href="#"> <div class="logotip">
         <img src="./images/logotipICB.png" alt="logotip-icon">
-    </div>
+    </div></a>
     <div class="toptext">
         <a href="#" class="shrift">INDIVIDUALS</a>
         <a href="#" class="shrift">LEGAL ENTITIES</a>
@@ -47,41 +47,41 @@
     </div>
     <nav role="navigation">
         <ul class="allofthem">
-            <li><a href="#" class="shrift">Loans</a>
+            <li><a href="loans" class="shrift">Loans</a>
                 <ul class="dropdown">
-                    <li><a href="#" class="shriftshrift">Business loans</a></li>
-                    <li><a href="#" class="shriftshrift">Consumer loans</a></li>
-                    <li><a href="#" class="shriftshrift">Mortgage loan</a></li>
-                    <li><a href="#" class="shriftshrift"> Auto loan</a></li>
-                    <li><a href="#" class="shriftshrift">Agriculture loan</a></li>
-                    <li><a href="#" class="shriftshrift">Express credit</a></li>
-                    <li><a href="#" class="shriftshrift">Loan product "Donish"</a></li>
+                    <li><a href="businessloan" class="shriftshrift">Business loans</a></li>
+                    <li><a href="costumerloans" class="shriftshrift">Consumer loans</a></li>
+                    <li><a href="mortgate" class="shriftshrift">Mortgage loan</a></li>
+                    <li><a href="autoloan" class="shriftshrift"> Auto loan</a></li>
+                    <li><a href="agricultureloan" class="shriftshrift">Agriculture loan</a></li>
+                    <li><a href="expresscredit" class="shriftshrift">Express credit</a></li>
+                    <li><a href="donish" class="shriftshrift">Loan product "Donish"</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="shrift">Deposits</a>
+            <li><a href="deposits" class="shrift">Deposits</a>
                 <ul class="dropdown">
-                    <li><a href="#" class="shriftshrift">Savings account</a></li>
-                    <li><a href="#" class="shriftshrift">Individual term deposits</a></li>
-                    <li><a href="#" class="shriftshrift">"Easy" deposit</a></li>
-                    <li><a href="#" class="shriftshrift">Child deposit</a></li>
-                    <li><a href="#" class="shriftshrift">"Diyor" Deposit</a></li>
-                    <li><a href="#" class="shriftshrift">Housing deposit</a></li>
+                    <li><a href="saving" class="shriftshrift">Savings account</a></li>
+                    <li><a href="individualterm" class="shriftshrift">Individual term deposits</a></li>
+                    <li><a href="easydeposit" class="shriftshrift">"Easy" deposit</a></li>
+                    <li><a href="childdeposit" class="shriftshrift">Child deposit</a></li>
+                    <li><a href="diyor" class="shriftshrift">"Diyor" Deposit</a></li>
+                    <li><a href="housing" class="shriftshrift">Housing deposit</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="shrift">Cards</a>
+            <li><a href="cards" class="shrift">Cards</a>
                 <ul class="dropdown">
-                    <li><a href="#" class="shriftshrift">Kirti Milli</a></li>
-                    <li><a href="#" class="shriftshrift">Visa (Classic)</a></li>
-                    <li><a href="#" class="shriftshrift">Visa (Gold)</a></li>
-                    <li><a href="#" class="shriftshrift">Gift Card</a></li>
+                    <li><a href="milli" class="shriftshrift">Kirti Milli</a></li>
+                    <li><a href="classic" class="shriftshrift">Visa (Classic)</a></li>
+                    <li><a href="gold" class="shriftshrift">Visa (Gold)</a></li>
+                    <li><a href="gift" class="shriftshrift">Gift Card</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="shrift">Online Services</a></li>
+            <li><a href="onlineservice" class="shrift">Online Services</a></li>
 
             <li><a href="#" class="shrift">More</a>
                 <ul class="dropdown">
-                    <li><a href="#" class="shriftshrift">About the bank</a></li>
-                    <li><a href="#" class="shriftshrift">Vacansy</a></li>
+                    <li><a href="abouts" class="shriftshrift">About the bank</a></li>
+                    <li><a href="vacancy" class="shriftshrift">Vacansy</a></li>
                 </ul>
             </li>
         </ul>
