@@ -16,6 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/remmitance', function () {
+    return view('remitance');
+});
+Route::get('/services', function () {
+    return view('onlineservice');
+});
+Route::get('/cards', function () {
+    return view('card');
+});
+Route::get('/vacancy', function () {
+    return view('vacancy');
+});
+
+Route::get('/cotumerloans', function () {
+    return view('costumerloans');
+});
+
 
 Auth::routes();
 

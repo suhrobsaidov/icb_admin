@@ -141,7 +141,7 @@
 </div>
 <h2 class="calculators">Calculators</h2>
 <div class="currency-calculator">
-    <img src="./images/currency calculator.png" alt="icon-image">
+    <img src="/images/currency calculator.png" alt="icon-image">
     <h2>CURRENCY CALCULATOR</h2>
 </div>
 <div class="loans-calculator">
