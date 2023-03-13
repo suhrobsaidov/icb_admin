@@ -29,7 +29,7 @@ Route::get('/vacancy', function () {
     return view('vacancy');
 });
 
-Route::get('/cotumerloans', function () {
+Route::get('/costumerloans', function () {
     return view('costumerloans');
 });
 
