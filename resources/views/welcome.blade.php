@@ -90,7 +90,7 @@
 <div class="kortimillih2">
     <h2>KORTI MILLI</h2>
     <p>With the "Korti Milli" card, everything is <br>accessible, easy and always nearby</p>
-    <img src="./images/vectorup.png" alt="">
+
 </div>
 <div class="middletext">
     <div class="consumerloans">
@@ -618,7 +618,7 @@
         margin-top: 80px;
         margin-left: 183px;
     }
-    .vertical-line
+/*    .vertical-line
     {
         border-left: 2px solid #0000001A;
         height: 135px;
@@ -635,7 +635,7 @@
         left: 76.5%;
         margin-left: 20px;
         top: 683px;
-    }
+    }*/
     .bankproduct h2{
         position: absolute;
         width: 304px;
@@ -1552,3 +1552,14 @@
         border: 1px solid rgba(0, 0, 0, 0.3);
     }
 </style>
+
+
+
+
+
+
+
+
+
+
+

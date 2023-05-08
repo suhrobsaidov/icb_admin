@@ -11,7 +11,7 @@
             justify-content: center;
             margin-top: 4000px;
             height: 500px;
-            width: 100%;
+            width: 1920px;
             color: #fff;
             background-color: rgb(221, 26, 26);
         }
