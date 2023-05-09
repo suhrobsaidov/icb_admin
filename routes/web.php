@@ -28,6 +28,9 @@ Route::get('/cards', function () {
 Route::get('/vacancy', function () {
     return view('vacancy');
 });
+Route::get('/deposits', function () {
+    return view('deposites');
+});
 
 Route::get('/costumerloans', function () {
     return view('costumerloans');
