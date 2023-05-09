@@ -252,7 +252,7 @@
 
 </html>
 
-@include('includes.footer')
+<?php include "includes/footer.blade.php"; ?>
 
 
 <style>
