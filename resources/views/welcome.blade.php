@@ -1,4 +1,3 @@
-{{--
 
 
 
@@ -1564,54 +1563,3 @@
 
 
 
---}}
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-    <title>Html Generated</title>
-    <meta name="description" content="Figma htmlGenerator">
-    <meta name="author" content="htmlGenerator">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /*
-          Figma Background for illustrative/preview purposes only.
-          You can remove this style tag with no consequence
-        */
-        body {
-            background: #E5E5E5;
-        }
-    </style>
-
-</head>
-
-<body>
-<div class=e1272_524>
-    <div class="e1272_525"></div>
-    <div class=e1272_526>
-        <div class="e1272_527"></div>
-        <span class="e1272_528">More detailed</span></div>
-    <div class=e1272_529>
-        <div class="e1272_530"></div>
-        <div class="e1272_531"></div>
-        <div class="e1272_532"></div>
-        <span class="e1272_533">Korti milli</span><span class="e1272_534">Consumer credit</span><span class="e1272_535">Deposit Account «Diyor»</span><span
-            class="e1272_536">“WESTERN UNION”</span><span class="e1272_537">With the "Korti Milli” card, everything is accessible, easy and always nearby</span><span
-            class="e1272_538">To meet consumer needs</span><span
-            class="e1272_539">Your money is in safe hands</span><span class="e1272_540">Get paid in minutes</span>
-        <div class="e1272_541"></div>
-        <div class="e1272_542"></div>
-    </div>
-    <span class="e1272_543">Individual card
-“Korti Milli”</span><span class="e1272_544">With the "Корти Милли” card, everything is accessible, easy and always nearby</span>
-    <div class="e1272_545"></div>
-</div>
-</body>
-</html>
-<style>
-
-
-</style>
