@@ -848,6 +848,8 @@
         top: 1849px;
         font-size: 40px;
     }
+
+
     .currency-calculator
     {
         position: absolute;
