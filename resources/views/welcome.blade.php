@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -252,7 +249,6 @@
 
 </html>
 
-<?php include "includes/footer.blade.php"; ?>
 
 
 <style>
