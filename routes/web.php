@@ -125,4 +125,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::apiResource('sliders' , 'SLiderController');
 Route::apiResource('remitance' , 'RemitanceController');
 Route::apiResource('products' , 'ProductsController');
-Route::apiResource('services' , 'ServicesController');
+

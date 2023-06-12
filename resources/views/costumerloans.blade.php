@@ -1,3 +1,7 @@
+
+@extends('layouts.remitance')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,43 +14,7 @@
 <body>
 
 <div class="begin">
-    <img src="./images/Логотип.png" alt="">
-    <h1>
-
-        <strong>INDIVIDUALS</strong>
-        <hr>
-    </h1>
-    <p>
-        LEGAL ENTITIES
-    </p>
-
-
-    <div class="menu_bar">
-        <ul>
-            <li class="first"><a href="#">Loans</a></li>
-            <li class="second"><a href="#">Deposits</a></li>
-            <li class="third"><a href="#">Cards</a></li>
-            <li class="forth"><a href="#">Online Services</a></li>
-            <li class="fifth"><a href="#">More</a></li>
-        </ul>
-    </div>
-
-    <div class="Search">
-        <img src="./images/Search.png" alt="">
-        <input type="text" placeholder="Search" class="Search-2">
-    </div>
-
-    <div class="Banking">
-        <p>
-            Mobile banking
-        </p>
-    </div>
-    <div class="Language">
-        <img src="./images/Tajik(1).png" alt="TJK">
-        <img src="./images/Russian(1).png" alt="RU">
-        <img src="./images/Britain(1).png" alt="EN">
-    </div>
-
+   
     <div class="loan">
         <img src="./images/image 35.png" alt="">
         <h1>Consumer loans
@@ -1192,3 +1160,6 @@
     }
 
 </style>
+
+
+@endsection
