@@ -1,4 +1,4 @@
-@extends('layouts.remitance')
+@extends('layouts.test')
 
 @section('content')
 

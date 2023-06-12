@@ -39,7 +39,7 @@ Route::get('/term', function () {
 Route::get('/show', function () {
     return view('searchShow');
 });
-Route::get('/savings', function () {
+Route::get('/saving', function () {
     return view('savingaccounts');
 });
 Route::get('/payroll', function () {
@@ -78,10 +78,10 @@ Route::get('/faq', function () {
 Route::get('/expresscredit', function () {
     return view('expresscredit');
 });
-Route::get('/diyordeposit', function () {
+Route::get('/diyor', function () {
     return view('diyordeposit');
 });
-Route::get('/depositeasy', function () {
+Route::get('/easy', function () {
     return view('depositeasy');
 });
 Route::get('/contacts', function () {

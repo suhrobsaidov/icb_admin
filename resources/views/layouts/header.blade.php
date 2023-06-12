@@ -40,7 +40,7 @@
                 <ul class="dropdown">
                     <li><a href="saving" class="shriftshrift">Savings account</a></li>
                     <li><a href="individualterm" class="shriftshrift">Individual term deposits</a></li>
-                    <li><a href="easydeposit" class="shriftshrift">"Easy" deposit</a></li>
+                    <li><a href="easy" class="shriftshrift">"Easy" deposit</a></li>
                     <li><a href="childdeposit" class="shriftshrift">Child deposit</a></li>
                     <li><a href="diyor" class="shriftshrift">"Diyor" Deposit</a></li>
                     <li><a href="housing" class="shriftshrift">Housing deposit</a></li>
