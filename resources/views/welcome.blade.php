@@ -498,7 +498,7 @@
 <script src="script.js"></script>
 </body>
 
-@include('layouts.footer')
+
 
 
 
