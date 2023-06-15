@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div class="container">
-	
+		
 
 		<div class="loans-calc">
 			<h1>Loans calcualtors</h1>
@@ -62,8 +62,8 @@
 					<div class="deposit-amount">
 						<p>Loan term</p>
 						<div class="range-slider">
-							<p class="slider-number" id="sliderNumber">0</p>
-							<input type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+							<p class="slider-number" id="sliderNumber1">0</p>
+							<input type="range" min="1" max="1000000" value="0" class="slider" id="myRange1">
 						</div>
 						<div class="range-numbers">
 							<p>1000</p>
@@ -229,13 +229,31 @@
 			            </div>
 			        </div>
 			    </form>
-			</div>
+		</div>
 
-			<!-- конец -->
-		</div>	
+		<!-- конец -->
+	</div>	
+
+<script>
+	"use strict";
+
+const slider = document.getElementById('myRange');
+const sliderNumber = document.getElementById('sliderNumber');
+const slider1 = document.getElementById('myRange1');
+const sliderNumber1 = document.getElementById('sliderNumber1');
 
 
 
+// Обработчик события ввода для ползунка slider
+slider.addEventListener('input', () => {
+  sliderNumber.textContent = slider.value;
+});
+slider1.addEventListener('input', () => {
+  sliderNumber1.textContent = slider1.value;
+});
+
+
+</script>
 	</div>
 
 	<!-- <div class="mobile-menu">
@@ -266,11 +284,13 @@
 		</div>
 	</div> -->
 
-<script></script>
+<script src="./scripts/app.js"></script>
 </body>
 </html>
 
 <style>
+
+
 *{
 	padding:0;
 	margin: 0;
@@ -303,6 +323,7 @@ a{
 }
 /*HEADER*/
 .header{
+	margin-bottom: 80px;
 	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -396,7 +417,6 @@ a{
 }
 
 .loans-calc{
-	margin-top: 150px;
 	display: flex;
 	flex-direction: column;
 }
@@ -583,120 +603,6 @@ a{
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 	border-radius: 20px;
 	padding: 36px 21px;
-}
-
-
-
-
-/*Footer*/
-footer{
-	margin-top: 100px;
-	background: #DB0011;
-	width: 100%;
-	color: #FFFFFF;
-}
-
-
-.footer-container{
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-/*FIRST*/
-.footer-first-block{
-	display: flex;
-/*	gap: 30px;*/
-	margin-top: 60px;
-	justify-content: space-between;
-	padding-bottom: 40px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-.footer-first-block > div{
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-.footer-first-block > div > h3{
-	font-weight: 600;
-	font-size: 24px;
-	line-height: 29px;
-}
-.footer-first-block > div > ul{
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.footer-first-block > div > ul > a{
-	text-decoration: none;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
-	color: #FFFFFF;
-}
-.footer-first-block > div > ul > a:hover{
-	text-decoration: underline;
-}
-/*SECOND*/
-.footer-second-block{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 40px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-
-}
-
-.footer-second-block-one{
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 150%;
-	color: #FFFFFF;
-	
-}
-.footer-second-block-two{
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-}
-.footer-second-block-two > div{
-	display: flex;
-	justify-content: end;
-}
-.apps{
-	display: flex;
-	font-weight: 600;
-	gap:5px;
-	font-size: 16px;
-	line-height: 22px;
-	align-items: center;
-
-}
-.social{
-	display: flex;
-	gap: 15px;
-}
-
-/*THIRD*/
-.footer-third-block{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.footer-third-block > p{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 10px;
-}
-#contacts > a{
-	display: flex;
-	gap:5px;
-	align-items: center;
-}
-.mobile-menu{
-	display: none;
 }
 
 
@@ -989,7 +895,121 @@ footer{
 	box-shadow: 0px 0px 12px rgba(219, 0, 17, 0.5);
 }
 
+/*Footer*/
+footer{
+	margin-top: 100px;
+	background: #DB0011;
+	width: 100%;
+	color: #FFFFFF;
+}
 
 
-</style>
+.footer-container{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+/*FIRST*/
+.footer-first-block{
+	display: flex;
+/*	gap: 30px;*/
+	margin-top: 60px;
+	justify-content: space-between;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-first-block > div{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.footer-first-block > div > h3{
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+}
+.footer-first-block > div > ul{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.footer-first-block > div > ul > a{
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+.footer-first-block > div > ul > a:hover{
+	text-decoration: underline;
+}
+/*SECOND*/
+.footer-second-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.footer-second-block-one{
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: #FFFFFF;
+	
+}
+.footer-second-block-two{
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.footer-second-block-two > div{
+	display: flex;
+	justify-content: end;
+}
+.apps{
+	display: flex;
+	font-weight: 600;
+	gap:5px;
+	font-size: 16px;
+	line-height: 22px;
+	align-items: center;
+
+}
+.social{
+	display: flex;
+	gap: 15px;
+}
+
+/*THIRD*/
+.footer-third-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-third-block > p{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 10px;
+}
+#contacts > a{
+	display: flex;
+	gap:5px;
+	align-items: center;
+}
+.mobile-menu{
+	display: none;
+}
+
+
+
+
+
+
+	</style>
 @endsection
