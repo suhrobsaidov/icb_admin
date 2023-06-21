@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/remmitance', function () {
     return view('remitance');
 });
-Route::get('/services', function () {
+Route::get('/onlineservice', function () {
     return view('onlineservice');
 });
 Route::get('/cards', function () {
@@ -53,9 +53,7 @@ Route::get('/saving', function () {
 Route::get('/payroll', function () {
     return view('payrollservices');
 });
-Route::get('/onlineservices', function () {
-    return view('onlineservices');
-});
+
 Route::get('/news', function () {
     return view('news');
 });

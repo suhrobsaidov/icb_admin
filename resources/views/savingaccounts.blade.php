@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="header">
+
 		
 
 
@@ -510,6 +510,7 @@ a{
     max-width:1144px ;
     margin: 0 auto;
     padding: 0 24px;
+	/* margin-top: 50px; */
 }
 
 .footer-container{
@@ -613,7 +614,7 @@ a{
 
 /*Main*/
 .main{
-	margin-top: 40px;
+	margin-top: 125px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -640,7 +641,7 @@ a{
 
 /*Dropdown*/
 .dropdown{
-	margin-top: 100px;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;

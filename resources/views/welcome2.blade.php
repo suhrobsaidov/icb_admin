@@ -37,24 +37,24 @@
 						    <li>
 						    	<a href="#">Loans</a>
 						    	<ul>
-						    		<li><a href="">Business loans</a></li>
-						    		<li><a href="">Consumer loans</a></li>
-						    		<li><a href="">Mortgage loan</a></li>
-						    		<li><a href="">Auto loan</a></li>
-						    		<li><a href="">Agriculture loan</a></li>
-						    		<li><a href="">Express credit</a></li>
-						    		<li><a href="">Loan product "Donish"</a></li>
+						    		<li><a href="businessloans">Business loans</a></li>
+						    		<li><a href="customerloans">Consumer loans</a></li>
+						    		<li><a href="mortgateloan">Mortgage loan</a></li>
+						    		<li><a href="autoloan">Auto loan</a></li>
+						    		<li><a href="agricultureloan">Agriculture loan</a></li>
+						    		<li><a href="expresscredit">Express credit</a></li>
+						    		<li><a href="donish">Loan product "Donish"</a></li>
 						    	</ul>
 						    </li>
 						    <li>
 						    	<a href="#">Deposits</a>
 						    	<ul>
-						    		<li><a href="">Savings account</a></li>
-						    		<li><a href="">Individual term deposits</a></li>
-						    		<li><a href="">"Easy" deposit</a></li>
-						    		<li><a href="">Child deposit</a></li>
-						    		<li><a href="">"Diyor" Deposit</a></li>
-						    		<li><a href="">Housing deposit</a></li>
+						    		<li><a href="savingaccounts">Savings account</a></li>
+						    		<li><a href="termdeposits">Individual term deposits</a></li>
+						    		<li><a href="easydeposit">"Easy" deposit</a></li>
+						    		<li><a href="childdeposit">Child deposit</a></li>
+						    		<li><a href="diyor">"Diyor" Deposit</a></li>
+						    		<li><a href="housing deposit">Housing deposit</a></li>
 						    	</ul>
 						    </li>
 						    <li>
@@ -66,12 +66,12 @@
 						    		<li><a href="">Gift Card</a></li>
 						    	</ul>
 						    </li>
-						    <li><a href="#">Online Services</a></li>
+						    <li><a href="onlineservice">Online Services</a></li>
 						    <li>
 						    	<a href="#">More</a>
 						    	<ul>
-						    		<li><a href="">About the bank</a></li>
-						    		<li><a href="">Vacansy</a></li>
+						    		<li><a href="/abouts">About the bank</a></li>
+						    		<li><a href="/vacancy">Vacansy</a></li>
 						    	</ul>
 						    </li>
 						</ul>
