@@ -1,0 +1,235 @@
+@media screen and (max-width: 676px){
+	#background{
+	    height: 600px;
+	}
+	/*HEADER*/
+	.header-menu{
+		display: none;
+	}
+	.header-input-and-button > input{
+		display: none;
+	}
+	.logo{
+		width: 120px;
+		height: 45px;
+	}
+
+	/*Main*/
+	#headerslides{
+		height: 375px;
+		text-align: center;
+		flex-direction: column;
+	}
+	.main-title{
+		height: auto;
+		align-items: center;
+	}
+	.main-title > h1{
+		/*font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;*/
+	}
+	.main-title > p{
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 160%;
+	}
+	.main-image{
+		width: 220px;
+/* 		height: 120px;*/
+	}
+
+
+	/*CARDS*/
+	.cards{
+	    display: flex;
+	    justify-content: space-between;
+	    gap: 10px;
+		overflow:hidden;
+	}
+
+	.cards > div{
+		width: 240px;
+		height: 92px;
+		padding: 15px;
+		border-radius: 5px;	
+	}
+	.cards > div > h2{
+		width: 144px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.cards > div > p{
+		width: 177px;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 10px;
+	}
+	/*Currency*/
+	.currency{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.currency h1{
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		align-self: start;
+	}
+	/*Currency Converter*/
+	.currency-converter{
+		margin-top: 30px;
+		display: flex;
+		gap: 20px;
+		width: 100%;
+		flex-direction: column;
+		width: 100%;
+	}
+	.rates-card{
+	    width: 100%;
+		height: 192px;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+		border-radius: 20px;
+		padding: 20px;
+		flex-direction: column;
+		gap: 40px;
+		overflow: hidden;
+	}
+	.rates-card-selection{
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 20px;
+	}
+	.rates-card-table tbody{
+		gap: 2px;
+	}
+	.rates-card-table table tr{
+		display: flex;
+		justify-content: space-around;
+		gap:20px;
+	}
+	.rates-card-table table th {
+	  	font-weight: 300;
+		font-size: 14px;
+		line-height: 17px;
+		gap:88px;
+	}
+	.rates-card-table table th,
+	td {
+	  padding: 8px;
+	}
+
+	.rates-card-table table td {
+	  	font-weight: 600;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+
+	.resul-card{
+		overflow: hidden;
+		width: 100%;
+		height: 192px;
+		background: #F9F9F9;
+		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+		border-radius: 20px;
+		padding:20px;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+
+	.resul-card h2{
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.resul-card-forms{
+		margin-top: 17px;
+	}
+
+	.resul-card-selection{
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+
+	.resul-card-input{
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+		width: 194px;
+	}
+
+
+	.resul-card > a{
+	    margin-top: 45px;
+	    font-weight: 300;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	/*BANK*/
+	.bank4,.bank5{
+		display: none;
+	}
+	.bank-services{
+
+	}
+	.bank-services-cards>div{
+		overflow: hidden;
+		height: 120px;
+	}
+
+	footer{
+
+	}
+	.footer-first-block{
+		flex-direction: column;
+	}
+	.footer-first-block > div{
+		margin-bottom: 10px;
+		gap: 10px;
+
+	} 
+	.footer-first-block > div > ul{
+		flex-direction: row;
+	} 
+	#contacts{
+		flex-direction: column;
+	}
+	#contacts > a{
+		display: flex;
+		gap:5px;
+		align-items: center;
+	}
+	.footer-second-block{
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+	.footer-second-block-two{
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.footer-third-block p {
+		font-size: 6px;
+		line-height: 150%;
+	}
+	
+	/*.mobile-menu{
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		height: 77px;
+		background: #FCFCFC;
+		bottom: 0;
+		width: 100%;
+	}
+	*/
+}	

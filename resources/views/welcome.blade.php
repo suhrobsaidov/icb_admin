@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./CSS/Style.css">
     <title>ICB</title>
 </head>
-<body>
+<body >
+     
 <header id="headerslides" class="fade active">
    <a href="#"> <div class="logotip">
         <img src="./images/logotipICB.png" alt="logotip-icon">
