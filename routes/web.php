@@ -32,7 +32,7 @@ Route::get('/remmitance', function () {
 Route::get('/onlineservice', function () {
     return view('onlineservice');
 });
-Route::get('/cards', function () {
+Route::get('/card', function () {
     return view('card');
 });
 Route::get('/vacancy', function () {

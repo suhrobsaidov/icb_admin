@@ -58,7 +58,7 @@
 						    	</ul>
 						    </li>
 						    <li>
-						    	<a href="#">Cards</a>
+						    	<a href="cards">Cards</a>
 						    	<ul>
 						    		<li><a href="">Korti Milli</a></li>
 						    		<li><a href="">Visa (Classic)</a></li>
