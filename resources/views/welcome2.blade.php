@@ -244,18 +244,20 @@ easy and always nearby</p>
 						  <tr>
 
 						    <td><img src="./images/icons/usa.png" alt="usa.png" style="padding-right: 5px;">USD</td>
-						    <td>12.2010</td>
-						    <td>12.5100</td>
+						    
+						    <td>10.9400</td>
+							<td>10.9100</td>
 						  </tr>
 						  <tr>
 						    <td><img src="./images/icons/europe.png" alt="europe.png" style="padding-right: 5px;">EUR</td>
-						    <td>14.3700</td>
-						    <td>12.5100</td>
+						    
+						    <td>11.9500</td>
+							<td>14.3700</td>
 						  </tr>
 						  <tr>
 						    <td><img src="./images/icons/russia.png" alt="russia.png" style="padding-right: 5px;">RUB</td>
-						    <td>0.1400</td>
-						    <td>12.5100</td>
+						    <td>0.1320</td>
+						    <td>0.1270</td>
 						  </tr>
 						</table>
 
