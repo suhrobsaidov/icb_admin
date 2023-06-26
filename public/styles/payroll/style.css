@@ -128,7 +128,6 @@ a{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
 }
 
 .main-title{
@@ -151,7 +150,7 @@ a{
 
 /*CARDS*/
 .cards-container{
-	margin-top: 190px;
+	margin-top: 30px;
     overflow: hidden;
 }
 
