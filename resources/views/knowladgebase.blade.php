@@ -1,4 +1,4 @@
-@extends('layouts.remitance')
+@extends('layouts.tlay')
 
 @section('content')
 
@@ -18,9 +18,9 @@
 </head>
 <body>
 	<div class="container">
-		
+
 		<!-- Нaчало -->
-		
+
 		<div class="literature">
 			<h1>Knowledge base</h1>
 			<div class="literature-name">
@@ -42,29 +42,29 @@
 
 		<!-- Конец -->
 	</div>
-	
+
 	<!-- <div class="mobile-menu">
-		
+
 		<div>
 			<img src="./images/icons/hand.png" alt="hand.png">
 			<p>Loans</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/wallet.png" alt="wallet.png">
 			<p>Deposits</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/menu.png" alt="menu.png">
 			<p>Menu</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/cards.png" alt="cards.png">
 			<p>Cards</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/search.png" alt="search.png">
 			<p>Vacancy</p>
@@ -75,7 +75,7 @@
 </body>
 </html>
 <script>
-    
+
 dropdownLabels.forEach((label) => {
   const plusButton = label.querySelector('img');
   const dropdownList = label.nextElementSibling;
@@ -319,7 +319,7 @@ footer{
 	font-size: 16px;
 	line-height: 150%;
 	color: #FFFFFF;
-	
+
 }
 .footer-second-block-two{
 	display: flex;
