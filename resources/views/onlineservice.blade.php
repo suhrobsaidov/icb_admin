@@ -1,372 +1,84 @@
 @extends('layouts.tlay')
-@section('title')
 
-online service
-@endsection
 @section('content')
-
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Online Services</title>
-	<link rel="stylesheet" href="./styles/style.css">
-	<link rel="stylesheet" href="./styles/tablet/style-tablet.css">
-	<link rel="stylesheet" href="./styles/mobile/style-mobile.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Services</title>
+    <link rel="stylesheet" href="./styles/online/style.css">
+    <link rel="stylesheet" href="./styles/online/tablet/style-tablet.css">
+    <link rel="stylesheet" href="./styles/online/mobile/style-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 </head>
 <body>
-	<div class="container">
+<div class="container">
 
-		<!-- Нaчало -->
+    <!-- Нaчало -->
 
-		<div class="online-services">
-			<div class="online-services-title">
-				<h1>Online Services</h1>
-				<p>Access to money anywhere in the world</p>
-			</div>
-			<div class="online-services-blocks">
+    <div class="online-services">
+        <div class="online-services-title">
+            <h1>Online Services</h1>
+            <p>Access to money anywhere in the world</p>
+        </div>
+        <div class="online-services-blocks">
 
-				<div>
-					<img src="./images/icons/mob.png" alt="mob.png">
-					<h2>Mobile banking </h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-				</div>
-				<div>
-					<img src="./images/icons/pc.png" alt="mob.png">
-					<h2>Online banking </h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-				</div>
-				<div>
-					<img src="./images/icons/lap.png" alt="mob.png">
-					<h2>Online applications</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-				</div>
+            <div>
+                <img src="./images/icons/mob.png" alt="mob.png">
+                <h2>Mobile banking </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </div>
+            <div>
+                <img src="./images/icons/pc.png" alt="mob.png">
+                <h2>Online banking </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </div>
+            <div>
+                <img src="./images/icons/lap.png" alt="mob.png">
+                <h2>Online applications</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </div>
 
-			</div>
-		</div>
+        </div>
+    </div>
 
 
-		<!-- Конец -->
-	</div>
+    <!-- Конец -->
+</div>
 
-	<!-- <div class="mobile-menu">
+<!-- <div class="mobile-menu">
 
-		<div>
-			<img src="./images/icons/hand.png" alt="hand.png">
-			<p>Loans</p>
-		</div>
+    <div>
+        <img src="./images/icons/hand.png" alt="hand.png">
+        <p>Loans</p>
+    </div>
 
-		<div>
-			<img src="./images/icons/wallet.png" alt="wallet.png">
-			<p>Deposits</p>
-		</div>
+    <div>
+        <img src="./images/icons/wallet.png" alt="wallet.png">
+        <p>Deposits</p>
+    </div>
 
-		<div>
-			<img src="./images/icons/menu.png" alt="menu.png">
-			<p>Menu</p>
-		</div>
+    <div>
+        <img src="./images/icons/menu.png" alt="menu.png">
+        <p>Menu</p>
+    </div>
 
-		<div>
-			<img src="./images/icons/cards.png" alt="cards.png">
-			<p>Cards</p>
-		</div>
+    <div>
+        <img src="./images/icons/cards.png" alt="cards.png">
+        <p>Cards</p>
+    </div>
 
-		<div>
-			<img src="./images/icons/search.png" alt="search.png">
-			<p>Vacancy</p>
-		</div>
-	</div> -->
+    <div>
+        <img src="./images/icons/search.png" alt="search.png">
+        <p>Vacancy</p>
+    </div>
+</div> -->
 
 <script src="./scripts/app.js"></script>
 </body>
 </html>
-<style>
-*{
-	padding:0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: 'Montserrat';
-}
-body{
-	/*background-image: url("../images/desktop/background.png");
-	background-repeat: no-repeat;
-	background-position: center;*/
-}
-
-li{
-	list-style: none;
-}
-a{
-	text-decoration: none;
-}
-/*Containers*/
-.container{
-    max-width:1144px ;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.footer-container{
-	max-width:1144px ;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-/*HEADER*/
-.header{
-	margin-top: 90px;
-	/* display: flex; */
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-}
-.header-icons{
-	position: absolute;
-	top: 0;
-	right: 0;
-
-}
-.header-logo-and-menu{
-	display: flex;
-	align-items:center;
-	gap: 15px;
-}
-.header-logo-and-menu > a > img{}
-
-.header-menu{
-	display: flex;
-	flex-direction: column;
-	gap :10px;
-}
-.header-menu-one > ul{
-	display: flex;
-	gap: 17px;
-}
-.header-menu-one > ul a{
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 12px;
-	text-transform: uppercase;
-	color: #000000;
-
-}
-
-.header-menu-two > ul{
-	display: flex;
-	gap: 12px;
-}
-
-.header-menu-two > ul a{
-	font-style: normal;
-	font-weight: 400;
-	font-size: 9px;
-	line-height: 10px;
-	color: #000000;
-
-}
-
-.header-menu-one > ul a:hover{
-	color: #DB0011;
-}
-
-.header-menu-two > ul a:hover{
-	color: #DB0011;
-}
-
-
-.header-input-and-button {
-	display: flex;
-	gap: 21px;
-}
-.header-input-and-button > input{
-	width: 256px;
-    height: 39px;
-	border: none;
-	background: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.02);
-	border-radius: 7px;
-	padding: 5px 6px;
-}
-.header-input-and-button > button{
-	border: none;
-	width: 100px;
-	height: 39px;
-	background: #DB0011;
-	border-radius: 8px;
-	padding: 7px;
-	font-weight: 600;
-	font-size: 10px;
-	line-height: 10px;
-	color: #FFFFFF;
-
-}
-.header-input-and-button > button:hover{
-	box-shadow:0 0 10px 1px #db0011;
-	transition: .3s;
-}
-
-/*online-services*/
-.online-services{
-	margin-top: 150px;
-	display: flex;
-	flex-direction: column;
-}
-.online-services-title{
-	align-self: center;
-}
-
-.online-services-blocks{
-	margin-top: 60px;
-	display: flex;
-	width: 100%;
-	gap: 30px;
-}
-.online-services-blocks div{
-	padding: 40px;
-	background: #FFFFFF;
-	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
-	border-radius: 20px;
-}
-.online-services-blocks div img{
-	padding-bottom:20px ;
-	margin-bottom:20px ;
-	border-bottom: 4px solid #DB0011;
-}
-.online-services-blocks div h2{
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 130%;
-	color: #DB0011;
-}
-.online-services-blocks div p{
-	margin-top: 20px;
-	font-style: normal;
-	font-weight: 300;
-	font-size: 14px;
-	line-height: 130%;
-	color: #000000;
-
-}
-
-/*Footer*/
-footer{
-	margin-top: 100px;
-	background: #DB0011;
-	width: 100%;
-	color: #FFFFFF;
-}
-
-
-.footer-container{
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-/*FIRST*/
-.footer-first-block{
-	display: flex;
-/*	gap: 30px;*/
-	margin-top: 60px;
-	justify-content: space-between;
-	padding-bottom: 40px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-.footer-first-block > div{
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-.footer-first-block > div > h3{
-	font-weight: 600;
-	font-size: 24px;
-	line-height: 29px;
-}
-.footer-first-block > div > ul{
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.footer-first-block > div > ul > a{
-	text-decoration: none;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
-	color: #FFFFFF;
-}
-.footer-first-block > div > ul > a:hover{
-	text-decoration: underline;
-}
-/*SECOND*/
-.footer-second-block{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 40px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-
-}
-
-.footer-second-block-one{
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 150%;
-	color: #FFFFFF;
-
-}
-.footer-second-block-two{
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-}
-.footer-second-block-two > div{
-	display: flex;
-	justify-content: end;
-}
-.apps{
-	display: flex;
-	font-weight: 600;
-	gap:5px;
-	font-size: 16px;
-	line-height: 22px;
-	align-items: center;
-
-}
-.social{
-	display: flex;
-	gap: 15px;
-}
-
-/*THIRD*/
-.footer-third-block{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.footer-third-block > p{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 10px;
-}
-#contacts > a{
-	display: flex;
-	gap:5px;
-	align-items: center;
-}
-.mobile-menu{
-	display: none;
-}
-
-
-
-    </style>
-
 @endsection

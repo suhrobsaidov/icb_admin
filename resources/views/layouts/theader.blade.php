@@ -18,7 +18,7 @@
             <div class="header-menu-two">
                 <ul>
                     <li>
-                        <a href="#">Loans</a>
+                        <a href="loans">Loans</a>
                         <ul>
                             <li><a href="businessloans">Business loans</a></li>
                             <li><a href="customerloans">Consumer loans</a></li>
