@@ -47,13 +47,13 @@ Route::get('/vacancy', function () {
 Route::get('/deposits', function () {
     return view('deposites');
 });
-Route::get('/term', function () {
+Route::get('/termdeposits', function () {
     return view('termdeposits');
 });
 Route::get('/show', function () {
     return view('searchShow');
 });
-Route::get('/saving', function () {
+Route::get('/savingaccounts', function () {
     return view('savingaccounts');
 });
 Route::get('/payroll', function () {
@@ -96,7 +96,7 @@ Route::get('/expresscredit', function () {
 Route::get('/diyor', function () {
     return view('diyordeposit');
 });
-Route::get('/easy', function () {
+Route::get('/easydeposit', function () {
     return view('depositeasy');
 });
 Route::get('/contacts', function () {

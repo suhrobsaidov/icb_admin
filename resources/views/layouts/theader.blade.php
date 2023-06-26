@@ -37,7 +37,7 @@
                             <li><a href="easydeposit">"Easy" deposit</a></li>
                             <li><a href="childdeposit">Child deposit</a></li>
                             <li><a href="diyor">"Diyor" Deposit</a></li>
-                            <li><a href="housing deposit">Housing deposit</a></li>
+                            <li><a href="housingdeposit">Housing deposit</a></li>
                         </ul>
                     </li>
                     <li>
