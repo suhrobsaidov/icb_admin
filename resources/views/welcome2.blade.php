@@ -20,11 +20,11 @@
 				<a href="#"><img src="./images/icons/tj.png" alt="tj"></a>
 				<a href="#"><img src="./images/icons/rus.png" alt="rus"></a>
 				<a href="#"><img src="./images/icons/eng.png" alt="eng"></a>
-				
+
 			</div>
 			<div class="header-logo-and-menu">
-				<a href="#"><img src="./images/desktop/logo.png" alt="Logo" class="logo"></a>
-				
+				<a href="/"><img src="./images/desktop/logo.png" alt="Logo" class="logo"></a>
+
 				<div class="header-menu">
 					<div class="header-menu-one">
 						<ul>
@@ -47,7 +47,7 @@
 						    	</ul>
 						    </li>
 						    <li>
-						    	<a href="#">Deposits</a>
+						    	<a href="deposits">Deposits</a>
 						    	<ul>
 						    		<li><a href="savingaccounts">Savings account</a></li>
 						    		<li><a href="termdeposits">Individual term deposits</a></li>
@@ -58,7 +58,7 @@
 						    	</ul>
 						    </li>
 						    <li>
-						    	<a href="cards">Cards</a>
+						    	<a href="card">Cards</a>
 						    	<ul>
 						    		<li><a href="">Korti Milli</a></li>
 						    		<li><a href="">Visa (Classic)</a></li>
@@ -140,8 +140,8 @@
 				<!-- 1 -->
 				<div class="card">
 					<h2>Korti milli</h2>
-					<p>With the "Korti Milli” card, 
-everything is accessible, 
+					<p>With the "Korti Milli” card,
+everything is accessible,
 easy and always nearby</p>
 				</div>
 				<!-- 2 -->
@@ -206,15 +206,22 @@ easy and always nearby</p>
 				<div class="calc-card">
 					<div>
 						<img src="./images/icons/1.png" alt="">
-						<p>currency calculator</p>
+						<p>Currency calculator</p>
 					</div>
+
+
+                        <div>
+                            <a href="loanscalc">
+                                <img src="./images/icons/calcul-money.png" alt="">
+                                <p>Loans calculator</p>
+                            </a>
+                        </div>
+
 					<div>
-						<img src="./images/icons/calcul-money.png" alt="">
-						<p>currency calculator</p>
-					</div>
-					<div>
-						<img src="./images/icons/safe-box.png" alt="">
-						<p>currency calculator</p>
+						<a href="depositcalc">
+                            <img src="./images/icons/safe-box.png" alt="">
+                            <p>Deposit calculator</p>
+                        </a>
 					</div>
 				</div>
 			</div>
@@ -244,13 +251,13 @@ easy and always nearby</p>
 						  <tr>
 
 						    <td><img src="./images/icons/usa.png" alt="usa.png" style="padding-right: 5px;">USD</td>
-						    
+
 						    <td>10.9400</td>
 							<td>10.9100</td>
 						  </tr>
 						  <tr>
 						    <td><img src="./images/icons/europe.png" alt="europe.png" style="padding-right: 5px;">EUR</td>
-						    
+
 						    <td>11.9500</td>
 							<td>14.3700</td>
 						  </tr>
@@ -265,19 +272,19 @@ easy and always nearby</p>
 						  <tr style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
 						    <th>Валюта</th>
 						    <th>Учетный курс</th>
-						    
+
 						  </tr>
 						  <tr>
 						    <td><img src="./images/icons/usa.png" alt="usa.png" style="padding-right: 5px;">USD</td>
 						    <td>12.2010</td>
-						   
+
 						  </tr>
 						  <tr>
 						    <td><img src="./images/icons/europe.png" alt="europe.png" style="padding-right: 5px;">EUR</td>
 						    <td>14.3700</td>
-						    
+
 						  </tr>
-						 
+
 						</table>
 					</div>
 
@@ -289,7 +296,7 @@ easy and always nearby</p>
 
 				<div class="resul-card">
 					<h2>Конвертер валют</h2>
-					
+
 					<div class="resul-card-forms">
 						<form action="">
 							<input type="number" step="1" min="1" max="1000000" value="0" id="age" name=""/ class="resul-card-input">
@@ -304,9 +311,9 @@ easy and always nearby</p>
 							</select>
 						</form>
 					</div>
-					
+
 					<a href="#">По курсу ICB</a>
-				
+
 				</div>
 
 			</div>
@@ -374,7 +381,7 @@ easy and always nearby</p>
 						<p>Transfer from card to card</p>
 					</div>
 					<!-- 3 -->
-					<div class="bank"> 
+					<div class="bank">
 						<img src="./images/icons/atm.png" alt="atm.png">
 						<p>Find the nearest ATM</p>
 					</div>
@@ -474,27 +481,27 @@ easy and always nearby</p>
 		</div>
 	</footer>
 	<!-- <div class="mobile-menu">
-		
+
 		<div>
 			<img src="./images/icons/hand.png" alt="hand.png">
 			<p>Loans</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/wallet.png" alt="wallet.png">
 			<p>Deposits</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/menu.png" alt="menu.png">
 			<p>Menu</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/cards.png" alt="cards.png">
 			<p>Cards</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/search.png" alt="search.png">
 			<p>Vacancy</p>

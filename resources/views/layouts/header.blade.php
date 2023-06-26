@@ -73,7 +73,7 @@
     {
         /* display: flex; */
         position: absolute;
-        width: 1920px;
+        width: 100%;
         height: 758px;
         left: 2px;
         top: 3px;
@@ -358,7 +358,7 @@ top: 35px;
         width: 323px;
         padding-left: 20px;
         padding-top: 5px;
-        
+
     }
     .depositaccountdiyor {
         border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -376,25 +376,25 @@ top: 35px;
     .kortimillih2:hover {
         background: #FFFFFF;
         border: 1px solid rgba(219, 0, 17, 0.1);
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);   
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
         cursor: pointer;
     }
         .consumerloans:hover {
         background: #FFFFFF;
         border: 1px solid rgba(219, 0, 17, 0.1);
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);   
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
         cursor: pointer;
     }
         .depositaccountdiyor:hover {
         background: #FFFFFF;
         border: 1px solid rgba(219, 0, 17, 0.1);
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);   
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
         cursor: pointer;
     }
         .westernunion:hover {
         background: #FFFFFF;
         border: 1px solid rgba(219, 0, 17, 0.1);
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);   
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
         cursor: pointer;
     }
     .consumerloans h2
@@ -1348,7 +1348,7 @@ top: 35px;
         border: 1px solid rgba(0, 0, 0, 0.3);
     }
 
-    
+
     .fade{
         animation-name: fade;
         animation-duration: 2s;
@@ -1360,8 +1360,8 @@ top: 35px;
      }
 
     .newbackground{
-    background: linear-gradient(90deg, rgba(0, 209, 255, 0.1) 0%, rgba(219, 0, 17, 0.1) 100%);     
-    }   
+    background: linear-gradient(90deg, rgba(0, 209, 255, 0.1) 0%, rgba(219, 0, 17, 0.1) 100%);
+    }
     .firstimage{
         display: block;
     }
@@ -1373,7 +1373,7 @@ height: 357px;
 left: 0px;
 top: 0px;
         }
-        
+
         .logotip img{
             /* Логотип */
             position: absolute;
@@ -1431,7 +1431,7 @@ text-transform: uppercase;
             top: 65px;
             order: 3;
             flex-grow: 0;
-            
+
 
             width: 62px;
 height: 10px;
@@ -1462,7 +1462,7 @@ border-radius: 7px;
         }
 
         .search input {
-            
+
             box-sizing: border-box;
             font-size: 8px;
         }
@@ -1602,13 +1602,13 @@ align-items: center;
         .safeimage img{
             width: 83px;
             height: 64px;
-        } 
+        }
         .cardsimage{
             width: 162px;
             height: 133px;
             text-align: center;
             padding-top: 10px;
-            
+
         }
         .cardsimage img{
             width: 83px;

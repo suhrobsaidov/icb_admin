@@ -17,14 +17,15 @@
 <body>
 	<div class="container">
 
-		
+
+
 
 
 		<div class="main">
 			<div class="main-title">
 				<h1>Savings Account</h1>
-				<p>To increase turnover, support liquidity, fixed 
-				assets for business development and increase 
+				<p>To increase turnover, support liquidity, fixed
+				assets for business development and increase
 				capacity.</p>
 			</div>
 
@@ -41,16 +42,16 @@
 				<!-- 2 -->
 				<div class="cards-2">
 					<h2>Free opening deposit account</h2>
-					<p>Deposit accounts can be opened at any ICB-T 
-	Branches or Banking Service Centers. All deposit 
+					<p>Deposit accounts can be opened at any ICB-T
+	Branches or Banking Service Centers. All deposit
 	accounts are opened free of charge.</p>
 				</div>
 				<!-- 3 -->
 				<div class="cards-3">
 					<h2>experienced specialists</h2>
-					<p>Our customer service officers will be happy 
-	to advise customers on the right product, 
-	or combination of products to meet their 
+					<p>Our customer service officers will be happy
+	to advise customers on the right product,
+	or combination of products to meet their
 	financial needs.</p>
 				</div>
 			</div>
@@ -58,7 +59,7 @@
 
 
 		<div class="dropdown">
-			
+
 			<div class="dropdown-menu">
 				<div class="dropdown-label">
 					<p>Product terms</p>
@@ -69,7 +70,7 @@
 						<h3>Purpose of the loan</h3>
 						<p>To increase turnover, support liquidity, fixed assets for business development and increase capacity.</p>
 					</div>
-				
+
 					<div class="dropdown-list-content">
 						<h3>Terms</h3>
 						<ul>
@@ -77,12 +78,12 @@
 							<li>Loan term; Up to 48 months.</li>
 						</ul>
 					</div>
-				
+
 					<div class="dropdown-list-content">
 						<h3>Сurrency</h3>
 						<p>TJS, USD</p>
 					</div>
-				
+
 					<div class="dropdown-list-content">
 						<h3>Loan security</h3>
 						<ul>
@@ -90,7 +91,7 @@
 							<li>Up to US $ 3,000 (TJS equivalent) without collateral and guarantor for repeat and exemplary clients;</li>
 							<li>Moving bond up to USD 5,000 (and TJS equivalent) and 1 guarantor;</li>
 							<li>Real estate worth more than USD 5,000 (and the equivalent in somoni) and 1 guarantor.</li>
-							
+
 						</ul>
 					</div>
 
@@ -98,13 +99,13 @@
 						<h3>Banking tariffs</h3>
 						<p>For information about banking tariffs on this product, please see the table here</p>
 					</div>
-				
+
 
 				</div>
 			</div>
 		</div>
 
-		
+
 		<div class="card-calculator" id="cardCalculator">
 			<div class="calculation-card">
 				<!-- 1 -->
@@ -204,7 +205,7 @@
 			                    <input type="text">
 			                </label>
 			            </div>
-			            
+
 
 			            <div class="last">
 			            	<div class="check-last">
@@ -291,8 +292,8 @@
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 		</div>
 
 
@@ -311,7 +312,7 @@
 					<p>Transfer from card to card</p>
 				</div>
 				<!-- 3 -->
-				<div class="bank3"> 
+				<div class="bank3">
 					<img src="./images/icons/atm.png" alt="atm.png">
 					<p>Find the nearest ATM</p>
 				</div>
@@ -460,27 +461,27 @@ depositCalculator.addEventListener('click', () => {
 
 </script>
 	<!-- <div class="mobile-menu">
-		
+
 		<div>
 			<img src="./images/icons/hand.png" alt="hand.png">
 			<p>Loans</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/wallet.png" alt="wallet.png">
 			<p>Deposits</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/menu.png" alt="menu.png">
 			<p>Menu</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/cards.png" alt="cards.png">
 			<p>Cards</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/search.png" alt="search.png">
 			<p>Vacancy</p>
@@ -517,100 +518,101 @@ a{
 	max-width:1144px ;
     margin: 0 auto;
     padding: 0 24px;
+    margin-top: 190px;
 }
 /*HEADER*/
-.header{
-	margin-top: 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-}
-.header-icons{
-	position: absolute;
-	top: 0;
-	right: 0;
+/*.header{*/
+/*	margin-top: 20px;*/
+/*	display: flex;*/
+/*	justify-content: space-between;*/
+/*	align-items: center;*/
+/*	position: relative;*/
+/*}*/
+/*.header-icons{*/
+/*	position: absolute;*/
+/*	top: 0;*/
+/*	right: 0;*/
 
-}
-.header-logo-and-menu{
-	display: flex;
-	align-items:center;
-	gap: 15px;
-}
-.header-logo-and-menu > a > img{}
+/*}*/
+/*.header-logo-and-menu{*/
+/*	display: flex;*/
+/*	align-items:center;*/
+/*	gap: 15px;*/
+/*}*/
+/*.header-logo-and-menu > a > img{}*/
 
-.header-menu{
-	display: flex;
-	flex-direction: column;
-	gap :10px;
-}
-.header-menu-one > ul{
-	display: flex;
-	gap: 17px;
-}
-.header-menu-one > ul a{
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 12px;
-	text-transform: uppercase;
-	color: #000000;
+/*.header-menu{*/
+/*	display: flex;*/
+/*	flex-direction: column;*/
+/*	gap :10px;*/
+/*}*/
+/*.header-menu-one > ul{*/
+/*	display: flex;*/
+/*	gap: 17px;*/
+/*}*/
+/*.header-menu-one > ul a{*/
+/*	font-style: normal;*/
+/*	font-weight: 400;*/
+/*	font-size: 12px;*/
+/*	line-height: 12px;*/
+/*	text-transform: uppercase;*/
+/*	color: #000000;*/
 
-}
+/*}*/
 
-.header-menu-two > ul{
-	display: flex;
-	gap: 12px;
-}
+/*.header-menu-two > ul{*/
+/*	display: flex;*/
+/*	gap: 12px;*/
+/*}*/
 
-.header-menu-two > ul a{
-	font-style: normal;
-	font-weight: 400;
-	font-size: 9px;
-	line-height: 10px;
-	color: #000000;
+/*.header-menu-two > ul a{*/
+/*	font-style: normal;*/
+/*	font-weight: 400;*/
+/*	font-size: 9px;*/
+/*	line-height: 10px;*/
+/*	color: #000000;*/
 
-}
+/*}*/
 
-.header-menu-one > ul a:hover{
-	color: #DB0011;
-}
+/*.header-menu-one > ul a:hover{*/
+/*	color: #DB0011;*/
+/*}*/
 
-.header-menu-two > ul a:hover{
-	color: #DB0011;
-}
+/*.header-menu-two > ul a:hover{*/
+/*	color: #DB0011;*/
+/*}*/
 
 
-.header-input-and-button {
-	display: flex;
-	gap: 21px;
-}
-.header-input-and-button > input{
-	width: 256px;
-    height: 39px;
-	border: none;
-	background: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.02);
-	border-radius: 7px;
-	padding: 5px 6px;
-}
-.header-input-and-button > button{
-	border: none;
-	width: 100px;
-	height: 39px;
-	background: #DB0011;
-	border-radius: 8px;
-	padding: 7px;
-	font-weight: 600;
-	font-size: 10px;
-	line-height: 10px;
-	color: #FFFFFF;
+/*.header-input-and-button {*/
+/*	display: flex;*/
+/*	gap: 21px;*/
+/*}*/
+/*.header-input-and-button > input{*/
+/*	width: 256px;*/
+/*    height: 39px;*/
+/*	border: none;*/
+/*	background: rgba(255, 255, 255, 0.8);*/
+/*	border: 1px solid rgba(0, 0, 0, 0.02);*/
+/*	border-radius: 7px;*/
+/*	padding: 5px 6px;*/
+/*}*/
+/*.header-input-and-button > button{*/
+/*	border: none;*/
+/*	width: 100px;*/
+/*	height: 39px;*/
+/*	background: #DB0011;*/
+/*	border-radius: 8px;*/
+/*	padding: 7px;*/
+/*	font-weight: 600;*/
+/*	font-size: 10px;*/
+/*	line-height: 10px;*/
+/*	color: #FFFFFF;*/
 
-}
-.header-input-and-button > button:hover{
-	box-shadow:0 0 10px 1px #db0011;
-	transition: .3s;
-}
+/*}*/
+/*.header-input-and-button > button:hover{*/
+/*	box-shadow:0 0 10px 1px #db0011;*/
+/*	transition: .3s;*/
+/*}*/
 
 /*Main*/
 .main{
@@ -700,18 +702,18 @@ a{
 	line-height: 150%;
 	color: #000000;
 
-	
+
 }
 .dropdown-list div p{
 	font-weight: 300;
 	font-size: 20px;
 	line-height: 150%;
 	color: #000000;
-	
+
 }
 .dropdown-list div ul li{
 	list-style: inside;
-	
+
 }
 .dropdown-list {
   /* Начальное состояние списка */
@@ -810,7 +812,7 @@ a{
   	-webkit-appearance: none;
   	appearance: none;
   	width: 10px;
-  	height: 10px; 
+  	height: 10px;
   	background: #DB0011;
   	border-radius: 50%;
 }
@@ -969,7 +971,7 @@ a{
 	gap:50px;
 }
 .rates-card-table table th {
-  
+
   	font-style: normal;
 	font-weight: 300;
 	font-size: 18px;
@@ -1184,7 +1186,7 @@ td {
 	padding: 25px;
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 10px;	
+	border-radius: 10px;
 }
 .cards > div > h2{
 	font-weight: 600;
@@ -1329,7 +1331,7 @@ footer{
 	font-size: 16px;
 	line-height: 150%;
 	color: #FFFFFF;
-	
+
 }
 .footer-second-block-two{
 	display: flex;

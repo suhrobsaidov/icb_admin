@@ -1,12 +1,12 @@
 <html>
 
 <body>
-  	@include('layouts.header')
- 
+  	@include('layouts.theader')
+
   		@yield('content')
- 
+
   	@include('layouts.footer')
- 
+
   	@stack('js')
   </body>
 </html>

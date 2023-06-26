@@ -1,0 +1,122 @@
+@media screen and (max-width: 1251px){
+	
+	/*HEADER*/
+	.logo{
+		width: 134px;
+		height: 50px;
+	}
+
+	.header-icons{
+		position: absolute;
+		top: -14px;
+		right: 0;
+	}
+
+	.header-menu-one > ul a{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.header-menu-two > ul a{
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 10px;
+
+	}
+
+	.header-input-and-button input{
+		width: 151.43px;
+		height: 22px;
+		font-size: 8px;
+		line-height: 10px;
+		color: rgba(0, 0, 0, 0.8);
+	}
+	.header-input-and-button button{
+		
+		height: 25px;
+		font-weight: 600;
+		font-size: 8px;
+		line-height: 10px;
+		color: #FFFFFF;
+	}
+
+
+
+	/*MAIN*/
+	.main{
+		margin-top: 20px;
+		justify-content: space-around;
+	}
+	.main-title{
+		width: 212px;
+    	height: 197px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+	.main-title > h1{
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		color: #000000;
+
+	}
+
+	.main-title > p{
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 160%;
+		color: #000000;
+	}
+
+	.main-image{
+		width: 244px;
+		height: 220px;
+	}
+	
+	/*CARDS*/
+	.cards{
+	    display: flex;
+	    justify-content: space-around;
+	    gap: 10px;
+		overflow:hidden;
+	}
+	
+	.cards > div{
+		width: 214px;
+		height: 97px;
+		padding: 15px;
+		border-radius: 5px;	
+	}
+	.cards > div > h2{
+		width: 144px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.cards > div > p{
+		width: 177px;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 13px;
+	}	
+
+
+
+
+
+
+
+
+
+
+	.footer-third-block > p{
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 150%;
+	}
+
+
+}

@@ -2,180 +2,181 @@
 
 @section('content')
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Payroll Services</title>
-	<link rel="stylesheet" href="./styles/tablet/style-tablet.css">
-	<link rel="stylesheet" href="./styles/mobile/style-mobile.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Services</title>
+    <link rel="stylesheet" href="./styles/payroll/style.css">
+    <link rel="stylesheet" href="./styles/payroll/tablet/style-tablet.css">
+    <link rel="stylesheet" href="./styles/payroll/mobile/style-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 </head>
 <body>
-	<div class="container">
-	
-
-		<div class="main">
-			<div class="main-title">
-				<h1>Payroll Services</h1>
-				<p>FMFB offers a convenient service to manage payroll disbursement on behalf of its institutional clients</p>
-			</div>
-
-			<img src="./images/desktop/main.png" alt="" class="main-image">
-		</div>
-
-		
-		<div class="cards-container">
-			<div class="cards">
-				<!-- 1 -->
-				<div class="cards-1">
-					<h2>security of your money</h2>
-					<p>We are a member of the Tajik Individuals Deposits Insurance Fund (IDIF), listed under No. 0438</p>
-				</div>
-				<!-- 2 -->
-				<div class="cards-2">
-					<h2>Free opening deposit account</h2>
-					<p>Deposit accounts can be opened at any ICB-T 
-	Branches or Banking Service Centers. All deposit 
-	accounts are opened free of charge.</p>
-				</div>
-				<!-- 3 -->
-				<div class="cards-3">
-					<h2>experienced specialists</h2>
-					<p>Our customer service officers will be happy 
-	to advise customers on the right product, 
-	or combination of products to meet their 
-	financial needs.</p>
-				</div>
-			</div>
-		</div>
-		<!-- Нaчало -->
-		<div class="dropdown">
-			
-			<div class="dropdown-menu">
-				<div class="dropdown-label">
-					<p>How it Works</p>
-					<img src="./images/icons/+.png" alt="+" >
-				</div>
-				<ul class="dropdown-list" >
-					<li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
-					<li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
-					<li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
-					<li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
-					<li>FMFB sends a report on disbursements made back to the Institution</li>
-				</ul>
-			</div>
-			<div class="dropdown-menu">
-				<div class="dropdown-label">
-					<p>Advantages to Institution’s Employees</p>
-					<img src="./images/icons/+.png" alt="+" >
-				</div>
-				<ul class="dropdown-list" >
-					<li>A simple process that saves time and money over the typical cash-based process of giving out salaries to staff</li>
-					<li>Minimizes cash turnover within the organization</li>
-					<li>Institutions only make a single payment to FMFB-T per payment cycle, and we take care of the rest</li>
-					<li>Strict confidentiality is maintained on any payments made to employees</li>
-					
-				</ul>
-			</div>
-			<div class="dropdown-menu">
-				<div class="dropdown-label">
-					<p>How to Sign Up for Payroll Service </p>
-					<img src="./images/icons/+.png" alt="+" >
-				</div>
-				<ul class="dropdown-list" >
-					<li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
-					<li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
-					<li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
-					<li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
-					<li>FMFB sends a report on disbursements made back to the Institution</li>
-				</ul>
-			</div>
-			<div class="dropdown-menu">
-				<div class="dropdown-label">
-					<p>How is Salary Transferred to the Employee’s Account</p>
-					<img src="./images/icons/+.png" alt="+" >
-				</div>
-				<ul class="dropdown-list" >
-					<li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
-					<li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
-					<li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
-					<li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
-					<li>FMFB sends a report on disbursements made back to the Institution</li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- Конец -->
-		<div class="bank-services">
-			<h1>Bank services</h1>
-			<div class="bank-services-cards">
-				<!-- 1 -->
-				<div class="bank1">
-					<img src="./images/icons/bank.png" alt="bank.png">
-					<p>Online banking for legal entities and private entrepreneurs</p>
-				</div>
-				<!-- 2 -->
-				<div class="bank2">
-					<img src="./images/icons/card.png" alt="card.png">
-					<p>Transfer from card to card</p>
-				</div>
-				<!-- 3 -->
-				<div class="bank3"> 
-					<img src="./images/icons/atm.png" alt="atm.png">
-					<p>Find the nearest ATM</p>
-				</div>
-				<!-- 4 -->
-				<div class="bank4">
-					<img src="./images/icons/bank2.png" alt="bank2.png">
-					<p>Find a branch nearby</p>
-				</div>
-				<!-- 5 -->
-				<div class="bank5">
-					<img src="./images/icons/share.png" alt="share.png">
-					<p>Knowledge base</p>
-				</div>
-			</div>
-			<img src="./images/icons/arrow.png" alt="arrow.png" class="bank-services-arrow">
-		</div>
-		</div>	
+<div class="container">
 
 
-	</div>
+    <div class="main">
+        <div class="main-title">
+            <h1>Payroll Services</h1>
+            <p>FMFB offers a convenient service to manage payroll disbursement on behalf of its institutional clients</p>
+        </div>
 
-	<!-- <div class="mobile-menu">
-		
-		<div>
-			<img src="./images/icons/hand.png" alt="hand.png">
-			<p>Loans</p>
-		</div>
-		
-		<div>
-			<img src="./images/icons/wallet.png" alt="wallet.png">
-			<p>Deposits</p>
-		</div>
-		
-		<div>
-			<img src="./images/icons/menu.png" alt="menu.png">
-			<p>Menu</p>
-		</div>
-		
-		<div>
-			<img src="./images/icons/cards.png" alt="cards.png">
-			<p>Cards</p>
-		</div>
-		
-		<div>
-			<img src="./images/icons/search.png" alt="search.png">
-			<p>Vacancy</p>
-		</div>
-	</div> -->
+        <img src="./images/desktop/main.png" alt="" class="main-image">
+    </div>
 
-<script src="./scripts/app.js"></script>
+
+    <div class="cards-container">
+        <div class="cards">
+            <!-- 1 -->
+            <div class="cards-1">
+                <h2>security of your money</h2>
+                <p>We are a member of the Tajik Individuals Deposits Insurance Fund (IDIF), listed under No. 0438</p>
+            </div>
+            <!-- 2 -->
+            <div class="cards-2">
+                <h2>Free opening deposit account</h2>
+                <p>Deposit accounts can be opened at any ICB-T
+                    Branches or Banking Service Centers. All deposit
+                    accounts are opened free of charge.</p>
+            </div>
+            <!-- 3 -->
+            <div class="cards-3">
+                <h2>experienced specialists</h2>
+                <p>Our customer service officers will be happy
+                    to advise customers on the right product,
+                    or combination of products to meet their
+                    financial needs.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Нaчало -->
+    <div class="dropdown">
+
+        <div class="dropdown-menu">
+            <div class="dropdown-label">
+                <p>How it Works</p>
+                <img src="./images/icons/+.png" alt="+" >
+            </div>
+            <ul class="dropdown-list" >
+                <li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
+                <li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
+                <li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
+                <li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
+                <li>FMFB sends a report on disbursements made back to the Institution</li>
+            </ul>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-label">
+                <p>Advantages to Institution’s Employees</p>
+                <img src="./images/icons/+.png" alt="+" >
+            </div>
+            <ul class="dropdown-list" >
+                <li>A simple process that saves time and money over the typical cash-based process of giving out salaries to staff</li>
+                <li>Minimizes cash turnover within the organization</li>
+                <li>Institutions only make a single payment to FMFB-T per payment cycle, and we take care of the rest</li>
+                <li>Strict confidentiality is maintained on any payments made to employees</li>
+
+            </ul>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-label">
+                <p>How to Sign Up for Payroll Service </p>
+                <img src="./images/icons/+.png" alt="+" >
+            </div>
+            <ul class="dropdown-list" >
+                <li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
+                <li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
+                <li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
+                <li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
+                <li>FMFB sends a report on disbursements made back to the Institution</li>
+            </ul>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-label">
+                <p>How is Salary Transferred to the Employee’s Account</p>
+                <img src="./images/icons/+.png" alt="+" >
+            </div>
+            <ul class="dropdown-list" >
+                <li>Institution signs up for Payroll Service through FMFB-T (see How to Sign Up for Payroll Services)</li>
+                <li>FMFB-T sets up individual bank cards for all employees (if they don’t already have one)</li>
+                <li>On payday, the Institution makes a single payment to FMFB equivalent to the whole salary amount and provides details on the salary amount to be paid to each employee</li>
+                <li>FMFB credits the appropriate salary amount to the bank card of each employee (see How is Salary Transferred to the Employee’s Account)</li>
+                <li>FMFB sends a report on disbursements made back to the Institution</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Конец -->
+    <div class="bank-services">
+        <h1>Bank services</h1>
+        <div class="bank-services-cards">
+            <!-- 1 -->
+            <div class="bank1">
+                <img src="./images/icons/bank.png" alt="bank.png">
+                <p>Online banking for legal entities and private entrepreneurs</p>
+            </div>
+            <!-- 2 -->
+            <div class="bank2">
+                <img src="./images/icons/card.png" alt="card.png">
+                <p>Transfer from card to card</p>
+            </div>
+            <!-- 3 -->
+            <div class="bank3">
+                <img src="./images/icons/atm.png" alt="atm.png">
+                <p>Find the nearest ATM</p>
+            </div>
+            <!-- 4 -->
+            <div class="bank4">
+                <img src="./images/icons/bank2.png" alt="bank2.png">
+                <p>Find a branch nearby</p>
+            </div>
+            <!-- 5 -->
+            <div class="bank5">
+                <img src="./images/icons/share.png" alt="share.png">
+                <p>Knowledge base</p>
+            </div>
+        </div>
+        <img src="./images/icons/arrow.png" alt="arrow.png" class="bank-services-arrow">
+    </div>
+</div>
+
+
+
+<!-- <div class="mobile-menu">
+
+    <div>
+        <img src="./images/icons/hand.png" alt="hand.png">
+        <p>Loans</p>
+    </div>
+
+    <div>
+        <img src="./images/icons/wallet.png" alt="wallet.png">
+        <p>Deposits</p>
+    </div>
+
+    <div>
+        <img src="./images/icons/menu.png" alt="menu.png">
+        <p>Menu</p>
+    </div>
+
+    <div>
+        <img src="./images/icons/cards.png" alt="cards.png">
+        <p>Cards</p>
+    </div>
+
+    <div>
+        <img src="./images/icons/search.png" alt="search.png">
+        <p>Vacancy</p>
+    </div>
+</div> -->
+
+<script></script>
 </body>
 </html>
 
@@ -362,7 +363,7 @@ a{
 	padding: 25px;
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 10px;	
+	border-radius: 10px;
 }
 .cards > div > h2{
 	font-weight: 600;
@@ -569,7 +570,7 @@ footer{
 	font-size: 16px;
 	line-height: 150%;
 	color: #FFFFFF;
-	
+
 }
 .footer-second-block-two{
 	display: flex;

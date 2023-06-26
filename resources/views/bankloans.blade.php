@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deposits</title>
-    <link rel="stylesheet" href="./styles/deposits/style.css">
-    <link rel="stylesheet" href="./styles/deposits/tablet/style-tablet.css">
-    <link rel="stylesheet" href="./styles/deposits/mobile/style-mobile.css">
+    <title>Bank Loans</title>
+    <link rel="stylesheet" href="./styles/bankloans/style.css">
+    <link rel="stylesheet" href="./styles/bankloans/tablet/style-tablet.css">
+    <link rel="stylesheet" href="./styles/bankloans/mobile/style-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -87,11 +87,12 @@
 
     <div class="main">
         <div class="main-title">
-            <h1>Deposits</h1>
-            <p>ICB-T offers a suite of deposit products for individual clients for daily cash management, money transfers and to encourage savings</p>
+            <h1>Bank Loans</h1>
+            <p>ICB offers a wide range of loans for individual
+                clients at attractive interest rates</p>
         </div>
 
-        <img src="./images/desktop/main.png" alt="" class="main-image">
+        <img src="./images/desktop/main5.png" alt="" class="main-image">
     </div>
 
     <div class="cards-container">
@@ -103,18 +104,15 @@
             </div>
             <!-- 2 -->
             <div class="cards-2">
-                <h2>Free opening deposit account</h2>
-                <p>Deposit accounts can be opened at any ICB-T
-                    Branches or Banking Service Centers. All deposit
-                    accounts are opened free of charge.</p>
+                <h2>Easy access</h2>
+                <p>Easy access to your funds at any ICB Branches
+                    or Banking Service Centers across Tajikistan</p>
             </div>
             <!-- 3 -->
             <div class="cards-3">
-                <h2>experienced specialists</h2>
-                <p>Our customer service officers will be happy
-                    to advise customers on the right product,
-                    or combination of products to meet their
-                    financial needs.</p>
+                <h2>No fees for deposit</h2>
+                <p>No fees for deposit, withdrawal, and transfer of
+                    fundsfrom your account to another ICB account</p>
             </div>
         </div>
     </div>
@@ -124,9 +122,9 @@
     <div class="big-cards">
         <!-- 1 -->
         <div class="savings-account">
-            <img src="./images/desktop/safe.png" alt="safe">
+            <img src="./images/desktop/business-loans.png" alt="business-loans.png">
             <div class="savings-account-content">
-                <h1>Savings Account</h1>
+                <h1>Business loans</h1>
                 <p>The product is designed to provide customers with a safe space to keep their money, accumulate savings and use the savings as needed.</p>
                 <div class="account-content-table">
                     <div>
@@ -175,9 +173,9 @@
         </div>
         <!-- 2 -->
         <div class="savings-account">
-            <img src="./images/desktop/money.png" alt="money">
+            <img src="./images/desktop/mortgage-loan.png" alt="mortgage-loan">
             <div class="savings-account-content">
-                <h1>Individual Term Deposits</h1>
+                <h1>Mortgage loan</h1>
                 <p>This product is offered to all individual customers, who wish to save money for a period of time at high-interest rates.</p>
                 <div class="account-content-table">
                     <div>
@@ -368,4 +366,3 @@
 <script></script>
 </body>
 </html>
-

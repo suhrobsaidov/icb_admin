@@ -26,6 +26,9 @@ Route::get('/', function () {
 
 
 // });
+Route::get('/bankloans', function () {
+    return view('bankloans');
+});
 Route::get('/remmitance', function () {
     return view('remitance');
 });
@@ -77,6 +80,9 @@ Route::get('/housingdeposit', function () {
 });
 Route::get('/filiali', function () {
     return view('filiali');
+});
+Route::get('/depositcalc', function () {
+    return view('depositcalc');
 });
 Route::get('/faq', function () {
     return view('faq');
