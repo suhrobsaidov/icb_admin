@@ -1,16 +1,15 @@
 @extends('layouts.tlay')
 
 @section('content')
-<!DOCTYPE html>
-
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business loan</title>
-    <link rel="stylesheet" href="./styles/bloans/style.css">
-    <link rel="stylesheet" href="./styles/bloans/tablet/style-tablet.css">
-    <link rel="stylesheet" href="./styles/bloans/mobile/style-mobile.css">
+    <title>Consumer loans</title>
+    <link rel="stylesheet" href="./styles/conloans/style.css">
+    <link rel="stylesheet" href="./styles/conloans/tablet/style-tablet.css">
+    <link rel="stylesheet" href="./styles/conloans/mobile/style-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,13 +22,13 @@
 
     <div class="main">
         <div class="main-title">
-            <h1>Business loan</h1>
+            <h1>Consumer loans</h1>
             <p>To increase turnover, support liquidity, fixed
                 assets for business development and increase
                 capacity.</p>
         </div>
 
-        <img src="./images/desktop/main3.png" alt="" class="main-image">
+        <img src="./images/desktop/consumer-loans.png" alt="" class="main-image">
     </div>
 
     <div class="cards-container">
@@ -459,27 +458,7 @@
     </div>
 </div> -->
 
-<script src="#">
-    const dropdownLabels = document.querySelectorAll('.dropdown-label');
-
-    dropdownLabels.forEach((label) => {
-        const plusButton = label.querySelector('img');
-        const dropdownList = label.nextElementSibling;
-
-        // Check if the button should be hidden by default
-        if (plusButton.classList.contains('hidden')) {
-            dropdownList.classList.add('display');
-            plusButton.classList.add('rotate-plus');
-        }
-
-        plusButton.addEventListener('click', () => {
-            dropdownList.classList.toggle('display');
-            plusButton.classList.toggle('rotate-plus');
-            plusButton.style.transition = '.5s';
-        });
-    });
-
-</script>
+<script src="./scripts/app.js"></script>
 </body>
 </html>
 @endsection

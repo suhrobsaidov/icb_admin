@@ -29,6 +29,9 @@ Route::get('/', function () {
 Route::get('/bankloans', function () {
     return view('bankloans');
 });
+Route::get('/businessloans', function () {
+    return view('businessloan');
+});
 Route::get('/remmitance', function () {
     return view('remitance');
 });
@@ -60,7 +63,7 @@ Route::get('/payroll', function () {
 Route::get('/news', function () {
     return view('news');
 });
-Route::get('/mortgate', function () {
+Route::get('/mortgateloan', function () {
     return view('mortgateloan');
 });
 Route::get('/loans', function () {
@@ -126,10 +129,12 @@ Route::get('/abouts', function () {
 Route::get('/aboutplaceholders', function () {
     return view('aboutplaceholders');
 });
-Route::get('/costumerloans', function () {
+Route::get('/cost0merloans', function () {
     return view('costumerloans');
 });
-
+Route::get('/consumerloans', function () {
+    return view('consumerloans');
+});
 
 Auth::routes();
 

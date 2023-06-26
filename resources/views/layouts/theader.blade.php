@@ -21,7 +21,7 @@
                         <a href="loans">Loans</a>
                         <ul>
                             <li><a href="businessloans">Business loans</a></li>
-                            <li><a href="customerloans">Consumer loans</a></li>
+                            <li><a href="consumerloans">Consumer loans</a></li>
                             <li><a href="mortgateloan">Mortgage loan</a></li>
                             <li><a href="autoloan">Auto loan</a></li>
                             <li><a href="agricultureloan">Agriculture loan</a></li>

@@ -1,5 +1,5 @@
 
-@extends('layouts.remitance')
+@extends('layouts.tlay')
 
 @section('content')
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 <body>
 
 <div class="begin">
-   
+
     <div class="loan">
         <img src="./images/image 35.png" alt="">
         <h1>Consumer loans
