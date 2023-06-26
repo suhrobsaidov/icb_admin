@@ -29,9 +29,9 @@
             <div>
                 <h3>Legal entities</h3>
                 <ul>
-                    <a href="about">About the bank</a>
+                    <a href="abouts>About the bank</a>
                     <a href="#">Job openings</a>
-                    <a href="cantacts">Contacts</a>
+                    <a href="contacts">Contacts</a>
                     <a href="#">Documents</a>
                     <a href="news">News</a>
                     <a href="faq">FAQ</a>

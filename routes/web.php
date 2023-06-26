@@ -135,7 +135,9 @@ Route::get('/cost0merloans', function () {
 Route::get('/consumerloans', function () {
     return view('consumerloans');
 });
-
+Route::get('/finantialstatement', function () {
+    return view('finstatement');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

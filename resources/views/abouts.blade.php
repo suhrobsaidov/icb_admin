@@ -1,4 +1,4 @@
-@extends('layouts.remitance')
+@extends('layouts.tlay')
 
 
 @section('content')
@@ -18,10 +18,10 @@
 </head>
 <body>
 	<div class="container">
-		
+
 	<!-- начало -->
 	<div class="about-container">
-	
+
 
 		<div class="about">
 			<div class="about-content">
@@ -30,7 +30,7 @@
 			</div>
 			<img src="./images/desktop/about.png" alt="about.png">
 		</div>
-		
+
 
 
 
@@ -82,27 +82,27 @@
 	</div>
 
 	<!-- <div class="mobile-menu">
-		
+
 		<div>
 			<img src="./images/icons/hand.png" alt="hand.png">
 			<p>Loans</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/wallet.png" alt="wallet.png">
 			<p>Deposits</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/menu.png" alt="menu.png">
 			<p>Menu</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/cards.png" alt="cards.png">
 			<p>Cards</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/search.png" alt="search.png">
 			<p>Vacancy</p>
@@ -389,7 +389,7 @@ footer{
 	font-size: 16px;
 	line-height: 150%;
 	color: #FFFFFF;
-	
+
 }
 .footer-second-block-two{
 	display: flex;
