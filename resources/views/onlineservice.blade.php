@@ -1,7 +1,7 @@
-@extends('layouts.remitance')
+@extends('layouts.tlay')
 @section('title')
 
-online service 
+online service
 @endsection
 @section('content')
 
@@ -22,32 +22,32 @@ online service
 </head>
 <body>
 	<div class="container">
-		
+
 		<!-- Нaчало -->
-		
+
 		<div class="online-services">
 			<div class="online-services-title">
 				<h1>Online Services</h1>
 				<p>Access to money anywhere in the world</p>
 			</div>
 			<div class="online-services-blocks">
-				
+
 				<div>
-					<img src="./images/icons/mob.png" alt="mob.png">	
+					<img src="./images/icons/mob.png" alt="mob.png">
 					<h2>Mobile banking </h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				</div>
 				<div>
-					<img src="./images/icons/pc.png" alt="mob.png">	
+					<img src="./images/icons/pc.png" alt="mob.png">
 					<h2>Online banking </h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				</div>
 				<div>
-					<img src="./images/icons/lap.png" alt="mob.png">	
+					<img src="./images/icons/lap.png" alt="mob.png">
 					<h2>Online applications</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -56,27 +56,27 @@ online service
 	</div>
 
 	<!-- <div class="mobile-menu">
-		
+
 		<div>
 			<img src="./images/icons/hand.png" alt="hand.png">
 			<p>Loans</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/wallet.png" alt="wallet.png">
 			<p>Deposits</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/menu.png" alt="menu.png">
 			<p>Menu</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/cards.png" alt="cards.png">
 			<p>Cards</p>
 		</div>
-		
+
 		<div>
 			<img src="./images/icons/search.png" alt="search.png">
 			<p>Vacancy</p>
@@ -318,7 +318,7 @@ footer{
 	font-size: 16px;
 	line-height: 150%;
 	color: #FFFFFF;
-	
+
 }
 .footer-second-block-two{
 	display: flex;
