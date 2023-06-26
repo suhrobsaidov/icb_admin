@@ -6,9 +6,9 @@
             <div>
                 <h3>Individuals</h3>
                 <ul>
-                    <a href="#">Cards</a>
-                    <a href="#">Loans</a>
-                    <a href="#">Deposits</a>
+                    <a href="card">Cards</a>
+                    <a href="loans">Loans</a>
+                    <a href="deposits">Deposits</a>
                     <a href="#">Money transfers</a>
                     <a href="#">Mobile banking</a>
                 </ul>
@@ -17,8 +17,8 @@
             <div>
                 <h3>Legal entities</h3>
                 <ul>
-                    <a href="#">Loans</a>
-                    <a href="#">Term deposits</a>
+                    <a href="loans">Loans</a>
+                    <a href="term">Term deposits</a>
                     <a href="#">Current account</a>
                     <a href="#">Salary projects</a>
                     <a href="#">Corporate card</a>
@@ -29,12 +29,12 @@
             <div>
                 <h3>Legal entities</h3>
                 <ul>
-                    <a href="#">About the bank</a>
+                    <a href="about">About the bank</a>
                     <a href="#">Job openings</a>
-                    <a href="#">Contacts</a>
+                    <a href="cantacts">Contacts</a>
                     <a href="#">Documents</a>
-                    <a href="#">News</a>
-                    <a href="#">FAQ</a>
+                    <a href="news">News</a>
+                    <a href="faq">FAQ</a>
                 </ul>
             </div>
             <!-- 4 -->
