@@ -117,10 +117,10 @@ Route::get('/bankomati', function () {
 Route::get('/bankfinstatement', function () {
     return view('bankfinstatement');
 });
-Route::get('/auto', function () {
+Route::get('/autoloan', function () {
     return view('autoloan');
 });
-Route::get('/agrecultureloan', function () {
+Route::get('/agricultureloan', function () {
     return view('agrecultureloan');
 });
 Route::get('/abouts', function () {
