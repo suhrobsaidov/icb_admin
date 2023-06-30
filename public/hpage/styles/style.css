@@ -301,8 +301,12 @@ a{
 	justify-content: center;
 	width: 297px;
 	height: 246px;
-	border: 1px solid rgba(219, 0, 17, 0.05);
+	border: 1px solid #F6F6F6;
 	border-radius: 10px;
+}
+.product-card div:hover{
+	background: #F6F6F6;
+	transition: .5s;
 }
 /*.bank-products-cards{
 	width: 100%;
@@ -359,7 +363,10 @@ a{
 	border-radius: 10px;
 	padding: 20px;
 }
-
+.services-card div:hover{
+	background: #F6F6F6;
+	transition: .5s;
+}
 /*mobile-banking-for*/
 .mobile-banking-for{
 	height: 414px;
@@ -441,7 +448,10 @@ a{
 	border-radius: 10px;
 	padding:28px 40px ;
 }
-
+.calc-card > div:hover{
+	background: #F6F6F6;
+	transition: .5s;
+}
 
 /*Currency*/
 .currency{
@@ -611,7 +621,10 @@ td {
     flex-direction: column;
     gap: 10px;
 }
-
+.curr-off-card div:hover{
+	background: #F6F6F6;
+	transition: .5s;
+}
 .curr-off-card div h1{
 	font-weight: 500;
 	font-size: 20px;

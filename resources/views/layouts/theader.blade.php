@@ -1,73 +1,82 @@
-<div class="header">
-    <div class="header-icons">
-        <a href="#"><img src="./images/icons/tj.png" alt="tj"></a>
-        <a href="#"><img src="./images/icons/rus.png" alt="rus"></a>
-        <a href="#"><img src="./images/icons/eng.png" alt="eng"></a>
 
-    </div>
-    <div class="header-logo-and-menu">
-        <a href="/"><img src="./images/desktop/logo.png" alt="Logo" class="logo"></a>
+<div class="container">
+        
+    <div class="header">
+        <div class="header-icons">
+            <a href="#"><img src="./images/icons/tj.png" alt="tj"></a>
+            <a href="#"><img src="./images/icons/rus.png" alt="rus"></a>
+            <a href="#"><img src="./images/icons/eng.png" alt="eng"></a>
 
-        <div class="header-menu">
-            <div class="header-menu-one">
-                <ul>
-                    <a href="#">INDIVIDUALS</a>
-                    <a href="#">LEGAL ENTITIES</a>
-                </ul>
-            </div>
-            <div class="header-menu-two">
-                <ul>
-                    <li>
-                        <a href="loans">Loans</a>
-                        <ul>
-                            <li><a href="businessloans">Business loans</a></li>
-                            <li><a href="consumerloans">Consumer loans</a></li>
-                            <li><a href="mortgateloan">Mortgage loan</a></li>
-                            <li><a href="autoloan">Auto loan</a></li>
-                            <li><a href="agricultureloan">Agriculture loan</a></li>
-                            <li><a href="expresscredit">Express credit</a></li>
-                            <li><a href="donish">Loan product "Donish"</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="deposits">Deposits</a>
-                        <ul>
-                            <li><a href="savingaccounts">Savings account</a></li>
-                            <li><a href="termdeposits">Individual term deposits</a></li>
-                            <li><a href="easydeposit">"Easy" deposit</a></li>
-                            <li><a href="childdeposit">Child deposit</a></li>
-                            <li><a href="diyor">"Diyor" Deposit</a></li>
-                            <li><a href="housingdeposit">Housing deposit</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="card">Cards</a>
-                        <ul>
-                            <li><a href="">Korti Milli</a></li>
-                            <li><a href="">Visa (Classic)</a></li>
-                            <li><a href="">Visa (Gold)</a></li>
-                            <li><a href="">Gift Card</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="onlineservice">Online Services</a></li>
-                    <li>
-                        <a href="#">More</a>
-                        <ul>
-                            <li><a href="/abouts">About the bank</a></li>
-                            <li><a href="/vacancy">Vacansy</a></li>
-                        </ul>
-                    </li>
-                </ul>
+        </div>
+        <div class="header-logo-and-menu">
+            <a href="/"><img src="./images/desktop/logo.png" alt="Logo" class="logo"></a>
+
+            <div class="header-menu">
+                <div class="header-menu-one">
+                    <ul>
+                        <a href="#">INDIVIDUALS</a>
+                        <a href="#">LEGAL ENTITIES</a>
+                    </ul>
+                </div>
+                <div class="header-menu-two">
+                    <ul>
+                        <li>
+                            <a href="loans">Loans</a>
+                            <ul>
+                                <li><a href="businessloans">Business loans</a></li>
+                                <li><a href="consumerloans">Consumer loans</a></li>
+                                <li><a href="mortgateloan">Mortgage loan</a></li>
+                                <li><a href="autoloan">Auto loan</a></li>
+                                <li><a href="agricultureloan">Agriculture loan</a></li>
+                                <li><a href="expresscredit">Express credit</a></li>
+                                <li><a href="donish">Loan product "Donish"</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="deposits">Deposits</a>
+                            <ul>
+                                <li><a href="savingaccounts">Savings account</a></li>
+                                <li><a href="termdeposits">Individual term deposits</a></li>
+                                <li><a href="easydeposit">"Easy" deposit</a></li>
+                                <li><a href="childdeposit">Child deposit</a></li>
+                                <li><a href="diyor">"Diyor" Deposit</a></li>
+                                <li><a href="housingdeposit">Housing deposit</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="card">Cards</a>
+                            <ul>
+                                <li><a href="">Korti Milli</a></li>
+                                <li><a href="">Visa (Classic)</a></li>
+                                <li><a href="">Visa (Gold)</a></li>
+                                <li><a href="">Gift Card</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="onlineservice">Online Services</a></li>
+                        <li>
+                            <a href="#">More</a>
+                            <ul>
+                                <li><a href="/abouts">About the bank</a></li>
+                                <li><a href="/vacancy">Vacansy</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="header-input-and-button">
-        <input type="search" placeholder="Search">
-        <button>Mobile banking</button>
+        <div class="header-input-and-button">
+            <input type="search" placeholder="Search">
+            <button>Mobile banking</button>
+        </div>
     </div>
 </div>
 <style>
+    .container{
+        max-width:1144px ;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
     .header{
         margin-top: 20px;
         display: flex;
