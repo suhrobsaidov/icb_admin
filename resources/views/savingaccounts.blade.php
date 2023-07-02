@@ -61,7 +61,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>Product terms</p>
-                <img src="./images/icons/+.png" alt="+" >
+                <img src="./images/icons/plus.png" alt="+" >
             </div>
             <div class="dropdown-list" >
                 <div class="dropdown-list-content">
@@ -222,7 +222,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>Where can I get information about credit products of CJSC “The First Microfinance Bank”?</p>
-                <img src="./images/icons/+.png" alt="+" >
+                <img src="./images/icons/plus.png" alt="+" >
             </div>
             <div class="dropdown-list " >
                 <div>
@@ -233,7 +233,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>Which credit products do you offer?</p>
-                <img src="./images/icons/+.png" alt="+" class="hidden">
+                <img src="./images/icons/plus.png" alt="+" class="hidden">
             </div>
             <div class="dropdown-list" >
                 <div>
@@ -245,7 +245,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>What is the term of various products you offer?</p>
-                <img src="./images/icons/+.png" alt="+" class="hidden">
+                <img src="./images/icons/plus.png" alt="+" class="hidden">
             </div>
             <div class="dropdown-list" >
                 <div>
@@ -257,7 +257,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p> How long does it take to obtain loan approval?</p>
-                <img src="./images/icons/+.png" alt="+" class="hidden">
+                <img src="./images/icons/plus.png" alt="+" class="hidden">
             </div>
             <div class="dropdown-list" >
                 <div>
@@ -269,7 +269,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>Can we obtain loans in U.S. dollars?</p>
-                <img src="./images/icons/+.png" alt="+" class="hidden">
+                <img src="./images/icons/plus.png" alt="+" class="hidden">
             </div>
             <div class="dropdown-list" >
                 <div>
@@ -281,7 +281,7 @@
         <div class="dropdown-menu">
             <div class="dropdown-label">
                 <p>What is the maximum amount of loan the Bank can provide?</p>
-                <img src="./images/icons/+.png" alt="+" class="hidden">
+                <img src="./images/icons/plus.png" alt="+" class="hidden">
             </div>
             <div class="dropdown-list" >
                 <div>
@@ -360,6 +360,7 @@
 </div> -->
 
 <script src="./scripts/app.js"></script>
+<script src="./js/plus/app.js"></script>
 </body>
 </html>
 
