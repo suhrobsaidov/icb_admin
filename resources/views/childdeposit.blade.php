@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child deposit</title>
     <link rel="stylesheet" href="./styles/child/style.css">
-    <link rel="stylesheet" href="./styles/childtablet/style-tablet.css">
+    <link rel="stylesheet" href="./styles/child/tablet/style-tablet.css">
     <link rel="stylesheet" href="./styles/child/mobile/style-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

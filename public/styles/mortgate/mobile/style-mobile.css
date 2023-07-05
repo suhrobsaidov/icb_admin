@@ -61,102 +61,7 @@
 		font-size: 8px;
 		line-height: 10px;
 	}
-	/*BIGCARDS*/
-	.savings-account{
-		flex-direction: column;
-/*		height: 291px;*/
-		padding: 5px 35px;
-
-	}
-	.savings-account > img{
-		width: 100px;
-		height: 84px;
-	}
-	.savings-account-content{
-		text-align: center;
-		justify-content: center;
-		gap: 5px;
-	}
-	.savings-account-content > h1{
-		font-size: 16px;
-		line-height: 130%;
-	}
-
-
-	.savings-account-content > p{
-		font-weight: 400;
-		font-size: 8px;
-		line-height: 130%;
-		
-	}
-	.account-content-table,.account-content-button{
-		display: none;
-	}
-
-	.account-content-table-mobile{
-		margin-top:20px ;
-		display: flex;
-		justify-content: space-around;
-	}
-	.account-content-table-mobile-one,
-	.account-content-table-mobile-two{
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-		text-align: start;
-	}
-
-	.account-content-table-mobile-one > div > h3{
-		font-weight: 600;
-		font-size: 10px;
-		line-height: 130%;
-	}	
-	.account-content-table-mobile-one > div > p{
-		font-weight: 400;
-		font-size: 8px;
-		line-height: 130%;
-		color: #000000;
-	}
-	.account-content-table-mobile-two > div > h3{
-		font-weight: 600;
-		font-size: 10px;
-		line-height: 130%;
-	}
-	.account-content-table-mobile-two > div > p{
-		font-weight: 400;
-		font-size: 8px;
-		line-height: 130%;
-		color: #000000;
-	}
-	.account-content-table-mobile-two-button{
-		text-align: end;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-	.account-content-table-mobile-two-button button{
-		width: 115px;
-		height: 26px;
-		background: #DB0011;
-		border-radius: 5px;
-		border: none;
-		font-weight: 600;
-		font-size: 10px;
-		line-height: 12px;
-		color: #FFFFFF;
-
-	}
-	.account-content-table-mobile-two-button button:hover{
-		filter: drop-shadow(0px 0px 7px rgba(219, 0, 17, 0.5));
-		transition: .3s;
-
-	}
-	.account-content-table-mobile-two-button > p{
-		font-weight: 400;
-		font-size: 6px;
-		line-height: 130%;
-		color: rgba(0, 0, 0, 0.8);
-	}
+	
 
 	/*BANK*/
 	.bank4,.bank5{
@@ -170,6 +75,88 @@
 		height: 120px;
 	}
 
+	/*	CALC-CARD*/
+	.card-calculator{
+		flex-direction: column;
+		align-items: center;
+		margin-top: 15px;
+	}
+	.calculation-card{
+		padding: 25px 10px;
+		width: 100%;
+		gap:10px;
+	}
+	.deposit-menu p {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+	.deposit-amount p{
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+		padding: 11px 10px;
+	}
+
+	.deposit-menu > form > select{
+		height: 35px;
+		
+	}
+
+	.result-card{
+		width: 100%;	
+	}
+	.deposit-amount{
+		gap: 0px;
+	}
+
+
+	/*Online Loan App*/
+	.main-card{
+		gap:20px;
+	}
+	.main-card div{
+		flex-direction: column;
+	}
+	.main-card div > label{
+		font-weight: 500;
+		font-size: 10px;
+		line-height: 12px;
+
+	}
+	.main-card div label > input {
+		height: 29px;
+	}
+	.main-card div > label > select {
+		height: 29px;
+		padding: 5px;
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.main-card6 > label > input{
+		font-size: 10px;
+	}
+
+	.online-loan-app > h1{
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		margin-bottom: 20px;
+	}
+
+	.file-upload-container{
+		height: 150px;
+
+	}
+	.last button{
+		margin-top: 25px;
+	}
+	.bank-services{
+		display: none;
+	}
 	footer{
 
 	}
