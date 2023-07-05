@@ -461,7 +461,7 @@
 
 <script src="./js/rot/app.js"></script>
 <script src="./js/plus/app.js"></script>
-<script src="./js/lcalc/app.js"></script>
+<script src="./js/rot/app.js"></script>
 
 </body>
 </html>
