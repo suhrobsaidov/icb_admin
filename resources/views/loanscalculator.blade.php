@@ -41,6 +41,7 @@
                     <form action="">
                         <select name="" id="">
                             <option value="">TJS</option>
+                            <option value="">USD</option>
                         </select>
                     </form>
                 </div>
@@ -265,6 +266,7 @@
 </div> -->
 
 <script src="./js/lcalc/app.js"></script>
+<script src="./js/rot/app.js"></script>
 </body>
 </html>
 

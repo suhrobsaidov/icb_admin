@@ -114,6 +114,27 @@
 		font-size: 8px;
 		line-height: 13px;
 	}	
+	/*.bank-products	*/
+	.bank-products > h1{
+		font-size: 20px;
+	}
+
+
+	.product-card div{
+		width: 162px;
+		height: 133px;
+	}
+	.product-card div img{
+		width: 95px;
+		height: 72px;
+	}
+	.product-card{
+		justify-content: start;
+	}
+
+
+
+
 
 
 	/*Mob-bank-for-phone*/

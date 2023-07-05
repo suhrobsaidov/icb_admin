@@ -449,6 +449,7 @@ a{
 }
 
 .main-card4 > label textarea{
+	width: 100%;
 	border:none;
 	background: #F3F4F6;
 	border-radius: 10px 10px 0px 0px;

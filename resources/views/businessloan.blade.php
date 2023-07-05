@@ -35,19 +35,19 @@
     <div class="cards-container">
         <div class="cards">
             <!-- 1 -->
-            <div class="cards-1">
+            <div class="card">
                 <h2>security of your money</h2>
                 <p>We are a member of the Tajik Individuals Deposits Insurance Fund (IDIF), listed under No. 0438</p>
             </div>
             <!-- 2 -->
-            <div class="cards-2">
+            <div class="card">
                 <h2>Free opening deposit account</h2>
                 <p>Deposit accounts can be opened at any ICB-T
                     Branches or Banking Service Centers. All deposit
                     accounts are opened free of charge.</p>
             </div>
             <!-- 3 -->
-            <div class="cards-3">
+            <div class="card">
                 <h2>experienced specialists</h2>
                 <p>Our customer service officers will be happy
                     to advise customers on the right product,
@@ -129,6 +129,7 @@
                     <form action="">
                         <select name="" id="" required>
                             <option value="">TJS</option>
+                            <option value="">USD</option>
                         </select>
                     </form>
                 </div>
@@ -460,6 +461,7 @@
 </div> -->
 <script src="./js/plus/app.js"></script>
 <script src="./js/rot/app.js"></script>
+<script src="./js/slider/app.js"></script>
 
 </body>
 </html>

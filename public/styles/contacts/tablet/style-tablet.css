@@ -42,148 +42,87 @@
 		color: #FFFFFF;
 	}
 
+		gap: 55px;
 
-	/*MAIN*/
-	.main{
-		margin-top: 20px;
-		justify-content: space-around;
+	/*Contacts*/
+	.contacts{
+		gap: 30px;
 	}
-	.main-title{
-		width: 212px;
-    	height: 197px;
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-	}
-	.main-title > h1{
+	.contacts > h1{
 		font-weight: 600;
-		font-size: 18px;
+		font-size: 26px;
 		line-height: 130%;
-		color: #000000;
-
 	}
 
-	.main-title > p{
-		font-weight: 300;
+	.contacts-input-contact{
+		padding: 20px 30px;
+		gap: 44px;
+	}
+	.contacts-input-contact h3{
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.contacts-input-contact > div p{
+		font-weight: 500;
 		font-size: 12px;
-		line-height: 160%;
-		color: #000000;
+		line-height: 15px;
 	}
 
-	.main-image{
-		width: 244px;
-		height: 220px;
+	.contacts-input-contact div img{
+		width: 43px;
+		height: 42px;
 	}
-
-	/*CARDS*/
-	.cards{
-	    display: flex;
-	    justify-content: space-around;
-	    gap: 10px;
-		overflow:hidden;
+	.contacts-input-feedback{
+		padding: 20px 30px;
+		
 	}
-	
-	.cards > div{
-		width: 214px;
-		height: 97px;
-		padding: 15px;
-		border-radius: 5px;	
-	}
-	.cards > div > h2{
-		width: 144px;
+	.contacts-input-feedback h3{
 		font-weight: 600;
-		font-size: 10px;
-		line-height: 12px;
+		font-size: 20px;
+		line-height: 24px;
 	}
-	.cards > div > p{
-		width: 177px;
-		font-weight: 400;
-		font-size: 8px;
-		line-height: 13px;
-	}	
-
-
-
-	/*BIG CARDS*/
-
-
-	.savings-account > img{
-		width: 169px;
-		height: 130px;
-	}
-
-
-	.savings-account-content > h1{
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 130%;
-	}
-
-	.savings-account-content > p{
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 130%;
-	}
-
-	.account-content-table div h3{
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 130%;
-	}
-	.account-content-table div p{
-		font-weight: 300;
-		font-size: 10px;
-		line-height: 130%;
-		color: rgba(0, 0, 0, 0.8);
-
-	}
-	.savings-account-content {
-	    gap: 13px;
-	}
-
-	.account-content-button{
-		gap: 20px;
-	}
-	.account-content-button > p{
-		font-weight: 400;
-		font-size: 10px;
-		line-height: 130%;
-	}
-	.account-content-button > button{
-		width: 137px;
-    	height: 35px;
-		border: none;
+	.contacts-input-feedback h2{
+		margin-top: 25px;
 		font-weight: 600;
 		font-size: 12px;
 		line-height: 15px;
-		padding:  7px 20px;
+	}
+	.contacts-input-feedback p{
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 15px;
+		margin-bottom: 17px;
 	}
 
-	.savings-account {
-	    height: 282px;
-	    padding: 20px 14px;
-	    gap: 13px;
+	.contacts-input-feedback form{
+		gap: 17px;
+	}
+	.contacts-input-feedback form input{
+		height: 36px;
+		background: #FFFFFF;
+		border: 1px solid #FFFFFF;
+		border-radius: 15px;
+	}
+	.contacts-input-feedback form textarea{
+		height: 92px;
 	}
 
-	/* Bank Services */
-	.bank-services-cards{
-		height: 130px;
-	}
-	.bank-services-cards img{
-		margin-bottom: 8px;
-		width: 27.14px;
-		height: 27.14px;
+	.contacts-input-feedback button{
+		width: 105px;
+		height: 30px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
 	}
 
-	.bank-services-cards > div > p{
-		font-weight: 500;
-		font-size: 10px;
-		line-height: 12px;
-	}
 
-	.bank-services-arrow{
-	   bottom: 172px;
-	}
+
+
+
+
+
+
 
 	/*Footer*/
 	.footer-container {

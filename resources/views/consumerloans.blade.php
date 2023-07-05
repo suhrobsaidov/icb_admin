@@ -128,6 +128,7 @@
                     <form action="">
                         <select name="" id="">
                             <option value="">TJS</option>
+                            <option value="">USD</option>
                         </select>
                     </form>
                 </div>

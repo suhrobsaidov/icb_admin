@@ -28,14 +28,14 @@ depositTermButtons.forEach(button => {
 })
 
 
-// const percent = document.querySelector('.inter-rate > h2')
-// const newPrecent = percent.textContent.substring(0,2).trim()
-// const resultSpan = document.querySelector('.inter-rate-result > div > span')
+const percent = document.querySelector('.inter-rate > h2')
+const newPrecent = percent.textContent.substring(0,2).trim()
+const resultSpan = document.querySelector('.inter-rate-result > div > span')
 
-// sliders.forEach((slider) => {
-//   slider.addEventListener('input', () => {
-//     let sliderN = Number(slider.value)
-//     let result = sliderN * newPrecent
-//     resultSpan.textContent = result
-//   });
-// });
+sliders.forEach((slider) => {
+  slider.addEventListener('input', () => {
+    let sliderN = Number(slider.value)
+    let result = sliderN * newPrecent
+    resultSpan.textContent = result + ' смн'
+  });
+});

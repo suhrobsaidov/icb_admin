@@ -1,13 +1,7 @@
-const bankProductsArrow = document.querySelectorAll('.bank-products-arrow');
-const sliderLine = document.querySelectorAll('#sliderLine');
-const slideContainer = document.querySelectorAll('#slideContainer')
-let offset = 0;
+// const cardsContainer = document.querySelector('.cards')
+// const cards = document.querySelectorAll('.card')
 
-bankProductsArrow.forEach((arrow, index) => {
-  const slide = sliderLine[index];
 
-  arrow.addEventListener('click', () => {
-    offset += 100;
-    slide.style.left = -offset + 'px';
-  });
-});
+// cards.forEach((card, index)=>{
+//   card[index].style.left = -240 + 'px'
+// })
