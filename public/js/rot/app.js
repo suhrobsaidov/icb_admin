@@ -9,6 +9,5 @@ const interRate = document.querySelector('.inter-rate > h2')
 sliders.forEach((slider, index) => {
   slider.addEventListener('input', () => {
     sliderNumbers[index].textContent = slider.value;
-
   });
 });

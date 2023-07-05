@@ -117,7 +117,7 @@
                     <p>Type of loan</p>
                     <!-- Form for selecting deposit -->
                     <form action="">
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value="">Consumer credit</option>
                         </select>
                     </form>
@@ -127,7 +127,7 @@
                     <p>Сurrency</p>
                     <!-- Form for selecting deposit -->
                     <form action="">
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value="">TJS</option>
                         </select>
                     </form>
@@ -137,7 +137,7 @@
                     <p>Loan amount</p>
                     <div class="range-slider">
                         <p class="slider-number" id="sliderNumber">0</p>
-                        <input type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+                        <input type="range" min="1" max="1000000" value="0" class="slider" id="myRange" required>
                     </div>
                     <div class="range-numbers">
                         <p>1000</p>
@@ -149,7 +149,7 @@
                     <p>Loan term</p>
                     <div class="range-slider">
                         <p class="slider-number" id="sliderNumber">0</p>
-                        <input type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+                        <input type="range" min="1" max="1000000" value="0" class="slider" id="myRange" required>
                     </div>
                     <div class="range-numbers">
                         <p>1000</p>
@@ -186,95 +186,95 @@
                 <div class="main-card1">
                     <label for="">
                         Some
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Name
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Middle name
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                 </div>
                 <div class="main-card2">
                     <label for="">
                         Some
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Phone number
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
-                        <select name="" id="" class="titile-select">
+                        <select name="" id="" class="titile-select" required>
                             <option value="">Additional phone number</option>
                         </select>
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                 </div>
                 <div class="main-card3">
                     <label for="">
                         Loan products
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value="">Business Loans</option>
                         </select>
                     </label>
                     <label for="">
                         Loan currency
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value="">Somoni</option>
                         </select>
                     </label>
                     <label for="">
                         Loan amount
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Loan term
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                 </div>
                 <div class="main-card4">
                     <label for="">
                         Loan purpose
-                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" required></textarea>
                     </label>
                     <label for="">
                         Occupation
-                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" required></textarea>
                     </label>
                 </div>
                 <div class="main-card5">
                     <label for="">
                         Сity / District
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Region
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
-                        <select name="" id="" class="titile-select">
+                        <select name="" id="" class="titile-select" required>
                             <option value="">Address, where registered</option>
                         </select>
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                 </div>
                 <div class="main-card6">
                     <label for="">
                         Monthly family income
-                        <input type="text">
+                        <input type="text" required>
                     </label>
                     <label for="">
                         Branch
-                        <select name="" id="">
+                        <select name="" id="" required>
                             <option value="">Dushanbe branch (reference point Lastochka)</option>
                         </select>
                     </label>
                     <label for="">
                         Phone numbers for additional information
-                        <input type="text" placeholder="Dushanbe - (+992 37) 227 84 84, 235 50 53">
+                        <input type="text" placeholder="Dushanbe - (+992 37) 227 84 84, 235 50 53" required>
                     </label>
                 </div>
                 <div class="upload">
@@ -282,7 +282,7 @@
                         Please, attach your photo
                         <div class="file-upload-container">
                             <img src="./images/icons/upload.png" alt="">
-                            <input type="file" id="fileInput" class="file-input">
+                            <input type="file" id="fileInput" class="file-input" required>
                             <label for="fileInput" class="file-label"></label>
                         </div>
                     </label>
@@ -291,7 +291,7 @@
                         Please, attach your photo
                         <div class="file-upload-container">
                             <img src="./images/icons/upload.png" alt="">
-                            <input type="file" id="fileInput" class="file-input">
+                            <input type="file" id="fileInput" class="file-input" required>
                             <label for="fileInput" class="file-label"></label>
                         </div>
                     </label>
@@ -299,7 +299,7 @@
                         Please, attach your photo
                         <div class="file-upload-container">
                             <img src="./images/icons/upload.png" alt="">
-                            <input type="file" id="fileInput" class="file-input">
+                            <input type="file" id="fileInput" class="file-input" required>
                             <label for="fileInput" class="file-label"></label>
                         </div>
                     </label>
@@ -307,7 +307,7 @@
 
                 <div class="last">
                     <div class="check-last">
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" required>
                         <label for="vehicle1"> I agree with the terms of personal data processing.</label>
                     </div>
                     <button>leave a request</button>

@@ -79,7 +79,7 @@
         </div>
 
         <div class="header-input-and-button">
-            <input type="search" placeholder="Search">
+            <input required type="search" placeholder="Search">
             <button>Mobile banking</button>
         </div>
     </div>

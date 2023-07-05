@@ -100,7 +100,7 @@
     <div class="bank-products">
         <h1>Bank products</h1>
         <div class="bank-products-cards">
-            <div class="product-card">
+            <div class="product-card" id="sliderLine">
                 <div>
                     <img src="./images/icons/home-bank.png" alt="">
                     <p>Loans</p>
@@ -256,7 +256,7 @@
     <div class="current-offers">
         <h1>Current offers</h1>
         <div class="current-offers-cards">
-            <div class="curr-off-card">
+            <div class="curr-off-card" id="sliderLine">
                 <div>
                     <img src="./images/icons/Merchant Account 1.png" alt="">
                     <h1>ICB Account</h1>
@@ -365,6 +365,8 @@
 </div> -->
 
 <script src="./hpage/scripts/app.js"></script>
+<script src="./js/slider/app.js"></script>
+
 </body>
 </html>
 

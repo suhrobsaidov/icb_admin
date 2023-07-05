@@ -160,13 +160,13 @@
             <summary class="dep_summary"><p>TJS</p> <img src="./img/Expand Arrow.png" alt=""></summary>
         </details>
         <p><strong>Loan amount</strong></p>
-        <input type="number" class="dep_amount" placeholder="100 000smn">
+        <input required type="number" class="dep_amount" placeholder="100 000smn">
         <div class="money">
             <p>1000 smn</p>
             <p>200000 smn</p>
         </div>
         <p><strong>Loan term</strong></p>
-        <input type="number" class="dep_amount" placeholder="3 years">
+        <input required type="number" class="dep_amount" placeholder="3 years">
         <div class="money">
             <p>from 3 month</p>
             <p>4 years</p>
@@ -191,29 +191,29 @@
     <div class="su_na_mi">
         <div class="name">
             <p>Surname</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Name</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Middle name</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
     </div>
     <div class="su_na_mi">
         <div class="name">
             <p>E-mail</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Phone number</p>
-            <input type="number" class="phb_inp">
+            <input required type="number" class="phb_inp">
         </div>
         <div class="name">
             <p>Additional phone number</p>
-            <input type="number" class="phb_inp">
+            <input required type="number" class="phb_inp">
         </div>
     </div>
     <div class="lo_lo_lo">
@@ -245,32 +245,32 @@
     <div class="lo_lo_lo">
         <div class="name">
             <p>Loan purpose</p>
-            <input type="text" class="loanpurpose">
+            <input required type="text" class="loanpurpose">
         </div>
 
         <div class="name">
             <p>Occupation</p>
-            <input type="text" class="loanpurpose">
+            <input required type="text" class="loanpurpose">
         </div>
     </div>
     <div class="su_na_mi">
         <div class="name">
             <p>City/District</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Region</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Address, where registered</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
     </div>
     <div class="su_na_mi">
         <div class="name">
             <p>Monthly family income</p>
-            <input type="text" class="phb_inp">
+            <input required type="text" class="phb_inp">
         </div>
         <div class="name">
             <p>Branch</p>
@@ -307,7 +307,7 @@
         </div>
     </div>
     <div class="i_agree">
-        <input type="checkbox">
+        <input required type="checkbox">
         <p>I agree with the terms of personal data processing</p>
     </div>
     <div class="leave_req">

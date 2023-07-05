@@ -71,10 +71,10 @@
                 <h2>Do you still have questions?</h2>
                 <p>Leave a request on our website and we will respond to you within 24 hours.</p>
                 <form action="">
-                    <input type="text" placeholder="Name"></input>
-                    <input type="text" placeholder="Surname"></input>
-                    <input type="email" placeholder="E-mail"></input>
-                    <input type="number" placeholder="Phone"></input>
+                    <input required type="text" placeholder="Name"></input>
+                    <input required type="text" placeholder="Surname"></input>
+                    <input required type="email" placeholder="E-mail"></input>
+                    <input required type="number" placeholder="Phone"></input>
                     <textarea name="" id="" cols="30" rows="5" placeholder="Question"></textarea>
                     <button>Send</button>
                 </form>
