@@ -42,106 +42,64 @@
 		color: #FFFFFF;
 	}
 
-
-	.work-in-title{
+	/*About*/
+	.about-container {
+	    gap: 49px;
+	}
+	.about-content h1{
 		font-weight: 600;
 		font-size: 26px;
 		line-height: 130%;
 	}
-	.about-us h3{
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 130%;
+	.about-content p{
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 150.5%;
 	}
-	.about-us h1{
-		font-weight: 700;
+	.about img{
+		width: 233px;
+		height: 87px;
+	}
+	.about-content{
+		gap: 20px;
+	}
+	.history div h1{
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		margin-bottom: 10px;
+	}
+	.history div p{
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 150.5%;
+	}
+	.history{
+		gap: 50px;
+	}
+	.achievements{
+		gap: 30px;
+	}
+	.achievements h1{
+		font-weight: 600;
 		font-size: 18px;
 		line-height: 130%;
 	}
-	.about-us p{
+	.achievements ul li{
 		font-weight: 400;
-		font-size: 14px;
-		line-height: 138.5%;
-	}
-	.work-in-first, .work-in-second{
-		gap: 10px;
-	}
-
-	.about-us{
-		gap: 10px;
-	}
-	.about-us-card{
-		padding: 10px;
-	}
-	.about-us-card > div img{
-		width: 27px;
-		height: 27px;
-	}
-	.about-us-card > div h3{
-		font-weight: 500;
 		font-size: 12px;
-		line-height: 130%;
+		line-height: 150.5%;
 	}
-	.about-us-card > div{
-		gap: 10px;
-	}
-	.about-us-card{
-		gap: 10px;
-	}
-	.about-us p{
-		font-weight: 300;
-		font-size: 8px;
-		line-height: 130%;
+	.achievements div img{
+		width: 252.31px;
+		height: 202.72px;
 	}
 
-	.cities{
-		padding: 15px;
-		gap: 25px;
-		width: 256px;
-		height: 100%;
-	}
-	.cities h1{
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 130%;
-	}
-	.cities ul{
-		gap: 15px;
-	}
-	.cities ul li a{
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 130%;
-	}
-	.vacancyes-card{
-		padding: 12px;
-		gap: 10px;
-	}
-	.vacancyes-card-content > h1{
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 130%;
-	}
-	.vacancyes-card-content > p{
-		font-weight: 400;
-		font-size: 8px;
-		line-height: 130%;
-	}
-	.vacancyes-cards-date{
-		font-weight: 300;
-		font-size: 6px;
-		line-height: 130%;
-	}
-	.vacancyes-card > p{
-		font-weight: 300;
-		font-size: 10px;
-		line-height: 130%;
-	}
-	.vacancyes-card-loc span,.vacancyes-card-loc p{
-		font-weight: 300;
-		font-size: 8px;
-		line-height: 130%;
-	}
+
+
+
+
+
 	/*Footer*/
 	.footer-container {
 	    gap: 15px;

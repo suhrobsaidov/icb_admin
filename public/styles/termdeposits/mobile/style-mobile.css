@@ -34,7 +34,18 @@
  		height: 120px;
 	}
 
-
+	/*.dropdown*/
+	.dropdown > h1{
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+	}
+	.dropdown-label p{
+		font-size: 12px;
+	}
+	.dropdown-list div p{
+		font-size: 10px;
+	}
 	/*CARDS*/
 	.cards{
 	    display: flex;
