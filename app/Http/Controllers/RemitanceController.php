@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Remitance;
+use App\Models\Remitance;
 use Illuminate\Http\Request;
 
 class RemitanceController extends Controller
@@ -41,7 +41,7 @@ class RemitanceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Remitance  $remitance
+     * @param  \App\Models\Remitance  $remitance
      * @return \Illuminate\Http\Response
      */
     public function show(Remitance $remitance)
@@ -52,7 +52,7 @@ class RemitanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Remitance  $remitance
+     * @param  \App\Models\Remitance  $remitance
      * @return \Illuminate\Http\Response
      */
     public function edit(Remitance $remitance)
@@ -64,7 +64,7 @@ class RemitanceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Remitance  $remitance
+     * @param  \App\Models\Remitance  $remitance
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Remitance $remitance)
@@ -75,7 +75,7 @@ class RemitanceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Remitance  $remitance
+     * @param  \App\Models\Remitance  $remitance
      * @return \Illuminate\Http\Response
      */
     public function destroy(Remitance $remitance)

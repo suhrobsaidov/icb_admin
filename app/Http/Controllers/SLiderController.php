@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\SLider;
+use App\Models\SLider;
 use Illuminate\Http\Request;
 
 class SLiderController extends Controller
@@ -48,7 +48,7 @@ class SLiderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SLider  $sLider
+     * @param  \App\Models\SLider  $sLider
      * @return \Illuminate\Http\Response
      */
     public function show(SLider $sLider)
@@ -60,7 +60,7 @@ class SLiderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SLider  $sLider
+     * @param  \App\Models\SLider  $sLider
      * @return \Illuminate\Http\Response
      */
     public function edit(SLider $sLider)
@@ -72,7 +72,7 @@ class SLiderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SLider  $sLider
+     * @param  \App\Models\SLider  $sLider
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SLider $sLider)
@@ -83,7 +83,7 @@ class SLiderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SLider  $sLider
+     * @param  \App\Models\SLider  $sLider
      * @return \Illuminate\Http\Response
      */
     public function destroy(SLider $sLider)

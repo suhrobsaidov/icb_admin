@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mainpage;
+use App\Models\Mainpage;
 use Illuminate\Http\Request;
 
 class MainpageController extends Controller
@@ -41,7 +41,7 @@ class MainpageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mainpage  $mainpage
+     * @param  \App\Models\Mainpage  $mainpage
      * @return \Illuminate\Http\Response
      */
     public function show(Mainpage $mainpage)
@@ -52,7 +52,7 @@ class MainpageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mainpage  $mainpage
+     * @param  \App\Models\Mainpage  $mainpage
      * @return \Illuminate\Http\Response
      */
     public function edit(Mainpage $mainpage)
@@ -64,7 +64,7 @@ class MainpageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mainpage  $mainpage
+     * @param  \App\Models\Mainpage  $mainpage
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Mainpage $mainpage)
@@ -75,7 +75,7 @@ class MainpageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mainpage  $mainpage
+     * @param  \App\Models\Mainpage  $mainpage
      * @return \Illuminate\Http\Response
      */
     public function destroy(Mainpage $mainpage)

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Calculators;
+use App\Models\Calculators;
 use Illuminate\Http\Request;
 
 class CalculatorsController extends Controller
@@ -41,7 +41,7 @@ class CalculatorsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Calculators  $calculators
+     * @param  \App\Models\Calculators  $calculators
      * @return \Illuminate\Http\Response
      */
     public function show(Calculators $calculators)
@@ -52,7 +52,7 @@ class CalculatorsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Calculators  $calculators
+     * @param  \App\Models\Calculators  $calculators
      * @return \Illuminate\Http\Response
      */
     public function edit(Calculators $calculators)
@@ -64,7 +64,7 @@ class CalculatorsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calculators  $calculators
+     * @param  \App\Models\Calculators  $calculators
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Calculators $calculators)
@@ -75,7 +75,7 @@ class CalculatorsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Calculators  $calculators
+     * @param  \App\Models\Calculators  $calculators
      * @return \Illuminate\Http\Response
      */
     public function destroy(Calculators $calculators)

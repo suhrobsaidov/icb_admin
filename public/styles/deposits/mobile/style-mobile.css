@@ -1,0 +1,237 @@
+@media screen and (max-width: 676px){
+	/*HEADER*/
+	.header-menu{
+		display: none;
+	}
+	.header-input-and-button > input{
+		display: none;
+	}
+	.logo{
+		width: 120px;
+		height: 45px;
+	}
+
+	/*Main*/
+	.main{
+		text-align: center;
+		flex-direction: column;
+	}
+	.main-title{
+		height: auto;
+	}
+	.main-title > h1{
+		/*font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;*/
+	}
+	.main-title > p{
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 160%;
+	}
+	.main-image{
+		width: 134px;
+ 		height: 120px;
+	}
+
+
+	/*CARDS*/
+	.cards{
+	    display: flex;
+	    justify-content: space-between;
+	    gap: 10px;
+		overflow:hidden;
+	}
+
+	.cards > div{
+		width: 240px;
+		height: 92px;
+		padding: 15px;
+		border-radius: 5px;	
+	}
+	.cards > div > h2{
+		width: 144px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.cards > div > p{
+		width: 177px;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 10px;
+	}
+	/*BIGCARDS*/
+	.savings-account{
+		flex-direction: column;
+/*		height: 291px;*/
+		padding: 5px 35px;
+
+	}
+	.savings-account > img{
+		width: 100px;
+		height: 84px;
+	}
+	.savings-account-content{
+		text-align: center;
+		justify-content: center;
+		gap: 5px;
+	}
+	.savings-account-content > h1{
+		font-size: 16px;
+		line-height: 130%;
+	}
+
+
+	.savings-account-content > p{
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 130%;
+		
+	}
+	.account-content-table,.account-content-button{
+		display: none;
+	}
+
+	.account-content-table-mobile{
+		margin-top:20px ;
+		display: flex;
+		justify-content: space-around;
+	}
+	.account-content-table-mobile-one,
+	.account-content-table-mobile-two{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		text-align: start;
+	}
+
+	.account-content-table-mobile-one > div > h3{
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 130%;
+	}	
+	.account-content-table-mobile-one > div > p{
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 130%;
+		color: #000000;
+	}
+	.account-content-table-mobile-two > div > h3{
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 130%;
+	}
+	.account-content-table-mobile-two > div > p{
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 130%;
+		color: #000000;
+	}
+	.account-content-table-mobile-two-button{
+		text-align: end;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.account-content-table-mobile-two-button button{
+		width: 115px;
+		height: 26px;
+		background: #DB0011;
+		border-radius: 5px;
+		border: none;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+		color: #FFFFFF;
+
+	}
+	.account-content-table-mobile-two-button button:hover{
+		filter: drop-shadow(0px 0px 7px rgba(219, 0, 17, 0.5));
+		transition: .3s;
+
+	}
+	.account-content-table-mobile-two-button > p{
+		font-weight: 400;
+		font-size: 6px;
+		line-height: 130%;
+		color: rgba(0, 0, 0, 0.8);
+	}
+
+	/*BANK*/
+	.bank4,.bank5{
+		display: none;
+	}
+	.bank-services > h1{
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	.services-card div{
+		text-align: center;
+		width: 110px;
+		height: 91px;
+		padding: 10px;
+	}
+	.bank-services-cards img{
+		width: 30px;
+		height: 30px;
+	}
+	.bank-services-cards p{
+		font-size: 8px;
+		font-style: normal;
+		font-weight: 500;
+	}
+	.bank-services-arrow{
+		bottom: 37px;
+	}
+
+	footer{
+
+	}
+	.footer-first-block{
+		flex-direction: column;
+	}
+	.footer-first-block > div{
+		margin-bottom: 10px;
+		gap: 10px;
+
+	} 
+	.footer-first-block > div > ul{
+		flex-direction: row;
+	} 
+	#contacts{
+		flex-direction: column;
+	}
+	#contacts > a{
+		display: flex;
+		gap:5px;
+		align-items: center;
+	}
+	.footer-second-block{
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+	.footer-second-block-two{
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.footer-third-block p {
+		font-size: 6px;
+		line-height: 150%;
+	}
+	
+	/*.mobile-menu{
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		height: 77px;
+		background: #FCFCFC;
+		bottom: 0;
+		width: 100%;
+	}
+	*/
+}	

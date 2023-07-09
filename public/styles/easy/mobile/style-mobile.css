@@ -1,0 +1,222 @@
+@media screen and (max-width: 676px){
+	/*HEADER*/
+	.header-menu{
+		display: none;
+	}
+	.header-input-and-button > input{
+		display: none;
+	}
+	.logo{
+		width: 120px;
+		height: 45px;
+	}
+
+	/*Main*/
+	.main{
+		text-align: center;
+		flex-direction: column;
+	}
+	.main-title{
+		height: auto;
+	}
+	.main-title > h1{
+		/*font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;*/
+	}
+	.main-title > p{
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 160%;
+	}
+	.main-image{
+		width: 134px;
+ 		height: 120px;
+	}
+	/*.dropdown*/
+	.dropdown > h1{
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+	}
+	.dropdown-label p{
+		font-size: 12px;
+	}
+	.dropdown-list div p{
+		font-size: 10px;
+	}
+
+	/*CARDS*/
+	.cards{
+	    display: flex;
+	    justify-content: space-between;
+	    gap: 10px;
+		overflow:hidden;
+	}
+
+	.cards > div{
+		width: 240px;
+		height: 92px;
+		padding: 15px;
+		border-radius: 5px;	
+	}
+	.cards > div > h2{
+		width: 144px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.cards > div > p{
+		width: 177px;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 10px;
+	}
+	/*.dropdown-list	*/
+	.dropdown-list{
+		max-height: 700px;
+	}
+	/*BANK*/
+	.bank4,.bank5{
+		display: none;
+	}
+	.bank-services{
+
+	}
+	.bank-services-cards>div{
+		overflow: hidden;
+		height: 120px;
+	}
+
+	/*	CALC-CARD*/
+	.card-calculator{
+		flex-direction: column;
+		align-items: center;
+		margin-top: 15px;
+	}
+	.calculation-card{
+		padding: 25px 10px;
+		width: 100%;
+		gap:10px;
+		height: 100%;
+
+	}
+	.deposit-menu p {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+	.deposit-amount p{
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+		padding: 11px 10px;
+	}
+
+	.deposit-menu > form > select{
+		height: 35px;
+		
+	}
+
+	.result-card{
+		width: 100%;	
+	}
+	.deposit-amount{
+		gap: 0px;
+	}
+
+
+	/*Online Loan App*/
+	.main-card{
+		gap:20px;
+	}
+	.main-card div{
+		flex-direction: column;
+	}
+	.main-card div > label{
+		font-weight: 500;
+		font-size: 10px;
+		line-height: 12px;
+
+	}
+	.main-card div label > input {
+		height: 29px;
+	}
+	.main-card div > label > select {
+		height: 29px;
+		padding: 5px;
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.main-card6 > label > input{
+		font-size: 10px;
+	}
+
+	.online-loan-app > h1{
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		margin-bottom: 20px;
+	}
+
+	.file-upload-container{
+		height: 150px;
+
+	}
+	.last button{
+		margin-top: 25px;
+	}
+	.bank-services{
+		display: none;
+	}
+	footer{
+
+	}
+	.footer-first-block{
+		flex-direction: column;
+	}
+	.footer-first-block > div{
+		margin-bottom: 10px;
+		gap: 10px;
+
+	} 
+	.footer-first-block > div > ul{
+		flex-direction: row;
+	} 
+	#contacts{
+		flex-direction: column;
+	}
+	#contacts > a{
+		display: flex;
+		gap:5px;
+		align-items: center;
+	}
+	.footer-second-block{
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+	.footer-second-block-two{
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.footer-third-block p {
+		font-size: 6px;
+		line-height: 150%;
+	}
+	
+	/*.mobile-menu{
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		height: 77px;
+		background: #FCFCFC;
+		bottom: 0;
+		width: 100%;
+	}
+	*/
+}	

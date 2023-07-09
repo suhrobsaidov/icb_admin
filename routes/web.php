@@ -14,17 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome2');
 
 
+});
+
+
+
+// Route::get('/wel', function () {
+//     return view('welcome2');
+
+
+// });
+Route::get('/bankloans', function () {
+    return view('bankloans');
+});
+Route::get('/businessloans', function () {
+    return view('businessloan');
 });
 Route::get('/remmitance', function () {
     return view('remitance');
 });
-Route::get('/services', function () {
+Route::get('/onlineservice', function () {
     return view('onlineservice');
 });
-Route::get('/cards', function () {
+Route::get('/card', function () {
     return view('card');
 });
 Route::get('/vacancy', function () {
@@ -33,25 +47,23 @@ Route::get('/vacancy', function () {
 Route::get('/deposits', function () {
     return view('deposites');
 });
-Route::get('/term', function () {
+Route::get('/termdeposits', function () {
     return view('termdeposits');
 });
 Route::get('/show', function () {
     return view('searchShow');
 });
-Route::get('/savings', function () {
+Route::get('/savingaccounts', function () {
     return view('savingaccounts');
 });
 Route::get('/payroll', function () {
     return view('payrollservices');
 });
-Route::get('/onlineservices', function () {
-    return view('onlineservices');
-});
+
 Route::get('/news', function () {
     return view('news');
 });
-Route::get('/mortgate', function () {
+Route::get('/mortgateloan', function () {
     return view('mortgateloan');
 });
 Route::get('/loans', function () {
@@ -72,16 +84,19 @@ Route::get('/housingdeposit', function () {
 Route::get('/filiali', function () {
     return view('filiali');
 });
+Route::get('/depositcalc', function () {
+    return view('depositcalc');
+});
 Route::get('/faq', function () {
     return view('faq');
 });
 Route::get('/expresscredit', function () {
     return view('expresscredit');
 });
-Route::get('/diyordeposit', function () {
+Route::get('/diyor', function () {
     return view('diyordeposit');
 });
-Route::get('/depositeasy', function () {
+Route::get('/easydeposit', function () {
     return view('depositeasy');
 });
 Route::get('/contacts', function () {
@@ -102,10 +117,10 @@ Route::get('/bankomati', function () {
 Route::get('/bankfinstatement', function () {
     return view('bankfinstatement');
 });
-Route::get('/auto', function () {
+Route::get('/autoloan', function () {
     return view('autoloan');
 });
-Route::get('/agrecultureloan', function () {
+Route::get('/agricultureloan', function () {
     return view('agrecultureloan');
 });
 Route::get('/abouts', function () {
@@ -114,15 +129,43 @@ Route::get('/abouts', function () {
 Route::get('/aboutplaceholders', function () {
     return view('aboutplaceholders');
 });
-Route::get('/costumerloans', function () {
+Route::get('/cost0merloans', function () {
     return view('costumerloans');
 });
-
-
+Route::get('/consumerloans', function () {
+    return view('consumerloans');
+});
+Route::get('/finantialstatement', function () {
+    return view('finstatement');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::apiResource('sliders' , 'SLiderController');
 Route::apiResource('remitance' , 'RemitanceController');
 Route::apiResource('products' , 'ProductsController');
-Route::apiResource('services' , 'ServicesController');
+
+//for admin
+Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');
+//Route::post('/save-header', [App\Http\Controllers\HeaderController::class, 'store'])->name('save-header');
+//Route::get('/edit-header/{id}', [App\Http\Controllers\HeaderController::class, 'edit'])->name('edit-header');
+//Route::put('/update-header/{id}', [App\Http\Controllers\HeaderController::class, 'update'])->name('update-header');
+//Route::delete('/delete-header/{id}' , [App\Http\Controllers\HeaderController::class, 'destroy'])->name('delete-header');
+
+//Route::get('/card', [App\Http\Controllers\CardController::class, 'index'])->name('card');
+//Route::post('/save-card', [App\Http\Controllers\CardController::class, 'store'])->name('save-card');
+//Route::get('/edit-card/{id}', [App\Http\Controllers\CardController::class, 'edit'])->name('edit-card');
+//Route::put('/update-card/{id}', [App\Http\Controllers\CardController::class, 'update'])->name('update-card');
+//Route::delete('/delete-card/{id}' , [App\Http\Controllers\CardController::class, 'destroy'])->name('delete-card');
+
+//Route::get('/bankService', [App\Http\Controllers\BankServiceController::class, 'index'])->name('bankService');
+//Route::post('/save-bankService', [App\Http\Controllers\BankServiceController::class, 'store'])->name('save-bankService');
+//Route::get('/edit-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'edit'])->name('edit-bankService');
+//Route::put('/update-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'update'])->name('update-bankService');
+//Route::delete('/delete-bankService/{id}' , [App\Http\Controllers\BankServiceController::class, 'destroy'])->name('delete-bankService');
+
+//Route::get('/fAQ', [App\Http\Controllers\FAQController::class, 'index'])->name('fAQ');
+//Route::post('/save-fAQ', [App\Http\Controllers\FAQController::class, 'store'])->name('save-fAQ');
+//Route::get('/edit-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'edit'])->name('edit-fAQ');
+//Route::put('/update-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'update'])->name('update-fAQ');
+//Route::delete('/delete-fAQ/{id}' , [App\Http\Controllers\FAQController::class, 'destroy'])->name('delete-fAQ');

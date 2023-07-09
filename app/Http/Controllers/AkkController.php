@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Akk;
+use App\Models\Akk;
 use Illuminate\Http\Request;
 
 class AkkController extends Controller
@@ -41,7 +41,7 @@ class AkkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Akk  $akk
+     * @param  \App\Models\Akk  $akk
      * @return \Illuminate\Http\Response
      */
     public function show(Akk $akk)
@@ -52,7 +52,7 @@ class AkkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Akk  $akk
+     * @param  \App\Models\Akk  $akk
      * @return \Illuminate\Http\Response
      */
     public function edit(Akk $akk)
@@ -64,7 +64,7 @@ class AkkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Akk  $akk
+     * @param  \App\Models\Akk  $akk
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Akk $akk)
@@ -75,7 +75,7 @@ class AkkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Akk  $akk
+     * @param  \App\Models\Akk  $akk
      * @return \Illuminate\Http\Response
      */
     public function destroy(Akk $akk)

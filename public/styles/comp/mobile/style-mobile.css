@@ -1,0 +1,134 @@
+@media screen and (max-width: 891px){
+	/*HEADER*/
+	.header-menu{
+		display: none;
+	}
+	.header-input-and-button > input{
+		display: none;
+	}
+	.logo{
+		width: 120px;
+		height: 45px;
+	}
+
+
+
+
+
+	/*Main*/
+	.main{
+		text-align: center;
+		flex-direction: column;
+	}
+	.main-title{
+		height: auto;
+	}
+	.main-title > h1{
+		/*font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;*/
+	}
+	.main-title > p{
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 160%;
+	}
+	.main-image{
+		width: 134px;
+ 		height: 120px;
+	}
+
+	/*CARDS*/
+	.cards{
+	    display: flex;
+	    justify-content: space-between;
+	    gap: 10px;
+		overflow:hidden;
+	}
+
+	.cards > div{
+		width: 240px;
+		height: 92px;
+		padding: 15px;
+		border-radius: 5px;	
+	}
+	.cards > div > h2{
+		width: 144px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.cards > div > p{
+		width: 177px;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 10px;
+	}
+	
+	/*BANK*/
+	.bank4,.bank5{
+		display: none;
+	}
+	.bank-services{
+
+	}
+	.bank-services-cards>div{
+		overflow: hidden;
+		height: 120px;
+	}
+
+
+
+
+
+
+	footer{
+
+	}
+	.footer-first-block{
+		flex-direction: column;
+	}
+	.footer-first-block > div{
+		margin-bottom: 10px;
+		gap: 10px;
+
+	} 
+	.footer-first-block > div > ul{
+		flex-direction: row;
+		flex-wrap: wrap;
+	} 
+	#contacts{
+		flex-direction: column;
+	}
+	#contacts > a{
+		display: flex;
+		gap:5px;
+		align-items: center;
+	}
+	.footer-second-block{
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+	.footer-second-block-two{
+		flex-direction: row-reverse;
+	    justify-content: start;
+	    width: 100%;
+	    flex-wrap: wrap;
+	}
+	.footer-third-block p {
+		font-size: 6px;
+		line-height: 150%;
+	}
+
+	/*.mobile-menu{
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		height: 77px;
+		background: #FCFCFC;
+		bottom: 0;
+		width: 100%;
+	}
+	*/
+}	

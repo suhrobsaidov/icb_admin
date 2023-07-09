@@ -1,0 +1,129 @@
+*{
+	padding:0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat';
+}
+body{
+	/*background-image: url("../images/desktop/background.png");
+	background-repeat: no-repeat;
+	background-position: center;*/
+}
+
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+/*Footer*/
+footer{
+	margin-top: 4100px;
+	background: #DB0011;
+	width: 100%;
+	color: #FFFFFF;
+}
+
+
+.footer-container{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+/*FIRST*/
+.footer-first-block{
+	display: flex;
+/*	gap: 30px;*/
+	margin-top: 60px;
+	justify-content: space-between;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-first-block > div{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.footer-first-block > div > h3{
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+}
+.footer-first-block > div > ul{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.footer-first-block > div > ul > a{
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+.footer-first-block > div > ul > a:hover{
+	text-decoration: underline;
+}
+/*SECOND*/
+.footer-second-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.footer-second-block-one{
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: #FFFFFF;
+	
+}
+.footer-second-block-two{
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.footer-second-block-two > div{
+	display: flex;
+	justify-content: end;
+}
+.apps{
+	display: flex;
+	font-weight: 600;
+	gap:5px;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+
+}
+.social{
+	display: flex;
+	gap: 15px;
+}
+
+/*THIRD*/
+.footer-third-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-third-block > p{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 10px;
+}
+#contacts > a{
+	display: flex;
+	gap:5px;
+	align-items: center;
+}
+.mobile-menu{
+	display: none;
+}
