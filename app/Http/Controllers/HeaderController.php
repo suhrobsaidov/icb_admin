@@ -52,7 +52,7 @@ class HeaderController extends Controller
         $headers->language = $request->input('language');
         $headers->save();
 
-        return view('admin.header.header', compact('headers'))->with('Запись добавлена');
+        return redirect()->back()->with('status','Запись добавлена');
 
 
     }

@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="{{ 'header' == request()->path() ? 'active' : '' }}">
-                    <a href="./header">
+                    <a href="./admin/header">
                         <i class="now-ui-icons text_caps-small"></i>
                         <p>Header</p>
                     </a>
@@ -198,9 +198,9 @@
             @yield('content')
         </div>
     </div>
-  
 
-	
+
+
 <script src="./scripts/app.js"></script>
 </body>
 </html>
