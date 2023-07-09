@@ -14,23 +14,34 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/header" method="POST">
+                <form action="/save-header" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Имя:</label>
-                            <input type="text" name="username" class="form-control" id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" name="title" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Фамилия:</label>
-                            <input type="text" name="surname" class="form-control" id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Description:</label>
+                            <input type="text" name="description" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Телефон:</label>
-                            <input type="text" name="phone" class="form-control" id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Page:</label>
+                            <input type="text" name="page" class="form-control" id="recipient-name">
                         </div>
-
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Image:</label>
+                            <input type="file" name="image" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Link:</label>
+                            <input type="text" name="link" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Language:</label>
+                            <input type="text" name="language" class="form-control" id="recipient-name">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -46,6 +57,9 @@
                 <div class="card-header">
                     <h4 class="card-title"> Users
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
+                        <a href="" class="btn float-right">ru</a>
+                        <a href="" class="btn float-right">en</a>
+                        <a href="" class="btn float-right">tj</a>
                     </h4>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -66,13 +80,22 @@
                                 ID
                             </th>
                             <th>
-                                Имя
+                                title
                             </th>
                             <th>
-                                Фамилия
+                                description
                             </th>
                             <th>
-                                Телефон
+                                page
+                            </th>
+                            <th>
+                                image
+                            </th>
+                            <th>
+                                link
+                            </th>
+                            <th>
+                                language
                             </th>
                             <th>
                                 Ред.
@@ -92,17 +115,26 @@
                                         {{ $header->title }}
                                     </td>
                                     <td>
-                                        {{ $header->surname }}
+                                        {{ $header->description }}
                                     </td>
                                     <td>
-                                        {{ $header->phone }}
+                                        {{ $header->page }}
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('images/headers/'.$header->image)}}" width="70px" height="70px" alt="Image">
+                                    </td>
+                                    <td>
+                                        {{ $header->link }}
+                                    </td>
+                                    <td>
+                                        {{ $header->language }}
                                     </td>
 
                                     <td>
-                                        <a href="/user-edit/{{ $user->id }}" class="btn btn-success">EDIT</a>
+                                        <a href="/edit-header/{{ $header->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        <form action="/user-delete/{{ $user->id }}" method="post">
+                                        <form action="/delete-header/{{ $header->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>
