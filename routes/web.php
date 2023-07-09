@@ -170,15 +170,15 @@ Route::get('/edit-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'edit']
 Route::put('/update-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'update'])->name('update-fAQ');
 Route::delete('/delete-fAQ/{id}' , [App\Http\Controllers\FAQController::class, 'destroy'])->name('delete-fAQ');
 
-//Route::get('/bankProducts', [App\Http\Controllers\BankProductsController::class, 'index'])->name('bankProducts');
-//Route::post('/save-bankProducts', [App\Http\Controllers\BankProductsController::class, 'store'])->name('save-bankProducts');
-//Route::get('/edit-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'edit'])->name('edit-bankProducts');
-//Route::put('/update-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'update'])->name('update-bankProducts');
-//Route::delete('/delete-bankProducts/{id}' , [App\Http\Controllers\BankProductsController::class, 'destroy'])->name('delete-bankProducts');
+Route::get('admin/bankProducts', [App\Http\Controllers\BankProductsController::class, 'index'])->name('bankProducts');
+Route::post('/save-bankProducts', [App\Http\Controllers\BankProductsController::class, 'store'])->name('save-bankProducts');
+Route::get('/edit-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'edit'])->name('edit-bankProducts');
+Route::put('/update-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'update'])->name('update-bankProducts');
+Route::delete('/delete-bankProducts/{id}' , [App\Http\Controllers\BankProductsController::class, 'destroy'])->name('delete-bankProducts');
 
-//Route::get('/currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'index'])->name('bankProducts');
-//Route::post('/save-currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'store'])->name('save-currentOffers');
-//Route::get('/edit-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'edit'])->name('edit-currentOffers');
-//Route::put('/update-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'update'])->name('update-currentOffers');
-//Route::delete('/delete-currentOffers/{id}' , [App\Http\Controllers\CurrentOffersController::class, 'destroy'])->name('delete-currentOffers');
+Route::get('/admin/currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'index'])->name('bankProducts');
+Route::post('/save-currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'store'])->name('save-currentOffers');
+Route::get('/edit-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'edit'])->name('edit-currentOffers');
+Route::put('/update-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'update'])->name('update-currentOffers');
+Route::delete('/delete-currentOffers/{id}' , [App\Http\Controllers\CurrentOffersController::class, 'destroy'])->name('delete-currentOffers');
 

@@ -102,6 +102,18 @@
                         <p>FAQ</p>
                     </a>
                 </li>
+                <li class="{{ 'bankProducts' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/bankProducts">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Bank Products</p>
+                    </a>
+                </li>
+                <li class="{{ 'currentOffers' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/currentOffers">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Current Offers</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

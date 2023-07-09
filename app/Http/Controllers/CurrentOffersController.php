@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\CurrentOffers;
+use App\Models\CurrentOffers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -16,7 +16,7 @@ class CurrentOffersController extends Controller
     public function index()
     {
         $currentOffers = CurrentOffers::all();
-        return view('admin.', compact('currentOffers'));
+        return view('admin.currentOffers.currentOffers', compact('currentOffers'));
     }
 
     /**

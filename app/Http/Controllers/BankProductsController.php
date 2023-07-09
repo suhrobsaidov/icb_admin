@@ -16,7 +16,7 @@ class BankProductsController extends Controller
     public function index()
     {
         $bankProducts = BankProducts::all();
-        return view('admin.', compact('bankProducts'));
+        return view('admin.bankProducts.bankProducts', compact('bankProducts'));
     }
 
     /**
@@ -118,6 +118,6 @@ class BankProductsController extends Controller
             File::delete($destination);
         }
         $bankProducts->delete();
-        return redirect()->back()->with('status','Header Deleted Successfully');
+        return redirect()->back()->with('status','Product Deleted Successfully');
     }
 }
