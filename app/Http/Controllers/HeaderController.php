@@ -37,24 +37,26 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        $header = new Header;
-        $header->title = $request->input('title');
-        $header->description = $request->input('description');
-        $header->page = $request->input('page');
+        $headers = new Header;
+        $headers->title = $request->input('title');
+        $headers->description = $request->input('description');
+        $headers->page = $request->input('page');
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             $file->move('images/headers/', $filename);
-            $header->image = $filename;
+            $headers->image = $filename;
         }
-        $header->link = $request->input('link');
-        $header->language = $request->input('language');
-        $header->save();
+        $headers->link = $request->input('link');
+        $headers->language = $request->input('language');
+        $headers->save();
 
         return view('admin.header.header
-        ' ,compact('header'))->with('Запись добавлена');
+        ' ,compact('headers'))->with('Запись добавлена');
+
+        
     }
 
     /**

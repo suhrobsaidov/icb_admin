@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="{{ 'header' == request()->path() ? 'active' : '' }}">
-                    <a href="./admin/header">
+                    <a href="./header">
                         <i class="now-ui-icons text_caps-small"></i>
                         <p>Header</p>
                     </a>
