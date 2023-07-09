@@ -44,8 +44,8 @@ class HeaderController extends Controller
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
             $file->move('images/headers/', $filename);
             $header->image = $filename;
         }
@@ -53,7 +53,7 @@ class HeaderController extends Controller
         $header->language = $request->input('language');
         $header->save();
 
-        return redirect()->back()->with('status','Header Upload Successfully');
+        return view('header')->with('header', $header);
     }
 
     /**
@@ -99,8 +99,8 @@ class HeaderController extends Controller
                 File::delete($destination);
             }
             $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
             $file->move('images/headers/', $filename);
             $header->image = $filename;
         }

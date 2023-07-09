@@ -30,9 +30,13 @@
                             <label for="recipient-name" class="col-form-label">Page:</label>
                             <input type="text" name="page" class="form-control" id="recipient-name">
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Image:</label>
-                            <input type="file" name="image" class="form-control" id="recipient-name">
+                        <div class="input-group">
+                               <div class="input-group">
+                                   <div class="custom-file">
+                                       <input type="file" name="image" class="custom-file-input" id="recipient-name">
+                                       <label for="recipient-name" class="custom-file-label">Image:</label>
+                                   </div>
+                               </div>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Link:</label>
