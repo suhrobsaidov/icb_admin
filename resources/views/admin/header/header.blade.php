@@ -14,7 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/save-header" method="POST">
+                <form action="/admin/header" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">

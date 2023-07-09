@@ -53,7 +53,8 @@ class HeaderController extends Controller
         $header->language = $request->input('language');
         $header->save();
 
-        return view('header')->with('header', $header);
+        return view('admin.header.header
+        ' ,compact('header'))->with('Запись добавлена');
     }
 
     /**
@@ -122,8 +123,8 @@ class HeaderController extends Controller
         $destination = 'images/headers/'.$header->image;
         if(File::exists($destination)){
             File::delete($destination);
-        }
+        }   
         $header->delete();
-       return redirect('header')->back()->with('status','Header Deleted Successfully');
+       return redirect('admin/header')->with('status','Header Deleted Successfully');
     }
 }
