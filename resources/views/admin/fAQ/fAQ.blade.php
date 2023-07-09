@@ -1,7 +1,7 @@
 @extends('layouts.masters')
 
 @section('title')
-    Header
+    FAQ
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/save-header" method="POST">
+                <form action="/save-fAQ" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">
@@ -37,14 +37,6 @@
                             <label for="recipient-name" class="col-form-label">Page:</label>
                             <input type="text" name="page" class="form-control" id="recipient-name">
                         </div>
-                        <div class="input-group">
-                               <div class="input-group">
-                                   <div class="custom-file">
-                                       <input type="file" name="image" class="custom-file-input" id="recipient-name">
-                                       <label for="recipient-name" class="custom-file-label">Image:</label>
-                                   </div>
-                               </div>
-                        </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Link:</label>
                             <input type="text" name="link" class="form-control" id="recipient-name">
@@ -66,7 +58,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Headers
+                    <h4 class="card-title"> FAQ
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
                         <a href="" class="btn float-right">ru</a>
                         <a href="" class="btn float-right">en</a>
@@ -100,9 +92,6 @@
                                 page
                             </th>
                             <th>
-                                image
-                            </th>
-                            <th>
                                 link
                             </th>
                             <th>
@@ -117,35 +106,32 @@
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($headers as $header)
+                            @foreach($fAQs as $fAQ)
                                 <tr>
                                     <td>
-                                        {{ $header->id }}
+                                        {{ $fAQ->id }}
                                     </td>
                                     <td>
-                                        {{ $header->title }}
+                                        {{ $fAQ->title }}
                                     </td>
                                     <td>
-                                        {{ $header->description }}
+                                        {{ $fAQ->description }}
                                     </td>
                                     <td>
-                                        {{ $header->page }}
+                                        {{ $fAQ->page }}
                                     </td>
                                     <td>
-                                        <img src="{{asset('images/headers/'.$header->image)}}" width="70px" height="70px" alt="Image">
+                                        {{ $fAQ->link }}
                                     </td>
                                     <td>
-                                        {{ $header->link }}
-                                    </td>
-                                    <td>
-                                        {{ $header->language }}
+                                        {{ $fAQ->language }}
                                     </td>
 
                                     <td>
-                                        <a href="/edit-header/{{ $header->id }}" class="btn btn-success">EDIT</a>
+                                        <a href="/edit-fAQ/{{ $fAQ->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        <form action="/delete-header/{{ $header->id }}" method="post">
+                                        <form action="/delete-fAQ/{{ $fAQ->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>
@@ -170,4 +156,6 @@
 @section('scripts')
 
 @endsection
+
+
 

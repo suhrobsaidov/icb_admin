@@ -15,8 +15,8 @@ class FAQController extends Controller
      */
     public function index()
     {
-        $fAQ = FAQ::all();
-        // return view('fAQ', compact('fAQ'));
+        $fAQs = FAQ::all();
+         return view('admin.fAQ.fAQ', compact('fAQs'));
     }
 
     /**
@@ -45,7 +45,7 @@ class FAQController extends Controller
         $fAQ->language = $request->input('language');
         $fAQ->save();
 
-        //return view('/save-fAQ')->with('status', 'FAQ saved');
+        return redirect()->back()->with('status','FAQ Saved Successfully');
     }
 
     /**
@@ -68,7 +68,7 @@ class FAQController extends Controller
     public function edit(FAQ $fAQ, $id)
     {
         $fAQ = FAQ::find($id);
-        //return view('edit-fAQ', compact('fAQ'));
+        return view('edit-fAQ', compact('fAQ'));
     }
 
     /**
@@ -87,7 +87,7 @@ class FAQController extends Controller
         $fAQ->link = $request->input('link');
         $fAQ->language = $request->input('language');
         $fAQ->update();
-        //return view('/update-fAQ')->with('status', 'FAQ updated');
+        return redirect()->back()->with('status','FAQ Saved Successfully');
     }
 
     /**
@@ -100,6 +100,6 @@ class FAQController extends Controller
     {
         $fAQ = FAQ::find($id);
         $fAQ->delete();
-        //return redirect('fAQ')->back()->with('status','FAQ Deleted Successfully');
+        return redirect()->back()->with('status','FAQ Saved Successfully');
     }
 }

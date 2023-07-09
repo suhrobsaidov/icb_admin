@@ -53,7 +53,7 @@ class HeaderController extends Controller
         $header->language = $request->input('language');
         $header->save();
 
-        return view('header')->with('header', $header);
+        return redirect()->back()->with('status','Header Saved Successfully');
     }
 
     /**
@@ -107,7 +107,7 @@ class HeaderController extends Controller
         $header->link = $request->input('link');
         $header->language = $request->input('language');
         $header->update();
-        return view('/update-header')->with('status', 'Header updated');
+        return redirect()->back()->with('status', 'Header updated');
     }
 
     /**
@@ -124,6 +124,6 @@ class HeaderController extends Controller
             File::delete($destination);
         }
         $header->delete();
-       return redirect('header')->back()->with('status','Header Deleted Successfully');
+       return redirect()->back()->with('status','Header Deleted Successfully');
     }
 }

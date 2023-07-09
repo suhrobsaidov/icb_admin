@@ -152,20 +152,33 @@ Route::get('/edit-header/{id}', [App\Http\Controllers\HeaderController::class, '
 Route::put('/update-header/{id}', [App\Http\Controllers\HeaderController::class, 'update'])->name('update-header');
 Route::delete('/delete-header/{id}' , [App\Http\Controllers\HeaderController::class, 'destroy'])->name('delete-header');
 
-//Route::get('/card', [App\Http\Controllers\CardController::class, 'index'])->name('card');
-//Route::post('/save-card', [App\Http\Controllers\CardController::class, 'store'])->name('save-card');
-//Route::get('/edit-card/{id}', [App\Http\Controllers\CardController::class, 'edit'])->name('edit-card');
-//Route::put('/update-card/{id}', [App\Http\Controllers\CardController::class, 'update'])->name('update-card');
-//Route::delete('/delete-card/{id}' , [App\Http\Controllers\CardController::class, 'destroy'])->name('delete-card');
+Route::get('/admin/card', [App\Http\Controllers\CardController::class, 'index'])->name('card');
+Route::post('/save-card', [App\Http\Controllers\CardController::class, 'store'])->name('save-card');
+Route::get('/edit-card/{id}', [App\Http\Controllers\CardController::class, 'edit'])->name('edit-card');
+Route::put('/update-card/{id}', [App\Http\Controllers\CardController::class, 'update'])->name('update-card');
+Route::delete('/delete-card/{id}' , [App\Http\Controllers\CardController::class, 'destroy'])->name('delete-card');
 
-//Route::get('/bankService', [App\Http\Controllers\BankServiceController::class, 'index'])->name('bankService');
-//Route::post('/save-bankService', [App\Http\Controllers\BankServiceController::class, 'store'])->name('save-bankService');
-//Route::get('/edit-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'edit'])->name('edit-bankService');
-//Route::put('/update-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'update'])->name('update-bankService');
-//Route::delete('/delete-bankService/{id}' , [App\Http\Controllers\BankServiceController::class, 'destroy'])->name('delete-bankService');
+Route::get('/admin/bankService', [App\Http\Controllers\BankServiceController::class, 'index'])->name('bankService');
+Route::post('/save-bankService', [App\Http\Controllers\BankServiceController::class, 'store'])->name('save-bankService');
+Route::get('/edit-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'edit'])->name('edit-bankService');
+Route::put('/update-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'update'])->name('update-bankService');
+Route::delete('/delete-bankService/{id}' , [App\Http\Controllers\BankServiceController::class, 'destroy'])->name('delete-bankService');
 
-//Route::get('/fAQ', [App\Http\Controllers\FAQController::class, 'index'])->name('fAQ');
-//Route::post('/save-fAQ', [App\Http\Controllers\FAQController::class, 'store'])->name('save-fAQ');
-//Route::get('/edit-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'edit'])->name('edit-fAQ');
-//Route::put('/update-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'update'])->name('update-fAQ');
-//Route::delete('/delete-fAQ/{id}' , [App\Http\Controllers\FAQController::class, 'destroy'])->name('delete-fAQ');
+Route::get('/admin/fAQ', [App\Http\Controllers\FAQController::class, 'index'])->name('fAQ');
+Route::post('/save-fAQ', [App\Http\Controllers\FAQController::class, 'store'])->name('save-fAQ');
+Route::get('/edit-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'edit'])->name('edit-fAQ');
+Route::put('/update-fAQ/{id}', [App\Http\Controllers\FAQController::class, 'update'])->name('update-fAQ');
+Route::delete('/delete-fAQ/{id}' , [App\Http\Controllers\FAQController::class, 'destroy'])->name('delete-fAQ');
+
+//Route::get('/bankProducts', [App\Http\Controllers\BankProductsController::class, 'index'])->name('bankProducts');
+//Route::post('/save-bankProducts', [App\Http\Controllers\BankProductsController::class, 'store'])->name('save-bankProducts');
+//Route::get('/edit-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'edit'])->name('edit-bankProducts');
+//Route::put('/update-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'update'])->name('update-bankProducts');
+//Route::delete('/delete-bankProducts/{id}' , [App\Http\Controllers\BankProductsController::class, 'destroy'])->name('delete-bankProducts');
+
+//Route::get('/currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'index'])->name('bankProducts');
+//Route::post('/save-currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'store'])->name('save-currentOffers');
+//Route::get('/edit-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'edit'])->name('edit-currentOffers');
+//Route::put('/update-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'update'])->name('update-currentOffers');
+//Route::delete('/delete-currentOffers/{id}' , [App\Http\Controllers\CurrentOffersController::class, 'destroy'])->name('delete-currentOffers');
+

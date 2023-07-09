@@ -1,7 +1,7 @@
 @extends('layouts.masters')
 
 @section('title')
-    Header
+    Card
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/save-header" method="POST">
+                <form action="/save-card" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">
@@ -38,12 +38,12 @@
                             <input type="text" name="page" class="form-control" id="recipient-name">
                         </div>
                         <div class="input-group">
-                               <div class="input-group">
-                                   <div class="custom-file">
-                                       <input type="file" name="image" class="custom-file-input" id="recipient-name">
-                                       <label for="recipient-name" class="custom-file-label">Image:</label>
-                                   </div>
-                               </div>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="recipient-name">
+                                    <label for="recipient-name" class="custom-file-label">Image:</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Link:</label>
@@ -66,7 +66,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Headers
+                    <h4 class="card-title"> Cards
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
                         <a href="" class="btn float-right">ru</a>
                         <a href="" class="btn float-right">en</a>
@@ -117,35 +117,35 @@
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($headers as $header)
+                            @foreach($cards as $card)
                                 <tr>
                                     <td>
-                                        {{ $header->id }}
+                                        {{ $card->id }}
                                     </td>
                                     <td>
-                                        {{ $header->title }}
+                                        {{ $card->title }}
                                     </td>
                                     <td>
-                                        {{ $header->description }}
+                                        {{ $card->description }}
                                     </td>
                                     <td>
-                                        {{ $header->page }}
+                                        {{ $card->page }}
                                     </td>
                                     <td>
-                                        <img src="{{asset('images/headers/'.$header->image)}}" width="70px" height="70px" alt="Image">
+                                        <img src="{{asset('images/cards/'.$card->image)}}" width="70px" height="70px" alt="Image">
                                     </td>
                                     <td>
-                                        {{ $header->link }}
+                                        {{ $card->link }}
                                     </td>
                                     <td>
-                                        {{ $header->language }}
+                                        {{ $card->language }}
                                     </td>
 
                                     <td>
-                                        <a href="/edit-header/{{ $header->id }}" class="btn btn-success">EDIT</a>
+                                        <a href="/edit-card/{{ $card->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        <form action="/delete-header/{{ $header->id }}" method="post">
+                                        <form action="/delete-card/{{ $card->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>
@@ -170,4 +170,5 @@
 @section('scripts')
 
 @endsection
+
 

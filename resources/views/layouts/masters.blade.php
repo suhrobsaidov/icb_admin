@@ -84,7 +84,24 @@
                         <p>Header</p>
                     </a>
                 </li>
-
+                <li class="{{ 'card' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/card">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Card</p>
+                    </a>
+                </li>
+                <li class="{{ 'bankServices' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/bankService">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Bank Services</p>
+                    </a>
+                </li>
+                <li class="{{ 'fAQ' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/fAQ">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>FAQ</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

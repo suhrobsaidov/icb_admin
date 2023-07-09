@@ -15,8 +15,8 @@ class BankServiceController extends Controller
      */
     public function index()
     {
-        $bankService = BankService::all();
-        // return view('bankService', compact('bankService'));
+        $bankServices = BankService::all();
+        return view('admin.bankServices.bankServices', compact('bankServices'));
     }
 
     /**
@@ -53,7 +53,7 @@ class BankServiceController extends Controller
         $bankService->language = $request->input('language');
         $bankService->save();
 
-        //return view('/save-bankService')->with('status', 'bankService saved');
+        return redirect()->back()->with('status','Bank Service Saved Successfully');
     }
 
     /**
@@ -76,7 +76,7 @@ class BankServiceController extends Controller
     public function edit(BankService $bankService, $id)
     {
         $bankService = BankService::find($id);
-        //return view('edit-bankService', compact('bankService'));
+        return view('edit-bankService', compact('bankService'));
     }
 
     /**
@@ -107,7 +107,7 @@ class BankServiceController extends Controller
             $bankService->link = $request->input('link');
             $bankService->language = $request->input('language');
             $bankService->update();
-            //return view('/update-bankService')->with('status', 'bankService updated');
+            return redirect()->back()->with('status','Bank Service Update Successfully');
     }
 
     /**
@@ -124,6 +124,6 @@ class BankServiceController extends Controller
             File::delete($destination);
         }
         $bankService->delete();
-        //return redirect('bankService')->back()->with('status','bankService Deleted Successfully');
+        return redirect()->back()->with('status','bankService Deleted Successfully');
     }
 }

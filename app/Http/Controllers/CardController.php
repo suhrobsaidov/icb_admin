@@ -15,8 +15,8 @@ class CardController extends Controller
      */
     public function index()
     {
-        $card = card::all();
-        // return view('card', compact('card'));
+        $cards = card::all();
+        return view('admin.card.card', compact('cards'));
     }
 
     /**
@@ -53,7 +53,7 @@ class CardController extends Controller
                 $card->language = $request->input('language');
                 $card->save();
 
-                //return view('/save-card')->with('status', 'Card saved');
+        return redirect()->back()->with('status','Card Saved Successfully');
     }
 
     /**
@@ -76,7 +76,7 @@ class CardController extends Controller
     public function edit(card $card, $id)
     {
         $card = card::find($id);
-        //return view('edit-card', compact('card'));
+        return view('edit-card', compact('card'));
     }
 
     /**
@@ -107,7 +107,7 @@ class CardController extends Controller
                 $card->link = $request->input('link');
                 $card->language = $request->input('language');
                 $card->update();
-                //return view('/update-card')->with('status', 'Card updated');
+        return redirect()->back()->with('status','Card Saved Successfully');
     }
 
     /**
@@ -124,6 +124,6 @@ class CardController extends Controller
             File::delete($destination);
         }
         $card->delete();
-        //return redirect('card')->back()->with('status','Card Deleted Successfully');
+        return redirect()->back()->with('status','Card Deleted Successfully');
     }
 }
