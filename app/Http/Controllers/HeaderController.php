@@ -32,7 +32,7 @@ class HeaderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,11 +41,10 @@ class HeaderController extends Controller
         $headers->title = $request->input('title');
         $headers->description = $request->input('description');
         $headers->page = $request->input('page');
-        if($request->hasfile('image'))
-        {
+        if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
+            $filename = time() . '.' . $extension;
             $file->move('images/headers/', $filename);
             $headers->image = $filename;
         }
@@ -53,20 +52,15 @@ class HeaderController extends Controller
         $headers->language = $request->input('language');
         $headers->save();
 
-<<<<<<< HEAD
-        return redirect()->back()->with('status','Header Saved Successfully');
-=======
-        return view('admin.header.header
-        ' ,compact('headers'))->with('Запись добавлена');
+        return view('admin.header.header', compact('headers'))->with('Запись добавлена');
 
-        
->>>>>>> c5917a8edd840eae4a83b311ecda48411962ecd5
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Header  $header
+     * @param \App\Models\Header $header
      * @return \Illuminate\Http\Response
      */
     public function show(Header $header)
@@ -77,7 +71,7 @@ class HeaderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Header  $header
+     * @param \App\Models\Header $header
      * @return \Illuminate\Http\Response
      */
     public function edit(Header $header, $id)
@@ -89,8 +83,8 @@ class HeaderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Header  $header
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Header $header
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Header $header, $id)
@@ -99,15 +93,14 @@ class HeaderController extends Controller
         $header->title = $request->input('title');
         $header->description = $request->input('description');
         $header->page = $request->input('page');
-        if($request->hasfile('image'))
-        {
-            $destination = 'images/headers/'.$header->image;
-            if(File::exists($destination)){
+        if ($request->hasfile('image')) {
+            $destination = 'images/headers/' . $header->image;
+            if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
+            $filename = time() . '.' . $extension;
             $file->move('images/headers/', $filename);
             $header->image = $filename;
         }
@@ -120,21 +113,17 @@ class HeaderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Header  $header
+     * @param \App\Models\Header $header
      * @return \Illuminate\Http\Response
      */
     public function destroy(Header $header, $id)
     {
         $header = Header::find($id);
-        $destination = 'images/headers/'.$header->image;
-        if(File::exists($destination)){
+        $destination = 'images/headers/' . $header->image;
+        if (File::exists($destination)) {
             File::delete($destination);
-        }   
+        }
         $header->delete();
-<<<<<<< HEAD
-       return redirect()->back()->with('status','Header Deleted Successfully');
-=======
-       return redirect('admin/header')->with('status','Header Deleted Successfully');
->>>>>>> c5917a8edd840eae4a83b311ecda48411962ecd5
+        return redirect()->back()->with('status', 'Header Deleted Successfully');
     }
 }
