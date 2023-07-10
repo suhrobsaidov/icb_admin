@@ -114,6 +114,12 @@
                         <p>Current Offers</p>
                     </a>
                 </li>
+                <li class="{{ 'depositCards' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/depositCards">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Deposit Cards</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

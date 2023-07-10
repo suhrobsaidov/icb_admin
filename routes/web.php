@@ -176,9 +176,20 @@ Route::get('/edit-bankProducts/{id}', [App\Http\Controllers\BankProductsControll
 Route::put('/update-bankProducts/{id}', [App\Http\Controllers\BankProductsController::class, 'update'])->name('update-bankProducts');
 Route::delete('/delete-bankProducts/{id}' , [App\Http\Controllers\BankProductsController::class, 'destroy'])->name('delete-bankProducts');
 
-Route::get('/admin/currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'index'])->name('bankProducts');
+Route::get('/admin/currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'index'])->name('currentOffers');
 Route::post('/save-currentOffers', [App\Http\Controllers\CurrentOffersController::class, 'store'])->name('save-currentOffers');
 Route::get('/edit-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'edit'])->name('edit-currentOffers');
 Route::put('/update-currentOffers/{id}', [App\Http\Controllers\CurrentOffersController::class, 'update'])->name('update-currentOffers');
 Route::delete('/delete-currentOffers/{id}' , [App\Http\Controllers\CurrentOffersController::class, 'destroy'])->name('delete-currentOffers');
 
+Route::get('/admin/depositCards', [App\Http\Controllers\DepositCardsController::class, 'index'])->name('depositCards');
+Route::post('/save-depositCards', [App\Http\Controllers\DepositCardsController::class, 'store'])->name('save-depositCards');
+Route::get('/edit-depositCards/{id}', [App\Http\Controllers\DepositCardsController::class, 'edit'])->name('edit-depositCards');
+Route::put('/update-depositCards/{id}', [App\Http\Controllers\DepositCardsController::class, 'update'])->name('update-depositCards');
+Route::delete('/delete-depositCards/{id}' , [App\Http\Controllers\DepositCardsController::class, 'destroy'])->name('delete-depositCards');
+
+Route::get('/admin/bankLoans', [App\Http\Controllers\BankLoansController::class, 'index'])->name('bankLoans');
+Route::post('/save-bankLoans', [App\Http\Controllers\BankLoansController::class, 'store'])->name('save-bankLoans');
+Route::get('/edit-bankLoans/{id}', [App\Http\Controllers\BankLoansController::class, 'edit'])->name('edit-bankLoans');
+Route::put('/update-bankLoans/{id}', [App\Http\Controllers\BankLoansController::class, 'update'])->name('update-bankLoans');
+Route::delete('/delete-bankLoans/{id}' , [App\Http\Controllers\BankLoansController::class, 'destroy'])->name('delete-bankLoans');

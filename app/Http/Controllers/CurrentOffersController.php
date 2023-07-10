@@ -58,7 +58,7 @@ class CurrentOffersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\CurrentOffers  $currentOffers
+     * @param  \App\Models\CurrentOffers  $currentOffers
      * @return \Illuminate\Http\Response
      */
     public function show(CurrentOffers $currentOffers)
@@ -69,7 +69,7 @@ class CurrentOffersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\CurrentOffers  $currentOffers
+     * @param  \App\Models\CurrentOffers  $currentOffers
      * @return \Illuminate\Http\Response
      */
     public function edit(CurrentOffers $currentOffers, $id)
@@ -82,7 +82,7 @@ class CurrentOffersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CurrentOffers  $currentOffers
+     * @param  \App\Models\CurrentOffers  $currentOffers
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, CurrentOffers $currentOffers, $id)
@@ -110,13 +110,13 @@ class CurrentOffersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\CurrentOffers  $currentOffers
+     * @param  \App\Models\CurrentOffers  $currentOffers
      * @return \Illuminate\Http\Response
      */
     public function destroy(CurrentOffers $currentOffers, $id)
     {
         $currentOffers = CurrentOffers::find($id);
-        $destination = 'images/headers/'.$currentOffers->image;
+        $destination = 'images/currentOffers/'.$currentOffers->image;
         if(File::exists($destination)){
             File::delete($destination);
         }
