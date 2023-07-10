@@ -193,3 +193,15 @@ Route::post('/save-bankLoans', [App\Http\Controllers\BankLoansController::class,
 Route::get('/edit-bankLoans/{id}', [App\Http\Controllers\BankLoansController::class, 'edit'])->name('edit-bankLoans');
 Route::put('/update-bankLoans/{id}', [App\Http\Controllers\BankLoansController::class, 'update'])->name('update-bankLoans');
 Route::delete('/delete-bankLoans/{id}' , [App\Http\Controllers\BankLoansController::class, 'destroy'])->name('delete-bankLoans');
+
+Route::get('/admin/remittances', [App\Http\Controllers\RemittancesController::class, 'index'])->name('remittances');
+Route::post('admin/save-remittances', [App\Http\Controllers\RemittancesController::class, 'store'])->name('save-remittances');
+Route::get('/edit-remittances/{id}', [App\Http\Controllers\RemittancesController::class, 'edit'])->name('edit-remittances');
+Route::put('/update-remittances/{id}', [App\Http\Controllers\RemittancesController::class, 'update'])->name('update-remittances');
+Route::delete('/delete-remittances/{id}' , [App\Http\Controllers\RemittancesController::class, 'destroy'])->name('delete-remittances');
+
+Route::get('/admin/knowledgeBase', [App\Http\Controllers\KnowledgeBaseController::class, 'index'])->name('knowledgeBase');
+Route::post('admin/save-knowledgeBase', [App\Http\Controllers\KnowledgeBaseController::class, 'store'])->name('save-knowledgeBase');
+Route::get('/edit-knowledgeBase/{id}', [App\Http\Controllers\KnowledgeBaseController::class, 'edit'])->name('edit-knowledgeBase');
+Route::put('/update-knowledgeBase/{id}', [App\Http\Controllers\KnowledgeBaseController::class, 'update'])->name('update-knowledgeBase');
+Route::delete('/delete-knowledgeBase/{id}' , [App\Http\Controllers\KnowledgeBaseController::class, 'destroy'])->name('delete-knowledgeBase');

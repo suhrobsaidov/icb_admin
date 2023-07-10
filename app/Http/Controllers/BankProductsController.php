@@ -113,7 +113,7 @@ class BankProductsController extends Controller
     public function destroy(BankProducts $bankProducts, $id)
     {
         $bankProducts = BankProducts::find($id);
-        $destination = 'images/headers/'.$bankProducts->image;
+        $destination = 'images/bankProducts/'.$bankProducts->image;
         if(File::exists($destination)){
             File::delete($destination);
         }

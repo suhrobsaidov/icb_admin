@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BankLoans;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BankLoansController extends Controller
 {
@@ -14,7 +15,8 @@ class BankLoansController extends Controller
      */
     public function index()
     {
-        //
+        $bankLoans = BankLoans::all();
+        return view('admin.BankLoans.BankLoans', compact('bankLoans'));
     }
 
     /**
@@ -35,7 +37,28 @@ class BankLoansController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bankLoans = new BankLoans;
+        $bankLoans->title = $request->input('title');
+        $bankLoans->description = $request->input('description');
+        $bankLoans->link = $request->input('link');
+        $bankLoans->maintense = $request->input('maintense');
+        $bankLoans->security = $request->input('security');
+        $bankLoans->access = $request->input('access');
+        $bankLoans->commission = $request->input('commission');
+        $bankLoans->time = $request->input('time');
+        $bankLoans->money = $request->input('money');
+
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('images/bankLoans/', $filename);
+            $bankLoans->image = $filename;
+        }
+        $bankLoans->save();
+
+        return redirect()->back()->with('status','Offer Saved Successfully');
     }
 
     /**
@@ -55,9 +78,10 @@ class BankLoansController extends Controller
      * @param  \App\Models\BankLoans  $bankLoans
      * @return \Illuminate\Http\Response
      */
-    public function edit(BankLoans $bankLoans)
+    public function edit(BankLoans $bankLoans, $id)
     {
-        //
+        $bankLoans = BankLoans::find($id);
+        return view('edit-bankLoans', compact('bankLoans'));
     }
 
     /**
@@ -67,9 +91,33 @@ class BankLoansController extends Controller
      * @param  \App\Models\BankLoans  $bankLoans
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BankLoans $bankLoans)
+    public function update(Request $request, BankLoans $bankLoans, $id)
     {
-        //
+        $bankLoans = BankLoans::findOrFail($id);
+        $bankLoans->title = $request->input('title');
+        $bankLoans->description = $request->input('description');
+        $bankLoans->link = $request->input('link');
+        $bankLoans->maintense = $request->input('maintense');
+        $bankLoans->security = $request->input('security');
+        $bankLoans->access = $request->input('access');
+        $bankLoans->commission = $request->input('commission');
+        $bankLoans->time = $request->input('time');
+        $bankLoans->money = $request->input('money');
+
+        if($request->hasfile('image'))
+        {
+            $destination = 'images/bankLoans/'.$bankLoans->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('images/bankLoans/', $filename);
+            $bankLoans->image = $filename;
+        }
+        $bankLoans->update();
+        return redirect()->back()->with('status', 'Offer updated');
     }
 
     /**
@@ -78,8 +126,14 @@ class BankLoansController extends Controller
      * @param  \App\Models\BankLoans  $bankLoans
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BankLoans $bankLoans)
+    public function destroy(BankLoans $bankLoans, $id)
     {
-        //
+        $bankLoans = BankLoans::find($id);
+        $destination = 'images/bankLoans/'.$bankLoans->image;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+        $bankLoans->delete();
+        return redirect()->back()->with('status','Card Deleted Successfully');
     }
 }

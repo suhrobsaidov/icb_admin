@@ -120,6 +120,24 @@
                         <p>Deposit Cards</p>
                     </a>
                 </li>
+                <li class="{{ 'bankLoans' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/bankLoans">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Bank Loans</p>
+                    </a>
+                </li>
+                <li class="{{ 'remittances' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/remittances">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Remittance cards</p>
+                    </a>
+                </li>
+                <li class="{{ 'knowledgeBase' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/knowledgeBase">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Knowledge Base</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
