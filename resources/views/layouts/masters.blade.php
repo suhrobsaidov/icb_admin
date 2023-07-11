@@ -138,6 +138,12 @@
                         <p>Knowledge Base</p>
                     </a>
                 </li>
+                <li class="{{ 'onlineServices' == request()->path() ? 'active' : '' }}">
+                    <a href="./admin/onlineServices">
+                        <i class="now-ui-icons text_caps-small"></i>
+                        <p>Online Services</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

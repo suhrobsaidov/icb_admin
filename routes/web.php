@@ -205,3 +205,9 @@ Route::post('admin/save-knowledgeBase', [App\Http\Controllers\KnowledgeBaseContr
 Route::get('/edit-knowledgeBase/{id}', [App\Http\Controllers\KnowledgeBaseController::class, 'edit'])->name('edit-knowledgeBase');
 Route::put('/update-knowledgeBase/{id}', [App\Http\Controllers\KnowledgeBaseController::class, 'update'])->name('update-knowledgeBase');
 Route::delete('/delete-knowledgeBase/{id}' , [App\Http\Controllers\KnowledgeBaseController::class, 'destroy'])->name('delete-knowledgeBase');
+
+Route::get('/admin/onlineServices', [App\Http\Controllers\OnlineServicesController::class, 'index'])->name('onlineServices');
+Route::post('save-onlineServices', [App\Http\Controllers\OnlineServicesController::class, 'store'])->name('save-onlineServices');
+Route::get('/edit-onlineServices/{id}', [App\Http\Controllers\OnlineServicesController::class, 'edit'])->name('edit-onlineServices');
+Route::put('/update-onlineServices/{id}', [App\Http\Controllers\OnlineServicesController::class, 'update'])->name('update-onlineServices');
+Route::delete('/delete-onlineServices/{id}' , [App\Http\Controllers\OnlineServicesController::class, 'destroy'])->name('delete-onlineServices');

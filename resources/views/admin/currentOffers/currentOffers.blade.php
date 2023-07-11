@@ -1,7 +1,7 @@
 @extends('layouts.masters')
 
 @section('title')
-    Bank Services
+    Current Offers
 @endsection
 
 @section('content')
@@ -54,7 +54,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Cards
+                    <h4 class="card-title"> Current Offers
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
                         <a href="" class="btn float-right">ru</a>
                         <a href="" class="btn float-right">en</a>
@@ -112,7 +112,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="/edit-$currentOffers/{{ $currentOffer->id }}" class="btn btn-success">EDIT</a>
+                                        <a href="/edit-currentOffers/{{ $currentOffer->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
                                         <form action="/delete-currentOffers/{{ $currentOffer->id }}" method="post">

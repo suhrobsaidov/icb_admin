@@ -52,7 +52,7 @@ class HeaderController extends Controller
         $headers->language = $request->input('language');
         $headers->save();
 
-        return redirect()->back()->with('status','Запись добавлена');
+        return view('admin.header.header')->with('status','Запись добавлена');
 
 
     }
@@ -77,7 +77,7 @@ class HeaderController extends Controller
     public function edit(Header $header, $id)
     {
         $header = Header::find($id);
-        return view('edit-header', compact('header'));
+        return view('admin.header.edit-header', compact('header'));
     }
 
     /**
@@ -107,7 +107,7 @@ class HeaderController extends Controller
         $header->link = $request->input('link');
         $header->language = $request->input('language');
         $header->update();
-        return redirect()->back()->with('status', 'Header updated');
+        return view('admin.header.header')->with('status', 'Header updated');
     }
 
     /**

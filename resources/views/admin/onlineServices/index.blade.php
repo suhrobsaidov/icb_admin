@@ -1,7 +1,7 @@
 @extends('layouts.masters')
 
 @section('title')
-    Knowledge Base
+    Online Services
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="save-knowledgeBase" method="POST">
+                <form action="/save-onlineServices" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">
@@ -25,6 +25,14 @@
                                 <option value=”tj”>Тоҷикӣ</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" name="title" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Description:</label>
+                            <input type="text" name="description" class="form-control" id="recipient-name">
+                        </div>
                         <div class="input-group">
                             <div class="input-group">
                                 <div class="custom-file">
@@ -33,14 +41,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Link:</label>
-                            <input type="text" name="link" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="submit" class="btn btn-primary">Сохранить</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
                     </div>
                 </form>
             </div>
@@ -50,7 +54,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Knowledge Base
+                    <h4 class="card-title"> Online Services
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
                         <a href="" class="btn float-right">ru</a>
                         <a href="" class="btn float-right">en</a>
@@ -75,10 +79,13 @@
                                 ID
                             </th>
                             <th>
-                                image
+                                title
                             </th>
                             <th>
-                                link
+                                description
+                            </th>
+                            <th>
+                                image
                             </th>
                             <th>
                                 Ред.
@@ -89,22 +96,26 @@
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($knowledgeBase as $base)
+                            @foreach($onlineServices as $service)
                                 <tr>
                                     <td>
-                                        {{ $base->id }}
+                                        {{ $service->id }}
                                     </td>
                                     <td>
-                                        <img src="{{asset('images/knowledgeBase/'.$base->image)}}" width="70px" height="70px" alt="Image">
+                                        {{ $service->title }}
                                     </td>
                                     <td>
-                                        {{ $base->link }}
+                                        {{ $service->description }}
                                     </td>
                                     <td>
-                                        <a href="/edit-knowledgeBase/{{ $base->id }}" class="btn btn-success">EDIT</a>
+                                        <img src="{{asset('images/onlineServices/'.$service->image)}}" width="70px" height="70px" alt="Image">
+                                    </td>
+
+                                    <td>
+                                        <a href="/edit-onlineServices/{{ $service->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        <form action="/delete-knowledgeBase/{{ $base->id }}" method="post">
+                                        <form action="/delete-onlineServices/{{ $service->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>
@@ -129,4 +140,6 @@
 @section('scripts')
 
 @endsection
+
+
 
