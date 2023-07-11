@@ -76,7 +76,7 @@ class BankServiceController extends Controller
     public function edit(BankService $bankService, $id)
     {
         $bankService = BankService::find($id);
-        return view('edit-bankService', compact('bankService'));
+        return view('admin.bankServices.edit', compact('bankService'));
     }
 
     /**
@@ -107,7 +107,7 @@ class BankServiceController extends Controller
             $bankService->link = $request->input('link');
             $bankService->language = $request->input('language');
             $bankService->update();
-            return redirect()->back()->with('status','Bank Service Update Successfully');
+            return view('admin.bankServices.bankServices')->with('status','Bank Service Update Successfully');
     }
 
     /**

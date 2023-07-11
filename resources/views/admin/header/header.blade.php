@@ -15,7 +15,7 @@
                     </button>
                 </div>
                 <form action="/admin/header" method="POST">
-                    {{ csrf_field() }}
+                    @csrf
 
                     <div class="modal-body">
                         <div>
@@ -41,7 +41,7 @@
                                <div class="input-group">
                                    <div class="custom-file">
                                        <input type="file" name="image" class="custom-file-input" id="recipient-name">
-                                       <label for="recipient-name" class="custom-file-label">Image:</label>
+                                       <label for="" class="custom-file-label">Image</label>
                                    </div>
                                </div>
                         </div>

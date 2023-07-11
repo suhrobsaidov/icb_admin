@@ -76,7 +76,7 @@ class CardController extends Controller
     public function edit(card $card, $id)
     {
         $card = card::find($id);
-        return view('edit-card', compact('card'));
+        return view('admin.card.card-edit', compact('card'));
     }
 
     /**
@@ -107,7 +107,7 @@ class CardController extends Controller
                 $card->link = $request->input('link');
                 $card->language = $request->input('language');
                 $card->update();
-        return redirect()->back()->with('status','Card Saved Successfully');
+        return view('admin.card.card')->with('status','Card Saved Successfully');
     }
 
     /**

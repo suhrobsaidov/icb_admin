@@ -71,7 +71,7 @@ class KnowledgeBaseController extends Controller
     public function edit(KnowledgeBase $knowledgeBase, $id)
     {
         $knowledgeBase = KnowledgeBase::find($id);
-        return view('edit-knowledgeBase', compact('knowledgeBase'));
+        return view('admin.knowledgeBase.edit', compact('knowledgeBase'));
     }
 
     /**
@@ -97,7 +97,7 @@ class KnowledgeBaseController extends Controller
             $knowledgeBase->image = $filename;
         }
         $knowledgeBase->update();
-        return redirect()->back()->with('status', 'Header updated');
+        return view('admin.knowledgeBase.index')->with('status', 'Header updated');
     }
 
     /**

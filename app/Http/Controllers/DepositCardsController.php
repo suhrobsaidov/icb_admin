@@ -81,7 +81,7 @@ class DepositCardsController extends Controller
     public function edit(DepositCards $depositCards, $id)
     {
         $depositCards = DepositCards::find($id);
-        return view('edit-depositCards', compact('depositCards'));
+        return view('admin.DepositCards.edit', compact('depositCards'));
     }
 
     /**
@@ -117,7 +117,7 @@ class DepositCardsController extends Controller
             $depositCards->image = $filename;
         }
         $depositCards->update();
-        return redirect()->back()->with('status', 'Offer updated');
+        return view('admin.DepositCards.DepositCards')->with('status', 'Offer updated');
     }
 
     /**

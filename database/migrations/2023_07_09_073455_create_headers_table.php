@@ -18,7 +18,7 @@ class CreateHeadersTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('page');
-            $table->mediumtext('image')->nullable();
+            $table->string('image');
             $table->string('link');
             $table->string('language');
             $table->timestamps();

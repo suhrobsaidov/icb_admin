@@ -81,7 +81,7 @@ class BankLoansController extends Controller
     public function edit(BankLoans $bankLoans, $id)
     {
         $bankLoans = BankLoans::find($id);
-        return view('edit-bankLoans', compact('bankLoans'));
+        return view('admin.BankLoans.edit', compact('bankLoans'));
     }
 
     /**
@@ -117,7 +117,7 @@ class BankLoansController extends Controller
             $bankLoans->image = $filename;
         }
         $bankLoans->update();
-        return redirect()->back()->with('status', 'Offer updated');
+        return view('admin.BankLoans.BankLoans')->with('status', 'Offer updated');
     }
 
     /**

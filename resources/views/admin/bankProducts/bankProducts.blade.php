@@ -102,10 +102,10 @@
                                     </td>
 
                                     <td>
-                                        <a href="/edit-bankProduct/{{ $bankProduct->id }}" class="btn btn-success">EDIT</a>
+                                        <a href="/edit-bankProducts/{{ $bankProduct->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        <form action="/delete-bankProduct/{{ $bankService->id }}" method="post">
+                                        <form action="/delete-bankProducts/{{ $bankProduct->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>

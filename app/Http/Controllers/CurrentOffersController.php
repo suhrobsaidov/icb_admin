@@ -75,7 +75,7 @@ class CurrentOffersController extends Controller
     public function edit(CurrentOffers $currentOffers, $id)
     {
         $currentOffers = CurrentOffers::find($id);
-        return view('edit-currentOffers', compact('currentOffers'));
+        return view('admin.currentOffers.edit', compact('currentOffers'));
     }
 
     /**
@@ -104,7 +104,7 @@ class CurrentOffersController extends Controller
             $currentOffers->image = $filename;
         }
         $currentOffers->update();
-        return redirect()->back()->with('status', 'Offer updated');
+        return view('admin.currentOffers.currentOffers')->with('status', 'Offer updated');
     }
 
     /**

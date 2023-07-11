@@ -73,7 +73,7 @@ class BankProductsController extends Controller
     public function edit(BankProducts $bankProducts, $id)
     {
         $bankProducts = BankProducts::find($id);
-        return view('edit-bankProducts', compact('bankProducts'));
+        return view('admin.bankProducts.edit', compact('bankProducts'));
     }
 
     /**
@@ -101,7 +101,7 @@ class BankProductsController extends Controller
             $bankProducts->image = $filename;
         }
         $bankProducts->update();
-        return redirect()->back()->with('status', 'Product updated');
+        return view('admin.bankProducts.bankProducts')->with('status', 'Product updated');
     }
 
     /**

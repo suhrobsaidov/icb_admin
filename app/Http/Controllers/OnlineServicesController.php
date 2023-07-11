@@ -74,7 +74,7 @@ class OnlineServicesController extends Controller
     public function edit(OnlineServices $onlineServices, $id)
     {
         $onlineServices = OnlineServices::find($id);
-        return view('edit-onlineServices', compact('onlineServices'));
+        return view('admin.onlineServices.edit', compact('onlineServices'));
     }
 
     /**
@@ -103,7 +103,7 @@ class OnlineServicesController extends Controller
             $onlineServices->image = $filename;
         }
         $onlineServices->update();
-        return redirect()->back()->with('status', 'Offer updated');
+        return view('admin.onlineServices.index')->with('status', 'Offer updated');
     }
 
     /**

@@ -48,7 +48,7 @@
                                         <input type="text" name="language" value="{{ $header->language }}" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-success">Update</button>
-                                    <a href="#" class="btn btn-danger">Cancel</a>
+                                    <a href="../admin/header" class="btn btn-danger">Cancel</a>
                                 </form>
                             </div>
                         </div>

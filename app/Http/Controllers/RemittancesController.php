@@ -72,7 +72,7 @@ class RemittancesController extends Controller
     public function edit(Remittances $remittances, $id)
     {
         $remittances = Remittances::find($id);
-        return view('edit-remittances', compact('remittances'));
+        return view('admin.remittances.edit', compact('remittances'));
     }
 
     /**
@@ -99,7 +99,7 @@ class RemittancesController extends Controller
             $remittances->image = $filename;
         }
         $remittances->update();
-        return redirect()->back()->with('status', 'Header updated');
+        return view('admin.remittances.index')->with('status', 'Header updated');
     }
 
     /**

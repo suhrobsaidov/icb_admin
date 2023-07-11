@@ -68,7 +68,7 @@ class FAQController extends Controller
     public function edit(FAQ $fAQ, $id)
     {
         $fAQ = FAQ::find($id);
-        return view('edit-fAQ', compact('fAQ'));
+        return view('admin.fAQ.edit', compact('fAQ'));
     }
 
     /**
@@ -87,7 +87,7 @@ class FAQController extends Controller
         $fAQ->link = $request->input('link');
         $fAQ->language = $request->input('language');
         $fAQ->update();
-        return redirect()->back()->with('status','FAQ Saved Successfully');
+        return view('admin.fAQ.fAQ')->with('status','FAQ Saved Successfully');
     }
 
     /**
