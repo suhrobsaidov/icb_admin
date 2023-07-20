@@ -42,12 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', () => {
 
   ratesCardSelection.addEventListener('change', () => {
-    if (ratesCardSelection.value === 'Курсы валют в НБТ') {
+    if (ratesCardSelection.value === 'Exchange rate in NBT') {
       firstTable.style.display = 'none';
-      secondTable.style.display = 'flex';
-    } else if (ratesCardSelection.value === 'Курсы валют в интернет - банкинге') {
-      firstTable.style.display = 'flex';
+      secondTable.style.display = 'block';
+    } else if (ratesCardSelection.value === 'Exchange rate in internet banking') {
+      firstTable.style.display = 'block';
       secondTable.style.display = 'none';
     }
   });
 });
+
+
