@@ -185,7 +185,8 @@
     </div>
 </div> -->
 
-<script src="./scripts/app.js"></script>
+<!-- <script src="./scripts/app.js"></script> -->
+<script src="./js/cities/app.js"></script>
 </body>
 </html>
 @endsection

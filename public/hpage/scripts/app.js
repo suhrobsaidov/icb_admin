@@ -14,6 +14,7 @@ function showSlides() {
   }
   slides[slideIndex - 1].style.display = "flex";
   mySlides[slideIndex - 1].style.background = "white";
+  
   setTimeout(showSlides, 3500);
 }
 

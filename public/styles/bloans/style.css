@@ -309,7 +309,7 @@ a{
 	position: absolute;
 	width: 100%;
   	appearance: none;
-  	background: #DB0011;
+
   	height: 5px;
 }
 
@@ -930,3 +930,5 @@ footer{
 .mobile-menu{
 	display: none;
 }
+
+
