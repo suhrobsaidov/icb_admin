@@ -14,7 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/admin/header" method="POST">
+                <form action="admin/header" method="POST">
                     @csrf
 
                     <div class="modal-body">
@@ -37,13 +37,11 @@
                             <label for="recipient-name" class="col-form-label">Page:</label>
                             <input type="text" name="page" class="form-control" id="recipient-name">
                         </div>
-                        <div class="input-group">
-                               <div class="input-group">
+                        <div class="form-group">
                                    <div class="custom-file">
                                        <input type="file" name="image" class="custom-file-input" id="recipient-name">
-                                       <label for="" class="custom-file-label">Image</label>
+                                       <label for="image" class="custom-file-label">Image</label>
                                    </div>
-                               </div>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Link:</label>

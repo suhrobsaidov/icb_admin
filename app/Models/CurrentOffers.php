@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CurrentOffers extends Model
 {
-    protected $filliable = ['title', 'description','image'];
+    protected $fillable = ['title', 'description','image'];
 }

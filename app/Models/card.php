@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class card extends Model
 {
-    protected $filliable = ['title', 'description', 'page', 'image', 'link', 'language'];
+    protected $fillable = ['title', 'description', 'page', 'image', 'link', 'language'];
 }
