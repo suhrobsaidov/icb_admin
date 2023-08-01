@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child deposit</title>
+    <link rel="stylesheet" href="./styles/rotateslider/style.css">
     <link rel="stylesheet" href="./styles/child/style.css">
     <link rel="stylesheet" href="./styles/child/tablet/style-tablet.css">
     <link rel="stylesheet" href="./styles/child/mobile/style-mobile.css">
@@ -123,7 +124,7 @@
                 <p>Сумма депозита</p>
                 <div class="range-slider">
                     <p class="slider-number" id="sliderNumber">0</p>
-                    <input required type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+                    <input required type="range" min="1" max="1000000" value="0" class="slider styled-slider slider-progress" id="myRange">
                 </div>
                 <div class="range-numbers">
                     <p>1000</p>

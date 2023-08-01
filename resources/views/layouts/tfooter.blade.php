@@ -85,6 +85,7 @@
         background: #DB0011;
         width: 100%;
         color: #FFFFFF;
+    
     }
 
 

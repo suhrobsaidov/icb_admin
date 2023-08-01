@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express credit</title>
+    <title>Express credit</title>   
+    <link rel="stylesheet" href="./styles/rotateslider/style.css">
     <link rel="stylesheet" href="./styles/expcredit/style.css">
     <link rel="stylesheet" href="./styles/expcredit/tablet/style-tablet.css">
     <link rel="stylesheet" href="./styles/expcredit/mobile/style-mobile.css">
@@ -136,7 +137,7 @@
                     <p>Loan amount</p>
                     <div class="range-slider">
                         <p class="slider-number" id="sliderNumber">0</p>
-                        <input required type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+                        <input required type="range" min="1" max="1000000" value="0" class="slider styled-slider slider-progress" id="myRange">
                     </div>
                     <div class="range-numbers">
                         <p>1000</p>
@@ -148,7 +149,7 @@
                     <p>Loan term</p>
                     <div class="range-slider">
                         <p class="slider-number" id="sliderNumber">0</p>
-                        <input required type="range" min="1" max="1000000" value="0" class="slider" id="myRange">
+                        <input required type="range" min="1" max="1000000" value="0" class="slider styled-slider slider-progress" id="myRange">
                     </div>
                     <div class="range-numbers">
                         <p>1000</p>

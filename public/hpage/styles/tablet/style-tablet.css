@@ -97,7 +97,7 @@
 	}
 	
 	.cards > div{
-		width: 214px;
+/*		width: 214px;*/
 		height: 97px;
 		padding: 15px;
 		border-radius: 5px;	
@@ -121,7 +121,7 @@
 
 
 	.product-card div{
-		width: 162px;
+		width: -webkit-fill-available;
 		height: 133px;
 	}
 	.product-card div img{
@@ -130,6 +130,7 @@
 	}
 	.product-card{
 		justify-content: start;
+		overflow-x: scroll;
 	}
 
 
@@ -167,7 +168,7 @@
 
 	/*calculator*/
 	.calc-card{
-		justify-content: start;
+		justify-content: space-between;
 		gap: 10px;
 	}
 	.calculators > h1{
@@ -177,7 +178,7 @@
 	}
 	.calc-card > div{
 		padding: 15px;
-		width: 186px;
+		width: -webkit-fill-available;
 		height: 132px;
 	}
 	.calc-card > div p{
@@ -228,6 +229,9 @@
 	.rates-card-table tbody{
 		gap: 2px;
 	}
+	.rates-card-table table{
+		width: -webkit-fill-available;
+	}
 	.rates-card-table table tr{
 		display: flex;
 		justify-content: space-around;
@@ -269,10 +273,13 @@
 		font-size: 16px;
 		line-height: 20px;
 	}
+
 	.resul-card-forms{
 		margin-top: 17px;
 	}
-
+	.resul-card-forms form{
+		display: flex;
+	}
 	.resul-card-selection{
 		font-weight: 600;
 		font-size: 12px;
@@ -337,9 +344,12 @@
 
 	/*current-offers*/
 	.curr-off-card{
-		justify-content: start;
+		justify-content: space-between;
 		gap: 10px;
 		margin: 5px;
+	}
+	.current-offers-cards{
+		overflow-x: scroll;
 	}
 	.current-offers > h1{
 		font-size: 20px;
@@ -348,7 +358,7 @@
 	}
 
 	.curr-off-card div{
-		width: 162px;
+/*		width: 162px;*/
 		height: 135px;
 		padding: 15px;
 		gap: 1px;
@@ -378,6 +388,10 @@
 	}
 	.bank-services-cards{
 		margin: 10px;
+	}
+	.services-card{
+		overflow-x: scroll;
+
 	}
 	.bank-services-cards img{
 		margin-bottom: 8px;
