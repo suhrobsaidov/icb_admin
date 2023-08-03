@@ -41,6 +41,8 @@ class HeaderController extends Controller
         $headers->title = $request->input('title');
         $headers->description = $request->input('description');
         $headers->page = $request->input('page');
+        $headers->link = $request->input('link');
+        $headers->language = $request->input('language');
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
@@ -48,11 +50,9 @@ class HeaderController extends Controller
             $file->move('images/headers/', $filename);
             $headers->image = $filename;
         }
-        $headers->link = $request->input('link');
-        $headers->language = $request->input('language');
         $headers->save();
 
-        return redirect()->back()->with('status','Запись добавлена');
+        return view('admin.header.header') -> with('status' , 'Запись добавлена');
 
 
     }
