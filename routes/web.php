@@ -146,12 +146,13 @@ Route::apiResource('remitance' , 'RemitanceController');
 Route::apiResource('products' , 'ProductsController');
 
 //for admin
+
 Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');
+
 Route::post('/admin/header', [App\Http\Controllers\HeaderController::class, 'store']);
 Route::get('/edit-header/{id}', [App\Http\Controllers\HeaderController::class, 'edit'])->name('edit-header');
 Route::put('/update-header/{id}', [App\Http\Controllers\HeaderController::class, 'update'])->name('update-header');
 Route::delete('/delete-header/{id}' , [App\Http\Controllers\HeaderController::class, 'destroy'])->name('delete-header');
-
 Route::get('/admin/card', [App\Http\Controllers\CardController::class, 'index'])->name('card');
 Route::post('/save-card', [App\Http\Controllers\CardController::class, 'store'])->name('save-card');
 Route::get('/edit-card/{id}', [App\Http\Controllers\CardController::class, 'edit'])->name('edit-card');
