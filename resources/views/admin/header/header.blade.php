@@ -1,4 +1,4 @@
-@extends('layouts.masters')
+@extends('layouts.master')
 
 @section('title')
     Header

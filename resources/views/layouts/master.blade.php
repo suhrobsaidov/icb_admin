@@ -93,6 +93,8 @@
         <b>Dashboard</b>
     </span>
         </a>
+
+
         <div class="sidebar">
             <nav class="pt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column "
@@ -113,11 +115,10 @@
                     </li>
                     <li  class="nav-item">
                         <a class="nav-link  "
-                           href="http://127.0.0.1:8000/admin/pages">
+                           href="http://127.0.0.1:8000/api/admin/header">
                             <i class="far fa-fw fa-file "></i>
                             <p>
-                                Pages
-                                <span class="badge badge-success right">4</span>
+                                Header
                             </p>
                         </a>
                     </li>
@@ -127,7 +128,7 @@
                     <li  class="nav-item">
 
                         <a class="nav-link  "
-                           href="http://127.0.0.1:8000/admin/settings"        >
+                           href="http://127.0.0.1:8000/admin/settings">
 
                             <i class="fas fa-fw fa-user "></i>
 
