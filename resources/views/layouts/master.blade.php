@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,7 +152,7 @@
                            href="" >
                             <i class="fas fa-fw fa-share "></i>
                             <p>
-                                Multi Level
+                               Page
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -163,65 +162,358 @@
                                    href="#"        >
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Level 1
+                                        Home Page
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item has-treeview ">
-                                <a class="nav-link  "
-                                   href="" >
-                                    <i class="far fa-fw fa-circle "></i>
-                                    <p>
-                                        Level 1
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li  class="nav-item">
-                                        <a class="nav-link  "
-                                           href="#"        >
-                                            <i class="far fa-fw fa-circle "></i>
-                                            <p>Level 2</p>
-                                        </a>
-                                    </li>
-                                    <li  class="nav-item has-treeview ">
-                                        <a class="nav-link  "
-                                           href="" >
-                                            <i class="far fa-fw fa-circle "></i>
-                                            <p>
-                                                Level 2
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
-                                        <ul class="nav nav-treeview">
-                                            <li  class="nav-item">
-                                                <a class="nav-link" href="#">
-                                                    <i class="far fa-fw fa-circle "></i>
-                                                    <p>
-                                                        Level 3
-
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li  class="nav-item">
-                                                <a class="nav-link  "
-                                                   href="#"        >
-                                                    <i class="far fa-fw fa-circle "></i>
-                                                    <p>
-                                                        Level 3
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "
                                    href="#"        >
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Level 1
+                                        Deposits
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Bank Loans
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Bank Cards
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Remittances
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Buying and selling currency
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Loans calculators
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Deposit calculators
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Payroll Services
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Knowledge base
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Online Services
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Result search
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Business loan
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Mortgage loan
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Consumer loans
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Express credit
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Auto loans
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Agriculture loan
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Loan product “Donish”
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Savings Account
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Term deposits
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Deposit “Easy”
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Child deposit
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        ‘Diyor’ Deposit
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        “Housing” deposit
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        About bank- 2
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        About bank- shareholders
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        About bank- Financial statements
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        About bank- Financial statements 2
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Compliance
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Контакты
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        FAQ
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Новости - 1
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Новости - подробнее
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Vacancy - 1
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Vacancy - 2
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Филиалы (на карте)
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Филиалы (список)
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Банкоматы (на карте)
+                                    </p>
+                                </a>
+                            </li>
+                            <li  class="nav-item">
+                                <a class="nav-link  "
+                                   href="#"        >
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Банкоматы (список )
                                     </p>
                                 </a>
                             </li>
