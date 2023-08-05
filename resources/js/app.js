@@ -5,9 +5,23 @@
  */
 
 require('./bootstrap');
-const Vue = require("vue");
+// const Vue = require("vue");
 
-window.Vue = require('vue');
+
+
+window.Vue = require("vue").default;
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+let routes = [
+    { path: '/dashboard', component: require('./components/DashboardComponent.vue') },
+]
+
+const router = new vueRouter({
+    routes // short for 'routes: routes'
+})
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,4 +44,5 @@ Vue.Component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router
 });

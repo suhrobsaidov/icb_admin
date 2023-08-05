@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="dBuRiiC1VClxRHpNN53FWKygOjSW30KcMKdutBp0">
     <title>Dashboard</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="sidebar-mini" >
-<div class="wrapper">
+<div class="wrapper" id="app">
     <div class="preloader flex-column justify-content-center align-items-center">
         <img src="http://127.0.0.1:8000/vendor/adminlte/dist/img/AdminLTELogo.png"
              class="animation__shake"
@@ -82,8 +83,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
 
-        <a href="http://127.0.0.1:8000/home"
-           class="brand-link ">
+        <router-link href="http://127.0.0.1:8000/home"
+           class="brand-link " to>
             <img src="http://127.0.0.1:8000/vendor/adminlte/dist/img/AdminLTELogo.png"
                  alt="Admin Logo"
                  class="brand-image img-circle elevation-3"
@@ -91,7 +92,7 @@
             <span class="brand-text font-weight-light ">
         <b>Dashboard</b>
     </span>
-        </a>
+        </router-link>
 
 
         <div class="sidebar">
@@ -125,22 +126,16 @@
                         ACCOUNT SETTINGS
                     </li>
                     <li  class="nav-item">
-
-                        <a class="nav-link  "
-                           href="http://127.0.0.1:8000/admin/settings">
-
+                        <router-link to="/dashboard" class="nav-link">
                             <i class="fas fa-fw fa-user "></i>
-
                             <p>
-                                Profile
-
+                                Dashboard
                             </p>
-
-                        </a>
+                        </router-link>
                     </li>
                     <li  class="nav-item">
                         <a class="nav-link  "
-                           href="http://127.0.0.1:8000/admin/settings"        >
+                           href="http://127.0.0.1:8000/admin/settings">
                             <i class="fas fa-fw fa-lock "></i>
                             <p>
                                 Change Password
@@ -561,7 +556,7 @@
         </div>
         <div class="content">
             <div class="container-fluid">
-                <p>Welcome to this beautiful admin panel.</p>
+                <router-view></router-view>
             </div>
         </div>
     </div>

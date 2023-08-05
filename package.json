@@ -20,12 +20,15 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.64.2",
         "sass-loader": "^8.0.0",
-        "vue": "^2.5.17",
+        "vue": "^2.7.14",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.4.2",
-        "admin-lte": "^3.2.0"
+        "admin-lte": "^3.2.0",
+        "vue-async-data": "^1.0.2",
+        "vue-resource": "^1.5.3",
+        "vue-router": "^2.7.14"
     }
 }
