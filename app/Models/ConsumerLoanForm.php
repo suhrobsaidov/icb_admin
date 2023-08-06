@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LoansCalculatorForm extends Model
+class ConsumerLoanForm extends Model
 {
     protected $fillable = [
         'surname',
@@ -28,5 +28,5 @@ class LoansCalculatorForm extends Model
         'photo',
         'passport',
         'other_documents'
-        ];
+    ];
 }

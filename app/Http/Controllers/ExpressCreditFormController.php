@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LoansCalculatorForm;
+use App\Models\ExpressCreditForm;
 use Illuminate\Http\Request;
 
-class LoansCalculatorFormController extends Controller
+class ExpressCreditFormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class LoansCalculatorFormController extends Controller
      */
     public function index()
     {
-        $form = LoansCalculatorForm::all();
+        $form = ExpressCreditForm::all();
         return response($form);
     }
 
@@ -36,7 +36,7 @@ class LoansCalculatorFormController extends Controller
      */
     public function store(Request $request)
     {
-        $form = new LoansCalculatorForm();
+        $form = new ExpressCreditForm();
         $form->surname = $request->input('surname');
         $form->name = $request->input('name');
         $form->middle_name = $request->input('middle_name');
@@ -60,7 +60,7 @@ class LoansCalculatorFormController extends Controller
             $file = $request->file('photo');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $file->move('images/loansCalculator/', $filename);
+            $file->move('images/ExpressCredit/', $filename);
             $form->photo = $filename;
         }
         if($request->hasfile('passport'))
@@ -68,7 +68,7 @@ class LoansCalculatorFormController extends Controller
             $file = $request->file('passport');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $file->move('images/loansCalculator/', $filename);
+            $file->move('images/ExpressCredit/', $filename);
             $form->passport = $filename;
         }
         if($request->hasfile('other_documents'))
@@ -76,7 +76,7 @@ class LoansCalculatorFormController extends Controller
             $file = $request->file('other_documents');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $file->move('images/loansCalculator/', $filename);
+            $file->move('images/ExpressCredit/', $filename);
             $form->other_documents = $filename;
         }
         $form->save();
@@ -86,10 +86,10 @@ class LoansCalculatorFormController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LoansCalculatorForm  $loansCalculatorForm
+     * @param  \App\Models\ExpressCreditForm  $expressCreditForm
      * @return \Illuminate\Http\Response
      */
-    public function show(LoansCalculatorForm $loansCalculatorForm)
+    public function show(ExpressCreditForm $expressCreditForm)
     {
         //
     }
@@ -97,10 +97,10 @@ class LoansCalculatorFormController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LoansCalculatorForm  $loansCalculatorForm
+     * @param  \App\Models\ExpressCreditForm  $expressCreditForm
      * @return \Illuminate\Http\Response
      */
-    public function edit(LoansCalculatorForm $loansCalculatorForm)
+    public function edit(ExpressCreditForm $expressCreditForm)
     {
         //
     }
@@ -109,10 +109,10 @@ class LoansCalculatorFormController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LoansCalculatorForm  $loansCalculatorForm
+     * @param  \App\Models\ExpressCreditForm  $expressCreditForm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LoansCalculatorForm $loansCalculatorForm)
+    public function update(Request $request, ExpressCreditForm $expressCreditForm)
     {
         //
     }
@@ -120,10 +120,10 @@ class LoansCalculatorFormController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LoansCalculatorForm  $loansCalculatorForm
+     * @param  \App\Models\ExpressCreditForm  $expressCreditForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LoansCalculatorForm $loansCalculatorForm)
+    public function destroy(ExpressCreditForm $expressCreditForm)
     {
         //
     }

@@ -94,3 +94,42 @@ Route::post('save-depositCalculatorForm', [App\Http\Controllers\DepositCalculato
 Route::get('payrollServicesForm', [App\Http\Controllers\PayrollServicesFormController::class, 'index']);
 Route::post('save-payrollServicesForm', [App\Http\Controllers\PayrollServicesFormController::class, 'store']);
 
+Route::get('businessLoanForm', [App\Http\Controllers\BusinessLoanFormController::class, 'index']);
+Route::post('save-businessLoanForm', [App\Http\Controllers\BusinessLoanFormController::class, 'store']);
+
+Route::get('mortgageLoanForm', [App\Http\Controllers\MortgageLoanFormController::class, 'index']);
+Route::post('save-mortgageLoanForm', [App\Http\Controllers\MortgageLoanFormController::class, 'store']);
+
+Route::get('consumerLoanForm', [App\Http\Controllers\ConsumerLoanFormController::class, 'index']);
+Route::post('save-consumerLoanForm', [App\Http\Controllers\ConsumerLoanFormController::class, 'store']);
+
+Route::get('expressCreditForm', [App\Http\Controllers\ExpressCreditFormController::class, 'index']);
+Route::post('save-expressCreditForm', [App\Http\Controllers\ExpressCreditFormController::class, 'store']);
+
+Route::get('autoLoanForm', [App\Http\Controllers\AutoLoanFormController::class, 'index']);
+Route::post('save-autoLoanForm', [App\Http\Controllers\AutoLoanFormController::class, 'store']);
+
+Route::get('agricultureLoanForm', [App\Http\Controllers\AgricultureLoanFormController::class, 'index']);
+Route::post('save-agricultureLoanForm', [App\Http\Controllers\AgricultureLoanFormController::class, 'store']);
+
+Route::get('loanProductDonishForm', [App\Http\Controllers\LoanProductDonishFormController::class, 'index']);
+Route::post('save-loanProductDonishForm', [App\Http\Controllers\LoanProductDonishFormController::class, 'store']);
+
+Route::get('savingAccountForm', [App\Http\Controllers\SavingAccountFormController::class, 'index']);
+Route::post('save-savingAccountForm', [App\Http\Controllers\SavingAccountFormController::class, 'store']);
+
+Route::get('termDepositsForm', [App\Http\Controllers\TermDepositsFormController::class, 'index']);
+Route::get('save-termDepositsForm', [App\Http\Controllers\TermDepositsFormController::class, 'store']);
+
+Route::get('depositEasyForm', [App\Http\Controllers\DepositEasyFormController::class, 'index']);
+Route::get('save-termDepositsForm', [App\Http\Controllers\DepositEasyFormController::class, 'store']);
+
+Route::get('childDepositForm', [App\Http\Controllers\ChildDepositFormController::class, 'index']);
+Route::post('save-childDepositForm',[App\Http\Controllers\ChildDepositFormController::class, 'store']);
+
+Route::get('diyorDepositForm', [App\Http\Controllers\DiyorDepositFormController::class, 'index']);
+Route::post('save-diyorDepositForm', [App\Http\Controllers\DiyorDepositFormController::class, 'store']);
+
+Route::get('housingDepositForm', [App\Http\Controllers\HousingDepositFormController::class, 'index']);
+Route::post('save-housingDepositForm', [App\Http\Controllers\HousingDepositFormController::class, 'store']);
+

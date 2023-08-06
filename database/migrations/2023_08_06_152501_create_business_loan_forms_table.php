@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoansCalculatorFormsTable extends Migration
+class CreateBusinessLoanFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLoansCalculatorFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('loans_calculator_forms', function (Blueprint $table) {
+        Schema::create('business_loan_forms', function (Blueprint $table) {
             $table->id();
             $table->string('surname');
             $table->string('name');
@@ -47,6 +47,6 @@ class CreateLoansCalculatorFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loans_calculator_forms');
+        Schema::dropIfExists('business_loan_forms');
     }
 }
