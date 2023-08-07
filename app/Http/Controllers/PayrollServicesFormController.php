@@ -44,7 +44,7 @@ class PayrollServicesFormController extends Controller
         $form->phone_number = $request->input('phone_number');
         $form->city_district = $request->input('city_district');
         $form->save();
-        return response('nice' , 200);
+        return response('stored' , 200);
     }
 
     /**
@@ -76,9 +76,17 @@ class PayrollServicesFormController extends Controller
      * @param  \App\Models\PayrollServicesForm  $payrollServicesForm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PayrollServicesForm $payrollServicesForm)
+    public function update(Request $request, PayrollServicesForm $payrollServicesForm, $id)
     {
-        //
+        $form = PayrollServicesForm::findOrFail($id);
+        $form->surname = $request->input('surname');
+        $form->name = $request->input('name');
+        $form->middle_name = $request->input('middle_name');
+        $form->e_mail = $request->input('e_mail');
+        $form->phone_number = $request->input('phone_number');
+        $form->city_district = $request->input('city_district');
+        $form->update();
+        return response('updated' , 200);
     }
 
     /**
@@ -87,8 +95,10 @@ class PayrollServicesFormController extends Controller
      * @param  \App\Models\PayrollServicesForm  $payrollServicesForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PayrollServicesForm $payrollServicesForm)
+    public function destroy(PayrollServicesForm $payrollServicesForm, $id)
     {
-        //
+        $form = PayrollServicesForm::find($id);
+        $form->delete();
+        return response('deleted', 200);
     }
 }

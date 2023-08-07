@@ -78,7 +78,15 @@ class DiyorDepositFormController extends Controller
      */
     public function update(Request $request, DiyorDepositForm $diyorDepositForm)
     {
-        //
+        $form = DiyorDepositForm::findOrFail();
+        $form->surname = $request->input('surname');
+        $form->name = $request->input('name');
+        $form->middle_name = $request->input('middle_name');
+        $form->e_mail = $request->input('e_mail');
+        $form->phone_number = $request->input('phone_number');
+        $form->additional_phone_number = $request->input('additional_phone_number');
+        $form->update();
+        return response('nice' , 200);
     }
 
     /**
@@ -87,8 +95,10 @@ class DiyorDepositFormController extends Controller
      * @param  \App\Models\DiyorDepositForm  $diyorDepositForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DiyorDepositForm $diyorDepositForm)
+    public function destroy(DiyorDepositForm $diyorDepositForm, $id)
     {
-        //
+        $form = DiyorDepositForm::find($id);
+        $form->delete();
+        return response('delete', 200);
     }
 }

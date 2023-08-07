@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MortgageLoanForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class MortgageLoanFormController extends Controller
 {
@@ -112,9 +113,62 @@ class MortgageLoanFormController extends Controller
      * @param  \App\Models\MortgageLoanForm  $mortgageLoanForm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MortgageLoanForm $mortgageLoanForm)
+    public function update(Request $request, MortgageLoanForm $mortgageLoanForm, $id)
     {
-        //
+        $form = MortgageLoanForm::findOrFail($id);
+        $form->surname = $request->input('surname');
+        $form->name = $request->input('name');
+        $form->middle_name = $request->input('middle_name');
+        $form->e_mail = $request->input('e_mail');
+        $form->phone_number = $request->input('phone_number');
+        $form->additional_phone_number = $request->input('additional_phone_number');
+        $form->loan_product = $request->input('loan_product');
+        $form->loan_currency = $request->input('loan_currency');
+        $form->loan_amount = $request->input('loan_amount');
+        $form->loan_term = $request->input('loan_term');
+        $form->loan_purpose = $request->input('loan_purpose');
+        $form->occupation = $request->input('occupation');
+        $form->city_district = $request->input('city_district');
+        $form->region = $request->input('region');
+        $form->address_where_registered = $request->input('address_where_registered');
+        $form->monthly_family_income = $request->input('monthly_family_income');
+        $form->branch = $request->input('branch');
+        $form->phone_number_for = $request->input('phone_number_for');
+        if ($request->hasfile('photo')) {
+            $destination = 'images/MortgageLoan/' . $form->photo;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/MortgageLoan/', $filename);
+            $form->photo = $filename;
+        }
+        if ($request->hasfile('passport')) {
+            $destination = 'images/MortgageLoan/' . $form->passport;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('passport');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/MortgageLoan/', $filename);
+            $form->passport = $filename;
+        }
+        if ($request->hasfile('other_documents')) {
+            $destination = 'images/MortgageLoan/' . $form->other_documents;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('other_documents');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/MortgageLoan/', $filename);
+            $form->other_documents = $filename;
+        }
+        $form->update();
+        return response('update' , 200);
     }
 
     /**
@@ -123,8 +177,22 @@ class MortgageLoanFormController extends Controller
      * @param  \App\Models\MortgageLoanForm  $mortgageLoanForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MortgageLoanForm $mortgageLoanForm)
+    public function destroy(MortgageLoanForm $mortgageLoanForm, $id)
     {
-        //
+        $form = MortgageLoanForm::find($id);
+        $destination = 'images/MortgageLoan/'.$form->photo;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+        $destination = 'images/MortgageLoan/'.$form->passport;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+        $destination = 'images/MortgageLoan/'.$form->other_documents;
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+        $form->delete();
+        return response('delete' , 200);
     }
 }

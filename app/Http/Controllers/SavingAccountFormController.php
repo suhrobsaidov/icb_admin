@@ -76,9 +76,17 @@ class SavingAccountFormController extends Controller
      * @param  \App\Models\SavingAccountForm  $savingAccountForm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SavingAccountForm $savingAccountForm)
+    public function update(Request $request, SavingAccountForm $savingAccountForm, $id)
     {
-        //
+        $form = SavingAccountForm::findOrFail($id);
+        $form->surname = $request->input('surname');
+        $form->name = $request->input('name');
+        $form->middle_name = $request->input('middle_name');
+        $form->e_mail = $request->input('e_mail');
+        $form->phone_number = $request->input('phone_number');
+        $form->additional_phone_number = $request->input('additional_phone_number');
+        $form->update();
+        return response('update' , 200);
     }
 
     /**
@@ -87,8 +95,10 @@ class SavingAccountFormController extends Controller
      * @param  \App\Models\SavingAccountForm  $savingAccountForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SavingAccountForm $savingAccountForm)
+    public function destroy(SavingAccountForm $savingAccountForm, $id)
     {
-        //
+        $form = SavingAccountForm::find($id);
+        $form->delete();
+        return response('delete', 200);
     }
 }

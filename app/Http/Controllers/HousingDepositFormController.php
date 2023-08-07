@@ -76,9 +76,17 @@ class HousingDepositFormController extends Controller
      * @param  \App\Models\HousingDepositForm  $housingDepositForm
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HousingDepositForm $housingDepositForm)
+    public function update(Request $request, HousingDepositForm $housingDepositForm, $id)
     {
-        //
+        $form = HousingDepositForm::findOrFail($id);
+        $form->surname = $request->input('surname');
+        $form->name = $request->input('name');
+        $form->middle_name = $request->input('middle_name');
+        $form->e_mail = $request->input('e_mail');
+        $form->phone_number = $request->input('phone_number');
+        $form->additional_phone_number = $request->input('additional_phone_number');
+        $form->update();
+        return response('nice' , 200);
     }
 
     /**
@@ -87,8 +95,10 @@ class HousingDepositFormController extends Controller
      * @param  \App\Models\HousingDepositForm  $housingDepositForm
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HousingDepositForm $housingDepositForm)
+    public function destroy(HousingDepositForm $housingDepositForm, $id)
     {
-        //
+        $form = HousingDepositForm::find($id);
+        $form->delete();
+        return response('delete', 200);
     }
 }

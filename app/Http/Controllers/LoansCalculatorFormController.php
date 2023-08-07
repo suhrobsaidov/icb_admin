@@ -185,12 +185,10 @@ class LoansCalculatorFormController extends Controller
         if(File::exists($destination)){
             File::delete($destination);
         }
-        $form = LoansCalculatorForm::find($id);
         $destination = 'images/loansCalculator/'.$form->passport;
         if(File::exists($destination)){
             File::delete($destination);
         }
-        $form = LoansCalculatorForm::find($id);
         $destination = 'images/loansCalculator/'.$form->other_documents;
         if(File::exists($destination)){
             File::delete($destination);

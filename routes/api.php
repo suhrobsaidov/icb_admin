@@ -92,46 +92,76 @@ Route::delete('delete-loansCalculatorForm/{id}', [App\Http\Controllers\LoansCalc
 
 Route::get('depositCalculatorForm', [App\Http\Controllers\DepositCalculatorFormController::class, 'index']);
 Route::post('save-depositCalculatorForm', [App\Http\Controllers\DepositCalculatorFormController::class, 'store']);
+Route::post('update-depositCalculatorForm/{id}', [App\Http\Controllers\DepositCalculatorFormController::class, 'update']);
+Route::delete('delete-depositCalculatorForm/{id}', [App\Http\Controllers\DepositCalculatorFormController::class, 'destroy']);
 
 Route::get('payrollServicesForm', [App\Http\Controllers\PayrollServicesFormController::class, 'index']);
 Route::post('save-payrollServicesForm', [App\Http\Controllers\PayrollServicesFormController::class, 'store']);
+Route::post('update-payrollServicesForm/{id}', [App\Http\Controllers\PayrollServicesFormController::class, 'update']);
+Route::delete('delete-payrollServicesForm/{id}', [App\Http\Controllers\PayrollServicesFormController::class, 'destroy']);
 
 Route::get('businessLoanForm', [App\Http\Controllers\BusinessLoanFormController::class, 'index']);
 Route::post('save-businessLoanForm', [App\Http\Controllers\BusinessLoanFormController::class, 'store']);
+Route::post('update-businessLoanForm/{id}', [App\Http\Controllers\BusinessLoanFormController::class, 'update']);
+Route::delete('delete-businessLoanForm/{id}', [App\Http\Controllers\BusinessLoanFormController::class, 'destroy']);
 
 Route::get('mortgageLoanForm', [App\Http\Controllers\MortgageLoanFormController::class, 'index']);
 Route::post('save-mortgageLoanForm', [App\Http\Controllers\MortgageLoanFormController::class, 'store']);
+Route::post('update-mortgageLoanForm/{id}', [App\Http\Controllers\MortgageLoanFormController::class, 'update']);
+Route::delete('delete-mortgageLoanForm/{id}', [App\Http\Controllers\MortgageLoanFormController::class, 'destroy']);
 
 Route::get('consumerLoanForm', [App\Http\Controllers\ConsumerLoanFormController::class, 'index']);
 Route::post('save-consumerLoanForm', [App\Http\Controllers\ConsumerLoanFormController::class, 'store']);
+Route::post('update-consumerLoanForm/{id}', [App\Http\Controllers\ConsumerLoanFormController::class, 'update']);
+Route::delete('delete-consumerLoanForm/{id}', [App\Http\Controllers\ConsumerLoanFormController::class, 'destroy']);
 
 Route::get('expressCreditForm', [App\Http\Controllers\ExpressCreditFormController::class, 'index']);
 Route::post('save-expressCreditForm', [App\Http\Controllers\ExpressCreditFormController::class, 'store']);
+Route::post('update-expressCreditForm/{id}', [App\Http\Controllers\ExpressCreditFormController::class, 'update']);
+Route::delete('delete-expressCreditForm/{id}', [App\Http\Controllers\ExpressCreditFormController::class, 'destroy']);
 
 Route::get('autoLoanForm', [App\Http\Controllers\AutoLoanFormController::class, 'index']);
 Route::post('save-autoLoanForm', [App\Http\Controllers\AutoLoanFormController::class, 'store']);
+Route::post('update-autoLoanForm/{id}', [App\Http\Controllers\AutoLoanFormController::class, 'update']);
+Route::delete('delete-autoLoanDorm/{id}', [App\Http\Controllers\AutoLoanFormController::class, 'destroy']);
 
 Route::get('agricultureLoanForm', [App\Http\Controllers\AgricultureLoanFormController::class, 'index']);
 Route::post('save-agricultureLoanForm', [App\Http\Controllers\AgricultureLoanFormController::class, 'store']);
+Route::post('update-agricultureLoanForm/{id}', [App\Http\Controllers\AgricultureLoanFormController::class, 'update']);
+Route::delete('delete-agricultureLoanForm/{id}', [App\Http\Controllers\AgricultureLoanFormController::class, 'destroy']);
 
 Route::get('loanProductDonishForm', [App\Http\Controllers\LoanProductDonishFormController::class, 'index']);
 Route::post('save-loanProductDonishForm', [App\Http\Controllers\LoanProductDonishFormController::class, 'store']);
+Route::post('update-loanProductDonishForm/{id}', [App\Http\Controllers\LoanProductDonishFormController::class, 'update']);
+Route::delete('delete-loanProductDonishForm/{id}', [App\Http\Controllers\LoanProductDonishFormController::class, 'destroy']);
 
 Route::get('savingAccountForm', [App\Http\Controllers\SavingAccountFormController::class, 'index']);
 Route::post('save-savingAccountForm', [App\Http\Controllers\SavingAccountFormController::class, 'store']);
+Route::post('update-savingAccountForm/{id}', [App\Http\Controllers\SavingAccountFormController::class, 'update']);
+Route::delete('delete-savingAccountForm/{id}', [App\Http\Controllers\SavingAccountFormController::class, 'destroy']);
 
 Route::get('termDepositsForm', [App\Http\Controllers\TermDepositsFormController::class, 'index']);
-Route::get('save-termDepositsForm', [App\Http\Controllers\TermDepositsFormController::class, 'store']);
+Route::post('save-termDepositsForm', [App\Http\Controllers\TermDepositsFormController::class, 'store']);
+Route::post('update-termDepositsForm/{id}', [App\Http\Controllers\TermDepositsFormController::class, 'update']);
+Route::delete('delete-termDepositsForm/{id}', [App\Http\Controllers\TermDepositsFormController::class, 'destroy']);
 
 Route::get('depositEasyForm', [App\Http\Controllers\DepositEasyFormController::class, 'index']);
-Route::get('save-termDepositsForm', [App\Http\Controllers\DepositEasyFormController::class, 'store']);
+Route::post('save-depositEasyForm', [App\Http\Controllers\DepositEasyFormController::class, 'store']);
+Route::post('update-depositEasyForm/{id}', [App\Http\Controllers\DepositEasyFormController::class, 'update']);
+Route::delete('delete-depositEasyForm/{id}', [App\Http\Controllers\DepositEasyFormController::class, 'destroy']);
 
 Route::get('childDepositForm', [App\Http\Controllers\ChildDepositFormController::class, 'index']);
 Route::post('save-childDepositForm',[App\Http\Controllers\ChildDepositFormController::class, 'store']);
+Route::post('update-childDepositForm/{id}', [App\Http\Controllers\ChildDepositFormController::class, 'update']);
+Route::delete('delete-childDepositForm/{id}', [App\Http\Controllers\ChildDepositFormController::class, 'destroy']);
 
 Route::get('diyorDepositForm', [App\Http\Controllers\DiyorDepositFormController::class, 'index']);
 Route::post('save-diyorDepositForm', [App\Http\Controllers\DiyorDepositFormController::class, 'store']);
+Route::post('update-diyorDepositForm/{id}', [App\Http\Controllers\DiyorDepositFormController::class, 'update']);
+Route::delete('delete-diyorDepositForm/{id}', [App\Http\Controllers\DiyorDepositFormController::class, 'destroy']);
 
 Route::get('housingDepositForm', [App\Http\Controllers\HousingDepositFormController::class, 'index']);
 Route::post('save-housingDepositForm', [App\Http\Controllers\HousingDepositFormController::class, 'store']);
+Route::post('update-housingDepositForm/{id}', [App\Http\Controllers\HousingDepositFormController::class, 'update']);
+Route::delete('delete-housingDepositForm/{id}', [App\Http\Controllers\HousingDepositFormController::class, 'destroy']);
 
