@@ -164,4 +164,3 @@ Route::get('housingDepositForm', [App\Http\Controllers\HousingDepositFormControl
 Route::post('save-housingDepositForm', [App\Http\Controllers\HousingDepositFormController::class, 'store']);
 Route::post('update-housingDepositForm/{id}', [App\Http\Controllers\HousingDepositFormController::class, 'update']);
 Route::delete('delete-housingDepositForm/{id}', [App\Http\Controllers\HousingDepositFormController::class, 'destroy']);
-
