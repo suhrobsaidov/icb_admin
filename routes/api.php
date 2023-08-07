@@ -86,7 +86,9 @@ Route::put('/update-onlineServices/{id}', [App\Http\Controllers\OnlineServicesCo
 Route::delete('/delete-onlineServices/{id}' , [App\Http\Controllers\OnlineServicesController::class, 'destroy'])->name('delete-onlineServices');
 
 Route::get('loansCalculatorForm', [App\Http\Controllers\LoansCalculatorFormController::class, 'index']);
-Route::post('save_loansCalculatorForm', [App\Http\Controllers\LoansCalculatorFormController::class, 'store']);
+Route::post('save-loansCalculatorForm', [App\Http\Controllers\LoansCalculatorFormController::class, 'store']);
+Route::post('update-loansCalculatorForm/{id}', [App\Http\Controllers\LoansCalculatorFormController::class, 'update']);
+Route::delete('delete-loansCalculatorForm/{id}', [App\Http\Controllers\LoansCalculatorFormController::class, 'destroy']);
 
 Route::get('depositCalculatorForm', [App\Http\Controllers\DepositCalculatorFormController::class, 'index']);
 Route::post('save-depositCalculatorForm', [App\Http\Controllers\DepositCalculatorFormController::class, 'store']);
