@@ -29,6 +29,6 @@
         "admin-lte": "^3.2.0",
         "vue-async-data": "^1.0.2",
         "vue-resource": "^1.5.3",
-        "vue-router": "^2.7.14"
+        "vue-router": "^2.8.1"
     }
 }

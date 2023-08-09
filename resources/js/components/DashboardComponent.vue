@@ -8,7 +8,7 @@ import ExampleComponent from "./ExampleComponent.vue";
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">Example Components</div>
+                <div class="card-header">Dashboard Components</div>
                 <div class="card-body">
                     I am example-component.
                 </div>

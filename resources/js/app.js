@@ -4,24 +4,24 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import DashboardComponent from "./components/DashboardComponent.vue";
+
 require('./bootstrap');
-// const Vue = require("vue");
+
+window.Vue = require('vue');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 
 
-window.Vue = require("vue").default;
-
-import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-let routes = [
-    { path: '/dashboard', component: require('./components/DashboardComponent.vue') },
-]
-
-const router = new vueRouter({
-    routes // short for 'routes: routes'
-})
-
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {path: '/dashboard', component: DashboardComponent}
+    ]
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,7 +34,8 @@ const router = new vueRouter({
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.Component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('Dashboard', require('./components/DashboardComponent.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44,5 +45,5 @@ Vue.Component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
-    router
+    router: router
 });
