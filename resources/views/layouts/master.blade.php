@@ -83,8 +83,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
 
-        <router-link href="http://127.0.0.1:8000/home"
-           class="brand-link " to>
+        <router-link class="brand-link " to="http://127.0.0.1:8000/home">
             <img src="http://127.0.0.1:8000/vendor/adminlte/dist/img/AdminLTELogo.png"
                  alt="Admin Logo"
                  class="brand-image img-circle elevation-3"
@@ -134,20 +133,19 @@
                         </router-link>
                     </li>
                     <li  class="nav-item">
-                        <a class="nav-link  "
-                           href="http://127.0.0.1:8000/admin/settings">
-                            <i class="fas fa-fw fa-lock "></i>
+                        <router-link to="/users" class="nav-link">
+                            <i class="fas fa-users nav-icon "></i>
                             <p>
-                                Change Password
+                                Users
                             </p>
-                        </a>
+                        </router-link>
                     </li>
                     <li  class="nav-item has-treeview ">
                         <a class="nav-link  "
                            href="" >
                             <i class="fas fa-fw fa-share "></i>
                             <p>
-                               Page
+                                Page
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -549,11 +547,6 @@
         </div>
     </aside>
     <div class="content-wrapper ">
-        <div class="content-header">
-            <div class="container-fluid">
-                <h1>Dashboard</h1>
-            </div>
-        </div>
         <div class="content">
             <div class="container-fluid">
                 <router-view></router-view>

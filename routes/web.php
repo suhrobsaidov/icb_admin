@@ -140,7 +140,6 @@ Route::get('/finantialstatement', function () {
     return view('finstatement');
 });
 
-Route::get('{path}', "HomeController@index")->where('path', '([A-z\d-\/_.]+?)');
 
 Auth::routes();
 
@@ -148,4 +147,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::apiResource('sliders' , 'SLiderController');
 Route::apiResource('remitance' , 'RemitanceController');
 Route::apiResource('products' , 'ProductsController');
+
 

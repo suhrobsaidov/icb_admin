@@ -72549,3 +72549,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+.router-link-active {
+  background-color: #3f51b5;
+  color: #fff;
+}
