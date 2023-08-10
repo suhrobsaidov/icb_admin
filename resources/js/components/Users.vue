@@ -32,6 +32,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                    class="form-control" :class="{'is_invalid': form.errors.has('name')}">
                                                 <has-error field="name" :form="form"></has-error>
                                         </div>
+                                        <div class="form-group">
+                                            <input type="text" v-model="form.email" name="email"
+                                                   placeholder="email"
+                                                   class="form-control" :class="{'is_invalid': form.errors.has('email')}">
+                                            <has-error field="email" :form="form"></has-error>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" v-model="form.password" name="password"
+                                                   placeholder="password"
+                                                   class="form-control" :class="{'is_invalid': form.errors.has('password')}">
+                                            <has-error field="password" :form="form"></has-error>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
