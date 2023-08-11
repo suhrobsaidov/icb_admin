@@ -105,12 +105,15 @@ import ExampleComponent from "./ExampleComponent.vue";
           }
         },
         methods: {
+            loadUsers(){
+                axios.get("api/user")
+            },
             createUser(){
-                this.form.post(api/user);
+                this.form.post('api/user');
             }
         },
-        mounted() {
-            console.log('Component mounted')
+        created() {
+            this.loadUsers();
         }
     }
 </script>

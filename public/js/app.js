@@ -88,12 +88,15 @@ var __default__ = {
     };
   },
   methods: {
+    loadUsers: function loadUsers() {
+      axios.get("api/user");
+    },
     createUser: function createUser() {
-      this.form.post(api / user);
+      this.form.post('api/user');
     }
   },
-  mounted: function mounted() {
-    console.log('Component mounted');
+  created: function created() {
+    this.loadUsers();
   }
 };
 
