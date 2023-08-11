@@ -87,6 +87,11 @@ var __default__ = {
       })
     };
   },
+  methods: {
+    createUser: function createUser() {
+      this.form.post(api / user);
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted');
   }
@@ -224,9 +229,11 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "modal-content"
   }, [_vm._m(1), _vm._v(" "), _c("form", {
-    attrs: {
-      action: "#",
-      method: "POST"
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.createUser.apply(null, arguments);
+      }
     }
   }, [_c("div", {
     staticClass: "modal-body"

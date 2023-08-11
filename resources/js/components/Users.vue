@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form action="#" method="POST">
+                                <form @submit.prevent="createUser">
 
 
                                     <div class="modal-body">
@@ -103,6 +103,11 @@ import ExampleComponent from "./ExampleComponent.vue";
 
               })
           }
+        },
+        methods: {
+            createUser(){
+                this.form.post(api/user);
+            }
         },
         mounted() {
             console.log('Component mounted')
