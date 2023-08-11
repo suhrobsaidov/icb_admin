@@ -80,6 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      users: {},
       form: new Form({
         name: '',
         email: '',
@@ -89,7 +90,11 @@ var __default__ = {
   },
   methods: {
     loadUsers: function loadUsers() {
-      axios.get("api/user");
+      var _this = this;
+      axios.get("api/user").then(function (_ref) {
+        var data = _ref.data;
+        return _this.user = data.data;
+      });
     },
     createUser: function createUser() {
       this.form.post('api/user');
@@ -336,7 +341,15 @@ var render = function render() {
       field: "password",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _vm._m(3)])])]);
+  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-body table-responsive p-0"
+  }, [_c("table", {
+    staticClass: "table table-hover text-nowrap"
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.users, function (user) {
+    return _c("tr", {
+      key: user.id
+    }, [_c("td", [_vm._v(_vm._s(user.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(user.email))]), _vm._v(" "), _vm._m(4, true)]);
+  }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -397,13 +410,12 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "card-body table-responsive p-0"
-  }, [_c("table", {
-    staticClass: "table table-hover text-nowrap"
-  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Email")]), _vm._v(" "), _c("th", [_vm._v("Modify")])])]), _vm._v(" "), _c("tbody", [_c("tr", [_c("td", [_vm._v("183")]), _vm._v(" "), _c("td", [_vm._v("John Doe")]), _vm._v(" "), _c("td", [_vm._v("11-7-2014")]), _vm._v(" "), _c("td", [_c("span", {
-    staticClass: "tag tag-success"
-  }, [_vm._v("Approved")])]), _vm._v(" "), _c("td", [_c("a", {
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Email")]), _vm._v(" "), _c("th", [_vm._v("Modify")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("td", [_c("a", {
     attrs: {
       href: "#"
     }
@@ -415,7 +427,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fa fa-trash red"
-  })])])])])])]);
+  })])]);
 }];
 render._withStripped = true;
 
