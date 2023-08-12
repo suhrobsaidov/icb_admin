@@ -11,13 +11,13 @@ import ExampleComponent from "./ExampleComponent.vue";
                 <h3 class="card-title">Users Table</h3>
                 <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Add</button>
                         </h4>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add info</h5>
+                                    <h5 class="modal-title" id="addNewLabel">Add info</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

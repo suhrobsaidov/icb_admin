@@ -227,9 +227,9 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
-      id: "exampleModal",
+      id: "addNew",
       tabindex: "-1",
-      "aria-labelledby": "exampleModalLabel",
+      "aria-labelledby": "addNewLabel",
       "aria-hidden": "true"
     }
   }, [_c("div", {
@@ -362,7 +362,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "button",
       "data-toggle": "modal",
-      "data-target": "#exampleModal"
+      "data-target": "#addNew"
     }
   }, [_vm._v("Add")])]);
 }, function () {
@@ -374,7 +374,7 @@ var staticRenderFns = [function () {
   }, [_c("h5", {
     staticClass: "modal-title",
     attrs: {
-      id: "exampleModalLabel"
+      id: "addNewLabel"
     }
   }, [_vm._v("Add info")]), _vm._v(" "), _c("button", {
     staticClass: "close",
