@@ -91,9 +91,9 @@ var __default__ = {
   methods: {
     loadUsers: function loadUsers() {
       var _this = this;
-      axios.get("api/user").then(function (_ref) {
+      axios.get('api/user').then(function (_ref) {
         var data = _ref.data;
-        return _this.user = data.data;
+        return _this.users = data.data;
       });
     },
     createUser: function createUser() {
@@ -345,10 +345,10 @@ var render = function render() {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.users, function (user) {
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.users, function (users) {
     return _c("tr", {
-      key: user.id
-    }, [_c("td", [_vm._v(_vm._s(user.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(user.email))]), _vm._v(" "), _vm._m(4, true)]);
+      key: users.id
+    }, [_c("td", [_vm._v(_vm._s(users.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.email))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -376,7 +376,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "addNewLabel"
     }
-  }, [_vm._v("Add info")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add New User")]), _vm._v(" "), _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -405,7 +405,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Send message")])]);
+  }, [_vm._v("Сoхранить")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
@@ -471,7 +471,7 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
-    path: '/dashboard',
+    path: '/home',
     component: _components_DashboardComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }, {
     path: '/users',

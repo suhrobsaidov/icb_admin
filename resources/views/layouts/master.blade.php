@@ -125,7 +125,7 @@
                         ACCOUNT SETTINGS
                     </li>
                     <li  class="nav-item">
-                        <router-link to="/dashboard" class="nav-link">
+                        <router-link to="/home" class="nav-link">
                             <i class="fas fa-fw fa-user "></i>
                             <p>
                                 Dashboard

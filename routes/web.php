@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 });
-
+Route::get('getusers', 'API\UserController@index');
 
 
 // Route::get('/wel', function () {

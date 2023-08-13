@@ -34,7 +34,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        {path: '/dashboard', component: DashboardComponent},
+        {path: '/home', component: DashboardComponent},
         {path: '/users', component: Users},
     ]
 });
