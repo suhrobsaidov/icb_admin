@@ -63,6 +63,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Registered At</th>
                             <th>Modify</th>
                         </tr>
                         </thead>
@@ -71,6 +72,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{ users.id }}</td>
                             <td>{{ users.name }}</td>
                             <td>{{users.email}}</td>
+                            <td>{{users.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -109,7 +111,9 @@ export default {
             axios.get('api/user').then(({data}) =>(this.users = data.data));
         },
         createUser(){
+            this.$Progress.start();
             this.form.post('api/user');
+            this.$Progress.finish();
         }
     },
     created() {

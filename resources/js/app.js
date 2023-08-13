@@ -11,6 +11,8 @@ import Users from "./components/Users.vue";
 require('./bootstrap');
 
 window.Vue = require('vue');
+import vueProgressBar from 'vue-progressbar';
+import moment from 'moment';
 import {Form} from 'vform';
 
 window.Form = Form;
@@ -31,12 +33,26 @@ Vue.component(AlertSuccess.name, AlertSuccess)
 
 Vue.use(VueRouter)
 
+Vue.use(vueProgressBar, {
+    color: 'rgb(143,255,199)',
+    failedColor: 'red',
+    height: '3px',
+})
+
 const router = new VueRouter({
     mode: 'history',
     routes: [
         {path: '/home', component: DashboardComponent},
         {path: '/users', component: Users},
     ]
+});
+
+Vue.filter('upText', function(text){
+    return text.charAt(0).toUpperCase() + text.slice(1)
+});
+
+Vue.filter('myDate', function(created){
+    return moment(created).format('MMMM Do YYYY');
 });
 
 /**
