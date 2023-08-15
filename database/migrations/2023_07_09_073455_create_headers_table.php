@@ -17,10 +17,10 @@ class CreateHeadersTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('page');
-            $table->string('image');
             $table->string('link');
-            $table->string('language');
+            $table->string('sub_title');
+            $table->string('sub_description');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

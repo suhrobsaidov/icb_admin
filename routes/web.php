@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 });
 Route::get('getusers', 'API\UserController@index');
+Route::get('getheader', 'API\HeaderController@index');
 
 
 // Route::get('/wel', function () {

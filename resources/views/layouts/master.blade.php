@@ -89,7 +89,7 @@
                  class="brand-image img-circle elevation-3"
                  style="opacity:.8">
             <span class="brand-text font-weight-light ">
-        <b>Dashboard</b>
+        <b>Админ панель</b>
     </span>
         </router-link>
 
@@ -112,31 +112,14 @@
                             </div>
                         </div>
                     </li>
-                    <li  class="nav-item">
-                        <a class="nav-link  "
-                           href="http://127.0.0.1:8000/api/admin/header">
-                            <i class="far fa-fw fa-file "></i>
-                            <p>
-                                Header
-                            </p>
-                        </a>
-                    </li>
                     <li  class="nav-header ">
                         ACCOUNT SETTINGS
-                    </li>
-                    <li  class="nav-item">
-                        <router-link to="/home" class="nav-link">
-                            <i class="fas fa-fw fa-user "></i>
-                            <p>
-                                Dashboard
-                            </p>
-                        </router-link>
                     </li>
                     <li  class="nav-item">
                         <router-link to="/users" class="nav-link">
                             <i class="fas fa-users nav-icon "></i>
                             <p>
-                                Users
+                                Пользователи
                             </p>
                         </router-link>
                     </li>
@@ -145,19 +128,18 @@
                            href="" >
                             <i class="fas fa-fw fa-share "></i>
                             <p>
-                                Page
+                                Страницы
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li  class="nav-item">
-                                <a class="nav-link  "
-                                   href="#"        >
+                                <router-link to="/mainPage" class="nav-link">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Home Page
+                                        Главная страница
                                     </p>
-                                </a>
+                                </router-link>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "
