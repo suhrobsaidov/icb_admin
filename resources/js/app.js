@@ -17,6 +17,7 @@ import moment from 'moment';
 import {Form} from 'vform';
 import swal from 'sweetalert2'
 
+
 window.swal = swal;
 window.Form = Form;
 import {
@@ -26,6 +27,14 @@ import {
     AlertErrors,
     AlertSuccess
 } from 'vform/src/components/bootstrap4'
+
+const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+})
+window.toast = toast;
 
 Vue.component(Button.name, Button)
 Vue.component(HasError.name, HasError)
