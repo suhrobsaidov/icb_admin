@@ -32,7 +32,6 @@ class HeaderController extends Controller
                 'link' => 'required|string|max:191',
                 'sub_title' => 'required|string|max:191',
                 'sub_description' => 'required|string|max:191',
-                'image' => 'required|file',
             ]
         );
         return Header::create([
