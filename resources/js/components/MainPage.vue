@@ -116,7 +116,7 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            Header : {},
+            header : {},
             form: new Form({
                 title: '',
                 description: '',
@@ -132,9 +132,7 @@ export default {
             axios.get('api/header').then(({data}) =>(this.header = data.data));
         },
         createHeader(){
-            this.$Progress.start();
             this.form.post('api/header');
-            this.$Progress.finish();
         }
     },
     created() {

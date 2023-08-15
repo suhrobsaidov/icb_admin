@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
-      Header: {},
+      header: {},
       form: new Form({
         title: '',
         description: '',
@@ -100,9 +100,7 @@ var __default__ = {
       });
     },
     createHeader: function createHeader() {
-      this.$Progress.start();
       this.form.post('api/header');
-      this.$Progress.finish();
     }
   },
   created: function created() {

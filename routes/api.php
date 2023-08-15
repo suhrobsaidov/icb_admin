@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('user',  'API\UserController');
+Route::apiResource('mainPage', 'Api\HeaderController');
 Route::apiResource('header',  'API\HeaderController');
 
 //for admin
