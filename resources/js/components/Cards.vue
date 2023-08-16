@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createbankproducts">
+                                    <form @submit.prevent="createcards">
 
 
                                         <div class="modal-body">
@@ -62,11 +62,11 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="bankproducts in bankproducts" :key="bankproducts.id">
-                            <td>{{ bankproducts.id }}</td>
-                            <td>{{ bankproducts.title }}</td>
-                            <td>{{bankproducts.link}}</td>
-                            <td>{{bankproducts.created_at | myDate}}</td>
+                        <tr v-for="cards in cards" :key="cards.id">
+                            <td>{{ cards.id }}</td>
+                            <td>{{ cards.title }}</td>
+                            <td>{{cards.link}}</td>
+                            <td>{{cards.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -92,7 +92,7 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            bankproducts : {},
+            cards : {},
             form: new Form({
                 title: '',
                 link: '',
@@ -101,18 +101,18 @@ export default {
         }
     },
     methods: {
-        loadbankproducts(){
-            axios.get('api/bankproducts').then(({data}) =>(this.bankproducts = data.data));
+        loadcards(){
+            axios.get('api/cards').then(({data}) =>(this.cards = data.data));
         },
-        createbankproducts(){
+        createcards(){
             this.$Progress.start();
-            this.form.post('api/bankproducts');
+            this.form.post('api/cards');
             this.$Progress.finish();
         }
     },
     created() {
-        this.loadbankproducts();
-        setInterval(() => this.loadbankproducts(), 3000);
+        this.loadcards();
+        setInterval(() => this.loadcards(), 3000);
     }
 }
 </script>

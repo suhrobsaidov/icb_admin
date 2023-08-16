@@ -10,6 +10,7 @@ import Users from "./components/Users.vue";
 import MainPage from "./components/MainPage.vue";
 import Header from "./components/Header.vue";
 import BankProducts from "./components/BankProducts.vue";
+import Cards from "./components/Cards.vue";
 
 require('./bootstrap');
 
@@ -61,6 +62,7 @@ const router = new VueRouter({
         {path: '/mainPage', component:MainPage},
         {path: '/header', component:Header},
         {path: '/bankproducts', component:BankProducts},
+        {path: '/cards', component:Cards},
     ]
 });
 
@@ -88,6 +90,7 @@ Vue.component('users', require('./components/Users.vue'));
 Vue.component('MainPage', require('./components/MainPage.vue'));
 Vue.component('Header', require('./components/Header.vue'));
 Vue.component('BankProducts', require('./components/BankProducts.vue'));
+Vue.component('Cards', require('./components/Cards.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
