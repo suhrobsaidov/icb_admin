@@ -73,7 +73,7 @@ Route::get('deposit','DepositsController@index');
 Route::get('header','HeaderController@index');
 Route::get('carts','CardController@index');
 Route::get('currentoffers','CurrentOffersController@index');
-//Route::get('','');
+Route::get('calculators','CalculatorsController@index');
 //Route::get('','');
 //Route::get('','');
 //Route::get('','');
