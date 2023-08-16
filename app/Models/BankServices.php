@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class BankServices extends Model
 {
-    protected $fillable = ['title', 'description',  'image', 'link',];
+    protected $fillable = ['title', 'description',  'image', 'link', 'page', 'language'];
 }

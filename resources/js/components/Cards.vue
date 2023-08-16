@@ -38,6 +38,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                        class="form-control" :class="{'is_invalid': form.errors.has('link')}">
                                                 <has-error field="link" :form="form"></has-error>
                                             </div>
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.page" name="page"
+                                                       placeholder="страница"
+                                                       class="form-control" :class="{'is_invalid': form.errors.has('page')}">
+                                                <has-error field="page" :form="form"></has-error>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.language" name="language"
+                                                       placeholder="язык"
+                                                       class="form-control" :class="{'is_invalid': form.errors.has('language')}">
+                                                <has-error field="language" :form="form"></has-error>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -57,6 +69,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <th>ID</th>
                             <th>Заголовок</th>
                             <th>Путь кнопки</th>
+                            <th>Страница</th>
+                            <th>Язык</th>
                             <th>Дата создания</th>
                             <th>Изменения</th>
                         </tr>
@@ -66,6 +80,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{ cards.id }}</td>
                             <td>{{ cards.title }}</td>
                             <td>{{cards.link}}</td>
+                            <td>{{cards.page}}</td>
+                            <td>{{cards.language}}</td>
                             <td>{{cards.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
@@ -97,6 +113,8 @@ export default {
                 title: '',
                 link: '',
                 image: '',
+                page: '',
+                language: '',
             })
         }
     },

@@ -94,7 +94,9 @@ var __default__ = {
         title: '',
         link: '',
         description: '',
-        image: ''
+        image: '',
+        page: '',
+        language: ''
       })
     };
   },
@@ -209,7 +211,9 @@ var __default__ = {
       form: new Form({
         title: '',
         link: '',
-        image: ''
+        image: '',
+        page: '',
+        language: ''
       })
     };
   },
@@ -439,6 +443,8 @@ var __default__ = {
         link: '',
         sub_title: '',
         sub_description: '',
+        page: '',
+        language: '',
         image: ''
       })
     };
@@ -945,6 +951,70 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.page,
+      expression: "form.page"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("page")
+    },
+    attrs: {
+      type: "text",
+      name: "page",
+      placeholder: "страница"
+    },
+    domProps: {
+      value: _vm.form.page
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "page", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "page",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.language,
+      expression: "form.language"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("language")
+    },
+    attrs: {
+      type: "text",
+      name: "language",
+      placeholder: "язык"
+    },
+    domProps: {
+      value: _vm.form.language
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "language", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "language",
+      form: _vm.form
+    }
   })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
@@ -952,7 +1022,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankservices, function (bankservices) {
     return _c("tr", {
       key: bankservices.id
-    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -1014,7 +1084,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Страница")]), _vm._v(" "), _c("th", [_vm._v("Язык")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
@@ -1357,6 +1427,70 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.page,
+      expression: "form.page"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("page")
+    },
+    attrs: {
+      type: "text",
+      name: "page",
+      placeholder: "страница"
+    },
+    domProps: {
+      value: _vm.form.page
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "page", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "page",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.language,
+      expression: "form.language"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("language")
+    },
+    attrs: {
+      type: "text",
+      name: "language",
+      placeholder: "язык"
+    },
+    domProps: {
+      value: _vm.form.language
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "language", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "language",
+      form: _vm.form
+    }
   })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
@@ -1364,7 +1498,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.cards, function (cards) {
     return _c("tr", {
       key: cards.id
-    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -1426,7 +1560,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Страница")]), _vm._v(" "), _c("th", [_vm._v("Язык")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
@@ -2407,6 +2541,70 @@ var render = function render() {
       field: "sub_description",
       form: _vm.form
     }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.page,
+      expression: "form.page"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("page")
+    },
+    attrs: {
+      type: "text",
+      name: "page",
+      placeholder: "страница"
+    },
+    domProps: {
+      value: _vm.form.page
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "page", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "page",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.language,
+      expression: "form.language"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("language")
+    },
+    attrs: {
+      type: "text",
+      name: "language",
+      placeholder: "язык"
+    },
+    domProps: {
+      value: _vm.form.language
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "language", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "language",
+      form: _vm.form
+    }
   })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
@@ -2414,7 +2612,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.header, function (header) {
     return _c("tr", {
       key: header.id
-    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2476,7 +2674,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Подзаголовок")]), _vm._v(" "), _c("th", [_vm._v("Подописание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Подзаголовок")]), _vm._v(" "), _c("th", [_vm._v("Подописание")]), _vm._v(" "), _c("th", [_vm._v("Страница")]), _vm._v(" "), _c("th", [_vm._v("Язык")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,

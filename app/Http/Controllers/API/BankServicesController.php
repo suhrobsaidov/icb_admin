@@ -31,12 +31,16 @@ class BankServicesController extends Controller
                 'title' => 'required|string|max:191',
                 'description' => 'required|string|max:191',
                 'link' => 'required|string|max:191',
+                'page' => 'required|string|max:191',
+                'language' => 'required|string|max:191',
             ]
         );
         return BankServices::create([
             'title' => $request['title'],
             'description' => $request['description'],
             'link' => $request['link'],
+            'page' => $request['page'],
+            'language' => $request['language'],
         ]);
     }
 

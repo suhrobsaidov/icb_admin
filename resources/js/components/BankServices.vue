@@ -44,6 +44,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                        class="form-control" :class="{'is_invalid': form.errors.has('link')}">
                                                 <has-error field="link" :form="form"></has-error>
                                             </div>
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.page" name="page"
+                                                       placeholder="страница"
+                                                       class="form-control" :class="{'is_invalid': form.errors.has('page')}">
+                                                <has-error field="page" :form="form"></has-error>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.language" name="language"
+                                                       placeholder="язык"
+                                                       class="form-control" :class="{'is_invalid': form.errors.has('language')}">
+                                                <has-error field="language" :form="form"></has-error>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -64,6 +76,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <th>Заголовок</th>
                             <th>Путь кнопки</th>
                             <th>Описание</th>
+                            <th>Страница</th>
+                            <th>Язык</th>
                             <th>Дата создания</th>
                             <th>Изменения</th>
                         </tr>
@@ -74,6 +88,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{ bankservices.title }}</td>
                             <td>{{bankservices.link}}</td>
                             <td>{{bankservices.description}}</td>
+                            <td>{{bankservices.page}}</td>
+                            <td>{{bankservices.language}}</td>
                             <td>{{bankservices.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
@@ -106,6 +122,8 @@ export default {
                 link: '',
                 description:'',
                 image: '',
+                page: '',
+                language: '',
             })
         }
     },
