@@ -14,134 +14,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome2');
+Route::get('/','MainpageController@index');
+Route::get('bankloans' ,'view\BankloansController@index');
+Route::get('remmitance' , 'view\RemmitanceController@index');
+Route::get('onlineservice' , 'view\OnlineserviceController@index');
+Route::get('card' , 'view\CardController@index');
+Route::get('deposits' , 'view\DepositController@index');
+Route::get('vacancy' , 'view\VacancyController@index');
+Route::get('termdeposits' , 'view\TermdepositsController@index');
+Route::get('savingaccounts' , 'view\SavingaccController@index');
+Route::get('payroll' , 'view\PayrollController@index');
+Route::get('news' , 'view\NewsController@index');
+Route::get('mortgateloan' , 'view\MortgateController@index');
+Route::get('easydeposit' , 'view\EasydepositController@index');
+Route::get('diyor' , 'view\DiyorController@index');
+Route::get('expresscredit' , 'view\ExpresscreditController@index');
+Route::get('faq' , 'view\FaqController@index');
+Route::get('depositcalc' , 'view\DepositcalcController@index');
+Route::get('filiali' , 'view\BranchController@index');
+Route::get('housingdeposit' , 'view\HousingController@index');
+Route::get('knowladge' , 'view\KnowladgeController@index');
+Route::get('donish' , 'view\DonishController@index');
+Route::get('loanscalc' , 'view\LoanscalcController@index');
+Route::get('loans' , 'view\LoansController@index');
+Route::get('contacts' , 'view\ContactsController@index');
+Route::get('compliance' , 'view\ComplianceController@index');
+Route::get('childdeposit' , 'view\ChilddepController@index');
+Route::get('businessloan' , 'view\BusinessloanController@index');
+Route::get('bankomati' , 'view\BankomatiController@index');
+Route::get('bankfinstatement' , 'view\FinstateController@index');
+Route::get('autoloan' , 'view\AutoloanController@index');
+Route::get('agricultureloan' , 'view\AgricultureController@index');
+Route::get('abouts' , 'view\AboutsController@index');
+Route::get('aboutplaceholders' , 'view\PlaceholdersController@index');
+Route::get('costomerloans' , 'view\CustomerloansController@index');
+Route::get('consumerloans' , 'view\ConsumersLoansController@index');
+Route::get('finantialstatement' , 'view\FinantialstatementController@index');
 
+Route::get('users' , 'UsersController@index');
 
-});
 Route::get('getusers', 'API\UserController@index');
 Route::get('getheader', 'API\HeaderController@index');
 
-
-// Route::get('/wel', function () {
-//     return view('welcome2');
-
-
-// });
-Route::get('/bankloans', function () {
-    return view('bankloans');
-});
-Route::get('/businessloans', function () {
-    return view('businessloan');
-});
-Route::get('/remmitance', function () {
-    return view('remitance');
-});
-Route::get('/onlineservice', function () {
-    return view('onlineservice');
-});
-Route::get('/card', function () {
-    return view('card');
-});
-Route::get('/vacancy', function () {
-    return view('vacancy');
-});
-Route::get('/deposits', function () {
-    return view('deposites');
-});
-Route::get('/termdeposits', function () {
-    return view('termdeposits');
-});
 Route::get('/show', function () {
     return view('searchShow');
 });
-Route::get('/savingaccounts', function () {
-    return view('savingaccounts');
-});
-Route::get('/payroll', function () {
-    return view('payrollservices');
-});
-
-Route::get('/news', function () {
-    return view('news');
-});
-Route::get('/mortgateloan', function () {
-    return view('mortgateloan');
-});
-Route::get('/loans', function () {
-    return view('loans');
-});
-Route::get('/loanscalc', function () {
-    return view('loanscalculator');
-});
-Route::get('/donish', function () {
-    return view('loanproductdonish');
-});
-Route::get('/knowladge', function () {
-    return view('knowladgebase');
-});
-Route::get('/housingdeposit', function () {
-    return view('housingdeposit');
-});
-Route::get('/filiali', function () {
-    return view('filiali');
-});
-Route::get('/depositcalc', function () {
-    return view('depositcalc');
-});
-Route::get('/faq', function () {
-    return view('faq');
-});
-Route::get('/expresscredit', function () {
-    return view('expresscredit');
-});
-Route::get('/diyor', function () {
-    return view('diyordeposit');
-});
-Route::get('/easydeposit', function () {
-    return view('depositeasy');
-});
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-Route::get('/compliance', function () {
-    return view('compliance');
-});
-Route::get('/childdeposit', function () {
-    return view('childdeposit');
-});
-Route::get('/businessloan', function () {
-    return view('businessloan');
-});
-Route::get('/bankomati', function () {
-    return view('bankomati');
-});
-Route::get('/bankfinstatement', function () {
-    return view('bankfinstatement');
-});
-Route::get('/autoloan', function () {
-    return view('autoloan');
-});
-Route::get('/agricultureloan', function () {
-    return view('agrecultureloan');
-});
-Route::get('/abouts', function () {
-    return view('abouts');
-});
-Route::get('/aboutplaceholders', function () {
-    return view('aboutplaceholders');
-});
-Route::get('/cost0merloans', function () {
-    return view('costumerloans');
-});
-Route::get('/consumerloans', function () {
-    return view('consumerloans');
-});
-Route::get('/finantialstatement', function () {
-    return view('finstatement');
-});
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

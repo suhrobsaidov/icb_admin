@@ -16,7 +16,8 @@ class HeaderController extends Controller
     public function index()
     {
         $headers = Header::all();
-        return view('admin.header.header', compact('headers'));
+        return $headers;
+//        return view('admin.header.header', compact('headers'));
     }
 
     /**

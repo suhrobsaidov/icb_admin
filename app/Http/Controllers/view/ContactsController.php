@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\view;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user=User::all();
-        return  $user;
+        return view('contacts');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -28,17 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|max:191|unique:users',
-            'password' => 'required|string|min:6',
-            ]
-        );
-        return User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
+        //
     }
 
     /**
@@ -48,6 +45,17 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
