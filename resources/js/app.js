@@ -80,7 +80,7 @@ Vue.filter('myDate', function(created){
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Dashboard', require('./components/DashboardComponent.vue'));
-Vue.component('Users', require('./components/Users.vue'));
+Vue.component('users', require('./components/Users.vue'));
 Vue.component('MainPage', require('./components/MainPage.vue'));
 
 /**

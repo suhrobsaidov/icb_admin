@@ -590,7 +590,7 @@ var render = function render() {
     staticClass: "card-header"
   }, [_c("h3", {
     staticClass: "card-title"
-  }, [_vm._v("Users Table")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Пользователи")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
@@ -890,7 +890,7 @@ vue__WEBPACK_IMPORTED_MODULE_9__["default"].filter('myDate', function (created) 
 
 vue__WEBPACK_IMPORTED_MODULE_9__["default"].component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_9__["default"].component('Dashboard', __webpack_require__(/*! ./components/DashboardComponent.vue */ "./resources/js/components/DashboardComponent.vue"));
-vue__WEBPACK_IMPORTED_MODULE_9__["default"].component('Users', __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue"));
+vue__WEBPACK_IMPORTED_MODULE_9__["default"].component('users', __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue"));
 vue__WEBPACK_IMPORTED_MODULE_9__["default"].component('MainPage', __webpack_require__(/*! ./components/MainPage.vue */ "./resources/js/components/MainPage.vue"));
 
 /**
