@@ -15,8 +15,7 @@ class BankProductsController extends Controller
      */
     public function index()
     {
-        $bankProducts = BankProducts::all();
-        return view('admin.bankProducts.bankProducts', compact('bankProducts'));
+       return view('admin.bankproducts.index');
     }
 
     /**

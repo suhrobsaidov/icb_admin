@@ -1772,7 +1772,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     path: '/bankproducts',
     component: _components_BankProducts_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/cards',
+    path: '/carts',
     component: _components_Cards_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
@@ -1797,7 +1797,7 @@ vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('users', __webpack_requir
 vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('MainPage', __webpack_require__(/*! ./components/MainPage.vue */ "./resources/js/components/MainPage.vue"));
 vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('Header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue"));
 vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('BankProducts', __webpack_require__(/*! ./components/BankProducts.vue */ "./resources/js/components/BankProducts.vue"));
-vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('Cards', __webpack_require__(/*! ./components/Cards.vue */ "./resources/js/components/Cards.vue"));
+vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('Carts', __webpack_require__(/*! ./components/Cards.vue */ "./resources/js/components/Cards.vue"));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
