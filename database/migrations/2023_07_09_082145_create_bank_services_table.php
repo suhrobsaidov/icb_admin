@@ -19,6 +19,8 @@ class CreateBankServicesTable extends Migration
             $table->string('description');
             $table->string('image')->nullable();
             $table->string('link');
+            $table->string('page');
+            $table->string('language');
             $table->timestamps();
         });
     }

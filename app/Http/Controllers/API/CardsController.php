@@ -29,11 +29,16 @@ class CardsController extends Controller
         $this->validate($request,[
                 'title' => 'required|string|max:191',
                 'link' => 'required|string|max:191',
+                'page' => 'required|string|max:191',
+                'language' => 'required|string|max:191',
+
             ]
         );
         return Cards::create([
             'title' => $request['title'],
             'link' => $request['link'],
+            'page' => $request['page'],
+            'language' => $request['language'],
         ]);
     }
 

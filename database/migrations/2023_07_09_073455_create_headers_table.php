@@ -20,6 +20,8 @@ class CreateHeadersTable extends Migration
             $table->string('link');
             $table->string('sub_title');
             $table->string('sub_description');
+            $table->string('page');
+            $table->string('language');
             $table->string('image')->nullable();
             $table->timestamps();
         });

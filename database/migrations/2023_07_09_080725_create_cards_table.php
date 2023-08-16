@@ -18,6 +18,8 @@ class CreateCardsTable extends Migration
             $table->string('title');
             $table->string('image')->nullable();
             $table->string('link');
+            $table->string('page');
+            $table->string('language');
             $table->timestamps();
         });
     }

@@ -32,6 +32,8 @@ class HeaderController extends Controller
                 'link' => 'required|string|max:191',
                 'sub_title' => 'required|string|max:191',
                 'sub_description' => 'required|string|max:191',
+                'page' => 'required|string|max:191',
+                'language' => 'required|string|max:191',
             ]
         );
         return Header::create([
@@ -40,6 +42,9 @@ class HeaderController extends Controller
             'link' => $request['link'],
             'sub_title' => $request['sub_title'],
             'sub_description' => $request['sub_description'],
+            'page' => $request['page'],
+            'language' => $request['language'],
+
         ]);
     }
 
