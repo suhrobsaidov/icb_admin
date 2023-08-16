@@ -1,2 +1,3 @@
-@extends('layouts.masters')
+@extends('layouts.master')
 
+<users></users>

@@ -83,8 +83,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
 
-        <router-link class="brand-link " to="/">
-            <img src="http://127.0.0.1:8000/vendor/adminlte/dist/img/AdminLTELogo.png"
+        <router-link class="brand-link " to="home">
+            <img src="./vendor/adminlte/dist/img/AdminLTELogo.png"
                  alt="Admin Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity:.8">
