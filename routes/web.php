@@ -65,7 +65,7 @@ Route::get('/show', function () {
 Auth::routes();
 Route::get('users' , 'UsersController@index');
 Route::get('mainPage' , 'MainpageController@index');
-//Route::get('','');
+Route::get('bankproducts','BankproductsController@index');
 //Route::get('','');
 //Route::get('','');
 //Route::get('','');
