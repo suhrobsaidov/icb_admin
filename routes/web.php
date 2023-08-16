@@ -51,7 +51,9 @@ Route::get('costomerloans' , 'view\CustomerloansController@index');
 Route::get('consumerloans' , 'view\ConsumersLoansController@index');
 Route::get('finantialstatement' , 'view\FinantialstatementController@index');
 
+
 Route::get('users' , 'UsersController@index');
+Route::get('mainPage' , 'MainpageController@index');
 
 Route::get('getusers', 'API\UserController@index');
 Route::get('getheader', 'API\HeaderController@index');

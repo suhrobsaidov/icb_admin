@@ -14,7 +14,7 @@ class MainpageController extends Controller
      */
     public function index()
     {
-       return view('welcome2');
+       return view('mainpage');
     }
 
     /**
