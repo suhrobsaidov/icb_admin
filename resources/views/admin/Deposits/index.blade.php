@@ -1,9 +1,9 @@
-@extends('layouts.masters')
+@extends('layouts.master')
 
 @section('title')
-    Remittance cards
+   Deposits
 @endsection
-
+<Deposit></Deposit>
 {{--@section('content')--}}
 {{--    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
 {{--        <div class="modal-dialog">--}}
@@ -140,3 +140,9 @@
 
 @endsection
 
+<script>
+    import Deposits from "../../../js/components/Deposit";
+    export default {
+        components: {Deposits}
+    }
+</script>

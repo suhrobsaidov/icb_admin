@@ -69,7 +69,7 @@ Auth::routes();
 Route::get('users' , 'UsersController@index');
 Route::get('mainPage' , 'MainpageController@index');
 Route::get('bankproducts','BankproductsController@index');
-Route::get('admin/deposits','DepositsController@index');
+Route::get('deposit','DepositsController@index');
 Route::get('header','HeaderController@index');
 Route::get('carts','CardController@index');
 Route::get('currentoffers','CurrentOffersController@index');
