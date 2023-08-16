@@ -1000,7 +1000,7 @@ var render = function render() {
     staticClass: "card-header"
   }, [_c("h3", {
     staticClass: "card-title"
-  }, [_vm._v("Предложения Банка")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Данные калькулятора")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
