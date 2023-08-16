@@ -58,6 +58,7 @@ Route::get('finantialstatement' , 'view\FinantialstatementController@index');
 Route::get('getusers', 'API\UserController@index');
 Route::get('getheader', 'API\HeaderController@index');
 Route::get('getbankproducts', 'API\BankProductsController@index');
+Route::get('getcards', 'API\CardsController@index');
 
 Route::get('/show', function () {
     return view('searchShow');
