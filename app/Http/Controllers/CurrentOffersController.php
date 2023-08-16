@@ -15,8 +15,7 @@ class CurrentOffersController extends Controller
      */
     public function index()
     {
-        $currentOffers = CurrentOffers::all();
-        return view('admin.currentOffers.currentOffers', compact('currentOffers'));
+       return view('admin.currentOffers.index');
     }
 
     /**
