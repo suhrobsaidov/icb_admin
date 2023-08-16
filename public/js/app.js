@@ -1007,7 +1007,19 @@ var render = function render() {
         _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }, [_c("option", [_vm._v("Русский")]), _vm._v(" "), _c("option", [_vm._v("English")]), _vm._v(" "), _c("option", [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form
@@ -1480,7 +1492,19 @@ var render = function render() {
         _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }, [_c("option", [_vm._v("Русский")]), _vm._v(" "), _c("option", [_vm._v("English")]), _vm._v(" "), _c("option", [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form
@@ -2591,7 +2615,19 @@ var render = function render() {
         _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }, [_c("option", [_vm._v("Русский")]), _vm._v(" "), _c("option", [_vm._v("English")]), _vm._v(" "), _c("option", [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form

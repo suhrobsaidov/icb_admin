@@ -52,9 +52,9 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             </div>
                                             <div class="form-group">
                                                 <select name="language" id="language"  v-model="form.language">
-                                                    <option>Русский</option>
-                                                    <option>English</option>
-                                                    <option>Таджикский</option>
+                                                    <option value="Ru">Русский</option>
+                                                    <option value="En">English</option>
+                                                    <option value="Tj">Таджикский</option>
                                                 </select>
                                                 <has-error field="language" :form="form"></has-error>
                                             </div>
