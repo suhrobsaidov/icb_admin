@@ -5,7 +5,7 @@ namespace App\Http\Controllers\view;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PalceholdersController extends Controller
+class PlaceholdersController extends Controller
 {
     /**
      * Display a listing of the resource.
