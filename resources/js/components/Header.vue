@@ -63,10 +63,12 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                 <has-error field="page" :form="form"></has-error>
                                             </div>
                                             <div class="form-group">
-                                            <input type="text" v-model="form.language" name="language"
-                                                   placeholder="язык"
-                                                   class="form-control" :class="{'is_invalid': form.errors.has('language')}">
-                                            <has-error field="language" :form="form"></has-error>
+                                                <select name="language" id="language"  v-model="form.language">
+                                                    <option value="Ru">Русский</option>
+                                                    <option value="En">English</option>
+                                                    <option value="Tj">Таджикский</option>
+                                                </select>
+                                                <has-error field="language" :form="form"></has-error>
                                         </div>
                                         </div>
                                         <div class="modal-footer">

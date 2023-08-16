@@ -985,32 +985,41 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c("input", {
+  }, [_c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.form.language,
       expression: "form.language"
     }],
-    staticClass: "form-control",
-    "class": {
-      is_invalid: _vm.form.errors.has("language")
-    },
     attrs: {
-      type: "text",
       name: "language",
-      placeholder: "язык"
-    },
-    domProps: {
-      value: _vm.form.language
+      id: "language"
     },
     on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.form, "language", $event.target.value);
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form
@@ -1461,32 +1470,41 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c("input", {
+  }, [_c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.form.language,
       expression: "form.language"
     }],
-    staticClass: "form-control",
-    "class": {
-      is_invalid: _vm.form.errors.has("language")
-    },
     attrs: {
-      type: "text",
       name: "language",
-      placeholder: "язык"
-    },
-    domProps: {
-      value: _vm.form.language
+      id: "language"
     },
     on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.form, "language", $event.target.value);
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form
@@ -2575,32 +2593,41 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c("input", {
+  }, [_c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.form.language,
       expression: "form.language"
     }],
-    staticClass: "form-control",
-    "class": {
-      is_invalid: _vm.form.errors.has("language")
-    },
     attrs: {
-      type: "text",
       name: "language",
-      placeholder: "язык"
-    },
-    domProps: {
-      value: _vm.form.language
+      id: "language"
     },
     on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.form, "language", $event.target.value);
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.form, "language", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
       }
     }
-  }), _vm._v(" "), _c("has-error", {
+  }, [_c("option", {
+    attrs: {
+      value: "Ru"
+    }
+  }, [_vm._v("Русский")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "En"
+    }
+  }, [_vm._v("English")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "Tj"
+    }
+  }, [_vm._v("Таджикский")])]), _vm._v(" "), _c("has-error", {
     attrs: {
       field: "language",
       form: _vm.form
