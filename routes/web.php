@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/','MainpageController@index');
+Route::get('/','HomePageController@index');
 Route::get('bankloans' ,'view\BankloansController@index');
 Route::get('remmitance' , 'view\RemmitanceController@index');
 Route::get('onlineservice' , 'view\OnlineserviceController@index');
