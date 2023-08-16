@@ -55,6 +55,7 @@ Route::get('users' , 'UsersController@index');
 
 Route::get('getusers', 'API\UserController@index');
 Route::get('getheader', 'API\HeaderController@index');
+Route::get('getbankproducts', 'API\BankProductsController@index');
 
 Route::get('/show', function () {
     return view('searchShow');

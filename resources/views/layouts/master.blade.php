@@ -132,14 +132,41 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li  class="nav-item">
-                                <router-link to="/mainPage" class="nav-link">
-                                    <i class="far fa-fw fa-circle "></i>
+                        <ul class="nav-item nav-treeview">
+                            <li  class="nav-link">
+                                <a href=" " class="nav-link">
+                                    <i class="fas fa-fw fa-share"></i>
                                     <p>
                                         Главная страница
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
-                                </router-link>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankproducts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Продукты банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "

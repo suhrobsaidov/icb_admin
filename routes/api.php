@@ -19,8 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('user',  'API\UserController');
-Route::apiResource('mainPage', 'Api\HeaderController');
+Route::apiResource('mainPage', 'API\HeaderController');
 Route::apiResource('header',  'API\HeaderController');
+Route::apiResource('bankproducts', 'API\BankProductsController');
 
 //for admin
 Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');
