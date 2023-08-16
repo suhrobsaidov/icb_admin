@@ -62,7 +62,7 @@ const router = new VueRouter({
         {path: '/mainPage', component:MainPage},
         {path: '/header', component:Header},
         {path: '/bankproducts', component:BankProducts},
-        {path: '/cards', component:Cards},
+        {path: '/carts', component:Cards},
     ]
 });
 
@@ -90,7 +90,7 @@ Vue.component('users', require('./components/Users.vue'));
 Vue.component('MainPage', require('./components/MainPage.vue'));
 Vue.component('Header', require('./components/Header.vue'));
 Vue.component('BankProducts', require('./components/BankProducts.vue'));
-Vue.component('Cards', require('./components/Cards.vue'));
+Vue.component('Carts', require('./components/Cards.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
