@@ -59,6 +59,7 @@ Route::get('getusers', 'API\UserController@index');
 Route::get('getheader', 'API\HeaderController@index');
 Route::get('getbankproducts', 'API\BankProductsController@index');
 Route::get('getcards', 'API\CardsController@index');
+Route::get('getcurrentoffers', 'API\CurrentOffersController@index');
 
 Route::get('/show', function () {
     return view('searchShow');
@@ -70,6 +71,7 @@ Route::get('bankproducts','BankproductsController@index');
 Route::get('admin/deposits','DepositsController@index');
 Route::get('header','HeaderController@index');
 Route::get('carts','CardController@index');
+Route::get('currentoffers','API\CurrentOffersController@index');
 //Route::get('','');
 //Route::get('','');
 //Route::get('','');

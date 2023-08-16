@@ -23,6 +23,7 @@ Route::apiResource('mainPage', 'API\HeaderController');
 Route::apiResource('header',  'API\HeaderController');
 Route::apiResource('bankproducts', 'API\BankProductsController');
 Route::apiResource('cards', 'API\CardsController');
+Route::apiResource('currentoffers', 'API\CurrentOffersController');
 
 //for admin
 Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');

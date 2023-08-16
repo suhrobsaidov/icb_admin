@@ -8,7 +8,7 @@ import ExampleComponent from "./ExampleComponent.vue";
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Карточки</h3>
+                    <h3 class="card-title">Предложения Банка</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createcards">
+                                    <form @submit.prevent="createcurrentoffers">
 
 
                                         <div class="modal-body">
@@ -31,6 +31,12 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                        placeholder="заголовок"
                                                        class="form-control" :class="{'is_invalid': form.errors.has('title')}">
                                                 <has-error field="title" :form="form"></has-error>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.description" name="description"
+                                                       placeholder="описание"
+                                                       class="form-control" :class="{'is_invalid': form.errors.has('description')}">
+                                                <has-error field="description" :form="form"></has-error>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" v-model="form.link" name="link"
@@ -57,16 +63,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <th>ID</th>
                             <th>Заголовок</th>
                             <th>Путь кнопки</th>
+                            <th>Описание</th>
                             <th>Дата создания</th>
                             <th>Изменения</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="cards in cards" :key="cards.id">
-                            <td>{{ cards.id }}</td>
-                            <td>{{ cards.title }}</td>
-                            <td>{{cards.link}}</td>
-                            <td>{{cards.created_at | myDate}}</td>
+                        <tr v-for="currentoffers in currentoffers" :key="currentoffers.id">
+                            <td>{{ currentoffers.id }}</td>
+                            <td>{{ currentoffers.title }}</td>
+                            <td>{{currentoffers.link}}</td>
+                            <td>{{currentoffers.description}}</td>
+                            <td>{{currentoffers.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -92,27 +100,28 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            cards : {},
+            currentoffers : {},
             form: new Form({
                 title: '',
                 link: '',
+                description:'',
                 image: '',
             })
         }
     },
     methods: {
-        loadcards(){
-            axios.get('api/cards').then(({data}) =>(this.cards = data.data));
+        loadcurrentoffers(){
+            axios.get('api/currentoffers').then(({data}) =>(this.currentoffers = data.data));
         },
-        createcards(){
+        createcurrentoffers(){
             this.$Progress.start();
-            this.form.post('api/cards');
+            this.form.post('api/currentoffers');
             this.$Progress.finish();
         }
     },
     created() {
-        this.loadcards();
-        setInterval(() => this.loadcards(), 3000);
+        this.loadcurrentoffers();
+        setInterval(() => this.loadcurrentoffers(), 3000);
     }
 }
 </script>
