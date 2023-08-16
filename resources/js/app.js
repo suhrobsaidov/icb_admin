@@ -14,6 +14,7 @@ import Cards from "./components/Cards.vue";
 import CurrentOffers from "./components/CurrentOffers.vue";
 import Calculators from "./components/Calculators.vue";
 import BankServices from "./components/BankServices.vue";
+import DepositCards from "./components/DepositCards.vue";
 
 require('./bootstrap');
 
@@ -69,6 +70,7 @@ const router = new VueRouter({
         {path: '/currentoffers', component:CurrentOffers},
         {path: '/calculators', component:Calculators},
         {path: '/bankservices', component:BankServices},
+        {path: '/depositcards', component:DepositCards},
     ]
 });
 
@@ -100,6 +102,7 @@ Vue.component('Carts', require('./components/Cards.vue'));
 Vue.component('CurrentOffers', require('./components/CurrentOffers.vue'));
 Vue.component('calculators', require('./components/Calculators.vue'));
 Vue.component('BankServices', require('./components/BankServices.vue'));
+Vue.component('DepositCards', require('./components/DepositCards.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
