@@ -14,7 +14,7 @@ class CalculatorsController extends Controller
      */
     public function index()
     {
-        //
+       return view('admin.calculators');
     }
 
     /**
