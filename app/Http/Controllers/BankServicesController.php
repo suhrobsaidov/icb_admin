@@ -15,8 +15,7 @@ class BankServicesController extends Controller
      */
     public function index()
     {
-        $bankServices = BankServices::all();
-        return view('admin.bankServices.bankServices', compact('bankServices'));
+       return view('admin.bankServices.index');
     }
 
     /**

@@ -2,4 +2,4 @@
 
 
 @section('title', 'Bank products')
-<bankproducts></bankproducts>
+<BankServices></BankServices>
