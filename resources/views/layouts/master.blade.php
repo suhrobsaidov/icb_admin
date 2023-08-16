@@ -182,6 +182,14 @@
                                             </p>
                                         </router-link>
                                     </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
                                 </ul>
                             </li>
                             <li  class="nav-item">

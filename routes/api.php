@@ -25,6 +25,7 @@ Route::apiResource('bankproducts', 'API\BankProductsController');
 Route::apiResource('cards', 'API\CardsController');
 Route::apiResource('currentoffers', 'API\CurrentOffersController');
 Route::apiResource('calculators', 'API\CalculatorsController');
+Route::apiResource('bankservices', 'API\BankServicesController');
 
 //for admin
 Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');
@@ -39,11 +40,11 @@ Route::get('/edit-card/{id}', [App\Http\Controllers\CardController::class, 'edit
 Route::put('/update-card/{id}', [App\Http\Controllers\CardController::class, 'update'])->name('update-card');
 Route::delete('/delete-card/{id}' , [App\Http\Controllers\CardController::class, 'destroy'])->name('delete-card');
 
-Route::get('/admin/bankService', [App\Http\Controllers\BankServiceController::class, 'index'])->name('bankService');
-Route::post('/save-bankService', [App\Http\Controllers\BankServiceController::class, 'store'])->name('save-bankService');
-Route::get('/edit-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'edit'])->name('edit-bankService');
-Route::put('/update-bankService/{id}', [App\Http\Controllers\BankServiceController::class, 'update'])->name('update-bankService');
-Route::delete('/delete-bankService/{id}' , [App\Http\Controllers\BankServiceController::class, 'destroy'])->name('delete-bankService');
+Route::get('/admin/bankService', [App\Http\Controllers\BankServicesController::class, 'index'])->name('bankService');
+Route::post('/save-bankService', [App\Http\Controllers\BankServicesController::class, 'store'])->name('save-bankService');
+Route::get('/edit-bankService/{id}', [App\Http\Controllers\BankServicesController::class, 'edit'])->name('edit-bankService');
+Route::put('/update-bankService/{id}', [App\Http\Controllers\BankServicesController::class, 'update'])->name('update-bankService');
+Route::delete('/delete-bankService/{id}' , [App\Http\Controllers\BankServicesController::class, 'destroy'])->name('delete-bankService');
 
 Route::get('/admin/fAQ', [App\Http\Controllers\FAQController::class, 'index'])->name('fAQ');
 Route::post('/save-fAQ', [App\Http\Controllers\FAQController::class, 'store'])->name('save-fAQ');

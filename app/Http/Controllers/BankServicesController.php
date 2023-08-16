@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BankService;
+use App\Models\BankServices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class BankServiceController extends Controller
+class BankServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class BankServiceController extends Controller
      */
     public function index()
     {
-        $bankServices = BankService::all();
+        $bankServices = BankServices::all();
         return view('admin.bankServices.bankServices', compact('bankServices'));
     }
 
@@ -37,7 +37,7 @@ class BankServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $bankService = new BankService;
+        $bankService = new BankServices;
         $bankService->title = $request->input('title');
         $bankService->description = $request->input('description');
         $bankService->page = $request->input('page');
@@ -59,10 +59,10 @@ class BankServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BankService  $bankService
+     * @param  \App\Models\BankServices  $bankService
      * @return \Illuminate\Http\Response
      */
-    public function show(BankService $bankService)
+    public function show(BankServices $bankService)
     {
         //
     }
@@ -70,12 +70,12 @@ class BankServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BankService  $bankService
+     * @param  \App\Models\BankServices  $bankService
      * @return \Illuminate\Http\Response
      */
-    public function edit(BankService $bankService, $id)
+    public function edit(BankServices $bankService, $id)
     {
-        $bankService = BankService::find($id);
+        $bankService = BankServices::find($id);
         return view('admin.bankServices.edit', compact('bankService'));
     }
 
@@ -83,12 +83,12 @@ class BankServiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BankService  $bankService
+     * @param  \App\Models\BankServices  $bankService
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BankService $bankService, $id)
+    public function update(Request $request, BankServices $bankService, $id)
     {
-        $bankService = BankService::findOrFail($id);
+        $bankService = BankServices::findOrFail($id);
             $bankService->title = $request->input('title');
             $bankService->description = $request->input('description');
             $bankService->page = $request->input('page');
@@ -113,12 +113,12 @@ class BankServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BankService  $bankService
+     * @param  \App\Models\BankServices  $bankService
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BankService $bankService, $id)
+    public function destroy(BankServices $bankService, $id)
     {
-        $bankService = BankService::find($id);
+        $bankService = BankServices::find($id);
         $destination = 'images/bankServices/'.$bankService->image;
         if(File::exists($destination)){
             File::delete($destination);

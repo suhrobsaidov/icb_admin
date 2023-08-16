@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\BankService;
+use App\Models\BankServices;
 use Faker\Generator as Faker;
 
-$factory->define(BankService::class, function (Faker $faker) {
+$factory->define(BankServices::class, function (Faker $faker) {
     return [
         //
     ];
