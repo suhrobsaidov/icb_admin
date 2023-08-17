@@ -51,6 +51,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                 <has-error field="page" :form="form"></has-error>
                                             </div>
                                             <div class="form-group">
+                                                <label>Язык</label>
                                                 <select name="language" id="language"  v-model="form.language">
                                                     <option value="Ru">Русский</option>
                                                     <option value="En">English</option>

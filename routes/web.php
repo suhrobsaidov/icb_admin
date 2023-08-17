@@ -80,7 +80,7 @@ Route::get('carts','CardController@index');
 Route::get('currentoffers','CurrentOffersController@index');
 Route::get('calculators','CalculatorsController@index');
 Route::get('bankservices','BankServicesController@index');
-//Route::get('','');
+Route::get('depositcards','DepositscardsController@index');
 //Route::get('','');
 //Route::get('','');
 //Route::get('','');
