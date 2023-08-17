@@ -985,7 +985,7 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "form-group"
-  }, [_c("select", {
+  }, [_c("label", [_vm._v("Язык")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
