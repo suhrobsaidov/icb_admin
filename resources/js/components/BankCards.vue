@@ -8,7 +8,7 @@ import ExampleComponent from "./ExampleComponent.vue";
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Депозитные карточки</h3>
+                    <h3 class="card-title">Банковские карты</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createdepositscards">
+                                    <form @submit.prevent="createbankcards">
 
 
                                         <div class="modal-body">
@@ -111,18 +111,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="depositscards in depositscards" :key="depositscards.id">
-                            <td>{{ depositscards.id }}</td>
-                            <td>{{ depositscards.title }}</td>
-                            <td>{{depositscards.description}}</td>
-                            <td>{{depositscards.link}}</td>
-                            <td>{{depositscards.maintenance}}</td>
-                            <td>{{depositscards.security}}</td>
-                            <td>{{depositscards.access}}</td>
-                            <td>{{depositscards.commission}}</td>
-                            <td>{{depositscards.time}}</td>
-                            <td>{{depositscards.money}}</td>
-                            <td>{{depositscards.created_at | myDate}}</td>
+                        <tr v-for="bankcards in bankcards" :key="bankcards.id">
+                            <td>{{ bankcards.id }}</td>
+                            <td>{{ bankcards.title }}</td>
+                            <td>{{bankcards.description}}</td>
+                            <td>{{bankcards.link}}</td>
+                            <td>{{bankcards.maintenance}}</td>
+                            <td>{{bankcards.security}}</td>
+                            <td>{{bankcards.access}}</td>
+                            <td>{{bankcards.commission}}</td>
+                            <td>{{bankcards.time}}</td>
+                            <td>{{bankcards.money}}</td>
+                            <td>{{bankcards.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -148,7 +148,7 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            depositscards : {},
+            bankcards : {},
             form: new Form({
                 title: '',
                 description: '',
@@ -164,18 +164,18 @@ export default {
         }
     },
     methods: {
-        loaddepositscards(){
-            axios.get('api/depositscards').then(({data}) =>(this.depositscards = data.data));
+        loadbankcards(){
+            axios.get('api/bankcards').then(({data}) =>(this.bankcards = data.data));
         },
-        createdepositscards(){
+        createbankcards(){
             this.$Progress.start();
-            this.form.post('api/depositscards');
+            this.form.post('api/bankcards');
             this.$Progress.finish();
         }
     },
     created() {
-        this.loaddepositscards();
-        setInterval(() => this.loaddepositscards(), 3000);
+        this.loadbankcards();
+        setInterval(() => this.loadbankcards(), 3000);
     }
 }
 </script>

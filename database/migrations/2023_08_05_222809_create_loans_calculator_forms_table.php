@@ -33,9 +33,9 @@ class CreateLoansCalculatorFormsTable extends Migration
             $table->string('monthly_family_income');
             $table->string('branch');
             $table->string('phone_number_for');
-            $table->string('photo');
-            $table->string('passport');
-            $table->string('other_documents');
+            $table->string('photo')->nullable();
+            $table->string('passport')->nullable();
+            $table->string('other_documents')->nullable();
             $table->timestamps();
         });
     }

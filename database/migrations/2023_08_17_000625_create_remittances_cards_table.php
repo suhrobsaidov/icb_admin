@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBankCardsTable extends Migration
+class CreateRemittancesCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateBankCardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bank_cards', function (Blueprint $table) {
+        Schema::create('remittances_cards', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description');
             $table->string('image')->nullable();
             $table->string('link');
-            $table->string('maintense');
-            $table->string('security');
-            $table->string('access');
-            $table->string('commission');
-            $table->string('time');
-            $table->string('money');
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ class CreateBankCardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bank_cards');
+        Schema::dropIfExists('remittances_cards');
     }
 }
