@@ -8,7 +8,7 @@ import ExampleComponent from "./ExampleComponent.vue";
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Кредиты</h3>
+                    <h3 class="card-title">Денежные переводы</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createbankloans">
+                                    <form @submit.prevent="createremittancescards">
 
 
                                         <div class="modal-body">
@@ -44,42 +44,6 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                        class="form-control" :class="{'is_invalid': form.errors.has('link')}">
                                                 <has-error field="link" :form="form"></has-error>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.maintenance" name="maintenance"
-                                                       placeholder="обслуживание"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('maintenance')}">
-                                                <has-error field="maintenance" :form="form"></has-error>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.security" name="security"
-                                                       placeholder="безопасноть"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('security')}">
-                                                <has-error field="security" :form="form"></has-error>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.access" name="access"
-                                                       placeholder="доступность"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('access')}">
-                                                <has-error field="access" :form="form"></has-error>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.commission" name="commission"
-                                                       placeholder="Комиссия"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('commission')}">
-                                                <has-error field="commission" :form="form"></has-error>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.time" name="time"
-                                                       placeholder="время"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('time')}">
-                                                <has-error field="time" :form="form"></has-error>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" v-model="form.money" name="money"
-                                                       placeholder="деньги"
-                                                       class="form-control" :class="{'is_invalid': form.errors.has('money')}">
-                                                <has-error field="money" :form="form"></has-error>
-                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -100,29 +64,17 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <th>Заголовок</th>
                             <th>Описание</th>
                             <th>Путь кнопки</th>
-                            <th>Обслуживание</th>
-                            <th>Безопасноть</th>
-                            <th>Доступность</th>
-                            <th>Комиссия</th>
-                            <th>Время</th>
-                            <th>Деньги</th>
                             <th>Время создания</th>
                             <th>Изменения</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="bankloans in bankloans" :key="bankloans.id">
-                            <td>{{ bankloans.id }}</td>
-                            <td>{{ bankloans.title }}</td>
-                            <td>{{bankloans.description}}</td>
-                            <td>{{bankloans.link}}</td>
-                            <td>{{bankloans.maintenance}}</td>
-                            <td>{{bankloans.security}}</td>
-                            <td>{{bankloans.access}}</td>
-                            <td>{{bankloans.commission}}</td>
-                            <td>{{bankloans.time}}</td>
-                            <td>{{bankloans.money}}</td>
-                            <td>{{bankloans.created_at | myDate}}</td>
+                        <tr v-for="remittancescards in remittancescards" :key="remittancescards.id">
+                            <td>{{ remittancescards.id }}</td>
+                            <td>{{ remittancescards.title }}</td>
+                            <td>{{remittancescards.description}}</td>
+                            <td>{{remittancescards.link}}</td>
+                            <td>{{remittancescards.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -148,34 +100,27 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            bankloans : {},
+            remittancescards : {},
             form: new Form({
                 title: '',
                 description: '',
                 link: '',
-                maintenance: '',
-                security: '',
-                access: '',
-                commission: '',
-                time: '',
-                money: '',
-                image: '',
             })
         }
     },
     methods: {
-        loadbankloans(){
-            axios.get('api/bankloans').then(({data}) =>(this.bankloans = data.data));
+        loadremittancescards(){
+            axios.get('api/remittancescards').then(({data}) =>(this.remittancescards = data.data));
         },
-        createbankloans(){
+        createremittancescards(){
             this.$Progress.start();
-            this.form.post('api/bankloans');
+            this.form.post('api/remittancescards');
             this.$Progress.finish();
         }
     },
     created() {
-        this.loadbankloans();
-        setInterval(() => this.loadbankloans(), 3000);
+        this.loadremittancescards();
+        setInterval(() => this.loadremittancescards(), 3000);
     }
 }
 </script>
