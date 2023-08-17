@@ -18,7 +18,7 @@ import DepositCards from "./components/DepositCards.vue";
 import BankLoans from "./components/BankLoans.vue";
 import BankCards from "./components/BankCards.vue";
 import RemittancesCards from "./components/RemittancesCards.vue";
-import LoansForm from "./components/LoansCalculatorForm.vue";
+import LoansCalculatorForm from "./components/LoansCalculatorForm.vue";
 
 
 require('./bootstrap');
@@ -79,7 +79,7 @@ const router = new VueRouter({
         {path: '/bankloans', component:BankLoans},
         {path: '/bankcards', component:BankCards},
         {path: '/remittancescards', component:RemittancesCards},
-        {path: '/loansform', component:LoansForm},
+        {path: '/loanscalculatorform', component:LoansCalculatorForm},
     ]
 });
 
@@ -115,7 +115,7 @@ Vue.component('DepositCards', require('./components/DepositCards.vue'));
 Vue.component('BankLoans', require('./components/BankLoans.vue'));
 Vue.component('BankCards', require('./components/BankCards.vue'));
 Vue.component('RemittancesCards', require('./components/RemittancesCards.vue'));
-Vue.component('LoansForm', require('./components/LoansCalculatorForm.vue'));
+Vue.component('LoansCalculatorForm', require('./components/LoansCalculatorForm.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

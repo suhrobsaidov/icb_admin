@@ -81,10 +81,10 @@ var __default__ = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -92,9 +92,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Bankloans"
-});
+/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+var __default__ = {
+  data: function data() {
+    return {
+      bankloans: {},
+      form: new Form({
+        title: '',
+        description: '',
+        link: '',
+        maintenance: '',
+        security: '',
+        access: '',
+        commission: '',
+        time: '',
+        money: '',
+        image: ''
+      })
+    };
+  },
+  methods: {
+    loadbankloans: function loadbankloans() {
+      var _this = this;
+      axios.get('api/bankloans').then(function (_ref) {
+        var data = _ref.data;
+        return _this.bankloans = data.data;
+      });
+    },
+    createbankloans: function createbankloans() {
+      this.$Progress.start();
+      this.form.post('api/bankloans');
+      this.$Progress.finish();
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+    this.loadbankloans();
+    setInterval(function () {
+      return _this2.loadbankloans();
+    }, 3000);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  __name: 'BankLoans',
+  setup: function setup(__props) {
+    return {
+      __sfc: true
+    };
+  }
+}));
 
 /***/ }),
 
@@ -434,7 +481,7 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
-      depositscards: {},
+      depositcards: {},
       form: new Form({
         title: '',
         description: '',
@@ -450,24 +497,24 @@ var __default__ = {
     };
   },
   methods: {
-    loaddepositscards: function loaddepositscards() {
+    loaddepositcards: function loaddepositcards() {
       var _this = this;
-      axios.get('api/depositscards').then(function (_ref) {
+      axios.get('api/depositcards').then(function (_ref) {
         var data = _ref.data;
-        return _this.depositscards = data.data;
+        return _this.depositcards = data.data;
       });
     },
-    createdepositscards: function createdepositscards() {
+    createdepositcards: function createdepositcards() {
       this.$Progress.start();
-      this.form.post('api/depositscards');
+      this.form.post('api/depositcards');
       this.$Progress.finish();
     }
   },
   created: function created() {
     var _this2 = this;
-    this.loaddepositscards();
+    this.loaddepositcards();
     setInterval(function () {
-      return _this2.loaddepositscards();
+      return _this2.loaddepositcards();
     }, 3000);
   }
 };
@@ -581,16 +628,24 @@ var __default__ = {
     return {
       loanscalculatorform: {},
       form: new Form({
-        title: '',
-        description: '',
-        link: '',
-        maintenance: '',
-        security: '',
-        access: '',
-        commission: '',
-        time: '',
-        money: '',
-        image: ''
+        surname: '',
+        name: '',
+        middle_name: '',
+        e_mail: '',
+        phone_number: '',
+        additional_phone_number: '',
+        loan_product: '',
+        loan_currency: '',
+        loan_amount: '',
+        loan_term: '',
+        loan_purpose: '',
+        occupation: '',
+        city_district: '',
+        region: '',
+        address_where_registered: '',
+        monthly_family_income: '',
+        branch: '',
+        phone_number_for: ''
       })
     };
   },
@@ -1246,10 +1301,417 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c;
-  return _c("div");
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "card"
+  }, [_c("div", {
+    staticClass: "card-header"
+  }, [_c("h3", {
+    staticClass: "card-title"
+  }, [_vm._v("Кредиты")]), _vm._v(" "), _c("div", {
+    staticClass: "card-tools"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "modal fade",
+    attrs: {
+      id: "addNew",
+      tabindex: "-1",
+      "aria-labelledby": "addNewLabel",
+      "aria-hidden": "true"
+    }
+  }, [_c("div", {
+    staticClass: "modal-dialog"
+  }, [_c("div", {
+    staticClass: "modal-content"
+  }, [_vm._m(1), _vm._v(" "), _c("form", {
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.createbankloans.apply(null, arguments);
+      }
+    }
+  }, [_c("div", {
+    staticClass: "modal-body"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.title,
+      expression: "form.title"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("title")
+    },
+    attrs: {
+      type: "text",
+      name: "title",
+      placeholder: "заголовок"
+    },
+    domProps: {
+      value: _vm.form.title
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "title", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "title",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.description,
+      expression: "form.description"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("description")
+    },
+    attrs: {
+      type: "text",
+      name: "description",
+      placeholder: "Описание"
+    },
+    domProps: {
+      value: _vm.form.description
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "description", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "description",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.link,
+      expression: "form.link"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("link")
+    },
+    attrs: {
+      type: "text",
+      name: "link",
+      placeholder: "ссылка"
+    },
+    domProps: {
+      value: _vm.form.link
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "link", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "link",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.maintenance,
+      expression: "form.maintenance"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("maintenance")
+    },
+    attrs: {
+      type: "text",
+      name: "maintenance",
+      placeholder: "обслуживание"
+    },
+    domProps: {
+      value: _vm.form.maintenance
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "maintenance", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "maintenance",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.security,
+      expression: "form.security"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("security")
+    },
+    attrs: {
+      type: "text",
+      name: "security",
+      placeholder: "безопасноть"
+    },
+    domProps: {
+      value: _vm.form.security
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "security", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "security",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.access,
+      expression: "form.access"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("access")
+    },
+    attrs: {
+      type: "text",
+      name: "access",
+      placeholder: "доступность"
+    },
+    domProps: {
+      value: _vm.form.access
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "access", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "access",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.commission,
+      expression: "form.commission"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("commission")
+    },
+    attrs: {
+      type: "text",
+      name: "commission",
+      placeholder: "Комиссия"
+    },
+    domProps: {
+      value: _vm.form.commission
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "commission", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "commission",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.time,
+      expression: "form.time"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("time")
+    },
+    attrs: {
+      type: "text",
+      name: "time",
+      placeholder: "время"
+    },
+    domProps: {
+      value: _vm.form.time
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "time", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "time",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.money,
+      expression: "form.money"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("money")
+    },
+    attrs: {
+      type: "text",
+      name: "money",
+      placeholder: "деньги"
+    },
+    domProps: {
+      value: _vm.form.money
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "money", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "money",
+      form: _vm.form
+    }
+  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-body table-responsive p-0"
+  }, [_c("table", {
+    staticClass: "table table-hover text-nowrap"
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankloans, function (bankloans) {
+    return _c("tr", {
+      key: bankloans.id
+    }, [_c("td", [_vm._v(_vm._s(bankloans.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankloans.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+  }), 0)])])])])]);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button",
+      "data-toggle": "modal",
+      "data-target": "#addNew"
+    }
+  }, [_vm._v("Добавить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    }
+  }, [_c("span", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Обслуживание")]), _vm._v(" "), _c("th", [_vm._v("Безопасноть")]), _vm._v(" "), _c("th", [_vm._v("Доступность")]), _vm._v(" "), _c("th", [_vm._v("Комиссия")]), _vm._v(" "), _c("th", [_vm._v("Время")]), _vm._v(" "), _c("th", [_vm._v("Деньги")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("td", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-edit blue"
+  })]), _vm._v("\n                            /\n                            "), _c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-trash red"
+  })])]);
+}];
 render._withStripped = true;
 
 
@@ -2580,7 +3042,7 @@ var render = function render() {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createdepositscards.apply(null, arguments);
+        return _vm.createdepositcards.apply(null, arguments);
       }
     }
   }, [_c("div", {
@@ -2877,10 +3339,10 @@ var render = function render() {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositscards, function (depositscards) {
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositcards, function (depositcards) {
     return _c("tr", {
-      key: depositscards.id
-    }, [_c("td", [_vm._v(_vm._s(depositscards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositscards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositscards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+      key: depositcards.id
+    }, [_c("td", [_vm._v(_vm._s(depositcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositcards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -3980,7 +4442,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.loanscalculatorform, function (loanscalculatorform) {
     return _c("tr", {
       key: loanscalculatorform.id
-    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purporse))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purpose))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -4966,7 +5428,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     path: '/remittancescards',
     component: _components_RemittancesCards_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
   }, {
-    path: '/loansform',
+    path: '/loanscalculatorform',
     component: _components_LoansCalculatorForm_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
   }]
 });
@@ -4999,7 +5461,7 @@ vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('DepositCards', __webpack
 vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('BankLoans', __webpack_require__(/*! ./components/BankLoans.vue */ "./resources/js/components/BankLoans.vue"));
 vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('BankCards', __webpack_require__(/*! ./components/BankCards.vue */ "./resources/js/components/BankCards.vue"));
 vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('RemittancesCards', __webpack_require__(/*! ./components/RemittancesCards.vue */ "./resources/js/components/RemittancesCards.vue"));
-vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('LoansForm', __webpack_require__(/*! ./components/LoansCalculatorForm.vue */ "./resources/js/components/LoansCalculatorForm.vue"));
+vue__WEBPACK_IMPORTED_MODULE_20__["default"].component('LoansCalculatorForm', __webpack_require__(/*! ./components/LoansCalculatorForm.vue */ "./resources/js/components/LoansCalculatorForm.vue"));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -68491,7 +68953,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _BankLoans_vue_vue_type_template_id_578b674c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BankLoans.vue?vue&type=template&id=578b674c&scoped=true& */ "./resources/js/components/BankLoans.vue?vue&type=template&id=578b674c&scoped=true&");
-/* harmony import */ var _BankLoans_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BankLoans.vue?vue&type=script&lang=js& */ "./resources/js/components/BankLoans.vue?vue&type=script&lang=js&");
+/* harmony import */ var _BankLoans_vue_vue_type_script_setup_true_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BankLoans.vue?vue&type=script&setup=true&lang=js& */ "./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -68501,7 +68963,7 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _BankLoans_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BankLoans_vue_vue_type_script_setup_true_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _BankLoans_vue_vue_type_template_id_578b674c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _BankLoans_vue_vue_type_template_id_578b674c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -69041,10 +69503,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/BankLoans.vue?vue&type=script&lang=js&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/BankLoans.vue?vue&type=script&lang=js& ***!
-  \************************************************************************/
+/***/ "./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js& ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -69052,8 +69514,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BankLoans_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BankLoans.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BankLoans_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BankLoans_vue_vue_type_script_setup_true_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BankLoans.vue?vue&type=script&setup=true&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BankLoans.vue?vue&type=script&setup=true&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BankLoans_vue_vue_type_script_setup_true_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

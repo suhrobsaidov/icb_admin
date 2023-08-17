@@ -179,7 +179,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{loanscalculatorform.loan_currency}}</td>
                             <td>{{loanscalculatorform.loan_amount}}</td>
                             <td>{{loanscalculatorform.loan_term}}</td>
-                            <td>{{loanscalculatorform.loan_purporse}}</td>
+                            <td>{{loanscalculatorform.loan_purpose}}</td>
                             <td>{{loanscalculatorform.occupation}}</td>
                             <td>{{loanscalculatorform.city_district}}</td>
                             <td>{{loanscalculatorform.region}}</td>
@@ -215,16 +215,24 @@ export default {
         return{
             loanscalculatorform : {},
             form: new Form({
-                title: '',
-                description: '',
-                link: '',
-                maintenance: '',
-                security: '',
-                access: '',
-                commission: '',
-                time: '',
-                money: '',
-                image: '',
+                surname: '',
+                name: '',
+                middle_name: '',
+                e_mail: '',
+                phone_number: '',
+                additional_phone_number: '',
+                loan_product: '',
+                loan_currency: '',
+                loan_amount: '',
+                loan_term: '',
+                loan_purpose: '',
+                occupation: '',
+                city_district: '',
+                region: '',
+                address_where_registered: '',
+                monthly_family_income: '',
+                branch: '',
+                phone_number_for: '',
             })
         }
     },

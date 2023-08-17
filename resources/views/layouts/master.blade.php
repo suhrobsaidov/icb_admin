@@ -132,15 +132,15 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav-item nav-treeview">
-                            <li  class="nav-link">
-                                <a href=" " class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>
-                                        Главная страница
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
+                            <ul class="nav-item nav-treeview">
+                                <li  class="nav-link">
+                                    <a href=" " class="nav-link">
+                                        <i class="far fa-fw fa-circle "></i>
+                                        <p>
+                                            Главная страница
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <router-link to="/header" class="nav-link">
@@ -192,6 +192,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            </ul>
                             <ul class="nav-item nav-treeview">
                                 <li  class="nav-link">
                                     <a href=" " class="nav-link">
@@ -354,7 +355,7 @@
                                         <router-link to="/remittancescards" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>
-                                                Банковские карты
+                                                Карты для перевода
                                             </p>
                                         </router-link>
                                     </li>

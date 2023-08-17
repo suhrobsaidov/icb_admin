@@ -22,7 +22,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createdepositscards">
+                                    <form @submit.prevent="createdepositcards">
 
 
                                         <div class="modal-body">
@@ -111,18 +111,18 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="depositscards in depositscards" :key="depositscards.id">
-                            <td>{{ depositscards.id }}</td>
-                            <td>{{ depositscards.title }}</td>
-                            <td>{{depositscards.description}}</td>
-                            <td>{{depositscards.link}}</td>
-                            <td>{{depositscards.maintenance}}</td>
-                            <td>{{depositscards.security}}</td>
-                            <td>{{depositscards.access}}</td>
-                            <td>{{depositscards.commission}}</td>
-                            <td>{{depositscards.time}}</td>
-                            <td>{{depositscards.money}}</td>
-                            <td>{{depositscards.created_at | myDate}}</td>
+                        <tr v-for="depositcards in depositcards" :key="depositcards.id">
+                            <td>{{ depositcards.id }}</td>
+                            <td>{{ depositcards.title }}</td>
+                            <td>{{depositcards.description}}</td>
+                            <td>{{depositcards.link}}</td>
+                            <td>{{depositcards.maintenance}}</td>
+                            <td>{{depositcards.security}}</td>
+                            <td>{{depositcards.access}}</td>
+                            <td>{{depositcards.commission}}</td>
+                            <td>{{depositcards.time}}</td>
+                            <td>{{depositcards.money}}</td>
+                            <td>{{depositcards.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -148,7 +148,7 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
-            depositscards : {},
+            depositcards : {},
             form: new Form({
                 title: '',
                 description: '',
@@ -164,18 +164,18 @@ export default {
         }
     },
     methods: {
-        loaddepositscards(){
-            axios.get('api/depositscards').then(({data}) =>(this.depositscards = data.data));
+        loaddepositcards(){
+            axios.get('api/depositcards').then(({data}) =>(this.depositcards = data.data));
         },
-        createdepositscards(){
+        createdepositcards(){
             this.$Progress.start();
-            this.form.post('api/depositscards');
+            this.form.post('api/depositcards');
             this.$Progress.finish();
         }
     },
     created() {
-        this.loaddepositscards();
-        setInterval(() => this.loaddepositscards(), 3000);
+        this.loaddepositcards();
+        setInterval(() => this.loaddepositcards(), 3000);
     }
 }
 </script>
