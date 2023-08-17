@@ -374,9 +374,28 @@
                                    href="#"        >
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Loans calculators
+                                        Кредитные калькуляторы
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Кредитная форма
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "
