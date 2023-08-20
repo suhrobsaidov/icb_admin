@@ -23,6 +23,7 @@ import DepositCalculatorForm from "./components/DepositCalculatorForm.vue";
 import OnlineServices from "./components/OnlineServices.vue";
 import News from "./components/News.vue";
 import Feedback from "./components/Feedback.vue";
+import Work from "./components/Work.vue";
 
 
 require('./bootstrap');
@@ -88,6 +89,7 @@ const router = new VueRouter({
         {path: '/onlineservices', component:OnlineServices},
         {path: '/news', component:News},
         {path: '/feedback', component:Feedback},
+        {path: '/work', component:Work},
     ]
 });
 
@@ -128,6 +130,7 @@ Vue.component('DepositCalculatorForm', require('./components/DepositCalculatorFo
 Vue.component('OnlineServices', require('./components/OnlineServices.vue'));
 Vue.component('News', require('./components/News.vue'));
 Vue.component('Feedback', require('./components/Feedback.vue'));
+Vue.component('Work', require('./components/Work.vue'));
 
 
 /**

@@ -35,6 +35,8 @@ Route::apiResource('depositcalculatorform', 'API\DepositCalculatorFormController
 Route::apiResource('onlineservices', 'API\OnlineServicesController');
 Route::apiResource('news', 'API\NewsController');
 Route::apiResource('feedback', 'API\FeedbackController');
+Route::apiResource('work', 'API\WorkController');
+
 
 
 //for admin
