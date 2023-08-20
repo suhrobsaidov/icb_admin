@@ -8,7 +8,7 @@ import ExampleComponent from "./ExampleComponent.vue";
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Банковские карты</h3>
+                    <h3 class="card-title">Кредитный калькулятор</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>

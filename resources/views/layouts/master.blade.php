@@ -403,18 +403,72 @@
                                    href="#"        >
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Deposit calculators
+                                        Калькулятор депозита
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Депозитная форма
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "
                                    href="#"        >
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Payroll Services
+                                        Расчет заработной платы
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                               Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                <li class="nav-item">
+                                    <router-link to="/depositcalculatorform" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Консультация
+                                        </p>
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                </li>
+                            </ul>
                             </li>
                             <li  class="nav-item">
                                 <a class="nav-link  "
