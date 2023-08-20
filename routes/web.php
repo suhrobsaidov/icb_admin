@@ -67,6 +67,11 @@ Route::get('getbankcards', 'API\BankCardsController@index');
 Route::get('getremittancescards', 'API\RemittancesCardsController@index');
 Route::get('getloanscalculatorform', 'API\LoansCalculatorFormController@index');
 Route::get('getdepositcalculatorform', 'API\DepositCalculatorFormController@index');
+Route::get('getonlineservices', 'API\OnlineServicesController@index');
+Route::get('getnews', 'API\NewsController@index');
+Route::get('getfeedback', 'API\FeedbackController@index');
+
+
 
 Route::get('/show', function () {
     return view('searchShow');

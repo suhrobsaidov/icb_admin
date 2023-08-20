@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/app.css">
 </head>
-<body class="sidebar-mini" >
+<body class="sidebar-mini">
 <div class="wrapper" id="app">
     <div class="preloader flex-column justify-content-center align-items-center">
         <img src="http://127.0.0.1:8000/vendor/adminlte/dist/img/AdminLTELogo.png"
@@ -61,7 +61,7 @@
             </li>
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <span >
+                <span>
             admin
         </span>
                 </a>
@@ -72,7 +72,8 @@
                             <i class="fa fa-fw fa-power-off text-red"></i>
                             Log Out
                         </a>
-                        <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
+                        <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST"
+                              style="display: none;">
                             <input type="hidden" name="_token" value="dBuRiiC1VClxRHpNN53FWKygOjSW30KcMKdutBp0">
                         </form>
                     </li>
@@ -112,10 +113,10 @@
                             </div>
                         </div>
                     </li>
-                    <li  class="nav-header ">
+                    <li class="nav-header ">
                         ACCOUNT SETTINGS
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item">
                         <router-link to="/users" class="nav-link">
                             <i class="fas fa-users nav-icon "></i>
                             <p>
@@ -123,24 +124,24 @@
                             </p>
                         </router-link>
                     </li>
-                    <li  class="nav-item has-treeview ">
+                    <li class="nav-item has-treeview ">
                         <a class="nav-link  "
-                           href="" >
+                           href="">
                             <i class="fas fa-fw fa-share "></i>
                             <p>
                                 Страницы
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                            <ul class="nav-item nav-treeview">
-                                <li  class="nav-link">
-                                    <a href=" " class="nav-link">
-                                        <i class="far fa-fw fa-circle "></i>
-                                        <p>
-                                            Главная страница
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
+                        <ul class="nav-item nav-treeview">
+                            <li class="nav-link">
+                                <a href=" " class="nav-link">
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Главная страница
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <router-link to="/header" class="nav-link">
@@ -192,54 +193,54 @@
                                     </li>
                                 </ul>
                             </li>
-                            </ul>
-                            <ul class="nav-item nav-treeview">
-                                <li  class="nav-link">
-                                    <a href=" " class="nav-link">
-                                        <i class="far fa-fw fa-circle "></i>
-                                        <p>
-                                            Депозиты
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <router-link to="/header" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>
-                                                    Шапка
-                                                </p>
-                                            </router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link to="/carts" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>
-                                                    Карточки
-                                                </p>
-                                            </router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link to="/depositcards" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>
-                                                    Депозиты
-                                                </p>
-                                            </router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link to="/bankservices" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>
-                                                    Сервисы банка
-                                                </p>
-                                            </router-link>
-                                        </li>
-                                    </ul>
-                                </li>
-                            <li  class="nav-item">
+                        </ul>
+                        <ul class="nav-item nav-treeview">
+                            <li class="nav-link">
+                                <a href=" " class="nav-link">
+                                    <i class="far fa-fw fa-circle "></i>
+                                    <p>
+                                        Депозиты
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcards" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Депозиты
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Кредиты
@@ -281,9 +282,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Банковские карты
@@ -311,7 +312,7 @@
                                         <router-link to="/bankcards" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>
-                                               Банковские карты
+                                                Банковские карты
                                             </p>
                                         </router-link>
                                     </li>
@@ -325,9 +326,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Денежные переводы
@@ -361,18 +362,18 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Buying and selling currency
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Кредитные калькуляторы
@@ -398,9 +399,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Калькулятор депозита
@@ -426,9 +427,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Расчет заработной платы
@@ -448,301 +449,924 @@
                                         <router-link to="/carts" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>
-                                               Карточки
+                                                Карточки
                                             </p>
                                         </router-link>
                                     </li>
-                                <li class="nav-item">
-                                    <router-link to="/depositcalculatorform" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>
-                                            Консультация
-                                        </p>
-                                    </router-link>
-                                </li>
-                                <li class="nav-item">
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Консультация
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
                                         <router-link to="/bankservices" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>
                                                 Сервисы банка
                                             </p>
                                         </router-link>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Knowledge base
+                                        База знаний
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Online Services
+                                        Онлайн сервисы
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/onlineservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Result search
+                                        Поисковик
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Business loan
+                                        Бизнес-кредит
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Mortgage loan
+                                        Ипотечный займ
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Consumer loans
+                                        Потребительские кредиты
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Express credit
+                                        Экспресс кредит
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Auto loans
+                                        Автокредиты
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Agriculture loan
+                                        Сельскохозяйственный кредит
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Loan product “Donish”
+                                        Кредитный продукт “Дониш”
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/loanscalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Savings Account
+                                        Сберегательный счет
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Term deposits
+                                        Срочные вклады
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Deposit “Easy”
+                                        Депозит «Легкий»
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Child deposit
+                                        Детский депозит
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        ‘Diyor’ Deposit
+                                        Депозит «Диёр»
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        “Housing” deposit
+                                        Депозит «Жилище»
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/carts" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Карточки
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/depositcalculatorform" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Заявки онлайн кредит
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/bankservices" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Сервисы банка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        About bank- 2
+                                        О банке - 2
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        About bank- shareholders
+                                        О банке - акционер
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        About bank- Financial statements
+                                        О банке- Финансовая отчетность
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/news" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Новости
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        About bank- Financial statements 2
+                                        О банке- Финансовая отчетность 2
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/news" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Новости
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Compliance
+                                        Согласие
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Контакты
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/feedback" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Обратная связь
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         FAQ
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Новости - 1
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/news" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Новости
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Новости - подробнее
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
-                            <li  class="nav-item">
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/news" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Новости
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Vacancy - 1
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Vacancy - 2
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Филиалы (на карте)
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Филиалы (список)
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Банкоматы (на карте)
                                     </p>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link  "
-                                   href="#"        >
+                                   href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Банкоматы (список )
@@ -751,30 +1375,30 @@
                             </li>
                         </ul>
                     </li>
-                    <li  class="nav-header ">
+                    <li class="nav-header ">
                         LABELS
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link  "
-                           href="#"        >
+                           href="#">
                             <i class="far fa-fw fa-circle text-red"></i>
                             <p>
                                 Important
                             </p>
                         </a>
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link  "
-                           href="#"        >
+                           href="#">
                             <i class="far fa-fw fa-circle text-yellow"></i>
                             <p>
                                 Warning
                             </p>
                         </a>
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link  "
-                           href="#"        >
+                           href="#">
                             <i class="far fa-fw fa-circle text-cyan"></i>
                             <p>
                                 Information

@@ -32,6 +32,10 @@ Route::apiResource('bankcards', 'API\BankCardsController');
 Route::apiResource('remittancescards', 'API\RemittancesCardsController');
 Route::apiResource('loanscalculatorform', 'API\LoansCalculatorFormController');
 Route::apiResource('depositcalculatorform', 'API\DepositCalculatorFormController');
+Route::apiResource('onlineservices', 'API\OnlineServicesController');
+Route::apiResource('news', 'API\NewsController');
+Route::apiResource('feedback', 'API\FeedbackController');
+
 
 //for admin
 Route::get('/admin/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('header');
