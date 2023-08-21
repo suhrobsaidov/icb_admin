@@ -36,7 +36,7 @@ Route::apiResource('onlineservices', 'API\OnlineServicesController');
 Route::apiResource('news', 'API\NewsController');
 Route::apiResource('feedback', 'API\FeedbackController');
 Route::apiResource('work', 'API\WorkController');
-
+Route::apiResource('vacancy', 'API\VacancyController');
 
 
 //for admin

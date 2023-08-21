@@ -53,7 +53,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" v-model="form.question" name="question"
-                                                       placeholder="доп. номер телефона"
+                                                       placeholder="Вопрос"
                                                        class="form-control" :class="{'is_invalid': form.errors.has('question')}">
                                                 <has-error field="question" :form="form"></has-error>
                                             </div>

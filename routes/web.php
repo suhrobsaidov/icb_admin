@@ -71,6 +71,7 @@ Route::get('getonlineservices', 'API\OnlineServicesController@index');
 Route::get('getnews', 'API\NewsController@index');
 Route::get('getfeedback', 'API\FeedbackController@index');
 Route::get('getwork', 'API\WorkController@index');
+Route::get('getvacancy', 'API\VacancyController@index');
 
 
 

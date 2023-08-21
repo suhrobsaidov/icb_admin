@@ -1351,10 +1351,28 @@
                                    href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Vacancy - 2
+                                        Вакансии - 2
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/vacancy" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Приём вакансий
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link  "
                                    href="#">
