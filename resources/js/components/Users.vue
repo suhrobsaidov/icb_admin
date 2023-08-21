@@ -78,7 +78,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deleteUsers(users.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -107,6 +107,23 @@ export default {
         }
     },
     methods: {
+        deleteUsers(id){
+            swal({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                if(result.value){
+                    swal(
+                        'Удалено'
+                    )
+                }
+            })
+        },
         loadUsers(){
             axios.get('api/user').then(({data}) =>(this.users = data.data));
         },

@@ -697,27 +697,53 @@ var __default__ = {
     };
   },
   methods: {
-    loadHeader: function loadHeader() {
+    deleteHeader: function deleteHeader(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/header' + id).then(function () {
+          if (result.value) {
+            swal.fire('Удалено');
+          }
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadHeader: function loadHeader() {
+      var _this2 = this;
       axios.get('api/header').then(function (_ref) {
         var data = _ref.data;
-        return _this.header = data.data;
+        return _this2.header = data.data;
       });
     },
     createHeader: function createHeader() {
+      var _this3 = this;
       this.$Progress.start();
-      this.form.post('api/header');
-      this.$Progress.finish();
+      this.form.post('api/header').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this3.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this4 = this;
     this.loadHeader();
-    setInterval(function () {
-      return _this2.loadHeader();
-    }, 3000);
+    Fire.$on('AfterCreate', function () {
+      _this4.loadHeader();
+    });
+    //setInterval(() => this.loadHeader(), 3000);
   }
 };
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   __name: 'Header',
@@ -829,11 +855,31 @@ var __default__ = {
     };
   },
   methods: {
-    loadHeader: function loadHeader() {
+    deleteHeader: function deleteHeader(id) {
       var _this = this;
+      swal({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/header' + id).then(function () {
+          if (result.value) {
+            swal('Удалено');
+          }
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadHeader: function loadHeader() {
+      var _this2 = this;
       axios.get('api/header').then(function (_ref) {
         var data = _ref.data;
-        return _this.header = data.data;
+        return _this2.header = data.data;
       });
     },
     createHeader: function createHeader() {
@@ -843,10 +889,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadHeader();
     setInterval(function () {
-      return _this2.loadHeader();
+      return _this3.loadHeader();
     }, 3000);
   }
 };
@@ -1057,6 +1103,21 @@ var __default__ = {
     };
   },
   methods: {
+    deleteUsers: function deleteUsers(id) {
+      swal({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        if (result.value) {
+          swal('Удалено');
+        }
+      });
+    },
     loadUsers: function loadUsers() {
       var _this = this;
       axios.get('api/user').then(function (_ref) {
@@ -4426,7 +4487,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.header, function (header) {
     return _c("tr", {
       key: header.id
-    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteHeader(header.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -4493,19 +4565,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -5414,7 +5480,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.header, function (header) {
     return _c("tr", {
       key: header.id
-    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(header.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(header.sub_description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(header.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: ""
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteHeader(header.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -5481,19 +5558,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6334,7 +6405,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.users, function (users) {
     return _c("tr", {
       key: users.id
-    }, [_c("td", [_vm._v(_vm._s(users.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.email))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(users.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(users.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(users.email))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(users.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteUsers(users.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -6401,19 +6483,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6684,7 +6760,7 @@ render._withStripped = true;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_DashboardComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/DashboardComponent.vue */ "./resources/js/components/DashboardComponent.vue");
 /* harmony import */ var _components_Users_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue");
@@ -6713,7 +6789,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
+/* harmony import */ var vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! vform/src/components/bootstrap4 */ "./node_modules/vform/src/components/bootstrap4/index.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6749,6 +6825,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 window.swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_24___default());
 window.Form = vform__WEBPACK_IMPORTED_MODULE_23__.Form;
+window.Fire = new vue__WEBPACK_IMPORTED_MODULE_25__["default"]();
 
 var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_24___default().mixin({
   toast: true,
@@ -6757,13 +6834,13 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_24___default().mixin({
   timer: 3000
 });
 window.toast = toast;
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.Button.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.Button);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.HasError.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.HasError);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertError.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertError);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertErrors.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertErrors);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertSuccess.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_25__.AlertSuccess);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].use((vue_progressbar__WEBPACK_IMPORTED_MODULE_21___default()), {
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.Button.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.Button);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.HasError.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.HasError);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertError.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertError);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertErrors.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertErrors);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component(vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertSuccess.name, vform_src_components_bootstrap4__WEBPACK_IMPORTED_MODULE_26__.AlertSuccess);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].use((vue_progressbar__WEBPACK_IMPORTED_MODULE_21___default()), {
   color: 'rgb(143,255,199)',
   failedColor: 'red',
   height: '3px'
@@ -6832,10 +6909,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     component: _components_Vacancy_vue__WEBPACK_IMPORTED_MODULE_20__["default"]
   }]
 });
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].filter('upText', function (text) {
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].filter('upText', function (text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 });
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].filter('myDate', function (created) {
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].filter('myDate', function (created) {
   return moment__WEBPACK_IMPORTED_MODULE_22___default()(created).format('MMMM Do YYYY');
 });
 
@@ -6847,27 +6924,27 @@ vue__WEBPACK_IMPORTED_MODULE_26__["default"].filter('myDate', function (created)
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Dashboard', __webpack_require__(/*! ./components/DashboardComponent.vue */ "./resources/js/components/DashboardComponent.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('users', __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('MainPage', __webpack_require__(/*! ./components/MainPage.vue */ "./resources/js/components/MainPage.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('BankProducts', __webpack_require__(/*! ./components/BankProducts.vue */ "./resources/js/components/BankProducts.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Carts', __webpack_require__(/*! ./components/Cards.vue */ "./resources/js/components/Cards.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('CurrentOffers', __webpack_require__(/*! ./components/CurrentOffers.vue */ "./resources/js/components/CurrentOffers.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('calculators', __webpack_require__(/*! ./components/Calculators.vue */ "./resources/js/components/Calculators.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('BankServices', __webpack_require__(/*! ./components/BankServices.vue */ "./resources/js/components/BankServices.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('DepositCards', __webpack_require__(/*! ./components/DepositCards.vue */ "./resources/js/components/DepositCards.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('BankLoans', __webpack_require__(/*! ./components/BankLoans.vue */ "./resources/js/components/BankLoans.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('BankCards', __webpack_require__(/*! ./components/BankCards.vue */ "./resources/js/components/BankCards.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('RemittancesCards', __webpack_require__(/*! ./components/RemittancesCards.vue */ "./resources/js/components/RemittancesCards.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('LoansCalculatorForm', __webpack_require__(/*! ./components/LoansCalculatorForm.vue */ "./resources/js/components/LoansCalculatorForm.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('DepositCalculatorForm', __webpack_require__(/*! ./components/DepositCalculatorForm.vue */ "./resources/js/components/DepositCalculatorForm.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('OnlineServices', __webpack_require__(/*! ./components/OnlineServices.vue */ "./resources/js/components/OnlineServices.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('News', __webpack_require__(/*! ./components/News.vue */ "./resources/js/components/News.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Feedback', __webpack_require__(/*! ./components/Feedback.vue */ "./resources/js/components/Feedback.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Work', __webpack_require__(/*! ./components/Work.vue */ "./resources/js/components/Work.vue"));
-vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Vacancy', __webpack_require__(/*! ./components/Vacancy.vue */ "./resources/js/components/Vacancy.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Dashboard', __webpack_require__(/*! ./components/DashboardComponent.vue */ "./resources/js/components/DashboardComponent.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('users', __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('MainPage', __webpack_require__(/*! ./components/MainPage.vue */ "./resources/js/components/MainPage.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('BankProducts', __webpack_require__(/*! ./components/BankProducts.vue */ "./resources/js/components/BankProducts.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Carts', __webpack_require__(/*! ./components/Cards.vue */ "./resources/js/components/Cards.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('CurrentOffers', __webpack_require__(/*! ./components/CurrentOffers.vue */ "./resources/js/components/CurrentOffers.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('calculators', __webpack_require__(/*! ./components/Calculators.vue */ "./resources/js/components/Calculators.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('BankServices', __webpack_require__(/*! ./components/BankServices.vue */ "./resources/js/components/BankServices.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('DepositCards', __webpack_require__(/*! ./components/DepositCards.vue */ "./resources/js/components/DepositCards.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('BankLoans', __webpack_require__(/*! ./components/BankLoans.vue */ "./resources/js/components/BankLoans.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('BankCards', __webpack_require__(/*! ./components/BankCards.vue */ "./resources/js/components/BankCards.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('RemittancesCards', __webpack_require__(/*! ./components/RemittancesCards.vue */ "./resources/js/components/RemittancesCards.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('LoansCalculatorForm', __webpack_require__(/*! ./components/LoansCalculatorForm.vue */ "./resources/js/components/LoansCalculatorForm.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('DepositCalculatorForm', __webpack_require__(/*! ./components/DepositCalculatorForm.vue */ "./resources/js/components/DepositCalculatorForm.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('OnlineServices', __webpack_require__(/*! ./components/OnlineServices.vue */ "./resources/js/components/OnlineServices.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('News', __webpack_require__(/*! ./components/News.vue */ "./resources/js/components/News.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Feedback', __webpack_require__(/*! ./components/Feedback.vue */ "./resources/js/components/Feedback.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Work', __webpack_require__(/*! ./components/Work.vue */ "./resources/js/components/Work.vue"));
+vue__WEBPACK_IMPORTED_MODULE_25__["default"].component('Vacancy', __webpack_require__(/*! ./components/Vacancy.vue */ "./resources/js/components/Vacancy.vue"));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -6875,7 +6952,7 @@ vue__WEBPACK_IMPORTED_MODULE_26__["default"].component('Vacancy', __webpack_requ
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_26__["default"]({
+var app = new vue__WEBPACK_IMPORTED_MODULE_25__["default"]({
   el: '#app',
   router: router
 });

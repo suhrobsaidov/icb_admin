@@ -114,7 +114,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deleteHeader(header.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -148,18 +148,49 @@ export default {
         }
     },
     methods: {
+        deleteHeader(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/header'+id).then(()=>{
+                    if(result.value){
+                        swal.fire(
+                            'Удалено'
+                        )
+                    }
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadHeader(){
             axios.get('api/header').then(({data}) =>(this.header = data.data));
         },
         createHeader(){
             this.$Progress.start();
-            this.form.post('api/header');
-            this.$Progress.finish();
+            this.form.post('api/header')
+            .then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {
         this.loadHeader();
-        setInterval(() => this.loadHeader(), 3000);
+        Fire.$on('AfterCreate',() =>{
+            this.loadHeader();
+        })
+        //setInterval(() => this.loadHeader(), 3000);
     }
 }
 </script>

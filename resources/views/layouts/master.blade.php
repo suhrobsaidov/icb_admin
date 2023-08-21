@@ -1379,36 +1379,76 @@
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Филиалы (на карте)
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link  "
                                    href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Филиалы (список)
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link  "
                                    href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Банкоматы (на карте)
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             <li class="nav-item">
                                 <a class="nav-link  "
                                    href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
                                         Банкоматы (список )
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                            </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                         </ul>
                     </li>
                     <li class="nav-header ">

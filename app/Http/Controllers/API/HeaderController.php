@@ -79,6 +79,7 @@ class HeaderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $header = Header::findOrFail($id);
+        return response(200, 'Удалено');
     }
 }

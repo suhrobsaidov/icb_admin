@@ -38,6 +38,7 @@ import swal from 'sweetalert2'
 
 window.swal = swal;
 window.Form = Form;
+window.Fire = new Vue();
 import {
     Button,
     HasError,
