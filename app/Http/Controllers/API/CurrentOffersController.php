@@ -70,6 +70,8 @@ class CurrentOffersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $currentoffers = CurrentOffers::findOrFail($id);
+        $currentoffers->delete();
+        return response(200, 'Deleted');
     }
 }

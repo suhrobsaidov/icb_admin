@@ -90,7 +90,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deletecards(cards.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -121,6 +121,25 @@ export default {
         }
     },
     methods: {
+        deletecards(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/cards/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadcards(){
             axios.get('api/cards').then(({data}) =>(this.cards = data.data));
         },

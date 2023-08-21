@@ -73,6 +73,8 @@ class CardsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cards = Cards::findOrFail($id);
+        $cards->delete();
+        return response(200, 'Удалено');
     }
 }

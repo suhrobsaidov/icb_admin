@@ -169,11 +169,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadbankproducts: function loadbankproducts() {
+    deletebankproducts: function deletebankproducts(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/bankproducts/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadbankproducts: function loadbankproducts() {
+      var _this2 = this;
       axios.get('api/bankproducts').then(function (_ref) {
         var data = _ref.data;
-        return _this.bankproducts = data.data;
+        return _this2.bankproducts = data.data;
       });
     },
     createbankproducts: function createbankproducts() {
@@ -183,13 +201,11 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
     this.loadbankproducts();
-    setInterval(function () {
-      return _this2.loadbankproducts();
-    }, 3000);
+    //setInterval(() => this.loadbankproducts(), 3000);
   }
 };
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   __name: 'BankProducts',
@@ -346,11 +362,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadcards: function loadcards() {
+    deletecards: function deletecards(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/cards/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadcards: function loadcards() {
+      var _this2 = this;
       axios.get('api/cards').then(function (_ref) {
         var data = _ref.data;
-        return _this.cards = data.data;
+        return _this2.cards = data.data;
       });
     },
     createcards: function createcards() {
@@ -360,10 +394,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadcards();
     setInterval(function () {
-      return _this2.loadcards();
+      return _this3.loadcards();
     }, 3000);
   }
 };
@@ -2246,7 +2280,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankproducts, function (bankproducts) {
     return _c("tr", {
       key: bankproducts.id
-    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletebankproducts(bankproducts.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2313,19 +2358,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3042,7 +3081,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.cards, function (cards) {
     return _c("tr", {
       key: cards.id
-    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletecards(cards.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -3109,19 +3159,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 

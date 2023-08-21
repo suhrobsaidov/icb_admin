@@ -68,6 +68,8 @@ class BankProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bankproducts = BankProducts::findOrFail($id);
+        $bankproducts->delete();
+        return response(200, 'Deleted');
     }
 }

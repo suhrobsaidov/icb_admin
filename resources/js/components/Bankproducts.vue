@@ -72,7 +72,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deletebankproducts(bankproducts.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -101,6 +101,25 @@ export default {
         }
     },
     methods: {
+        deletebankproducts(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/bankproducts/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadbankproducts(){
             axios.get('api/bankproducts').then(({data}) =>(this.bankproducts = data.data));
         },
@@ -112,7 +131,7 @@ export default {
     },
     created() {
         this.loadbankproducts();
-        setInterval(() => this.loadbankproducts(), 3000);
+        //setInterval(() => this.loadbankproducts(), 3000);
     }
 }
 </script>

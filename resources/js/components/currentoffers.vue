@@ -80,7 +80,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#"  @click="deletecurrentoffers(currentoffers.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -110,13 +110,38 @@ export default {
         }
     },
     methods: {
+        deletecurrentoffers(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/currentoffers/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadcurrentoffers(){
             axios.get('api/currentoffers').then(({data}) =>(this.currentoffers = data.data));
         },
         createcurrentoffers(){
             this.$Progress.start();
-            this.form.post('api/currentoffers');
-            this.$Progress.finish();
+            this.form.post('api/currentoffers');.then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {
