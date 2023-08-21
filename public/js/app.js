@@ -708,10 +708,8 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/header' + id).then(function () {
-          if (result.value) {
-            swal.fire('Удалено');
-          }
+        _this.form["delete"]('api/header/' + id).then(function () {
+          swal('Удалено');
         });
       })["catch"](function () {
         swal('Ошибка');

@@ -158,12 +158,10 @@ export default {
                 canselButtonColor: '#d33',
                 confirmButtonText: 'Удалить'
             }).then((result)=>{
-                this.form.delete('api/header'+id).then(()=>{
-                    if(result.value){
-                        swal.fire(
+                this.form.delete('api/header/'+id).then(()=>{
+                        swal(
                             'Удалено'
                         )
-                    }
                 })
             }).catch(()=>{
                 swal('Ошибка')
