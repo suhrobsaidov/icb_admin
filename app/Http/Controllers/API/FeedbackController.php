@@ -74,6 +74,8 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $feedback = Feedback::finOrFail($id);
+        $feedback->delete();
+        return response(200, 'Deleted');
     }
 }

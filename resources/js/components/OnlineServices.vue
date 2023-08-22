@@ -72,7 +72,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deleteonlineservices(onlineservices.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -101,6 +101,25 @@ export default {
         }
     },
     methods: {
+        deleteonlineservices(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/onlineservices/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadonlineservices(){
             axios.get('api/onlineservices').then(({data}) =>(this.onlineservices = data.data));
         },

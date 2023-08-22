@@ -80,7 +80,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deletework(work.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -110,6 +110,25 @@ export default {
         }
     },
     methods: {
+        deletework(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/work/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadwork(){
             axios.get('api/work').then(({data}) =>(this.work = data.data));
         },

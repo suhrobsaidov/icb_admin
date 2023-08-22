@@ -97,7 +97,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
+                                <a href="#" @click="deletevacancy(vacancy.id)">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -128,6 +128,25 @@ export default {
         }
     },
     methods: {
+        deletevacancy(id){
+            swal.fire({
+                title: 'Вы уверены?',
+                text: 'Вы не сможете вернуть данные',
+                type: 'warning',
+                showCanselButton: true,
+                confirmButtonColor: '#3085d6',
+                canselButtonColor: '#d33',
+                confirmButtonText: 'Удалить'
+            }).then((result)=>{
+                this.form.delete('api/vacancy/'+id).then(()=>{
+                    swal(
+                        'Удалено'
+                    )
+                })
+            }).catch(()=>{
+                swal('Ошибка')
+            })
+        },
         loadvacancy(){
             axios.get('api/vacancy').then(({data}) =>(this.vacancy = data.data));
         },

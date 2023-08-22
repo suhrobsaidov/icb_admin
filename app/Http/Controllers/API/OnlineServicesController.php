@@ -68,6 +68,8 @@ class OnlineServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $onlineservices = OnlineServices::findOrFail($id);
+        $onlineservices->delete();
+        return response(200, 'Deleted');
     }
 }

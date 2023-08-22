@@ -130,11 +130,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadbankloans: function loadbankloans() {
+    deletebankloans: function deletebankloans(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/bankloans/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadbankloans: function loadbankloans() {
+      var _this2 = this;
       axios.get('api/bankloans').then(function (_ref) {
         var data = _ref.data;
-        return _this.bankloans = data.data;
+        return _this2.bankloans = data.data;
       });
     },
     createbankloans: function createbankloans() {
@@ -144,10 +162,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadbankloans();
     setInterval(function () {
-      return _this2.loadbankloans();
+      return _this3.loadbankloans();
     }, 3000);
   }
 };
@@ -605,11 +623,29 @@ var __default__ = {
     };
   },
   methods: {
-    loaddepositcalculatorform: function loaddepositcalculatorform() {
+    deletedepositcalculatorform: function deletedepositcalculatorform(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/depositcalculatorform/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loaddepositcalculatorform: function loaddepositcalculatorform() {
+      var _this2 = this;
       axios.get('api/depositcalculatorform').then(function (_ref) {
         var data = _ref.data;
-        return _this.depositcalculatorform = data.data;
+        return _this2.depositcalculatorform = data.data;
       });
     },
     createdepositcalculatorform: function createdepositcalculatorform() {
@@ -619,10 +655,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loaddepositcalculatorform();
     setInterval(function () {
-      return _this2.loaddepositcalculatorform();
+      return _this3.loaddepositcalculatorform();
     }, 3000);
   }
 };
@@ -765,11 +801,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadfeedback: function loadfeedback() {
+    deletefeedback: function deletefeedback(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/feedback/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadfeedback: function loadfeedback() {
+      var _this2 = this;
       axios.get('api/feedback').then(function (_ref) {
         var data = _ref.data;
-        return _this.feedback = data.data;
+        return _this2.feedback = data.data;
       });
     },
     createfeedback: function createfeedback() {
@@ -779,10 +833,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadfeedback();
     setInterval(function () {
-      return _this2.loadfeedback();
+      return _this3.loadfeedback();
     }, 3000);
   }
 };
@@ -1078,11 +1132,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadnews: function loadnews() {
+    deletenews: function deletenews(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/news/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadnews: function loadnews() {
+      var _this2 = this;
       axios.get('api/news').then(function (_ref) {
         var data = _ref.data;
-        return _this.news = data.data;
+        return _this2.news = data.data;
       });
     },
     createnews: function createnews() {
@@ -1092,10 +1164,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadnews();
     setInterval(function () {
-      return _this2.loadnews();
+      return _this3.loadnews();
     }, 3000);
   }
 };
@@ -1135,11 +1207,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadonlineservices: function loadonlineservices() {
+    deleteonlineservices: function deleteonlineservices(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/onlineservices/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadonlineservices: function loadonlineservices() {
+      var _this2 = this;
       axios.get('api/onlineservices').then(function (_ref) {
         var data = _ref.data;
-        return _this.onlineservices = data.data;
+        return _this2.onlineservices = data.data;
       });
     },
     createonlineservices: function createonlineservices() {
@@ -1149,10 +1239,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadonlineservices();
     setInterval(function () {
-      return _this2.loadonlineservices();
+      return _this3.loadonlineservices();
     }, 3000);
   }
 };
@@ -1341,11 +1431,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadvacancy: function loadvacancy() {
+    deletevacancy: function deletevacancy(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/vacancy/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadvacancy: function loadvacancy() {
+      var _this2 = this;
       axios.get('api/vacancy').then(function (_ref) {
         var data = _ref.data;
-        return _this.vacancy = data.data;
+        return _this2.vacancy = data.data;
       });
     },
     createvacancy: function createvacancy() {
@@ -1355,10 +1463,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadvacancy();
     setInterval(function () {
-      return _this2.loadvacancy();
+      return _this3.loadvacancy();
     }, 3000);
   }
 };
@@ -1399,11 +1507,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadwork: function loadwork() {
+    deletework: function deletework(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/work/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadwork: function loadwork() {
+      var _this2 = this;
       axios.get('api/work').then(function (_ref) {
         var data = _ref.data;
-        return _this.work = data.data;
+        return _this2.work = data.data;
       });
     },
     creatework: function creatework() {
@@ -1413,10 +1539,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadwork();
     setInterval(function () {
-      return _this2.loadwork();
+      return _this3.loadwork();
     }, 3000);
   }
 };
@@ -2211,7 +2337,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankloans, function (bankloans) {
     return _c("tr", {
       key: bankloans.id
-    }, [_c("td", [_vm._v(_vm._s(bankloans.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankloans.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankloans.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankloans.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletebankloans(bankloans.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2278,19 +2415,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3819,7 +3950,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositculatorform, function (depositculatorform) {
     return _c("tr", {
       key: depositculatorform.id
-    }, [_c("td", [_vm._v(_vm._s(depositculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositculatorform.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(depositculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositculatorform.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletedepositcalculatorform(_vm.depositcalculatorform.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -3886,19 +4028,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -4595,7 +4731,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.feedback, function (feedback) {
     return _c("tr", {
       key: feedback.id
-    }, [_c("td", [_vm._v(_vm._s(feedback.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.question))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(feedback.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(feedback.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.question))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(feedback.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletefeedback(feedback.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -4662,19 +4809,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6211,7 +6352,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.news, function (news) {
     return _c("tr", {
       key: news.id
-    }, [_c("td", [_vm._v(_vm._s(news.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(news.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(news.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(news.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletenews(news.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -6278,19 +6430,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6417,7 +6563,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.onlineservices, function (onlineservices) {
     return _c("tr", {
       key: onlineservices.id
-    }, [_c("td", [_vm._v(_vm._s(onlineservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(onlineservices.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(onlineservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(onlineservices.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteonlineservices(onlineservices.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -6484,19 +6641,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -7159,7 +7310,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.work, function (work) {
     return _c("tr", {
       key: work.id
-    }, [_c("td", [_vm._v(_vm._s(work.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(work.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(work.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(work.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletework(work.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -7226,19 +7388,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 

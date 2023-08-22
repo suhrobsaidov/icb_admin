@@ -74,6 +74,8 @@ class VacancyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->delete();
+        return response(200, 'Deleted');
     }
 }

@@ -76,6 +76,8 @@ class DepositCalculatorFormController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $depositcalculatorform = DepositCalculatorForm::findOrFail($id);
+        $depositcalculatorform->delete();
+        return response (200, 'Deleted');
     }
 }

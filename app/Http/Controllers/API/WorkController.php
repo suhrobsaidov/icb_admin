@@ -70,6 +70,8 @@ class WorkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $work = Work::findOrFail($id);
+        $work->delete();
+        return response(200,'Deleted');
     }
 }

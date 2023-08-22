@@ -70,6 +70,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = News::findOrFail($id);
+        $news->delete();
+        return response(200, 'Deleted');
     }
 }
