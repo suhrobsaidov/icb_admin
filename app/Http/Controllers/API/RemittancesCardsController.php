@@ -71,6 +71,8 @@ class RemittancesCardsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $remittancescards = RemittancesCards::findOrFail($id);
+        $remittancescards->delete();
+        return response(200, 'Deleted');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\BankLoans;
+use App\Models\BankProducts;
 use Illuminate\Http\Request;
 
 class BankLoansController extends Controller
@@ -83,6 +84,8 @@ class BankLoansController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bankloans = BankLoans::findOrFail($id);
+        $bankloans->delete();
+        return response(200, 'Deleted');
     }
 }

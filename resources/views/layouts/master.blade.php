@@ -367,9 +367,20 @@
                                    href="#">
                                     <i class="far fa-fw fa-circle "></i>
                                     <p>
-                                        Buying and selling currency
+                                        Покупка и продажа валюты
+                                        <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <router-link to="/header" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Шапка
+                                            </p>
+                                        </router-link>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link  "

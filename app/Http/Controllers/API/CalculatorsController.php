@@ -68,6 +68,8 @@ class CalculatorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $calculators = Calculators::findOrFail($id);
+        $calculators->delete();
+        return response(200, 'Deleted');
     }
 }

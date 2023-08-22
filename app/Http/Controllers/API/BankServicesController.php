@@ -75,6 +75,8 @@ class BankServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bankservices = BankServices::findOrFail($id);
+        $bankservices->delete();
+        return response(200, 'Deleted');
     }
 }

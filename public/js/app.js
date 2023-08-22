@@ -48,11 +48,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadbankcards: function loadbankcards() {
+    deletebankcards: function deletebankcards(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/bankcards/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadbankcards: function loadbankcards() {
+      var _this2 = this;
       axios.get('api/bankcards').then(function (_ref) {
         var data = _ref.data;
-        return _this.bankcards = data.data;
+        return _this2.bankcards = data.data;
       });
     },
     createbankcards: function createbankcards() {
@@ -62,10 +80,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadbankcards();
     setInterval(function () {
-      return _this2.loadbankcards();
+      return _this3.loadbankcards();
     }, 3000);
   }
 };
@@ -247,11 +265,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadbankservices: function loadbankservices() {
+    deletebankservices: function deletebankservices(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/bankservices/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadbankservices: function loadbankservices() {
+      var _this2 = this;
       axios.get('api/bankservices').then(function (_ref) {
         var data = _ref.data;
-        return _this.bankservices = data.data;
+        return _this2.bankservices = data.data;
       });
     },
     createbankservices: function createbankservices() {
@@ -261,10 +297,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadbankservices();
     setInterval(function () {
-      return _this2.loadbankservices();
+      return _this3.loadbankservices();
     }, 3000);
   }
 };
@@ -305,11 +341,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadcalculators: function loadcalculators() {
+    deletecalculators: function deletecalculators(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/calculators/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadcalculators: function loadcalculators() {
+      var _this2 = this;
       axios.get('api/calculators').then(function (_ref) {
         var data = _ref.data;
-        return _this.calculators = data.data;
+        return _this2.calculators = data.data;
       });
     },
     createcalculators: function createcalculators() {
@@ -319,10 +373,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadcalculators();
     setInterval(function () {
-      return _this2.loadcalculators();
+      return _this3.loadcalculators();
     }, 3000);
   }
 };
@@ -869,11 +923,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadloanscalculatorform: function loadloanscalculatorform() {
+    deleteloanscalculatorform: function deleteloanscalculatorform(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/loanscalculatorform/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadloanscalculatorform: function loadloanscalculatorform() {
+      var _this2 = this;
       axios.get('api/loanscalculatorform').then(function (_ref) {
         var data = _ref.data;
-        return _this.loanscalculatorform = data.data;
+        return _this2.loanscalculatorform = data.data;
       });
     },
     createloanscalculatorform: function createloanscalculatorform() {
@@ -883,10 +955,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadloanscalculatorform();
     setInterval(function () {
-      return _this2.loadloanscalculatorform();
+      return _this3.loadloanscalculatorform();
     }, 3000);
   }
 };
@@ -1120,11 +1192,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadremittancescards: function loadremittancescards() {
+    deleteremittancescards: function deleteremittancescards(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/remittancescards/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadremittancescards: function loadremittancescards() {
+      var _this2 = this;
       axios.get('api/remittancescards').then(function (_ref) {
         var data = _ref.data;
-        return _this.remittancescards = data.data;
+        return _this2.remittancescards = data.data;
       });
     },
     createremittancescards: function createremittancescards() {
@@ -1134,10 +1224,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadremittancescards();
     setInterval(function () {
-      return _this2.loadremittancescards();
+      return _this3.loadremittancescards();
     }, 3000);
   }
 };
@@ -1686,7 +1776,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankcards, function (bankcards) {
     return _c("tr", {
       key: bankcards.id
-    }, [_c("td", [_vm._v(_vm._s(bankcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankcards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankcards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletebankcards(bankcards.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -1753,19 +1854,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -2638,7 +2733,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankservices, function (bankservices) {
     return _c("tr", {
       key: bankservices.id
-    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletebankservices(bankservices.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2705,19 +2811,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -2844,7 +2944,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.calculators, function (calculators) {
     return _c("tr", {
       key: calculators.id
-    }, [_c("td", [_vm._v(_vm._s(calculators.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(calculators.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(calculators.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(calculators.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletecalculators(calculators.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2911,19 +3022,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -5556,7 +5661,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.loanscalculatorform, function (loanscalculatorform) {
     return _c("tr", {
       key: loanscalculatorform.id
-    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purpose))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purpose))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteloanscalculatorform(loanscalculatorform.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -5623,19 +5739,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6545,7 +6655,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.remittancescards, function (remittancescards) {
     return _c("tr", {
       key: remittancescards.id
-    }, [_c("td", [_vm._v(_vm._s(remittancescards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(remittancescards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(remittancescards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(remittancescards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deleteremittancescards(remittancescards.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -6612,19 +6733,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 

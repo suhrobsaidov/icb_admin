@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class BankCards extends Model
 {
-    protected $fillable = ['title', 'description', 'image', 'link', 'maintense', 'security', 'access', 'commission', 'time', 'money' ];
+    protected $fillable = ['title', 'description', 'image', 'link', 'maintenance', 'security', 'access', 'commission', 'time', 'money' ];
 }
