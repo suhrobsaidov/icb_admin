@@ -83,6 +83,8 @@ class DepositCardsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $depositcards = DepositCards::findOrFail($id);
+        $depositcards -> delete();
+        return response(200,'Deleted');
     }
 }

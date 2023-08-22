@@ -169,11 +169,29 @@ var __default__ = {
     };
   },
   methods: {
-    loadbankproducts: function loadbankproducts() {
+    deletebankproducts: function deletebankproducts(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/bankproducts/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadbankproducts: function loadbankproducts() {
+      var _this2 = this;
       axios.get('api/bankproducts').then(function (_ref) {
         var data = _ref.data;
-        return _this.bankproducts = data.data;
+        return _this2.bankproducts = data.data;
       });
     },
     createbankproducts: function createbankproducts() {
@@ -183,10 +201,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loadbankproducts();
     setInterval(function () {
-      return _this2.loadbankproducts();
+      return _this3.loadbankproducts();
     }, 3000);
   }
 };
@@ -422,24 +440,46 @@ var __default__ = {
     };
   },
   methods: {
-    loadcurrentoffers: function loadcurrentoffers() {
+    deletecurrentoffers: function deletecurrentoffers(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/currentoffers/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadcurrentoffers: function loadcurrentoffers() {
+      var _this2 = this;
       axios.get('api/currentoffers').then(function (_ref) {
         var data = _ref.data;
-        return _this.currentoffers = data.data;
+        return _this2.currentoffers = data.data;
       });
     },
     createcurrentoffers: function createcurrentoffers() {
+      var _this3 = this;
       this.$Progress.start();
-      this.form.post('api/currentoffers');
-      this.$Progress.finish();
+      this.form.post('api/currentoffers').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this3.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this4 = this;
     this.loadcurrentoffers();
     setInterval(function () {
-      return _this2.loadcurrentoffers();
+      return _this4.loadcurrentoffers();
     }, 3000);
   }
 };
@@ -575,11 +615,29 @@ var __default__ = {
     };
   },
   methods: {
-    loaddepositcards: function loaddepositcards() {
+    deletedepositcards: function deletedepositcards(id) {
       var _this = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this.form["delete"]('api/depositcards/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loaddepositcards: function loaddepositcards() {
+      var _this2 = this;
       axios.get('api/depositcards').then(function (_ref) {
         var data = _ref.data;
-        return _this.depositcards = data.data;
+        return _this2.depositcards = data.data;
       });
     },
     createdepositcards: function createdepositcards() {
@@ -589,10 +647,10 @@ var __default__ = {
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
     this.loaddepositcards();
     setInterval(function () {
-      return _this2.loaddepositcards();
+      return _this3.loaddepositcards();
     }, 3000);
   }
 };
@@ -2264,7 +2322,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankproducts, function (bankproducts) {
     return _c("tr", {
       key: bankproducts.id
-    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletebankproducts(bankproducts.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -2331,19 +2400,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3303,7 +3366,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.currentoffers, function (currentoffers) {
     return _c("tr", {
       key: currentoffers.id
-    }, [_c("td", [_vm._v(_vm._s(currentoffers.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(currentoffers.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(currentoffers.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(currentoffers.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletecurrentoffers(currentoffers.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -3370,19 +3444,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -4076,7 +4144,18 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositcards, function (depositcards) {
     return _c("tr", {
       key: depositcards.id
-    }, [_c("td", [_vm._v(_vm._s(depositcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositcards.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+    }, [_c("td", [_vm._v(_vm._s(depositcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositcards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletedepositcards(depositcards.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
   }), 0)])])])])]);
 };
 var staticRenderFns = [function () {
@@ -4143,19 +4222,13 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("td", [_c("a", {
+  return _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa fa-edit blue"
-  })]), _vm._v("\n                            /\n                            "), _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-trash red"
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -4213,8 +4286,292 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render),
 /* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function render() {};
-var staticRenderFns = [];
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "card"
+  }, [_c("div", {
+    staticClass: "card-header"
+  }, [_c("h3", {
+    staticClass: "card-title"
+  }, [_vm._v("Депозитный калькулятор")]), _vm._v(" "), _c("div", {
+    staticClass: "card-tools"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "modal fade",
+    attrs: {
+      id: "addNew",
+      tabindex: "-1",
+      "aria-labelledby": "addNewLabel",
+      "aria-hidden": "true"
+    }
+  }, [_c("div", {
+    staticClass: "modal-dialog"
+  }, [_c("div", {
+    staticClass: "modal-content"
+  }, [_vm._m(1), _vm._v(" "), _c("form", {
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.createfeedback.apply(null, arguments);
+      }
+    }
+  }, [_c("div", {
+    staticClass: "modal-body"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.name,
+      expression: "form.name"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("name")
+    },
+    attrs: {
+      type: "text",
+      name: "name",
+      placeholder: "имя"
+    },
+    domProps: {
+      value: _vm.form.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "name",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.surname,
+      expression: "form.surname"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("surname")
+    },
+    attrs: {
+      type: "text",
+      name: "surname",
+      placeholder: "фамилия"
+    },
+    domProps: {
+      value: _vm.form.surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "surname", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "surname",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.e_mail,
+      expression: "form.e_mail"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("e_mail")
+    },
+    attrs: {
+      type: "text",
+      name: "e_mail",
+      placeholder: "E-mail"
+    },
+    domProps: {
+      value: _vm.form.e_mail
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "e_mail", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "e_mail",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.phone,
+      expression: "form.phone"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("phone")
+    },
+    attrs: {
+      type: "text",
+      name: "phone",
+      placeholder: "номер телефона"
+    },
+    domProps: {
+      value: _vm.form.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "phone", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "phone",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.question,
+      expression: "form.question"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("question")
+    },
+    attrs: {
+      type: "text",
+      name: "question",
+      placeholder: "Вопрос"
+    },
+    domProps: {
+      value: _vm.form.question
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "question", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "question",
+      form: _vm.form
+    }
+  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-body table-responsive p-0"
+  }, [_c("table", {
+    staticClass: "table table-hover text-nowrap"
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.feedback, function (feedback) {
+    return _c("tr", {
+      key: feedback.id
+    }, [_c("td", [_vm._v(_vm._s(feedback.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.question))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(feedback.created_at)))]), _vm._v(" "), _vm._m(4, true)]);
+  }), 0)])])])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button",
+      "data-toggle": "modal",
+      "data-target": "#addNew"
+    }
+  }, [_vm._v("Добавить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    }
+  }, [_c("span", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Вопрос")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("td", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-edit blue"
+  })]), _vm._v("\n                            /\n                            "), _c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-trash red"
+  })])]);
+}];
+render._withStripped = true;
 
 
 /***/ }),

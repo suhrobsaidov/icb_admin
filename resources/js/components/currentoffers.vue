@@ -134,7 +134,7 @@ export default {
         },
         createcurrentoffers(){
             this.$Progress.start();
-            this.form.post('api/currentoffers');.then(() =>{
+            this.form.post('api/currentoffers').then(() =>{
                 Fire.$emit('AfterCreate');
                 $('#addNew').modal('hide')
                 this.$Progress.finish();

@@ -26,7 +26,6 @@ import ExampleComponent from "./ExampleComponent.vue";
 
 
                                         <div class="modal-body">
-                                            <div class="form-group">
                                                 <div class="form-group">
                                                 <input type="text" v-model="form.name" name="name"
                                                        placeholder="имя"
@@ -85,13 +84,13 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </thead>
                         <tbody>
                         <tr v-for="feedback in feedback" :key="feedback.id">
-                            <td>{{ depositculatorform.id }}</td>
-                            <td>{{depositculatorform.name}}</td>
-                            <td>{{ depositculatorform.surname }}</td>
-                            <td>{{depositculatorform.e_mail}}</td>
-                            <td>{{depositculatorform.phone}}</td>
-                            <td>{{depositculatorform.question}}</td>
-                            <td>{{depositculatorform.created_at | myDate}}</td>
+                            <td>{{ feedback.id }}</td>
+                            <td>{{feedback.name}}</td>
+                            <td>{{ feedback.surname }}</td>
+                            <td>{{feedback.e_mail}}</td>
+                            <td>{{feedback.phone}}</td>
+                            <td>{{feedback.question}}</td>
+                            <td>{{feedback.created_at | myDate}}</td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-edit blue"></i>
@@ -105,7 +104,6 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
         </div>
