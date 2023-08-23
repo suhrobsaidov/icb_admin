@@ -32,7 +32,6 @@ import ExampleComponent from "./ExampleComponent.vue";
                                                        class="form-control" :class="{'is_invalid': form.errors.has('surname')}">
                                                 <has-error field="surname" :form="form"></has-error>
                                             </div>
-                                            <div class="form-group">
                                                 <div class="form-group">
                                                     <input type="text" v-model="form.name" name="name"
                                                            placeholder="имя"

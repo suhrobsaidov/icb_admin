@@ -70,7 +70,7 @@ class HeaderController extends Controller
         $header = Header::find($id);
 
         $this->validate($request,[
-                'title' => 'required|string|max:191',
+                'title' => 'required|string|max:191'.$header->id,
                 'description' => 'required|string|max:191',
                 'link' => 'required|string|max:191',
                 'sub_title' => 'required|string|max:191',

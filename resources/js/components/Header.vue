@@ -74,7 +74,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button v-show="editmode" type="submit" class="btn btn-primary">Изменить</button>
+                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
                                             <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
@@ -139,6 +139,7 @@ export default {
             editmode: false,
             header : {},
             form: new Form({
+                id: '',
                 title: '',
                 description: '',
                 link: '',

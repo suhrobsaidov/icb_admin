@@ -870,6 +870,7 @@ var __default__ = {
       editmode: false,
       header: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         link: '',
@@ -5175,7 +5176,7 @@ var render = function render() {
       value: _vm.editmode,
       expression: "editmode"
     }],
-    staticClass: "btn btn-primary",
+    staticClass: "btn btn-success",
     attrs: {
       type: "submit"
     }
@@ -7199,8 +7200,297 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render),
 /* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function render() {};
-var staticRenderFns = [];
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "card"
+  }, [_c("div", {
+    staticClass: "card-header"
+  }, [_c("h3", {
+    staticClass: "card-title"
+  }, [_vm._v("Депозитный калькулятор")]), _vm._v(" "), _c("div", {
+    staticClass: "card-tools"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "modal fade",
+    attrs: {
+      id: "addNew",
+      tabindex: "-1",
+      "aria-labelledby": "addNewLabel",
+      "aria-hidden": "true"
+    }
+  }, [_c("div", {
+    staticClass: "modal-dialog"
+  }, [_c("div", {
+    staticClass: "modal-content"
+  }, [_vm._m(1), _vm._v(" "), _c("form", {
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.createvacancy.apply(null, arguments);
+      }
+    }
+  }, [_c("div", {
+    staticClass: "modal-body"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.surname,
+      expression: "form.surname"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("surname")
+    },
+    attrs: {
+      type: "text",
+      name: "surname",
+      placeholder: "фамилия"
+    },
+    domProps: {
+      value: _vm.form.surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "surname", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "surname",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.name,
+      expression: "form.name"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("name")
+    },
+    attrs: {
+      type: "text",
+      name: "name",
+      placeholder: "имя"
+    },
+    domProps: {
+      value: _vm.form.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "name",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.middle_name,
+      expression: "form.middle_name"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("middle_name")
+    },
+    attrs: {
+      type: "text",
+      name: "middle_name",
+      placeholder: "отчество"
+    },
+    domProps: {
+      value: _vm.form.middle_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "middle_name", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "middle_name",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.e_mail,
+      expression: "form.e_mail"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("e_mail")
+    },
+    attrs: {
+      type: "text",
+      name: "e_mail",
+      placeholder: "E-mail"
+    },
+    domProps: {
+      value: _vm.form.e_mail
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "e_mail", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "e_mail",
+      form: _vm.form
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.phone,
+      expression: "form.phone"
+    }],
+    staticClass: "form-control",
+    "class": {
+      is_invalid: _vm.form.errors.has("phone")
+    },
+    attrs: {
+      type: "text",
+      name: "phone",
+      placeholder: "номер телефона"
+    },
+    domProps: {
+      value: _vm.form.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "phone", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      field: "phone",
+      form: _vm.form
+    }
+  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-body table-responsive p-0"
+  }, [_c("table", {
+    staticClass: "table table-hover text-nowrap"
+  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.vacancy, function (vacancy) {
+    return _c("tr", {
+      key: vacancy.id
+    }, [_c("td", [_vm._v(_vm._s(vacancy.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(vacancy.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.deletevacancy(vacancy.id);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-trash red"
+    })])])]);
+  }), 0)])])])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button",
+      "data-toggle": "modal",
+      "data-target": "#addNew"
+    }
+  }, [_vm._v("Добавить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    staticClass: "close",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal",
+      "aria-label": "Close"
+    }
+  }, [_c("span", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("×")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Отчество")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("i", {
+    staticClass: "fa fa-edit blue"
+  })]);
+}];
+render._withStripped = true;
 
 
 /***/ }),
