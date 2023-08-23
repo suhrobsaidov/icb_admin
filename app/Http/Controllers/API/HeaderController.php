@@ -34,8 +34,7 @@ class HeaderController extends Controller
                 'sub_description' => 'required|string|max:191',
                 'page' => 'required|string|max:191',
                 'language' => 'required|string|max:191',
-            ]
-        );
+            ]);
         return Header::create([
             'title' => $request['title'],
             'description' => $request['description'],
@@ -68,7 +67,20 @@ class HeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $header = Header::find($id);
+
+        $this->validate($request,[
+                'title' => 'required|string|max:191',
+                'description' => 'required|string|max:191',
+                'link' => 'required|string|max:191',
+                'sub_title' => 'required|string|max:191',
+                'sub_description' => 'required|string|max:191',
+                'page' => 'required|string|max:191',
+                'language' => 'required|string|max:191',
+            ]);
+
+        $header->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**
