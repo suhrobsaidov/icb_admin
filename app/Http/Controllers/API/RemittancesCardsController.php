@@ -60,7 +60,16 @@ class RemittancesCardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $remittancescards = RemittancesCards::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$remittancescards->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+        ]);
+
+        $remittancescards->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

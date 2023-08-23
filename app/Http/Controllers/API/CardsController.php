@@ -62,7 +62,15 @@ class CardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cards = Cards::findOrFail($id);
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$cards->id,
+            'link' => 'required|string|max:191',
+            'page' => 'required|string|max:191',
+            'language' => 'required|string|max:191',
+        ]);
+        $cards->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

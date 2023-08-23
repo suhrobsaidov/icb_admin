@@ -11,18 +11,19 @@ import ExampleComponent from "./ExampleComponent.vue";
                     <h3 class="card-title">Онлайн сервисы</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
+                            <button type="button" class="btn btn-primary float-right" @click="newModal">Добавить</button>
                         </h4>
                         <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Изменить</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createonlineservices">
+                                    <form @submit.prevent="editmode ? updateonlineservices() : createonlineservices()">
 
 
                                         <div class="modal-body">
@@ -41,7 +42,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button type="submit" class="btn btn-primary">Сoхранить</button>
+                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
+                                            <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -68,7 +70,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{ onlineservices.description}}</td>
                             <td>{{ onlineservices.created_at | myDate}}</td>
                             <td>
-                                <a href="#">
+                                <a href="#" @click="editModal(onlineservices)">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
@@ -92,8 +94,10 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
+            editmode: false,
             onlineservices : {},
             form: new Form({
+                id: '',
                 title: '',
                 description:'',
                 image: '',
@@ -101,6 +105,31 @@ export default {
         }
     },
     methods: {
+        updateonlineservices(){
+            this.$Progress.start();
+            this.form.put('api/onlineservices/'+this.form.id)
+                .then(() => {
+                    $('#addNew').modal('hide');
+                    swal(
+                        'Измнено'
+                    )
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+                }).catch(() => {
+                this.$Progress.fail();
+            });
+        },
+        editModal(onlineservices){
+            this.editmode = true;
+            this.form.reset();
+            $('#addNew').modal('show');
+            this.form.fill(onlineservices);
+        },
+        newModal(){
+            this.editmode = false;
+            this.form.reset();
+            $('#addNew').modal('show');
+        },
         deleteonlineservices(id){
             swal.fire({
                 title: 'Вы уверены?',
@@ -125,8 +154,15 @@ export default {
         },
         createonlineservices(){
             this.$Progress.start();
-            this.form.post('api/onlineservices');
-            this.$Progress.finish();
+            this.form.post('api/onlineservices')
+        .then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {

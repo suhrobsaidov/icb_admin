@@ -90,7 +90,31 @@ class LoansCalculatorFormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $loanscalculatorform = LoansCalculatorForm::find($id);
+
+        $this->validate($request,[
+            'surname' => 'required|string|max:191'.$loanscalculatorform->id,
+            'name' => 'required|string|max:191',
+            'middle_name' => 'required|string|max:191',
+            'e_mail' => 'required|string|max:191',
+            'phone_number' => 'required|string|max:191',
+            'additional_phone_number' => 'required|string|max:191',
+            'loan_product' => 'required|string|max:191',
+            'loan_currency' => 'required|string|max:191',
+            'loan_amount' => 'required|string|max:191',
+            'loan_term' => 'required|string|max:191',
+            'loan_purpose' => 'required|string|max:191',
+            'occupation' => 'required|string|max:191',
+            'city_district' => 'required|string|max:191',
+            'region' => 'required|string|max:191',
+            'address_where_registered' => 'required|string|max:191',
+            'monthly_family_income' => 'required|string|max:191',
+            'branch' => 'required|string|max:191',
+            'phone_number_for' => 'required|string|max:191',
+        ]);
+
+        $loanscalculatorform->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**
@@ -101,6 +125,8 @@ class LoansCalculatorFormController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $loanscalculatorform = LoansCalculatorForm::findOrFail($id);
+        $loanscalculatorform -> delete();
+        return response(200, 'Удалено');
     }
 }

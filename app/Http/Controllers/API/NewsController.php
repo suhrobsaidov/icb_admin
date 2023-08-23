@@ -59,7 +59,16 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $news = News::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$news->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+        ]);
+
+        $news->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

@@ -11,18 +11,19 @@ import ExampleComponent from "./ExampleComponent.vue";
                     <h3 class="card-title">Денежные переводы</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
+                            <button type="button" class="btn btn-primary float-right" @click="newModal">Добавить</button>
                         </h4>
                         <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Изменить</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createremittancescards">
+                                    <form @submit.prevent="editmode ? updateremittancescards() : createremittancescards()">
 
 
                                         <div class="modal-body">
@@ -47,7 +48,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button type="submit" class="btn btn-primary">Сoхранить</button>
+                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
+                                            <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -76,7 +78,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{remittancescards.link}}</td>
                             <td>{{remittancescards.created_at | myDate}}</td>
                             <td>
-                                <a href="#">
+                                <a href="#" @click="editModal(remittancescards)">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
@@ -100,8 +102,10 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
+            editmode: false,
             remittancescards : {},
             form: new Form({
+                id: '',
                 title: '',
                 description: '',
                 link: '',
@@ -109,6 +113,31 @@ export default {
         }
     },
     methods: {
+        updateremittancescards(){
+            this.$Progress.start();
+            this.form.put('api/remittancescards/'+this.form.id)
+                .then(() => {
+                    $('#addNew').modal('hide');
+                    swal(
+                        'Измнено'
+                    )
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+                }).catch(() => {
+                this.$Progress.fail();
+            });
+        },
+        editModal(remittancescards){
+            this.editmode = true;
+            this.form.reset();
+            $('#addNew').modal('show');
+            this.form.fill(remittancescards);
+        },
+        newModal(){
+            this.editmode = false;
+            this.form.reset();
+            $('#addNew').modal('show');
+        },
         deleteremittancescards(id){
             swal.fire({
                 title: 'Вы уверены?',
@@ -133,8 +162,15 @@ export default {
         },
         createremittancescards(){
             this.$Progress.start();
-            this.form.post('api/remittancescards');
-            this.$Progress.finish();
+            this.form.post('api/remittancescards')
+        .then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {

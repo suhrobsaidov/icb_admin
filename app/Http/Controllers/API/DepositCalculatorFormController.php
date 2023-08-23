@@ -65,7 +65,20 @@ class DepositCalculatorFormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $depositcalculatorform = DepositCalculatorForm::find($id);
+
+        $this->validate($request,[
+            'surname' => 'required|string|max:191'.$depositcalculatorform->id,
+            'name' => 'required|string|max:191',
+            'middle_name' => 'required|string|max:191',
+            'e_mail' => 'required|string|max:191',
+            'phone_number' => 'required|string|max:191',
+            'additional_phone_number' => 'required|string|max:191',
+
+        ]);
+
+        $depositcalculatorform->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

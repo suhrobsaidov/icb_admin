@@ -57,7 +57,15 @@ class BankProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bankproducts = BankProducts::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$bankproducts->id,
+            'link' => 'required|string|max:191',
+        ]);
+
+        $bankproducts->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

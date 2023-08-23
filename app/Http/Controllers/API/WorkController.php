@@ -59,7 +59,16 @@ class WorkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $work = Work::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$work->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+        ]);
+
+        $work->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

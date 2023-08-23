@@ -63,7 +63,18 @@ class VacancyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vacancy = Vacancy::find($id);
+
+        $this->validate($request,[
+            'surname' => 'required|string|max:191'.$vacancy->id,
+            'name' => 'required|string|max:191',
+            'middle_name' => 'required|string|max:191',
+            'e_mail' => 'required|string|max:191',
+            'phone' => 'required|string|max:191',
+        ]);
+
+        $vacancy->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

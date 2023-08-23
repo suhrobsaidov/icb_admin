@@ -1,6 +1,5 @@
 <script setup>
 
-import ExampleComponent from "./ExampleComponent.vue";
 </script>
 
 <template>
@@ -214,9 +213,7 @@ export default {
     },
     created() {
         this.loadHeader();
-        Fire.$on('AfterCreate',() =>{
-            this.loadHeader();
-        })
+        setInterval(() => this.loadHeader(), 3000);
     }
 }
 </script>

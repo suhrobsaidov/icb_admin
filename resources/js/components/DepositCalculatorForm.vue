@@ -11,18 +11,19 @@ import ExampleComponent from "./ExampleComponent.vue";
                     <h3 class="card-title">Депозитный калькулятор</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
+                            <button type="button" class="btn btn-primary float-right" @click="newModal">Добавить</button>
                         </h4>
                         <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Изменить</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createdepositcalculatorform">
+                                    <form @submit.prevent="editmode ? updatedepositcalculatorform() : createdepositcalculatorform()">
 
 
                                         <div class="modal-body">
@@ -59,7 +60,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button type="submit" class="btn btn-primary">Сoхранить</button>
+                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
+                                            <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -94,7 +96,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{depositculatorform.additional_phone_number}}</td>
                             <td>{{depositculatorform.created_at | myDate}}</td>
                             <td>
-                                <a href="#">
+                                <a href="#" @click="editModal(depositcalculatorform)">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
@@ -118,8 +120,10 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
+            editmode: false,
             depositcalculatorform : {},
             form: new Form({
+                id: '',
                 surname: '',
                 name: '',
                 middle_name: '',
@@ -130,6 +134,31 @@ export default {
         }
     },
     methods: {
+        updatedepositcalculatorform(){
+            this.$Progress.start();
+            this.form.put('api/depositcalculatorform/'+this.form.id)
+                .then(() => {
+                    $('#addNew').modal('hide');
+                    swal(
+                        'Измнено'
+                    )
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+                }).catch(() => {
+                this.$Progress.fail();
+            });
+        },
+        editModal(depositcalculatorform){
+            this.editmode = true;
+            this.form.reset();
+            $('#addNew').modal('show');
+            this.form.fill(depositcalculatorform);
+        },
+        newModal(){
+            this.editmode = false;
+            this.form.reset();
+            $('#addNew').modal('show');
+        },
         deletedepositcalculatorform(id){
             swal.fire({
                 title: 'Вы уверены?',
@@ -154,8 +183,15 @@ export default {
         },
         createdepositcalculatorform(){
             this.$Progress.start();
-            this.form.post('api/depositcalculatorform');
-            this.$Progress.finish();
+            this.form.post('api/depositcalculatorform')
+        .then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {

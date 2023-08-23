@@ -73,7 +73,22 @@ class BankLoansController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bankloans = BankLoans::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$bankloans->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+            'maintenance' => 'required|string|max:191',
+            'security' => 'required|string|max:191',
+            'access' => 'required|string|max:191',
+            'commission' => 'required|string|max:191',
+            'time' => 'required|string|max:191',
+            'money' => 'required|string|max:191',
+        ]);
+
+        $bankloans->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

@@ -63,7 +63,18 @@ class FeedbackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $feedback = Feedback::find($id);
+
+        $this->validate($request,[
+            'name' => 'required|string|max:191'.$feedback->id,
+            'surname' => 'required|string|max:191',
+            'e_mail' => 'required|string|max:191',
+            'phone' => 'required|string|max:191',
+            'question' => 'required|string|max:191',
+        ]);
+
+        $feedback->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

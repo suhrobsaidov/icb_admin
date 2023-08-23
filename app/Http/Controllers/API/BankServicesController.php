@@ -64,8 +64,18 @@ class BankServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $bankservices = BankServices::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$bankservices->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+            'page' => 'required|string|max:191',
+            'language' => 'required|string|max:191',
+        ]);
+
+        $bankservices->update($request->all());
+        return response(200, 'Updated');    }
 
     /**
      * Remove the specified resource from storage.

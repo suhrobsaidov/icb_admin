@@ -57,7 +57,15 @@ class CalculatorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $calculators = Calculators::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$calculators->id,
+            'link' => 'required|string|max:191',
+        ]);
+
+        $calculators->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

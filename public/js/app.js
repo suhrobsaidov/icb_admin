@@ -32,8 +32,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       bankcards: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         link: '',
@@ -48,8 +50,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletebankcards: function deletebankcards(id) {
+    updatebankcards: function updatebankcards() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/bankcards/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(bankcards) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(bankcards);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletebankcards: function deletebankcards(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -59,7 +84,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/bankcards/' + id).then(function () {
+        _this2.form["delete"]('api/bankcards/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -67,23 +92,27 @@ var __default__ = {
       });
     },
     loadbankcards: function loadbankcards() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/bankcards').then(function (_ref) {
         var data = _ref.data;
-        return _this2.bankcards = data.data;
+        return _this3.bankcards = data.data;
       });
     },
     createbankcards: function createbankcards() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/bankcards');
-      this.$Progress.finish();
+      this.form.post('api/bankcards').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadbankcards();
     setInterval(function () {
-      return _this3.loadbankcards();
+      return _this5.loadbankcards();
     }, 3000);
   }
 };
@@ -196,8 +225,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       bankproducts: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         image: ''
@@ -205,8 +236,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletebankproducts: function deletebankproducts(id) {
+    updatebankproducts: function updatebankproducts() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/bankproducts/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(bankproducts) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(bankproducts);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletebankproducts: function deletebankproducts(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -216,7 +270,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/bankproducts/' + id).then(function () {
+        _this2.form["delete"]('api/bankproducts/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -224,23 +278,27 @@ var __default__ = {
       });
     },
     loadbankproducts: function loadbankproducts() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/bankproducts').then(function (_ref) {
         var data = _ref.data;
-        return _this2.bankproducts = data.data;
+        return _this3.bankproducts = data.data;
       });
     },
     createbankproducts: function createbankproducts() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/bankproducts');
-      this.$Progress.finish();
+      this.form.post('api/bankproducts').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadbankproducts();
     setInterval(function () {
-      return _this3.loadbankproducts();
+      return _this5.loadbankproducts();
     }, 3000);
   }
 };
@@ -271,8 +329,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       bankservices: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         description: '',
@@ -283,8 +343,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletebankservices: function deletebankservices(id) {
+    updatebankservices: function updatebankservices() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/bankservices/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(bankservices) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(bankservices);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletebankservices: function deletebankservices(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -294,7 +377,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/bankservices/' + id).then(function () {
+        _this2.form["delete"]('api/bankservices/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -302,23 +385,27 @@ var __default__ = {
       });
     },
     loadbankservices: function loadbankservices() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/bankservices').then(function (_ref) {
         var data = _ref.data;
-        return _this2.bankservices = data.data;
+        return _this3.bankservices = data.data;
       });
     },
     createbankservices: function createbankservices() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/bankservices');
-      this.$Progress.finish();
+      this.form.post('api/bankservices').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadbankservices();
     setInterval(function () {
-      return _this3.loadbankservices();
+      return _this5.loadbankservices();
     }, 3000);
   }
 };
@@ -349,8 +436,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       calculators: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         description: '',
@@ -359,8 +448,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletecalculators: function deletecalculators(id) {
+    updatecalculators: function updatecalculators() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/calculators/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(calculators) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(calculators);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletecalculators: function deletecalculators(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -370,7 +482,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/calculators/' + id).then(function () {
+        _this2.form["delete"]('api/calculators/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -378,23 +490,27 @@ var __default__ = {
       });
     },
     loadcalculators: function loadcalculators() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/calculators').then(function (_ref) {
         var data = _ref.data;
-        return _this2.calculators = data.data;
+        return _this3.calculators = data.data;
       });
     },
     createcalculators: function createcalculators() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/calculators');
-      this.$Progress.finish();
+      this.form.post('api/calculators').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadcalculators();
     setInterval(function () {
-      return _this3.loadcalculators();
+      return _this5.loadcalculators();
     }, 3000);
   }
 };
@@ -425,8 +541,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       cards: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         image: '',
@@ -436,8 +554,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletecards: function deletecards(id) {
+    updatecards: function updatecards() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/cards/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(cards) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(cards);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletecards: function deletecards(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -447,7 +588,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/cards/' + id).then(function () {
+        _this2.form["delete"]('api/cards/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -455,23 +596,27 @@ var __default__ = {
       });
     },
     loadcards: function loadcards() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/cards').then(function (_ref) {
         var data = _ref.data;
-        return _this2.cards = data.data;
+        return _this3.cards = data.data;
       });
     },
     createcards: function createcards() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/cards');
-      this.$Progress.finish();
+      this.form.post('api/cards').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadcards();
     setInterval(function () {
-      return _this3.loadcards();
+      return _this5.loadcards();
     }, 3000);
   }
 };
@@ -611,8 +756,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       depositcalculatorform: {},
       form: new Form({
+        id: '',
         surname: '',
         name: '',
         middle_name: '',
@@ -623,8 +770,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletedepositcalculatorform: function deletedepositcalculatorform(id) {
+    updatedepositcalculatorform: function updatedepositcalculatorform() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/depositcalculatorform/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(depositcalculatorform) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(depositcalculatorform);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletedepositcalculatorform: function deletedepositcalculatorform(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -634,7 +804,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/depositcalculatorform/' + id).then(function () {
+        _this2.form["delete"]('api/depositcalculatorform/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -642,23 +812,27 @@ var __default__ = {
       });
     },
     loaddepositcalculatorform: function loaddepositcalculatorform() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/depositcalculatorform').then(function (_ref) {
         var data = _ref.data;
-        return _this2.depositcalculatorform = data.data;
+        return _this3.depositcalculatorform = data.data;
       });
     },
     createdepositcalculatorform: function createdepositcalculatorform() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/depositcalculatorform');
-      this.$Progress.finish();
+      this.form.post('api/depositcalculatorform').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loaddepositcalculatorform();
     setInterval(function () {
-      return _this3.loaddepositcalculatorform();
+      return _this5.loaddepositcalculatorform();
     }, 3000);
   }
 };
@@ -689,8 +863,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       depositcards: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         link: '',
@@ -705,8 +881,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletedepositcards: function deletedepositcards(id) {
+    updatedepositcards: function updatedepositcards() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/depositcards/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(depositcards) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(depositcards);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletedepositcards: function deletedepositcards(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -716,7 +915,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/depositcards/' + id).then(function () {
+        _this2.form["delete"]('api/depositcards/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -724,23 +923,27 @@ var __default__ = {
       });
     },
     loaddepositcards: function loaddepositcards() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/depositcards').then(function (_ref) {
         var data = _ref.data;
-        return _this2.depositcards = data.data;
+        return _this3.depositcards = data.data;
       });
     },
     createdepositcards: function createdepositcards() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/depositcards');
-      this.$Progress.finish();
+      this.form.post('api/depositcards').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loaddepositcards();
     setInterval(function () {
-      return _this3.loaddepositcards();
+      return _this5.loaddepositcards();
     }, 3000);
   }
 };
@@ -779,76 +982,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Feedback.vue?vue&type=script&setup=true&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
-var __default__ = {
-  data: function data() {
-    return {
-      feedback: {},
-      form: new Form({
-        name: '',
-        surname: '',
-        e_mail: '',
-        phone_number: '',
-        question: ''
-      })
-    };
-  },
-  methods: {
-    deletefeedback: function deletefeedback(id) {
-      var _this = this;
-      swal.fire({
-        title: 'Вы уверены?',
-        text: 'Вы не сможете вернуть данные',
-        type: 'warning',
-        showCanselButton: true,
-        confirmButtonColor: '#3085d6',
-        canselButtonColor: '#d33',
-        confirmButtonText: 'Удалить'
-      }).then(function (result) {
-        _this.form["delete"]('api/feedback/' + id).then(function () {
-          swal('Удалено');
-        });
-      })["catch"](function () {
-        swal('Ошибка');
-      });
-    },
-    loadfeedback: function loadfeedback() {
-      var _this2 = this;
-      axios.get('api/feedback').then(function (_ref) {
-        var data = _ref.data;
-        return _this2.feedback = data.data;
-      });
-    },
-    createfeedback: function createfeedback() {
-      this.$Progress.start();
-      this.form.post('api/feedback');
-      this.$Progress.finish();
-    }
-  },
-  created: function created() {
-    var _this3 = this;
-    this.loadfeedback();
-    setInterval(function () {
-      return _this3.loadfeedback();
-    }, 3000);
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
-  __name: 'Feedback',
-  setup: function setup(__props) {
-    return {
-      __sfc: true
-    };
-  }
-}));
+throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
 
 /***/ }),
 
@@ -863,7 +999,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
 var __default__ = {
   data: function data() {
     return {
@@ -944,12 +1079,11 @@ var __default__ = {
   created: function created() {
     var _this5 = this;
     this.loadHeader();
-    Fire.$on('AfterCreate', function () {
-      _this5.loadHeader();
-    });
+    setInterval(function () {
+      return _this5.loadHeader();
+    }, 3000);
   }
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   __name: 'Header',
   setup: function setup(__props) {
@@ -976,8 +1110,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       loanscalculatorform: {},
       form: new Form({
+        id: '',
         surname: '',
         name: '',
         middle_name: '',
@@ -1000,8 +1136,31 @@ var __default__ = {
     };
   },
   methods: {
-    deleteloanscalculatorform: function deleteloanscalculatorform(id) {
+    updateloanscalculatorform: function updateloanscalculatorform() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/loanscalculatorform/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(loanscalculatorform) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(loanscalculatorform);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deleteloanscalculatorform: function deleteloanscalculatorform(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -1011,7 +1170,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/loanscalculatorform/' + id).then(function () {
+        _this2.form["delete"]('api/loanscalculatorform/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -1019,23 +1178,27 @@ var __default__ = {
       });
     },
     loadloanscalculatorform: function loadloanscalculatorform() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/loanscalculatorform').then(function (_ref) {
         var data = _ref.data;
-        return _this2.loanscalculatorform = data.data;
+        return _this3.loanscalculatorform = data.data;
       });
     },
     createloanscalculatorform: function createloanscalculatorform() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/loanscalculatorform');
-      this.$Progress.finish();
+      this.form.post('api/loanscalculatorform').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadloanscalculatorform();
     setInterval(function () {
-      return _this3.loadloanscalculatorform();
+      return _this5.loadloanscalculatorform();
     }, 3000);
   }
 };
@@ -1146,8 +1309,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       news: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         description: ''
@@ -1155,8 +1320,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletenews: function deletenews(id) {
+    updatenews: function updatenews() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/news/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(news) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(news);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletenews: function deletenews(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -1166,7 +1354,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/news/' + id).then(function () {
+        _this2.form["delete"]('api/news/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -1174,23 +1362,27 @@ var __default__ = {
       });
     },
     loadnews: function loadnews() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/news').then(function (_ref) {
         var data = _ref.data;
-        return _this2.news = data.data;
+        return _this3.news = data.data;
       });
     },
     createnews: function createnews() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/news');
-      this.$Progress.finish();
+      this.form.post('api/news').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadnews();
     setInterval(function () {
-      return _this3.loadnews();
+      return _this5.loadnews();
     }, 3000);
   }
 };
@@ -1221,8 +1413,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       onlineservices: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         image: ''
@@ -1230,8 +1424,31 @@ var __default__ = {
     };
   },
   methods: {
-    deleteonlineservices: function deleteonlineservices(id) {
+    updateonlineservices: function updateonlineservices() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/onlineservices/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(onlineservices) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(onlineservices);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deleteonlineservices: function deleteonlineservices(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -1241,7 +1458,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/onlineservices/' + id).then(function () {
+        _this2.form["delete"]('api/onlineservices/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -1249,23 +1466,27 @@ var __default__ = {
       });
     },
     loadonlineservices: function loadonlineservices() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/onlineservices').then(function (_ref) {
         var data = _ref.data;
-        return _this2.onlineservices = data.data;
+        return _this3.onlineservices = data.data;
       });
     },
     createonlineservices: function createonlineservices() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/onlineservices');
-      this.$Progress.finish();
+      this.form.post('api/onlineservices').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadonlineservices();
     setInterval(function () {
-      return _this3.loadonlineservices();
+      return _this5.loadonlineservices();
     }, 3000);
   }
 };
@@ -1296,8 +1517,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       remittancescards: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         link: ''
@@ -1305,8 +1528,31 @@ var __default__ = {
     };
   },
   methods: {
-    deleteremittancescards: function deleteremittancescards(id) {
+    updateremittancescards: function updateremittancescards() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/remittancescards/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(remittancescards) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(remittancescards);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deleteremittancescards: function deleteremittancescards(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -1316,7 +1562,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/remittancescards/' + id).then(function () {
+        _this2.form["delete"]('api/remittancescards/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -1324,23 +1570,27 @@ var __default__ = {
       });
     },
     loadremittancescards: function loadremittancescards() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/remittancescards').then(function (_ref) {
         var data = _ref.data;
-        return _this2.remittancescards = data.data;
+        return _this3.remittancescards = data.data;
       });
     },
     createremittancescards: function createremittancescards() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/remittancescards');
-      this.$Progress.finish();
+      this.form.post('api/remittancescards').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadremittancescards();
     setInterval(function () {
-      return _this3.loadremittancescards();
+      return _this5.loadremittancescards();
     }, 3000);
   }
 };
@@ -1432,76 +1682,9 @@ var __default__ = {
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Vacancy.vue?vue&type=script&setup=true&lang=js& ***!
   \*************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
-var __default__ = {
-  data: function data() {
-    return {
-      vacancy: {},
-      form: new Form({
-        surname: '',
-        name: '',
-        middle_name: '',
-        e_mail: '',
-        phone_number: ''
-      })
-    };
-  },
-  methods: {
-    deletevacancy: function deletevacancy(id) {
-      var _this = this;
-      swal.fire({
-        title: 'Вы уверены?',
-        text: 'Вы не сможете вернуть данные',
-        type: 'warning',
-        showCanselButton: true,
-        confirmButtonColor: '#3085d6',
-        canselButtonColor: '#d33',
-        confirmButtonText: 'Удалить'
-      }).then(function (result) {
-        _this.form["delete"]('api/vacancy/' + id).then(function () {
-          swal('Удалено');
-        });
-      })["catch"](function () {
-        swal('Ошибка');
-      });
-    },
-    loadvacancy: function loadvacancy() {
-      var _this2 = this;
-      axios.get('api/vacancy').then(function (_ref) {
-        var data = _ref.data;
-        return _this2.vacancy = data.data;
-      });
-    },
-    createvacancy: function createvacancy() {
-      this.$Progress.start();
-      this.form.post('api/vacancy');
-      this.$Progress.finish();
-    }
-  },
-  created: function created() {
-    var _this3 = this;
-    this.loadvacancy();
-    setInterval(function () {
-      return _this3.loadvacancy();
-    }, 3000);
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
-  __name: 'Vacancy',
-  setup: function setup(__props) {
-    return {
-      __sfc: true
-    };
-  }
-}));
+throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
 
 /***/ }),
 
@@ -1509,75 +1692,9 @@ var __default__ = {
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Work.vue?vue&type=script&setup=true&lang=js& ***!
   \**********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
-var __default__ = {
-  data: function data() {
-    return {
-      work: {},
-      form: new Form({
-        title: '',
-        link: '',
-        description: '',
-        image: ''
-      })
-    };
-  },
-  methods: {
-    deletework: function deletework(id) {
-      var _this = this;
-      swal.fire({
-        title: 'Вы уверены?',
-        text: 'Вы не сможете вернуть данные',
-        type: 'warning',
-        showCanselButton: true,
-        confirmButtonColor: '#3085d6',
-        canselButtonColor: '#d33',
-        confirmButtonText: 'Удалить'
-      }).then(function (result) {
-        _this.form["delete"]('api/work/' + id).then(function () {
-          swal('Удалено');
-        });
-      })["catch"](function () {
-        swal('Ошибка');
-      });
-    },
-    loadwork: function loadwork() {
-      var _this2 = this;
-      axios.get('api/work').then(function (_ref) {
-        var data = _ref.data;
-        return _this2.work = data.data;
-      });
-    },
-    creatework: function creatework() {
-      this.$Progress.start();
-      this.form.post('api/work');
-      this.$Progress.finish();
-    }
-  },
-  created: function created() {
-    var _this3 = this;
-    this.loadwork();
-    setInterval(function () {
-      return _this3.loadwork();
-    }, 3000);
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
-  __name: 'Work',
-  setup: function setup(__props) {
-    return {
-      __sfc: true
-    };
-  }
-}));
+throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
 
 /***/ }),
 
@@ -1609,7 +1726,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Банковские карты")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -1621,11 +1748,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createbankcards.apply(null, arguments);
+        _vm.editmode ? _vm.updatebankcards() : _vm.createbankcards();
       }
     }
   }, [_c("div", {
@@ -1918,14 +2069,55 @@ var render = function render() {
       field: "money",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankcards, function (bankcards) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.bankcards, function (bankcards) {
     return _c("tr", {
       key: bankcards.id
-    }, [_c("td", [_vm._v(_vm._s(bankcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankcards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(bankcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankcards.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(bankcards);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -1943,28 +2135,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -1975,41 +2146,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Обслуживание")]), _vm._v(" "), _c("th", [_vm._v("Безопасноть")]), _vm._v(" "), _c("th", [_vm._v("Доступность")]), _vm._v(" "), _c("th", [_vm._v("Комиссия")]), _vm._v(" "), _c("th", [_vm._v("Время")]), _vm._v(" "), _c("th", [_vm._v("Деньги")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -2479,7 +2621,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Продукты Банка")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -2491,11 +2643,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createbankproducts.apply(null, arguments);
+        _vm.editmode ? _vm.updatebankproducts() : _vm.createbankproducts();
       }
     }
   }, [_c("div", {
@@ -2564,14 +2740,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankproducts, function (bankproducts) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.bankproducts, function (bankproducts) {
     return _c("tr", {
       key: bankproducts.id
-    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(bankproducts.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankproducts.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankproducts.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(bankproducts);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -2589,28 +2806,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -2621,41 +2817,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -2690,7 +2857,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Предложения Банка")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -2702,11 +2879,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createbankservices.apply(null, arguments);
+        _vm.editmode ? _vm.updatebankservices() : _vm.createbankservices();
       }
     }
   }, [_c("div", {
@@ -2880,14 +3081,55 @@ var render = function render() {
       field: "language",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankservices, function (bankservices) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.bankservices, function (bankservices) {
     return _c("tr", {
       key: bankservices.id
-    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(bankservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankservices.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankservices.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(bankservices);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -2905,28 +3147,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -2937,41 +3158,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Страница")]), _vm._v(" "), _c("th", [_vm._v("Язык")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -3006,7 +3198,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Данные калькулятора")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -3018,11 +3220,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createcalculators.apply(null, arguments);
+        _vm.editmode ? _vm.updatecalculators() : _vm.createcalculators();
       }
     }
   }, [_c("div", {
@@ -3091,14 +3317,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.calculators, function (calculators) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.calculators, function (calculators) {
     return _c("tr", {
       key: calculators.id
-    }, [_c("td", [_vm._v(_vm._s(calculators.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(calculators.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(calculators.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(calculators.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(calculators.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(calculators);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3116,28 +3383,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -3148,41 +3394,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -3217,7 +3434,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Карточки")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -3229,11 +3456,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createcards.apply(null, arguments);
+        _vm.editmode ? _vm.updatecards() : _vm.createcards();
       }
     }
   }, [_c("div", {
@@ -3375,14 +3626,55 @@ var render = function render() {
       field: "language",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.cards, function (cards) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.cards, function (cards) {
     return _c("tr", {
       key: cards.id
-    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(cards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.page))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(cards.language))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(cards.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(cards);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3400,28 +3692,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -3432,41 +3703,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Страница")]), _vm._v(" "), _c("th", [_vm._v("Язык")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -3785,7 +4027,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Депозитный калькулятор")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -3797,11 +4049,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createdepositcalculatorform.apply(null, arguments);
+        _vm.editmode ? _vm.updatedepositcalculatorform() : _vm.createdepositcalculatorform();
       }
     }
   }, [_c("div", {
@@ -3966,14 +4242,55 @@ var render = function render() {
       field: "additional_phone_number",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositculatorform, function (depositculatorform) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.depositculatorform, function (depositculatorform) {
     return _c("tr", {
       key: depositculatorform.id
-    }, [_c("td", [_vm._v(_vm._s(depositculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositculatorform.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(depositculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositculatorform.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(_vm.depositcalculatorform);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3991,28 +4308,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -4023,41 +4319,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Отечество")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Дополнительный номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -4092,7 +4359,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Депозитные карточки")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -4104,11 +4381,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createdepositcards.apply(null, arguments);
+        _vm.editmode ? _vm.updatedepositcards() : _vm.createdepositcards();
       }
     }
   }, [_c("div", {
@@ -4401,14 +4702,55 @@ var render = function render() {
       field: "money",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.depositcards, function (depositcards) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.depositcards, function (depositcards) {
     return _c("tr", {
       key: depositcards.id
-    }, [_c("td", [_vm._v(_vm._s(depositcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositcards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(depositcards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(depositcards.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(depositcards.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(depositcards);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -4426,28 +4768,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -4458,41 +4779,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Обслуживание")]), _vm._v(" "), _c("th", [_vm._v("Безопасноть")]), _vm._v(" "), _c("th", [_vm._v("Доступность")]), _vm._v(" "), _c("th", [_vm._v("Комиссия")]), _vm._v(" "), _c("th", [_vm._v("Время")]), _vm._v(" "), _c("th", [_vm._v("Деньги")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -4552,8 +4844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -4566,7 +4857,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Депозитный калькулятор")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -4578,11 +4879,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createfeedback.apply(null, arguments);
+        _vm.editmode ? _vm.updatefeedback() : _vm.createfeedback();
       }
     }
   }, [_c("div", {
@@ -4747,14 +5072,55 @@ var render = function render() {
       field: "question",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.feedback, function (feedback) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.feedback, function (feedback) {
     return _c("tr", {
       key: feedback.id
-    }, [_c("td", [_vm._v(_vm._s(feedback.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.question))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(feedback.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(feedback.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(feedback.question))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(feedback.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(feedback);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -4770,30 +5136,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    _c = _vm._self._c;
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -4804,41 +5148,11 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Вопрос")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -5278,7 +5592,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Кредитный калькулятор")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -5290,11 +5614,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createloanscalculatorform.apply(null, arguments);
+        _vm.editmode ? _vm.updateloanscalculatorform() : _vm.createloanscalculatorform();
       }
     }
   }, [_c("div", {
@@ -5843,14 +6191,55 @@ var render = function render() {
       field: "phone_number_for",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.loanscalculatorform, function (loanscalculatorform) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.loanscalculatorform, function (loanscalculatorform) {
     return _c("tr", {
       key: loanscalculatorform.id
-    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purpose))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(loanscalculatorform.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.additional_phone_number))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_product))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_currency))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_amount))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_term))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.loan_purpose))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.occupation))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.city_district))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.region))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.address_where_registered))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.monthly_family_income))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.branch))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(loanscalculatorform.phone_number_for))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(loanscalculatorform.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(loanscalculatorform);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -5868,28 +6257,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -5900,41 +6268,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Отечество")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Дополнительный номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Кредитный продукт")]), _vm._v(" "), _c("th", [_vm._v("Кредитная валюта")]), _vm._v(" "), _c("th", [_vm._v("Срок кредита")]), _vm._v(" "), _c("th", [_vm._v("Цель кредита")]), _vm._v(" "), _c("th", [_vm._v("Величина займа")]), _vm._v(" "), _c("th", [_vm._v("Занятие")]), _vm._v(" "), _c("th", [_vm._v("Город/район ")]), _vm._v(" "), _c("th", [_vm._v("Регион")]), _vm._v(" "), _c("th", [_vm._v("Адрес по прописке")]), _vm._v(" "), _c("th", [_vm._v("Ежемесячный доход семьи")]), _vm._v(" "), _c("th", [_vm._v("Ветвь")]), _vm._v(" "), _c("th", [_vm._v("Номер для доп.инф")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -6276,7 +6615,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Предложения Банка")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -6288,11 +6637,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createnews.apply(null, arguments);
+        _vm.editmode ? _vm.updatenews() : _vm.createnews();
       }
     }
   }, [_c("div", {
@@ -6393,14 +6766,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.news, function (news) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.news, function (news) {
     return _c("tr", {
       key: news.id
-    }, [_c("td", [_vm._v(_vm._s(news.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(news.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(news.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(news.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(news.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(news);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -6418,28 +6832,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -6450,41 +6843,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -6519,7 +6883,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Онлайн сервисы")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -6531,11 +6905,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createonlineservices.apply(null, arguments);
+        _vm.editmode ? _vm.updateonlineservices() : _vm.createonlineservices();
       }
     }
   }, [_c("div", {
@@ -6604,14 +7002,55 @@ var render = function render() {
       field: "description",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.onlineservices, function (onlineservices) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.onlineservices, function (onlineservices) {
     return _c("tr", {
       key: onlineservices.id
-    }, [_c("td", [_vm._v(_vm._s(onlineservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(onlineservices.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(onlineservices.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(onlineservices.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(onlineservices.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(onlineservices);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -6629,28 +7068,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -6661,41 +7079,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -6730,7 +7119,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Денежные переводы")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -6742,11 +7141,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createremittancescards.apply(null, arguments);
+        _vm.editmode ? _vm.updateremittancescards() : _vm.createremittancescards();
       }
     }
   }, [_c("div", {
@@ -6847,14 +7270,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.remittancescards, function (remittancescards) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.remittancescards, function (remittancescards) {
     return _c("tr", {
       key: remittancescards.id
-    }, [_c("td", [_vm._v(_vm._s(remittancescards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(remittancescards.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(remittancescards.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(remittancescards.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(remittancescards.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(remittancescards);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -6872,28 +7336,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -6904,41 +7347,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -7202,8 +7616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -7216,7 +7629,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Депозитный калькулятор")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -7228,11 +7651,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createvacancy.apply(null, arguments);
+        _vm.editmode ? _vm.updatevacancy() : _vm.createvacancy();
       }
     }
   }, [_c("div", {
@@ -7397,14 +7844,55 @@ var render = function render() {
       field: "phone",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.vacancy, function (vacancy) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.vacancy, function (vacancy) {
     return _c("tr", {
       key: vacancy.id
-    }, [_c("td", [_vm._v(_vm._s(vacancy.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(vacancy.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(vacancy.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.surname))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.middle_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.e_mail))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(vacancy.phone))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(vacancy.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(vacancy);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -7420,30 +7908,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    _c = _vm._self._c;
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -7454,41 +7920,11 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Отчество")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -7509,8 +7945,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -7523,7 +7958,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Предложения Банка")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -7535,11 +7980,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.creatework.apply(null, arguments);
+        _vm.editmode ? _vm.updatework() : _vm.creatework();
       }
     }
   }, [_c("div", {
@@ -7640,14 +8109,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.work, function (work) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.work, function (work) {
     return _c("tr", {
       key: work.id
-    }, [_c("td", [_vm._v(_vm._s(work.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(work.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(work.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(work.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(work.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.editModal(work);
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue"
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -7663,30 +8173,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+    _c = _vm._self._c;
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -7697,41 +8185,11 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
+    _c = _vm._self._c;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 

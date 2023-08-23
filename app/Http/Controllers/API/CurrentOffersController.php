@@ -59,7 +59,16 @@ class CurrentOffersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $currentoffers = CurrentOffers::findOrFail($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$currentoffers->id,
+            'description' => 'required|string|max:191',
+            'link' => 'required|string|max:191',
+        ]);
+
+        $currentoffers->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

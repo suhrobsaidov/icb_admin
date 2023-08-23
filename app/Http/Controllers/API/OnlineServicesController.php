@@ -57,7 +57,15 @@ class OnlineServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $onlineservices = OnlineServices::find($id);
+
+        $this->validate($request,[
+            'title' => 'required|string|max:191'.$onlineservices->id,
+            'description' => 'required|string|max:191',
+        ]);
+
+        $onlineservices->update($request->all());
+        return response(200, 'Updated');
     }
 
     /**

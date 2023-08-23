@@ -11,18 +11,19 @@ import ExampleComponent from "./ExampleComponent.vue";
                     <h3 class="card-title">Предложения Банка</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
+                            <button type="button" class="btn btn-primary float-right" @click="newModal">Добавить</button>
                         </h4>
                         <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Добавить</h5>
+                                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Изменить</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="createbankservices">
+                                    <form @submit.prevent="editmode ? updatebankservices() : createbankservices()">
 
 
                                         <div class="modal-body">
@@ -62,7 +63,8 @@ import ExampleComponent from "./ExampleComponent.vue";
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button type="submit" class="btn btn-primary">Сoхранить</button>
+                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
+                                            <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -95,7 +97,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                             <td>{{bankservices.language}}</td>
                             <td>{{bankservices.created_at | myDate}}</td>
                             <td>
-                                <a href="#">
+                                <a href="#"  @click="editModal(bankservices)">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
@@ -119,8 +121,10 @@ import ExampleComponent from "./ExampleComponent.vue";
 export default {
     data(){
         return{
+            editmode: false,
             bankservices : {},
             form: new Form({
+                id: '',
                 title: '',
                 link: '',
                 description:'',
@@ -131,6 +135,31 @@ export default {
         }
     },
     methods: {
+        updatebankservices(){
+            this.$Progress.start();
+            this.form.put('api/bankservices/'+this.form.id)
+                .then(() => {
+                    $('#addNew').modal('hide');
+                    swal(
+                        'Измнено'
+                    )
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+                }).catch(() => {
+                this.$Progress.fail();
+            });
+        },
+        editModal(bankservices){
+            this.editmode = true;
+            this.form.reset();
+            $('#addNew').modal('show');
+            this.form.fill(bankservices);
+        },
+        newModal(){
+            this.editmode = false;
+            this.form.reset();
+            $('#addNew').modal('show');
+        },
         deletebankservices(id){
             swal.fire({
                 title: 'Вы уверены?',
@@ -155,8 +184,15 @@ export default {
         },
         createbankservices(){
             this.$Progress.start();
-            this.form.post('api/bankservices');
-            this.$Progress.finish();
+            this.form.post('api/bankservices')
+                .then(() =>{
+                Fire.$emit('AfterCreate');
+                $('#addNew').modal('hide')
+                this.$Progress.finish();
+            })
+                .catch(() => {
+
+                })
         }
     },
     created() {
