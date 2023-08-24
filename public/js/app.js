@@ -143,8 +143,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       bankloans: {},
       form: new Form({
+        id: '',
         title: '',
         description: '',
         link: '',
@@ -159,8 +161,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletebankloans: function deletebankloans(id) {
+    updatebankloans: function updatebankloans() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/bankloans/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(bankloans) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(bankloans);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletebankloans: function deletebankloans(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -170,7 +195,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/bankloans/' + id).then(function () {
+        _this2.form["delete"]('api/bankloans/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -178,23 +203,27 @@ var __default__ = {
       });
     },
     loadbankloans: function loadbankloans() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/bankloans').then(function (_ref) {
         var data = _ref.data;
-        return _this2.bankloans = data.data;
+        return _this3.bankloans = data.data;
       });
     },
     createbankloans: function createbankloans() {
+      var _this4 = this;
       this.$Progress.start();
-      this.form.post('api/bankloans');
-      this.$Progress.finish();
+      this.form.post('api/bankloans').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
     this.loadbankloans();
     setInterval(function () {
-      return _this3.loadbankloans();
+      return _this5.loadbankloans();
     }, 3000);
   }
 };
@@ -647,8 +676,10 @@ __webpack_require__.r(__webpack_exports__);
 var __default__ = {
   data: function data() {
     return {
+      editmode: false,
       currentoffers: {},
       form: new Form({
+        id: '',
         title: '',
         link: '',
         description: '',
@@ -657,8 +688,31 @@ var __default__ = {
     };
   },
   methods: {
-    deletecurrentoffers: function deletecurrentoffers(id) {
+    updatecurrentoffers: function updatecurrentoffers() {
       var _this = this;
+      this.$Progress.start();
+      this.form.put('api/currentoffers/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(currentoffers) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(currentoffers);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletecurrentoffers: function deletecurrentoffers(id) {
+      var _this2 = this;
       swal.fire({
         title: 'Вы уверены?',
         text: 'Вы не сможете вернуть данные',
@@ -668,7 +722,7 @@ var __default__ = {
         canselButtonColor: '#d33',
         confirmButtonText: 'Удалить'
       }).then(function (result) {
-        _this.form["delete"]('api/currentoffers/' + id).then(function () {
+        _this2.form["delete"]('api/currentoffers/' + id).then(function () {
           swal('Удалено');
         });
       })["catch"](function () {
@@ -676,27 +730,27 @@ var __default__ = {
       });
     },
     loadcurrentoffers: function loadcurrentoffers() {
-      var _this2 = this;
+      var _this3 = this;
       axios.get('api/currentoffers').then(function (_ref) {
         var data = _ref.data;
-        return _this2.currentoffers = data.data;
+        return _this3.currentoffers = data.data;
       });
     },
     createcurrentoffers: function createcurrentoffers() {
-      var _this3 = this;
+      var _this4 = this;
       this.$Progress.start();
       this.form.post('api/currentoffers').then(function () {
         Fire.$emit('AfterCreate');
         $('#addNew').modal('hide');
-        _this3.$Progress.finish();
+        _this4.$Progress.finish();
       })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this4 = this;
+    var _this5 = this;
     this.loadcurrentoffers();
     setInterval(function () {
-      return _this4.loadcurrentoffers();
+      return _this5.loadcurrentoffers();
     }, 3000);
   }
 };
@@ -982,9 +1036,105 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Feedback.vue?vue&type=script&setup=true&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+var __default__ = {
+  data: function data() {
+    return {
+      editmode: false,
+      feedback: {},
+      form: new Form({
+        id: '',
+        name: '',
+        surname: '',
+        e_mail: '',
+        phone_number: '',
+        question: ''
+      })
+    };
+  },
+  methods: {
+    updatefeedback: function updatefeedback() {
+      var _this = this;
+      this.$Progress.start();
+      this.form.put('api/feedback/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(feedback) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(feedback);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletefeedback: function deletefeedback(id) {
+      var _this2 = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this2.form["delete"]('api/feedback/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadfeedback: function loadfeedback() {
+      var _this3 = this;
+      axios.get('api/feedback').then(function (_ref) {
+        var data = _ref.data;
+        return _this3.feedback = data.data;
+      });
+    },
+    createfeedback: function createfeedback() {
+      var _this4 = this;
+      this.$Progress.start();
+      this.form.post('api/feedback').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
+    }
+  },
+  created: function created() {
+    var _this5 = this;
+    this.loadfeedback();
+    setInterval(function () {
+      return _this5.loadfeedback();
+    }, 3000);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  __name: 'Feedback',
+  setup: function setup(__props) {
+    return {
+      __sfc: true
+    };
+  }
+}));
 
 /***/ }),
 
@@ -1682,9 +1832,105 @@ var __default__ = {
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Vacancy.vue?vue&type=script&setup=true&lang=js& ***!
   \*************************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+var __default__ = {
+  data: function data() {
+    return {
+      editmode: false,
+      vacancy: {},
+      form: new Form({
+        id: '',
+        surname: '',
+        name: '',
+        middle_name: '',
+        e_mail: '',
+        phone_number: ''
+      })
+    };
+  },
+  methods: {
+    updatevacancy: function updatevacancy() {
+      var _this = this;
+      this.$Progress.start();
+      this.form.put('api/vacancy/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(vacancy) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(vacancy);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletevacancy: function deletevacancy(id) {
+      var _this2 = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this2.form["delete"]('api/vacancy/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadvacancy: function loadvacancy() {
+      var _this3 = this;
+      axios.get('api/vacancy').then(function (_ref) {
+        var data = _ref.data;
+        return _this3.vacancy = data.data;
+      });
+    },
+    createvacancy: function createvacancy() {
+      var _this4 = this;
+      this.$Progress.start();
+      this.form.post('api/vacancy').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
+    }
+  },
+  created: function created() {
+    var _this5 = this;
+    this.loadvacancy();
+    setInterval(function () {
+      return _this5.loadvacancy();
+    }, 3000);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  __name: 'Vacancy',
+  setup: function setup(__props) {
+    return {
+      __sfc: true
+    };
+  }
+}));
 
 /***/ }),
 
@@ -1692,9 +1938,104 @@ throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.j
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Work.vue?vue&type=script&setup=true&lang=js& ***!
   \**********************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nTypeError: Cannot read properties of null (reading 'content')\n    at selectBlock (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\select.js:30:41)\n    at module.exports (C:\\OSPanel\\domains\\icb_admin\\node_modules\\vue-loader\\lib\\index.js:89:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+var __default__ = {
+  data: function data() {
+    return {
+      editmode: false,
+      work: {},
+      form: new Form({
+        id: '',
+        title: '',
+        link: '',
+        description: '',
+        image: ''
+      })
+    };
+  },
+  methods: {
+    updatework: function updatework() {
+      var _this = this;
+      this.$Progress.start();
+      this.form.put('api/work/' + this.form.id).then(function () {
+        $('#addNew').modal('hide');
+        swal('Измнено');
+        _this.$Progress.finish();
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
+    editModal: function editModal(work) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(work);
+    },
+    newModal: function newModal() {
+      this.editmode = false;
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    deletework: function deletework(id) {
+      var _this2 = this;
+      swal.fire({
+        title: 'Вы уверены?',
+        text: 'Вы не сможете вернуть данные',
+        type: 'warning',
+        showCanselButton: true,
+        confirmButtonColor: '#3085d6',
+        canselButtonColor: '#d33',
+        confirmButtonText: 'Удалить'
+      }).then(function (result) {
+        _this2.form["delete"]('api/work/' + id).then(function () {
+          swal('Удалено');
+        });
+      })["catch"](function () {
+        swal('Ошибка');
+      });
+    },
+    loadwork: function loadwork() {
+      var _this3 = this;
+      axios.get('api/work').then(function (_ref) {
+        var data = _ref.data;
+        return _this3.work = data.data;
+      });
+    },
+    creatework: function creatework() {
+      var _this4 = this;
+      this.$Progress.start();
+      this.form.post('api/work').then(function () {
+        Fire.$emit('AfterCreate');
+        $('#addNew').modal('hide');
+        _this4.$Progress.finish();
+      })["catch"](function () {});
+    }
+  },
+  created: function created() {
+    var _this5 = this;
+    this.loadwork();
+    setInterval(function () {
+      return _this5.loadwork();
+    }, 3000);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  __name: 'Work',
+  setup: function setup(__props) {
+    return {
+      __sfc: true
+    };
+  }
+}));
 
 /***/ }),
 
@@ -2186,7 +2527,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Кредиты")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -2198,11 +2549,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createbankloans.apply(null, arguments);
+        _vm.editmode ? _vm.updatebankloans() : _vm.createbankloans();
       }
     }
   }, [_c("div", {
@@ -2495,14 +2870,55 @@ var render = function render() {
       field: "money",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.bankloans, function (bankloans) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.bankloans, function (bankloans) {
     return _c("tr", {
       key: bankloans.id
-    }, [_c("td", [_vm._v(_vm._s(bankloans.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankloans.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(bankloans.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.maintenance))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.security))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.access))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.commission))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(bankloans.money))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(bankloans.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue",
+      on: {
+        click: function click($event) {
+          return _vm.editModal(bankloans);
+        }
+      }
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -2520,28 +2936,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -2552,41 +2947,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Обслуживание")]), _vm._v(" "), _c("th", [_vm._v("Безопасноть")]), _vm._v(" "), _c("th", [_vm._v("Доступность")]), _vm._v(" "), _c("th", [_vm._v("Комиссия")]), _vm._v(" "), _c("th", [_vm._v("Время")]), _vm._v(" "), _c("th", [_vm._v("Деньги")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -3743,7 +4109,17 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v("Предложения Банка")]), _vm._v(" "), _c("div", {
     staticClass: "card-tools"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("h4", {
+    staticClass: "card-title"
+  }, [_c("button", {
+    staticClass: "btn btn-primary float-right",
+    attrs: {
+      type: "button"
+    },
+    on: {
+      click: _vm.newModal
+    }
+  }, [_vm._v("Добавить")])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "addNew",
@@ -3755,11 +4131,35 @@ var render = function render() {
     staticClass: "modal-dialog"
   }, [_c("div", {
     staticClass: "modal-content"
-  }, [_vm._m(1), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "modal-header"
+  }, [_c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Добавить")]), _vm._v(" "), _c("h5", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "modal-title",
+    attrs: {
+      id: "addNewLabel"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("form", {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.createcurrentoffers.apply(null, arguments);
+        _vm.editmode ? _vm.updatecurrentoffers() : _vm.createcurrentoffers();
       }
     }
   }, [_c("div", {
@@ -3860,14 +4260,55 @@ var render = function render() {
       field: "link",
       form: _vm.form
     }
-  })], 1)]), _vm._v(" "), _vm._m(2)])])])])])]), _vm._v(" "), _c("div", {
+  })], 1)]), _vm._v(" "), _c("div", {
+    staticClass: "modal-footer"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary",
+    attrs: {
+      type: "button",
+      "data-dismiss": "modal"
+    }
+  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.editmode,
+      expression: "editmode"
+    }],
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Изменить")]), _vm._v(" "), _c("button", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_vm.editmode,
+      expression: "!editmode"
+    }],
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "card-body table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
-  }, [_vm._m(3), _vm._v(" "), _c("tbody", _vm._l(_vm.currentoffers, function (currentoffers) {
+  }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.currentoffers, function (currentoffers) {
     return _c("tr", {
       key: currentoffers.id
-    }, [_c("td", [_vm._v(_vm._s(currentoffers.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(currentoffers.created_at)))]), _vm._v(" "), _c("td", [_vm._m(4, true), _vm._v("\n                            /\n                            "), _c("a", {
+    }, [_c("td", [_vm._v(_vm._s(currentoffers.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.link))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(currentoffers.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("myDate")(currentoffers.created_at)))]), _vm._v(" "), _c("td", [_c("a", {
+      attrs: {
+        href: "#"
+      }
+    }, [_c("i", {
+      staticClass: "fa fa-edit blue",
+      on: {
+        click: function click($event) {
+          return _vm.editModal(currentoffers);
+        }
+      }
+    })]), _vm._v("\n                            /\n                            "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3885,28 +4326,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c("h4", {
-    staticClass: "card-title"
-  }, [_c("button", {
-    staticClass: "btn btn-primary float-right",
-    attrs: {
-      type: "button",
-      "data-toggle": "modal",
-      "data-target": "#addNew"
-    }
-  }, [_vm._v("Добавить")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-header"
-  }, [_c("h5", {
-    staticClass: "modal-title",
-    attrs: {
-      id: "addNewLabel"
-    }
-  }, [_vm._v("Добавить")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -3917,41 +4337,12 @@ var staticRenderFns = [function () {
     attrs: {
       "aria-hidden": "true"
     }
-  }, [_vm._v("×")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "modal-footer"
-  }, [_c("button", {
-    staticClass: "btn btn-secondary",
-    attrs: {
-      type: "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Сoхранить")])]);
+  }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-edit blue"
-  })]);
 }];
 render._withStripped = true;
 
@@ -4844,7 +5235,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -5136,7 +5528,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("button", {
     staticClass: "close",
     attrs: {
@@ -5151,7 +5544,8 @@ var staticRenderFns = [function () {
   }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Вопрос")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }];
 render._withStripped = true;
@@ -7616,7 +8010,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -7908,7 +8303,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("button", {
     staticClass: "close",
     attrs: {
@@ -7923,7 +8319,8 @@ var staticRenderFns = [function () {
   }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Фамилия")]), _vm._v(" "), _c("th", [_vm._v("Имя")]), _vm._v(" "), _c("th", [_vm._v("Отчество")]), _vm._v(" "), _c("th", [_vm._v("e-mail")]), _vm._v(" "), _c("th", [_vm._v("Номер телефона")]), _vm._v(" "), _c("th", [_vm._v("Время создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }];
 render._withStripped = true;
@@ -7945,7 +8342,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -8173,7 +8571,8 @@ var render = function render() {
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("button", {
     staticClass: "close",
     attrs: {
@@ -8188,7 +8587,8 @@ var staticRenderFns = [function () {
   }, [_vm._v("×")])]);
 }, function () {
   var _vm = this,
-    _c = _vm._self._c;
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
   return _c("thead", [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Заголовок")]), _vm._v(" "), _c("th", [_vm._v("Путь кнопки")]), _vm._v(" "), _c("th", [_vm._v("Описание")]), _vm._v(" "), _c("th", [_vm._v("Дата создания")]), _vm._v(" "), _c("th", [_vm._v("Изменения")])])]);
 }];
 render._withStripped = true;

@@ -179,7 +179,7 @@ export default {
         },
         createfeedback(){
             this.$Progress.start();
-            this.form.post('api/feedback');
+            this.form.post('api/feedback')
         .then(() =>{
                 Fire.$emit('AfterCreate');
                 $('#addNew').modal('hide')

@@ -163,7 +163,7 @@ export default {
         },
         creatework(){
             this.$Progress.start();
-            this.form.post('api/work');
+            this.form.post('api/work')
         .then(() =>{
                 Fire.$emit('AfterCreate');
                 $('#addNew').modal('hide')

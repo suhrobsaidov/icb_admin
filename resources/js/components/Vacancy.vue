@@ -180,7 +180,7 @@ export default {
         },
         createvacancy(){
             this.$Progress.start();
-            this.form.post('api/vacancy');
+            this.form.post('api/vacancy')
         .then(() =>{
                 Fire.$emit('AfterCreate');
                 $('#addNew').modal('hide')
