@@ -67,6 +67,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
 
