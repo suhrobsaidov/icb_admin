@@ -2056,10 +2056,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -2441,7 +2437,7 @@ var render = function render() {
       type: "submit"
     }
   }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "card-body table-responsive p-0"
+    staticClass: "card-body table-hover table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
   }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.bankcards, function (bankcards) {
@@ -2458,7 +2454,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -2470,7 +2466,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2976,10 +2972,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -3154,7 +3146,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3166,7 +3158,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3212,10 +3204,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -3495,7 +3483,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3507,7 +3495,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3553,10 +3541,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -3731,7 +3715,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -3743,7 +3727,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3789,10 +3773,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -4040,7 +4020,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -4052,7 +4032,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -4407,10 +4387,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -4681,7 +4657,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -4693,7 +4669,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -4739,10 +4715,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -5141,7 +5113,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -5153,7 +5125,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -5238,10 +5210,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -5512,7 +5480,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -5524,7 +5492,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -5570,10 +5538,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -5900,7 +5864,7 @@ var render = function render() {
       type: "submit"
     }
   }, [_vm._v("Сoхранить")])])])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "card-body table-responsive p-0"
+    staticClass: "table-responsive p-0"
   }, [_c("table", {
     staticClass: "table table-hover text-nowrap"
   }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.header, function (header) {
@@ -5917,7 +5881,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -5929,7 +5893,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -5975,10 +5939,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -6633,7 +6593,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -6645,7 +6605,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -6998,10 +6958,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -7208,7 +7164,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -7220,7 +7176,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -7266,10 +7222,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -7444,7 +7396,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -7456,7 +7408,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -7502,10 +7454,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -7712,7 +7660,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -7724,7 +7672,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -8013,10 +7961,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -8287,7 +8231,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -8299,7 +8243,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -8345,10 +8289,6 @@ var render = function render() {
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -8555,7 +8495,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fa fa-edit blue"
-    })]), _vm._v("\n                            /\n                            "), _c("a", {
+    })]), _vm._v("\n                    /\n                    "), _c("a", {
       attrs: {
         href: "#"
       },
@@ -8567,7 +8507,7 @@ var render = function render() {
     }, [_c("i", {
       staticClass: "fa fa-trash red"
     })])])]);
-  }), 0)])])])])]);
+  }), 0)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -8670,6 +8610,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 window.swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_24___default());
 window.Form = vform__WEBPACK_IMPORTED_MODULE_23__.Form;
 window.Fire = new vue__WEBPACK_IMPORTED_MODULE_25__["default"]();
+
 
 var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_24___default().mixin({
   toast: true,

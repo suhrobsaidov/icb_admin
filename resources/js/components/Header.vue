@@ -3,8 +3,7 @@
 </script>
 
 <template>
-    <div class="container">
-        <div class="col-md-12">
+
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Шапка</h3>
@@ -83,7 +82,7 @@
                     </div>
                 </div>
 
-                <div class="card-body table-responsive p-0">
+                <div class="table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
                         <tr>
@@ -126,8 +125,7 @@
 
             </div>
 
-        </div>
-    </div>
+
 
 </template>
 

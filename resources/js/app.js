@@ -46,6 +46,7 @@ import {
     AlertErrors,
     AlertSuccess
 } from 'vform/src/components/bootstrap4'
+import Index from "./components/BankCards.vue";
 
 const toast = swal.mixin({
     toast: true,

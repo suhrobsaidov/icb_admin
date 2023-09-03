@@ -4,8 +4,6 @@ import ExampleComponent from "./ExampleComponent.vue";
 </script>
 
 <template>
-    <div class="container">
-        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Данные калькулятора</h3>
@@ -84,9 +82,6 @@ import ExampleComponent from "./ExampleComponent.vue";
                 </div>
 
             </div>
-
-        </div>
-    </div>
 
 </template>
 
