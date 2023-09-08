@@ -1,8 +1,3 @@
-<script setup>
-
-import ExampleComponent from "./ExampleComponent.vue";
-</script>
-
 <template>
 
             <div class="card">

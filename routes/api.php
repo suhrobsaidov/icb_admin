@@ -19,7 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('user',  'API\UserController');
-Route::apiResource('mainPage', 'API\HeaderController');
 Route::apiResource('header',  'API\HeaderController');
 Route::apiResource('bankproducts', 'API\BankProductsController');
 Route::apiResource('cards', 'API\CardsController');
