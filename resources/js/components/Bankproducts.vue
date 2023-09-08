@@ -1,22 +1,28 @@
+<script setup>
+
+import ExampleComponent from "./ExampleComponent.vue";
+</script>
+
 <template>
+    <div class="container">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Продукты Банка</h3>
                     <div class="card-tools">
                         <h4 class="card-title">
-                            <button type="button" class="btn btn-primary float-right" @click="newModal">Добавить</button>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addNew">Добавить</button>
                         </h4>
                         <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="addNewLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Добавить</h5>
-                                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Изменить</h5>
+                                        <h5 class="modal-title" id="addNewLabel">Добавить</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form @submit.prevent="editmode ? updatebankproducts() : createbankproducts()">
+                                    <form @submit.prevent="createbankproducts">
 
 
                                         <div class="modal-body">
@@ -35,8 +41,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                            <button v-show="editmode" type="submit" class="btn btn-success">Изменить</button>
-                                            <button v-show="!editmode" type="submit" class="btn btn-primary">Сoхранить</button>
+                                            <button type="submit" class="btn btn-primary">Сoхранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -63,11 +68,11 @@
                             <td>{{bankproducts.link}}</td>
                             <td>{{bankproducts.created_at | myDate}}</td>
                             <td>
-                                <a href="#" @click="editModal(bankproducts)">
+                                <a href="#">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#" @click="deletebankproducts(bankproducts.id)">
+                                <a href="#">
                                     <i class="fa fa-trash red"></i>
                                 </a>
                             </td>
@@ -78,6 +83,8 @@
 
             </div>
 
+        </div>
+    </div>
 
 </template>
 
@@ -85,10 +92,8 @@
 export default {
     data(){
         return{
-            editmode: false,
             bankproducts : {},
             form: new Form({
-                id: '',
                 title: '',
                 link: '',
                 image: '',
@@ -96,64 +101,13 @@ export default {
         }
     },
     methods: {
-        updatebankproducts(){
-            this.$Progress.start();
-            this.form.put('api/bankproducts/'+this.form.id)
-                .then(() => {
-                    $('#addNew').modal('hide');
-                    swal(
-                        'Измнено'
-                    )
-                    this.$Progress.finish();
-                    Fire.$emit('AfterCreate');
-                }).catch(() => {
-                this.$Progress.fail();
-            });
-        },
-        editModal(bankproducts){
-            this.editmode = true;
-            this.form.reset();
-            $('#addNew').modal('show');
-            this.form.fill(bankproducts);
-        },
-        newModal(){
-            this.editmode = false;
-            this.form.reset();
-            $('#addNew').modal('show');
-        },
-        deletebankproducts(id){
-            swal.fire({
-                title: 'Вы уверены?',
-                text: 'Вы не сможете вернуть данные',
-                type: 'warning',
-                showCanselButton: true,
-                confirmButtonColor: '#3085d6',
-                canselButtonColor: '#d33',
-                confirmButtonText: 'Удалить'
-            }).then((result)=>{
-                this.form.delete('api/bankproducts/'+id).then(()=>{
-                    swal(
-                        'Удалено'
-                    )
-                })
-            }).catch(()=>{
-                swal('Ошибка')
-            })
-        },
         loadbankproducts(){
             axios.get('api/bankproducts').then(({data}) =>(this.bankproducts = data.data));
         },
         createbankproducts(){
             this.$Progress.start();
-            this.form.post('api/bankproducts')
-        .then(() =>{
-                Fire.$emit('AfterCreate');
-                $('#addNew').modal('hide')
-                this.$Progress.finish();
-            })
-                .catch(() => {
-
-                })
+            this.form.post('api/bankproducts');
+            this.$Progress.finish();
         }
     },
     created() {
