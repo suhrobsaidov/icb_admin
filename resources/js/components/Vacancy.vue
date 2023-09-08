@@ -1,9 +1,5 @@
-<script setup>
-
-import ExampleComponent from "./ExampleComponent.vue";
-</script>
-
 <template>
+    <div>
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Депозитный калькулятор</h3>
@@ -105,8 +101,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                         </tbody>
                     </table>
                 </div>
-
-            </div>
+    </div>
 </template>
 
 <script>
