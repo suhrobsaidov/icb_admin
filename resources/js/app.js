@@ -25,7 +25,7 @@ import News from "./components/News.vue";
 import Feedback from "./components/Feedback.vue";
 import Work from "./components/Work.vue";
 import Vacancy from "./components/Vacancy.vue";
-
+import ImageHeader from "./components/ImageHeader.vue";
 
 require('./bootstrap');
 
@@ -46,7 +46,6 @@ import {
     AlertErrors,
     AlertSuccess
 } from 'vform/src/components/bootstrap4'
-import Index from "./components/BankCards.vue";
 
 const toast = swal.mixin({
     toast: true,
@@ -94,6 +93,7 @@ const router = new VueRouter({
         {path: '/feedback', component:Feedback},
         {path: '/work', component:Work},
         {path: '/vacancy', component:Vacancy},
+        {path: '/imageheader', component:ImageHeader},
     ]
 });
 
@@ -136,6 +136,7 @@ Vue.component('News', require('./components/News.vue'));
 Vue.component('Feedback', require('./components/Feedback.vue'));
 Vue.component('Work', require('./components/Work.vue'));
 Vue.component('Vacancy', require('./components/Vacancy.vue'));
+Vue.component('ImageHeader', require('./components/ImageHeader.vue'));
 
 
 /**

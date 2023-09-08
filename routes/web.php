@@ -72,6 +72,7 @@ Route::get('getnews', 'API\NewsController@index');
 Route::get('getfeedback', 'API\FeedbackController@index');
 Route::get('getwork', 'API\WorkController@index');
 Route::get('getvacancy', 'API\VacancyController@index');
+Route::get('getheaderimage', 'API\HeaderController@index');
 
 
 
@@ -89,7 +90,6 @@ Route::get('currentoffers','CurrentOffersController@index');
 Route::get('calculators','CalculatorsController@index');
 Route::get('bankservices','BankServicesController@index');
 Route::get('depositcards','DepositscardsController@index');
-Route::get('bankcards','BankCardsController@index');
 //Route::get('','');
 //Route::get('','');
 //Route::get('','');

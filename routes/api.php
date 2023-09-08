@@ -37,6 +37,8 @@ Route::apiResource('news', 'API\NewsController');
 Route::apiResource('feedback', 'API\FeedbackController');
 Route::apiResource('work', 'API\WorkController');
 Route::apiResource('vacancy', 'API\VacancyController');
+Route::apiResource('imageheader', 'API\HeaderController');
+
 
 
 //for admin
