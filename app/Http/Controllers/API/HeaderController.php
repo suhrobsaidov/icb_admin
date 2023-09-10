@@ -22,7 +22,7 @@ class HeaderController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -43,8 +43,18 @@ class HeaderController extends Controller
             'sub_description' => $request['sub_description'],
             'page' => $request['page'],
             'language' => $request['language'],
-
         ]);
+//        $data = $request->all();
+//        if ($request->hasFile('image')) {
+//            $image = $request->file('image');
+//            $path = $image->store('public/images');
+//            $data['image'] = $path;
+//        }
+//        $response = Header::create($data);
+//        return response()->json([
+//            'status' => 'success',
+//            'data' => $response
+//        ], 200);
     }
 
     /**

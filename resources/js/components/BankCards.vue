@@ -1,11 +1,5 @@
-<script setup>
-
-import ExampleComponent from "./ExampleComponent.vue";
-</script>
-
 <template>
-    <div class="container">
-        <div class="col-md-12">
+
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Банковские карты</h3>
@@ -92,7 +86,7 @@ import ExampleComponent from "./ExampleComponent.vue";
                     </div>
                 </div>
 
-                <div class="card-body table-responsive p-0">
+                <div class="card-body  table-hover table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
                         <tr>
@@ -139,8 +133,6 @@ import ExampleComponent from "./ExampleComponent.vue";
 
             </div>
 
-        </div>
-    </div>
 
 </template>
 

@@ -48,14 +48,12 @@
                         <i class="now-ui-icons education_atom"></i>
                         <p>
                           <ul><li>Страницы</li>
-
-
                         </ul>
                         </p>
                     </a>
                 </li>
                 <li>
-                    <a href="groups">
+                    <a href="/groups">
                         <i class="now-ui-icons location_map-big"></i>
                         <p>Вакансии</p>
                     </a>
@@ -73,7 +71,7 @@
                     </a>
                 </li>
                 <li class="{{ 'profile' == request()->path() ? 'active' : '' }}">
-                    <a href="profile">
+                    <a href="/profile">
                         <i class="now-ui-icons design_bullet-list-67"></i>
                         <p>Профиль</p>
                     </a>
@@ -240,6 +238,7 @@
             @yield('content')
         </div>
     </div>
+</div>
 
 
 

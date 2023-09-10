@@ -14,7 +14,7 @@ class BankCardsController extends Controller
      */
     public function index()
     {
-        //
+       return view('bankcards');
     }
 
     /**

@@ -19,7 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('user',  'API\UserController');
-Route::apiResource('mainPage', 'API\HeaderController');
 Route::apiResource('header',  'API\HeaderController');
 Route::apiResource('bankproducts', 'API\BankProductsController');
 Route::apiResource('cards', 'API\CardsController');
@@ -37,6 +36,8 @@ Route::apiResource('news', 'API\NewsController');
 Route::apiResource('feedback', 'API\FeedbackController');
 Route::apiResource('work', 'API\WorkController');
 Route::apiResource('vacancy', 'API\VacancyController');
+Route::apiResource('imageheader', 'API\HeaderController');
+
 
 
 //for admin

@@ -7,7 +7,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import DashboardComponent from "./components/DashboardComponent.vue";
 import Users from "./components/Users.vue";
-import MainPage from "./components/MainPage.vue";
 import Header from "./components/Header.vue";
 import BankProducts from "./components/BankProducts.vue";
 import Cards from "./components/Cards.vue";
@@ -25,7 +24,7 @@ import News from "./components/News.vue";
 import Feedback from "./components/Feedback.vue";
 import Work from "./components/Work.vue";
 import Vacancy from "./components/Vacancy.vue";
-
+import ImageHeader from "./components/ImageHeader.vue";
 
 require('./bootstrap');
 
@@ -75,7 +74,6 @@ const router = new VueRouter({
     routes: [
         {path: '/home', component: DashboardComponent},
         {path: '/users', component: Users},
-        {path: '/mainPage', component:MainPage},
         {path: '/header', component:Header},
         {path: '/bankproducts', component:BankProducts},
         {path: '/carts', component:Cards},
@@ -93,6 +91,7 @@ const router = new VueRouter({
         {path: '/feedback', component:Feedback},
         {path: '/work', component:Work},
         {path: '/vacancy', component:Vacancy},
+        {path: '/imageheader', component:ImageHeader},
     ]
 });
 
@@ -117,7 +116,6 @@ Vue.filter('myDate', function(created){
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('Dashboard', require('./components/DashboardComponent.vue'));
 Vue.component('users', require('./components/Users.vue'));
-Vue.component('MainPage', require('./components/MainPage.vue'));
 Vue.component('Header', require('./components/Header.vue'));
 Vue.component('BankProducts', require('./components/BankProducts.vue'));
 Vue.component('Carts', require('./components/Cards.vue'));
@@ -135,6 +133,7 @@ Vue.component('News', require('./components/News.vue'));
 Vue.component('Feedback', require('./components/Feedback.vue'));
 Vue.component('Work', require('./components/Work.vue'));
 Vue.component('Vacancy', require('./components/Vacancy.vue'));
+Vue.component('ImageHeader', require('./components/ImageHeader.vue'));
 
 
 /**
