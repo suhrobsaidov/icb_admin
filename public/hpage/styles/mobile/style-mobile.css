@@ -1,4 +1,7 @@
 @media screen and (max-width: 676px){
+	*{
+		transition: .5s;
+	}
 	#background{
 	    height: 600px;
 	}
@@ -390,12 +393,13 @@
 	.mobile-backgound{
 		width: -webkit-fill-available;
 	}
-
-	.burger-mobile{
+	#bMobile{
 		position: absolute;
+		background-color: rgba(0, 0, 0,0);
+		border: none;
+	}
+	.burger-mobile{
 		width: min-content;
-		align-self: center;
-	
 	}
 	.menu-icons{
 		width: 100%;
@@ -415,5 +419,128 @@
 		width: 15%;
 	}
 
+	.mobile-list{
+		display: none;
+	}
+
+	#mobileList{
+		position: fixed;
+		background-color: white;
+		z-index: 1;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 20px 25px;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.mobile-header{
 	
-}		
+		display: flex;
+		justify-content: space-between;
+		width: -webkit-fill-available;
+		height: fit-content;
+	}
+
+	.mobile-header > button{
+		background-color: rgba(0,0,0,0);
+		border: none;
+	}
+	.mobile-header-menu{
+		gap: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	.mobile-header-menu-on ul{
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+	}
+	.mobile-header-menu-two ul{
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.mobile-header-menu-on ul a{
+		font-size: 21px;
+		color: #000000;
+	}
+	.mobile-header-menu-two ul li a{
+		font-size: 18px;
+		color: #000000;
+	}
+
+
+/*Dropdown*/
+.dropdown{
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.dropdown h1{
+	align-self: center;
+	margin-bottom:20px;
+}
+.dropdown-menu{
+	display: flex;
+	flex-direction: inherit;
+/*	gap: 20px;*/
+}
+
+.dropdown-label{
+	
+}
+.rotate-plus{
+	transform: rotate(-45deg);
+}
+
+.dropdown-list{
+	display: flex;
+	flex-direction: column;
+	padding-left: 20px;
+
+}
+.dropdown-list-content{
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(219, 0, 17, 0.1);
+}
+
+.dropdown-list div h3{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 150%;
+	color: #000000;
+
+	
+}
+.dropdown-list div p{
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 150%;
+	color: #000000;
+	
+}
+.dropdown-list div ul li{
+	list-style: inside;
+	
+}
+.dropdown-list {
+  /* Начальное состояние списка */
+	  opacity: 1;
+	  max-height: 530px;
+	  overflow: hidden;
+	  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.dropdown-list.display {
+	/* Стили для плавного появления */
+	opacity: 0;
+	max-height:0; /* Установите значение, подходящее для вашего контента */
+}
+
+}

@@ -39,7 +39,7 @@ Route::get('loans' , 'view\LoansController@index');
 Route::get('contacts' , 'view\ContactsController@index');
 Route::get('compliance' , 'view\ComplianceController@index');
 Route::get('childdeposit' , 'view\ChilddepController@index');
-Route::get('businessloan' , 'view\BusinessloanController@index');
+Route::get('businessloans' , 'view\BusinessloanController@index');
 Route::get('bankomati' , 'view\BankomatiController@index');
 Route::get('bankfinstatement' , 'view\FinstateController@index');
 Route::get('autoloan' , 'view\AutoloanController@index');

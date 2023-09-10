@@ -165,7 +165,9 @@
             </div>
         </div>
     </div>
+    <div>
 
+    </div>
     <div class="currency">
         <h1>Buying and selling currency</h1>
         <div class="currency-converter" id='currencyConverter'>
@@ -339,10 +341,10 @@
         <img src="./images/icons/arrow.png" alt="arrow.png" class="bank-services-arrow">
     </div>
 </div>
-<div class='mobile-menu'>
+<div class='mobile-menu' id='mobileMenu'>
     <div class="mobile-back">
         <img src="./images/icons/mobile-menu-back.png" class='mobile-backgound' alt="menu back">
-        <a href="#"><img src="./images/icons/mobile-menu-burger.png" class="burger-mobile" alt=""></a>
+        <button id='bMobile'><img src="./images/icons/mobile-menu-burger.png" class="burger-mobile" alt=""></button>
     </div>
     <div class="menu-icons">
         <div>
@@ -355,37 +357,68 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="mobile-menu">
-
-    <div>
-        <img src="./images/icons/hand.png" alt="hand.png">
-        <p>Loans</p>
+<div class='mobile-list'>  
+    <div class='mobile-header'>
+        <img src="./images/desktop/logo.png" alt="Logo" class="logo">
+        <button id='mobilExit'><img src="./images/icons/plus.png" alt=""></button>
     </div>
-
-    <div>
-        <img src="./images/icons/wallet.png" alt="wallet.png">
-        <p>Deposits</p>
-    </div>
-
-    <div>
-        <img src="./images/icons/menu.png" alt="menu.png">
-        <p>Menu</p>
-    </div>
-
-    <div>
-        <img src="./images/icons/cards.png" alt="cards.png">
-        <p>Cards</p>
-    </div>
-
-    <div>
-        <img src="./images/icons/search.png" alt="search.png">
-        <p>Vacancy</p>
-    </div>
-</div> -->
+    <div class='mobile-header-menu'>
+                <div class="mobile-header-menu-on">
+                    <ul>
+                        <a href="#">INDIVIDUALS</a>
+                        <a href="#">LEGAL ENTITIES</a>
+                    </ul>
+                </div>
+                <div class="mobile-header-menu-two">
+                    <ul>
+                        <li>
+                            <a href="#" class='dropdown-label'>Loans</a>
+                            <ul class='dropdown-list'>
+                                <li><a href="businessloans">Business loans</a></li>
+                                <li><a href="consumerloans">Consumer loans</a></li>
+                                <li><a href="mortgateloan">Mortgage loan</a></li>
+                                <li><a href="autoloan">Auto loan</a></li>
+                                <li><a href="agricultureloan">Agriculture loan</a></li>
+                                <li><a href="expresscredit">Express credit</a></li>
+                                <li><a href="donish">Loan product "Donish"</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class='dropdown-label'>Deposits</a>
+                            <ul class='dropdown-list'>
+                                <li><a href="savingaccounts">Savings account</a></li>
+                                <li><a href="termdeposits">Individual term deposits</a></li>
+                                <li><a href="easydeposit">"Easy" deposit</a></li>
+                                <li><a href="childdeposit">Child deposit</a></li>
+                                <li><a href="diyor">"Diyor" Deposit</a></li>
+                                <li><a href="housingdeposit">Housing deposit</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class='dropdown-label'>Cards</a>
+                            <ul class='dropdown-list'>
+                                <li><a href="">Korti Milli</a></li>
+                                <li><a href="">Visa (Classic)</a></li>
+                                <li><a href="">Visa (Gold)</a></li>
+                                <li><a href="">Gift Card</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Online Services</a></li>
+                        <li>
+                            <a href="#" class='dropdown-label'>More</a>
+                            <ul class='dropdown-list'>
+                                <li><a href="/abouts">About the bank</a></li>
+                                <li><a href="/vacancy">Vacansy</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</div>
 
 <script src="./hpage/scripts/app.js"></script>
 <script src="./js/slider/app.js"></script>
+<script src="./js/burger/app.js"></script>
 
 </body>
 </html>
